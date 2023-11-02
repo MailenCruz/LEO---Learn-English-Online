@@ -8,6 +8,9 @@ import { GramaticaHomePageComponent } from './pages/gramatica-pages/gramatica-ho
 import { JuegosHomePageComponent } from './pages/juegos-pages/juegos-home-page/juegos-home-page.component';
 import { TraductorHomePageComponent } from './pages/traductor-pages/traductor-home-page/traductor-home-page.component';
 import { ViajeroHomePageComponent } from './pages/viajero-pages/viajero-home-page/viajero-home-page.component';
+import { ListarEjercicioComponent } from './components/gramatica/listar-ejercicio/listar-ejercicio.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { ContactanosPageComponent } from './pages/contactanos-page/contactanos-page.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { ViajeroHomePageComponent } from './pages/viajero-pages/viajero-home-pag
     GramaticaHomePageComponent,
     JuegosHomePageComponent,
     TraductorHomePageComponent,
-    ViajeroHomePageComponent
+    ViajeroHomePageComponent,
+    ListarEjercicioComponent,
+    NavbarComponent,
+    ContactanosPageComponent
   ],
   imports: [
     BrowserModule,
