@@ -1,0 +1,192 @@
+.cuerpo-juego {
+    background-color: #d8dcfc;
+    margin: 0;
+}
+
+.barra {
+    background-color: #B3B3FD;
+    font-size: 3rem;
+    font-family: 'Lexend', sans-serif;
+}
+
+img {
+    width: auto;
+    height: auto;
+}
+
+.imagen-nombre {
+    display: flex;
+    align-items: center;
+}
+
+.secciones-juego h4 {
+    font-size: 2.7rem;
+    text-align: center;
+    font-family: 'Manrope', sans-serif;
+}
+
+legend {
+    background-color: #B3B3FD;
+    margin-bottom: 30rem;
+    padding: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    box-shadow: 3px 3px 3px 3px #9c9ce7bd;
+    font-family: 'Lexend', sans-serif;
+}
+
+.cuadrado {
+    height: 30rem;
+    width: 35rem;
+    margin: 2rem;
+    display: inline-block;
+    background-color: #dcbee8;
+    border-style: hidden;
+}
+
+.img-presentacion1 {
+    position: absolute;
+    top: 30rem;
+    left: 15rem;
+}
+
+.boton-respuesta1 {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    top: 10rem;
+    left: 14rem;
+    padding: 1rem 5rem;
+
+    border: none;
+    font-size: 2.5rem;
+    background-color: #a3a3f7;
+    border-style:outset;
+    border-color: #B3B3FD;
+}
+
+/*presentacion 2*/
+
+.boton-respuesta2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    top: 33rem;
+    left: 55rem;
+    padding: 1rem 5rem;
+
+    border: none;
+    font-size: 2.5rem;
+    background-color: #a3a3f7;
+    border-style:outset;
+    border-color: #B3B3FD;
+}
+
+.boton-respuesta3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    top: 38rem;
+    left: 65rem;
+    padding: 1rem 5rem;
+
+    border: none;
+    font-size: 2.5rem;
+    background-color: #d1a2e4;
+    border-style:outset;
+    border-color: #d090e9;
+    font-style:italic;
+}
+
+/*presentacion 3*/
+
+.img-presentacion3{
+    position: absolute;
+    top: 30rem;
+    left: 97rem;
+}
+
+.boton-respuesta4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    top: 10rem;
+    left: 8rem;
+    padding: 1rem 5rem;
+
+    border: none;
+    font-size: 2.5rem;
+    background-color: #a3a3f7;
+    border-style:outset;
+    border-color: #B3B3FD;
+}
+
+.contenedor-cuadrados {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.boton-jugar {
+    position: absolute;
+    top: 52rem;
+    margin-left: 7.5rem;
+    padding: 1rem 5rem;
+
+    border: none;
+    font-size: 2.5rem;
+    background-color: #b3b3fdad;
+    border-radius: 1rem;
+
+    transition-duration: 0.5s;
+    cursor: pointer;
+
+    font-family: 'Lexend', sans-serif;
+}
+
+.boton-jugar:hover {
+    background-color: #9898f8;
+    transform: translateY(-10px);
+}
+
+
+
+/*esto es para el sombreado
+:root {
+    --shadow-color: 240deg 45% 52%;
+    --shadow-elevation-low:
+        0.2px -0.3px 0.4px hsl(var(--shadow-color) / 0.34),
+        0.3px -0.5px 0.7px -1.2px hsl(var(--shadow-color) / 0.34),
+        0.7px -1.2px 1.6px -2.5px hsl(var(--shadow-color) / 0.34);
+    --shadow-elevation-medium:
+        0.2px -0.3px 0.4px hsl(var(--shadow-color) / 0.36),
+        0.6px -1px 1.3px -0.8px hsl(var(--shadow-color) / 0.36),
+        1.5px -2.4px 3.2px -1.7px hsl(var(--shadow-color) / 0.36),
+        3.7px -5.9px 7.8px -2.5px hsl(var(--shadow-color) / 0.36);
+    --shadow-elevation-high:
+        0.2px -0.3px 0.4px hsl(var(--shadow-color) / 0.34),
+        1.1px -1.7px 2.3px -0.4px hsl(var(--shadow-color) / 0.34),
+        2px -3.2px 4.2px -0.7px hsl(var(--shadow-color) / 0.34),
+        3.3px -5.3px 7px -1.1px hsl(var(--shadow-color) / 0.34),
+        5.3px -8.4px 11.2px -1.4px hsl(var(--shadow-color) / 0.34),
+        8.3px -13.1px 17.4px -1.8px hsl(var(--shadow-color) / 0.34),
+        12.6px -20px 26.6px -2.1px hsl(var(--shadow-color) / 0.34),
+        18.6px -29.4px 39.1px -2.5px hsl(var(--shadow-color) / 0.34);
+}
+
+.cuadrado:hover {
+    box-shadow: var(--shadow-elevation-low);
+    cursor: pointer;
+    transition: all .3s ease;
+}
+*/
