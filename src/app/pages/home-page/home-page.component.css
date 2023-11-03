@@ -1,33 +1,38 @@
 @import url(../../../styles.css);
 
+.contenedor-principal{
+    background-color: #DCBEE8FF;
+}
+
 /* BIENVENIDA */ 
 .contenedor-bienvenida{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10rem;
-    background-color: #DCBEE8FF;
+    margin-top: 3rem; 
 } 
 
 .contenedor-bienvenida .logo-home{
-    max-width: 80%;
-    height: 20.3rem;
+    max-width: 100%;
+    height: 29.3rem;
 }
 
 .contenedor-bienvenida .introduccion{
-    max-width: 20%;
-    height: 10rem;
+    max-width: 50%;
+    height: 20.3rem;
     background-color: #B3B3FDFF;
-    padding: 1rem;
+    padding: 5rem;
 }
 
 .contenedor-bienvenida .introduccion h1{
-    font-size: 2.4rem;
+    font-size: 3rem;
     color: black;
     margin: 0;
 }
 
 .contenedor-bienvenida .introduccion p{
+    font-size: 1.5rem;
     text-align: justify;
     color: black;
     font-family: 'Lexend', sans-serif;
@@ -39,7 +44,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #DCBEE8FF;
 }
 
 .contenedor-categorias h2{
