@@ -21,7 +21,7 @@ nav{
     padding: 1rem 1.5rem;
     text-decoration: none;
     color: rgb(110, 104, 104);
-    font-size: 1.3rem;
+    font-size: 2rem;
 }
 
 .home-span{
@@ -59,3 +59,4 @@ body {
     font-family: 'Manrope', sans-serif;
     font-family: 'Raleway', sans-serif;
 }
+

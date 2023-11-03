@@ -11,6 +11,11 @@ import { ViajeroHomePageComponent } from './pages/viajero-pages/viajero-home-pag
 import { ListarEjercicioComponent } from './components/gramatica/listar-ejercicio/listar-ejercicio.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { ContactanosPageComponent } from './pages/contactanos-page/contactanos-page.component';
+import { BienvenidaComponent } from './components/home/bienvenida/bienvenida.component';
+import { CategoriasComponent } from './components/home/categorias/categorias.component';
+import { NavJuegosComponent } from './components/juegos/nav-juegos/nav-juegos.component';
+import { EleccionJuegosComponent } from './components/juegos/eleccion-juegos/eleccion-juegos.component';
+import { NavViajeroComponent } from './components/viajero/nav-viajero/nav-viajero.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,12 @@ import { ContactanosPageComponent } from './pages/contactanos-page/contactanos-p
     ViajeroHomePageComponent,
     ListarEjercicioComponent,
     NavbarComponent,
-    ContactanosPageComponent
+    ContactanosPageComponent,
+    BienvenidaComponent,
+    CategoriasComponent,
+    NavJuegosComponent,
+    EleccionJuegosComponent,
+    NavViajeroComponent
   ],
   imports: [
     BrowserModule,

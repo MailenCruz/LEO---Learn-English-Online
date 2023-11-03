@@ -1,0 +1,15 @@
+.barra {
+    background-color: #B3B3FD;
+    font-size: 3rem;
+    font-family: 'Lexend', sans-serif;
+}
+
+img {
+    width: auto;
+    height: auto;
+}
+
+.imagen-nombre {
+    display: flex;
+    align-items: center;
+}

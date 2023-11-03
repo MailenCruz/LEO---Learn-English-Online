@@ -1,0 +1,37 @@
+.contenedor-categorias{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem;
+}
+
+.contenedor-categorias h2{
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.lista-categorias{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 10rem;
+}
+
+.categoria{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin: 0 1rem;
+}
+
+.categoria img{
+    max-width: 15rem;
+}
+
+.categoria h3{
+    font-size: 2rem;
+    margin-top: 1rem;
+}

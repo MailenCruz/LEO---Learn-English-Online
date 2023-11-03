@@ -4,7 +4,7 @@
     background-color: #DCBEE8FF;
 }
 
-/* BIENVENIDA */ 
+/* BIENVENIDA */ /*
 .contenedor-bienvenida{
     display: flex;
     align-items: center;
@@ -36,9 +36,9 @@
     text-align: justify;
     color: black;
     font-family: 'Lexend', sans-serif;
-}
+} */
 
-/* CATEGORIAS */
+/* CATEGORIAS */ /*
 .contenedor-categorias{
     display: flex;
     flex-direction: column;
@@ -78,6 +78,6 @@
 .categoria h3{
     font-size: 1.8rem;
     margin-top: 1rem;
-}
+}*/
 
 
