@@ -17,11 +17,7 @@ export class TraductorComponent {
   }
 
   alternar(){
-    if(this.visible){
-      this.ocultar();
-    }else{
-      this.mostrar();
-    }
+    this.visible = !this.visible;
+   
   }
-
 }

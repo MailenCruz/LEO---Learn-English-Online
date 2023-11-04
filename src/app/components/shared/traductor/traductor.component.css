@@ -2,7 +2,8 @@
     position: fixed;
     top:83%;
     margin-left: 91%;
-    margin-top: 1%;
+    margin-top: 0.5%;
+    pointer-events: auto;
     /* max-width: 300rem; */
 }
 
@@ -19,7 +20,7 @@
 }
 
 .ventana-emergente {
-    display: none;
+    visibility: hidden;
     position: fixed;
     top: 0;
     left: 0;
@@ -28,6 +29,8 @@
     /* background-color: rgba(0, 0, 0, 0.7); */
     justify-content: center;
     align-items: center;
+    margin-bottom: 30%;
+    
     
   transition: opacity 0.3s ease; /* Agregar transición de opacidad */
   
@@ -35,9 +38,15 @@
   }
 
   .ventana-emergente.mostrar {
-    display:list-item;
+    visibility: visible;
+    display:inline-block;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
     top:70%;
-    padding-left: 85%;
+    margin-left: 85%;
+    margin-bottom: 30%;
+    
+    
 
   }
 
@@ -48,7 +57,9 @@
     text-align: center;
     box-shadow: 10px 10px 10px rgb(142, 142, 212);
     transform: scale(0.9);
+    margin-bottom: 30%;
   transition: transform 0.3s ease;
+  
   }
 
  
