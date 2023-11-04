@@ -16,6 +16,7 @@ import { CategoriasComponent } from './components/home/categorias/categorias.com
 import { NavJuegosComponent } from './components/juegos/nav-juegos/nav-juegos.component';
 import { EleccionJuegosComponent } from './components/juegos/eleccion-juegos/eleccion-juegos.component';
 import { NavViajeroComponent } from './components/viajero/nav-viajero/nav-viajero.component';
+import { TraductorComponent } from './components/shared/traductor/traductor.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NavViajeroComponent } from './components/viajero/nav-viajero/nav-viajer
     CategoriasComponent,
     NavJuegosComponent,
     EleccionJuegosComponent,
-    NavViajeroComponent
+    NavViajeroComponent,
+    TraductorComponent
   ],
   imports: [
     BrowserModule,
