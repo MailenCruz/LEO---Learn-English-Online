@@ -15,9 +15,13 @@ import { CategoriasComponent } from './components/home/categorias/categorias.com
 import { NavJuegosComponent } from './components/juegos/nav-juegos/nav-juegos.component';
 import { EleccionJuegosComponent } from './components/juegos/eleccion-juegos/eleccion-juegos.component';
 import { NavViajeroComponent } from './components/viajero/nav-viajero/nav-viajero.component';
+<<<<<<< HEAD
 import { EleccionTematicaComponent } from './components/viajero/eleccion-tematica/eleccion-tematica.component';
 import { NavGramaticaComponent } from './components/gramatica/nav-gramatica/nav-gramatica.component';
 import { EleccionNivelComponent } from './components/gramatica/eleccion-nivel/eleccion-nivel.component';
+=======
+import { TraductorComponent } from './components/shared/traductor/traductor.component';
+>>>>>>> f164a2c3b8c46cdaa12fa7924697b9c8af1a1f89
 
 @NgModule({
   declarations: [
@@ -34,10 +38,15 @@ import { EleccionNivelComponent } from './components/gramatica/eleccion-nivel/el
     NavJuegosComponent,
     EleccionJuegosComponent,
     NavViajeroComponent,
+<<<<<<< HEAD
     EleccionTematicaComponent,
     NavGramaticaComponent,
     EleccionNivelComponent
     ],
+=======
+    TraductorComponent
+  ],
+>>>>>>> f164a2c3b8c46cdaa12fa7924697b9c8af1a1f89
   imports: [
     BrowserModule,
     AppRoutingModule
