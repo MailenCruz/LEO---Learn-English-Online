@@ -1,0 +1,21 @@
+.barra-P-P {
+    background-color: #B3B3FD;
+    font-size: 3rem;
+    font-family: 'Lexend', sans-serif;
+}
+
+img {
+    width: auto;
+    height: auto;
+}
+
+.imagen-nombre-P-P {
+    display: flex;
+    align-items: center;
+}
+
+.cuerpo-juego-P-P {
+    background-color: #d8dcff;
+    margin: 0;
+}
+

@@ -17,6 +17,15 @@ import { NavJuegosComponent } from './components/juegos/nav-juegos/nav-juegos.co
 import { EleccionJuegosComponent } from './components/juegos/eleccion-juegos/eleccion-juegos.component';
 import { NavViajeroComponent } from './components/viajero/nav-viajero/nav-viajero.component';
 import { TraductorComponent } from './components/shared/traductor/traductor.component';
+import { PalabraImagenJuegoComponent } from './components/juegos/palabra-imagen-juego/palabra-imagen-juego.component';
+import { NombreColorColorJuegoComponent } from './components/juegos/nombre-color-color-juego/nombre-color-color-juego.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { NivelBasicoGramaticaComponent } from './components/gramatica/nivel-basico-gramatica/nivel-basico-gramatica.component';
+import { NivelIntermedioGramaticaComponent } from './components/gramatica/nivel-intermedio-gramatica/nivel-intermedio-gramatica.component';
+import { NivelAvanzadoGramaticaComponent } from './components/gramatica/nivel-avanzado-gramatica/nivel-avanzado-gramatica.component';
+import { ShoppingViajeroComponent } from './components/viajero/shopping-viajero/shopping-viajero.component';
+import { RestauranteViajeroComponent } from './components/viajero/restaurante-viajero/restaurante-viajero.component';
+import { AlojamientoViajeroComponent } from './components/viajero/alojamiento-viajero/alojamiento-viajero.component';
 
 @NgModule({
   declarations: [
@@ -34,11 +43,20 @@ import { TraductorComponent } from './components/shared/traductor/traductor.comp
     NavJuegosComponent,
     EleccionJuegosComponent,
     NavViajeroComponent,
-    TraductorComponent
+    TraductorComponent,
+    PalabraImagenJuegoComponent,
+    NombreColorColorJuegoComponent,
+    NivelBasicoGramaticaComponent,
+    NivelIntermedioGramaticaComponent,
+    NivelAvanzadoGramaticaComponent,
+    ShoppingViajeroComponent,
+    RestauranteViajeroComponent,
+    AlojamientoViajeroComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

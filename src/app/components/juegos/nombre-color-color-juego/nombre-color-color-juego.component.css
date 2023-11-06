@@ -1,0 +1,21 @@
+.barra-NC-C {
+    background-color: #B3B3FD;
+    font-size: 3rem;
+    font-family: 'Lexend', sans-serif;
+}
+
+img {
+    width: auto;
+    height: auto;
+}
+
+.imagen-nombre-NC-C {
+    display: flex;
+    align-items: center;
+}
+
+.cuerpo-juego-NC-C {
+    background-color: #d8dcfc;
+    margin: 0;
+}
+

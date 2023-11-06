@@ -1,0 +1,20 @@
+.cuerpo-viajero-R {
+    background-color: #d8dcfc;
+    margin: 0;
+}
+
+.barra-R {
+    background-color: #B3B3FD;
+    font-size: 3rem;
+    font-family: 'Lexend', sans-serif;
+}
+
+img {
+    width: auto;
+    height: auto;
+}
+
+.imagen-nombre-R {
+    display: flex;
+    align-items: center;
+}
