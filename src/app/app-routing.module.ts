@@ -26,7 +26,7 @@ const routes: Routes = [
 
   {path:'viajeros-home', component:ViajeroHomePageComponent},
   {path:'shopping-viajeros', component:ShoppingViajeroComponent},
-  {path:'restaurant-viajeros', component:RestauranteViajeroComponent},
+  {path:'restaurante-viajeros', component:RestauranteViajeroComponent},
   {path:'alojamiento-viajeros', component:AlojamientoViajeroComponent},
 
   {path:'gramatica-home', component:GramaticaHomePageComponent},
