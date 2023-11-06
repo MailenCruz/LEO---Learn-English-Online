@@ -1,41 +1,3 @@
-.cuerpo-gramatica {
-    background-color: #d8dcfc;
-    margin: 0;
-}
-
-.secciones-gramatica h4 {
-    margin: 0;
-    padding: 2rem;
-    font-size: 2.5rem;
-    text-align: center;
-    font-family: 'Manrope', sans-serif;
-}
-
-/*
-.barra {
-    background-color: #B3B3FD;
-    font-size: 3rem;
-    font-family: 'Lexend', sans-serif;
-}
-
-img {
-    width: auto;
-    height: auto;
-}
-
-.imagen-nombre {
-    display: flex;
-    align-items: center;
-}
-
-.secciones-gramatica h4 {
-    margin: 0;
-    padding: 2rem;
-    font-size: 2.5rem;
-    text-align: center;
-    font-family: 'Manrope', sans-serif;
-}
-
 legend {
     background-color: #B3B3FD;
     margin-bottom: 28rem;
@@ -77,6 +39,7 @@ legend {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: .5rem 0 4rem 0;
 }
 
 .boton-entrar {
@@ -100,4 +63,3 @@ legend {
     background-color: #9898f8;
     transform: translateY(-10px);
 }
-*/

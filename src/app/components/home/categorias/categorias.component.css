@@ -9,7 +9,7 @@
 .contenedor-categorias h2{
     font-size: 3rem;
     text-align: center;
-    margin-bottom: 1rem;
+    padding: 2rem 0 4rem 0;
 }
 
 .lista-categorias{
@@ -27,7 +27,17 @@
     margin: 0 1rem;
 }
 
-.categoria img{
+.categoria img.img-normal{
+    max-width: 15rem;
+}
+.categoria:hover img.img-normal{
+    display:none;
+}
+.categoria img.img-hover{
+    display:none;
+}
+.categoria:hover img.img-hover{
+    display:inline-block;
     max-width: 15rem;
 }
 
