@@ -5,6 +5,7 @@
 
 .secciones-viajero h4 {
     margin: 0;
+    /*padding: 0.5rem; por si les gusta mas el otro texto*/ 
     padding: 2rem;
     font-size: 2.5rem;
     text-align: center;
