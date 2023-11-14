@@ -9,8 +9,25 @@
 
 <span class="ventana-emergente" [ngClass]="{'mostrar': visible}">
     <div class="contenido">
-      <h2>Ventana Emergente</h2>
-      <p>Este es el contenido de la ventana emergente.</p>
+      <h2>TRADUCTOR</h2>
+      <div>
+        <h3 *ngIf="this.idioma === 'es-en'">
+            español-inglés
+        </h3>
+        <h3 *ngIf="this.idioma === 'en-es'">
+            inglés-español
+        </h3>
+        <input type="button" value="cambiarIdioma" (click)="alternarIdioma()">
+      </div>
+      
+      <div>
+        
+      <label for="traducir">Ingrese palabra a traducir:</label>
+      <input type="text" id="traducir" [(ngModel)]="palabra">
+      </div>
+      
+      <input type="button" value="traducir" (click)="traducir()">
+      <p>{{traduccion}}</p>
       
     </div>
 </span>

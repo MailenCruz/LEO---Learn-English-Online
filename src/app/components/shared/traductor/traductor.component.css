@@ -9,46 +9,88 @@
 
 .abrir-btn img.logo-traductor-hover {
     display: none;
+    
   }
   
   .abrir-btn:hover img.logo-traductor-hover {
     display: block;
+    cursor:pointer;
   }
 
 .logo-traductor:hover{
     display: none;
 }
 
-.ventana-emergente {
+/* .ventana-emergente {
     visibility: hidden;
     position: fixed;
     top: 0;
     left: 0;
-    /* width: 20%; */
-    height: 100%;
-    /* background-color: rgba(0, 0, 0, 0.7); */
+     width: 40%; 
+    height: 30%;
+    // background-color: rgba(0, 0, 0, 0.7); 
     justify-content: center;
     align-items: center;
     margin-bottom: 30%;
     
     
-  transition: opacity 0.3s ease; /* Agregar transición de opacidad */
+    
+  transition: opacity 0.3s ease;
   
     
-  }
+  } */
 
-  .ventana-emergente.mostrar {
+  .ventana-emergente {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    width: 50%; /* Cambia este valor según tus necesidades */
+    height: 80%; /* Cambia este valor según tus necesidades */
+/*     background-color: rgba(0, 0, 0, 0.7);
+ */    padding-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+    padding: 0px;
+}
+
+/*   .ventana-emergente.mostrar {
     visibility: visible;
     display:inline-block;
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
-    top:70%;
-    margin-left: 85%;
+    top:50%;
+    height: 100%;
+    margin-left: 68%;
+    margin-bottom: 30%;
+
+  } */
+  .ventana-emergente.mostrar {
+    visibility: visible;
+    display: inline-block;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+    top: 7%; /* Cambia este valor según tus necesidades */
+    left: 59%;
+    padding: 0; /* Cambia este valor según tus necesidades */
+}
+
+/*   .contenido {
+    background-color: #d8dcfc;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 10px 10px 10px rgb(142, 142, 212);
+    transform: scale(0.9);
     margin-bottom: 30%;
     
-    
-
-  }
+  transition: transform 0.3s ease;
+  width: 80%;
+  
+  } */
 
   .contenido {
     background-color: #d8dcfc;
@@ -57,9 +99,11 @@
     text-align: center;
     box-shadow: 10px 10px 10px rgb(142, 142, 212);
     transform: scale(0.9);
-    margin-bottom: 30%;
-  transition: transform 0.3s ease;
-  
-  }
+    margin-bottom: 0px; /* Ajusta este valor según tus necesidades */
+    width: 80%; /* Cambia este valor según tus necesidades */
+    /* padding-bottom: 35%;
+    padding-top: 35%; */
+    height: 105%;
+}
 
  
