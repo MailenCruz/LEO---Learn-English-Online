@@ -74,7 +74,7 @@
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
     top: 7%; /* Cambia este valor según tus necesidades */
-    left: 59%;
+    left: 70%;
     padding: 0; /* Cambia este valor según tus necesidades */
 }
 
@@ -100,10 +100,303 @@
     box-shadow: 10px 10px 10px rgb(142, 142, 212);
     transform: scale(0.9);
     margin-bottom: 0px; /* Ajusta este valor según tus necesidades */
-    width: 80%; /* Cambia este valor según tus necesidades */
+    width: 60%; /* Cambia este valor según tus necesidades */
     /* padding-bottom: 35%;
     padding-top: 35%; */
     height: 105%;
 }
+
+/* Estilos para los encabezados h2 y h3 */
+/* .titulo-traductor, .idioma {
+  color: #333;
+} */
+
+.container-titulo-traductor{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 10%;
+  background: #B3B3FDFF;
+  border-radius: 0px;
+}
+
+.titulo-traductor {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  font-family: Lexend;
+  font-size: large;
+  font-weight: bold;
+  line-height: 50%;
+  color: #171A1FFF;
+  }
+
+/* Estilos específicos para el botón cambiarIdioma */
+/* .btn-cambiar-idioma {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+} */
+
+.container-cambiar-idioma {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  width: 90%;
+  height: 20%;
+  background: #FFFFFFFF;
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: #BDC1CAFF;
+  border-style: solid;
+  box-shadow: 0px 2px 5px #171a1f, 0px 0px 2px #171a1f;
+  }
+
+  .container-cambiar-idioma h3,input{
+    float:inline-start;
+    display: block;
+  }
+
+  .idioma{
+    position: absolute;
+    top: 28%;
+    left:2%;
+    width: 40%;
+    height: 35%;
+    display:flex;
+    font-size: large;
+  }
+
+  /* btn cambiar idioma */
+.btn-cambiar-idioma {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  width: 40%;
+  height: 35%;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  font-family: Manrope;
+  font-size: large;
+  font-weight: bolder;
+  line-height: 36px;
+  color: rgb(19, 13, 13);
+  background: #DCBEE8FF;
+  opacity: 1;
+  
+  gap: 6px;
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: #BDC1CAFF;
+  border-style: solid;
+  box-shadow: 0px 1px 5px #908491, 0px 0px 2px #7d6f80;
+  }
+  /* .button .icon {
+  width: 24px;
+  height: 24px;
+  fill: #FFFFFFFF;
+  } */
+  /* Hover */
+  .btn-cambiar-idioma:hover {
+    color: rgb(19, 13, 13);
+    background: rgb(193, 159, 206);
+  }
+  /* Pressed */
+  .btn-cambiar-idioma:hover:active {
+    color: rgb(19, 13, 13);
+    background: rgb(193, 159, 206);
+  }
+  /* Disabled */
+  .btn-cambiar-idioma:disabled {
+  opacity: 0.4
+  }
+
+
+  .campos-traduccion{
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    width: 90%;
+    height: 55%;
+    background: #FFFFFFFF;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: #BDC1CAFF;
+    border-style: solid;
+    box-shadow: 0px 2px 5px #171a1f, 0px 0px 2px #171a1f;
+  }
+
+  .campos-traduccion label{
+    font-family: Manrope;
+    font-size: large;
+    font-weight: bold;
+  }
+
+  .btn-clean{
+    font-size: medium;
+    opacity: 70%;
+    color:#171a1f;
+    margin-top: 5%;
+    margin-left: 80%;
+    
+  }
+
+  .error{
+    font-size:medium;
+    color:red;
+    opacity: 70%;
+    padding-top: 0;
+    top:1%
+  }
+
+  .btn-traducir{
+    position: absolute;
+    top: 42%;
+    left: 30%;
+    width: 40%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    font-family: Manrope;
+    font-size: large;
+    font-weight: bolder;
+    line-height: 36px;
+    color: rgb(19, 13, 13);
+    background: #DCBEE8FF;
+    opacity: 1;
+    
+    gap: 6px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: #BDC1CAFF;
+    border-style: solid;
+    box-shadow: 0px 1px 5px #908491, 0px 0px 2px #7d6f80;
+  }
+
+  .btn-traducir:hover {
+    color: rgb(19, 13, 13);
+    background: rgb(193, 159, 206);
+  }
+
+  .palabra{
+    position: absolute;
+    top: 9%;
+    left: 2%;
+    width: 95%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    font-family: Manrope;
+    font-size: large;
+    font-weight: bolder;
+    line-height: 36px;
+    color: rgb(19, 13, 13);
+    background: rgb(250, 247, 252);
+    opacity: 1;
+    
+    gap: 6px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: #BDC1CAFF;
+    border-style: solid;
+    box-shadow: 0px 1px 5px #908491, 0px 0px 2px #7d6f80;
+  }
+
+  .container-traduccion{
+    position: absolute;
+    top: 70%;
+    left: 2%;
+    width: 95%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    font-family: Manrope;
+    font-size: large;
+    font-weight: bolder;
+    line-height: 36px;
+    color: rgb(19, 13, 13);
+    background: rgb(250, 247, 252);
+    opacity: 1;
+    
+    gap: 6px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: #BDC1CAFF;
+    border-style: solid;
+    box-shadow: 0px 1px 5px #908491, 0px 0px 2px #7d6f80;
+  }
+
+
+
+
+/* Estilos para la etiqueta del input de texto */
+.label-palabra {
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* Estilos para el input de texto */
+.input-palabra {
+  position: absolute;
+    top: 15%;
+    left: 2%;
+    width: 95%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    font-family: Manrope;
+    font-size: large;
+    font-weight: bolder;
+    line-height: 36px;
+    color: rgb(19, 13, 13);
+    background: rgb(250, 247, 252);
+    opacity: 1;
+    padding-left: 43%;
+    
+    gap: 6px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: #BDC1CAFF;
+    border-style: solid;
+    box-shadow: 0px 1px 5px #908491, 0px 0px 2px #7d6f80;
+}
+
+/* Estilos para el botón de traducir */
+/* .btn-traducir {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+} */
+
+/* Estilos para el párrafo de traducción */
+
 
  

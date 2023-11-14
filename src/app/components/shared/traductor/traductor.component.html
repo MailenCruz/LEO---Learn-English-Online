@@ -9,25 +9,52 @@
 
 <span class="ventana-emergente" [ngClass]="{'mostrar': visible}">
     <div class="contenido">
-      <h2>TRADUCTOR</h2>
-      <div>
-        <h3 *ngIf="this.idioma === 'es-en'">
+
+      <div class="container-titulo-traductor">
+        <h2 class="titulo-traductor">TRADUCTOR</h2>
+      </div>
+
+      <div class="container-cambiar-idioma">
+        <h3 class="idioma" *ngIf="this.idioma === 'es-en'">
             español-inglés
         </h3>
-        <h3 *ngIf="this.idioma === 'en-es'">
+        <h3 class="idioma" *ngIf="this.idioma === 'en-es'">
             inglés-español
         </h3>
-        <input type="button" value="cambiarIdioma" (click)="alternarIdioma()">
+        <input class="btn-cambiar-idioma" type="button" value="cambiar" (click)="alternarIdioma()">
       </div>
       
-      <div>
+      <fieldset class="campos-traduccion">
+        <form id="forms" [formGroup]="forms" (ngSubmit)="getForm()">
+          <label class="label-palabra" for="palabra">Ingrese palabra a traducir:</label>
+          <div class="container-input">
+            <input *ngIf="palabra == ''" class="input-palabra" type="text" id="palabra" formControlName="palabra">
+            <p *ngIf="palabra != '' && palabra != '='" class="palabra">{{palabra}}</p>
+          </div>
+          <button class="btn-clean" (click)="clean()">x</button>
+          <div class="error" *ngIf="forms.touched && forms.controls['palabra'].getError('required')">
+            Ingresa una palabra para traducir
+          </div>
+
+          <input  class="btn-traducir" type="submit" value="traducir" >
+
+          <!-- *ngIf="forms.touched && !forms.controls['palabra'].getError('required')" -->
+
+        </form>
+
+        <div class="container-traduccion">
+          <p *ngIf="traduccion != '='" class="traduccionC">{{traduccion}}</p>
+          
+        </div>
+        <script>
+          console.log(`${traduccion}:traduccion`);
+        </script>
         
-      <label for="traducir">Ingrese palabra a traducir:</label>
-      <input type="text" id="traducir" [(ngModel)]="palabra">
-      </div>
+      </fieldset>     
       
-      <input type="button" value="traducir" (click)="traducir()">
-      <p>{{traduccion}}</p>
+      
+      
+      
       
     </div>
 </span>
