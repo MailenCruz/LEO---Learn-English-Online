@@ -8,4 +8,55 @@
 
 <section class="cuerpo-juego-P-P">
 
+    <main>
+        <!-- botones que representan tarjetas -->
+        <section class="section1">
+            <h1> JOIN WORD TO WORD - UNIR PALABRA CON PALABRA</h1>
+            <table>
+                <tr>
+                    <td><button id="0" (click)="destapar(0)" class="eleccion"></button></td>
+                    <td><button id="1" (click)="destapar(1)" class="eleccion"></button></td>
+                    <td><button id="2" (click)="destapar(2)" class="eleccion"></button></td>
+                    <td><button id="3" (click)="destapar(3)" class="eleccion"></button></td>
+                </tr>
+    
+                <tr>
+                    <td><button id="4" (click)="destapar(4)" class="eleccion"></button></td>
+                    <td><button id="5" (click)="destapar(5)" class="eleccion"></button></td>
+                    <td><button id="6" (click)="destapar(6)" class="eleccion"></button></td>
+                    <td><button id="7" (click)="destapar(7)" class="eleccion"></button></td>
+                </tr>
+    
+                <tr>
+                    <td><button id="8" (click)="destapar(8)" class="eleccion"></button></td>
+                    <td><button id="9" (click)="destapar(9)" class="eleccion"></button></td>
+                    <td><button id="10" (click)="destapar(10)" class="eleccion"></button></td>
+                    <td><button id="11" (click)="destapar(11)" class="eleccion"></button></td>
+                </tr>
+    
+                <tr>
+                    <td><button id="12" (click)="destapar(12)" class="eleccion"></button></td>
+                    <td><button id="13" (click)="destapar(13)" class="eleccion"></button></td>
+                    <td><button id="14" (click)="destapar(14)" class="eleccion"></button></td>
+                    <td><button id="15" (click)="destapar(15)" class="eleccion"></button></td>
+                </tr>
+            </table>
+        </section>
+    
+        <!--estadisticas del juego -->
+        <section class="section2">
+            <h2 id="aciertos" class="estadisticas">Aciertos: {{aciertos}}</h2>
+            <h2 id="movimientos" class="estadisticas">Movimientos: {{movimientos}}</h2>
+            
+            <div class="overlay" *ngIf="ganador">
+                <div class="mensajeGanador">
+                    <h1>Felicitaciones, ¡has ganado!</h1>
+                    <button (click)="recargarPagina()"> Jugar de nuevo </button>
+                </div>
+            </div>
+              
+        </section>
+    
+    </main>
+    
 </section>
