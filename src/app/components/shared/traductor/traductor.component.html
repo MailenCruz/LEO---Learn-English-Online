@@ -29,7 +29,10 @@
           <label class="label-palabra" for="palabra">Ingrese palabra a traducir:</label>
           <div class="container-input">
             <input *ngIf="palabra == ''" class="input-palabra" type="text" id="palabra" formControlName="palabra">
-            <p *ngIf="palabra != '' && palabra != '='" class="palabra">{{palabra}}</p>
+            <p *ngIf="palabra != '' && palabra != '=' && palabra.charAt(0) != '='" class="palabra">{{palabra}}</p>
+            <p *ngIf="palabra != '' && palabra != '=' && palabra.charAt(0) == '='" class="palabra">{{palabra.slice(1)}}</p>
+            
+
           </div>
           <button class="btn-clean" (click)="clean()">x</button>
           <div class="error" *ngIf="forms.touched && forms.controls['palabra'].getError('required')">
@@ -42,8 +45,11 @@
 
         </form>
 
+        
+
         <div class="container-traduccion">
-          <p *ngIf="traduccion != '='" class="traduccionC">{{traduccion}}</p>
+          <p *ngIf="traduccion != '=' && traduccion.charAt(0) != '='" class="traduccionC">{{traduccion}}</p>
+          <p *ngIf="traduccion != '=' && traduccion.charAt(0) == '='" class="traduccionC">{{traduccion.slice(1)}}</p>
           
         </div>
         <script>

@@ -124,7 +124,7 @@
 .titulo-traductor {
   position: absolute;
   top: 20%;
-  left: 40%;
+  left: 38%;
   font-family: Lexend;
   font-size: large;
   font-weight: bold;
@@ -168,8 +168,8 @@
 
   .idioma{
     position: absolute;
-    top: 28%;
-    left:2%;
+    top: 23%;
+    left:4%;
     width: 40%;
     height: 35%;
     display:flex;
@@ -179,8 +179,8 @@
   /* btn cambiar idioma */
 .btn-cambiar-idioma {
   position: absolute;
-  top: 38%;
-  left: 50%;
+  top: 33%;
+  left: 52%;
   width: 40%;
   height: 35%;
   display: flex;
@@ -247,7 +247,7 @@
     font-size: medium;
     opacity: 70%;
     color:#171a1f;
-    margin-top: 5%;
+    margin-top: 7%;
     margin-left: 80%;
     
   }
