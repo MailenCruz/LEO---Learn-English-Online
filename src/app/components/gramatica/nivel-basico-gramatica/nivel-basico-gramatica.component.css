@@ -1,20 +1,63 @@
-.cuerpo-NB {
+.cuerpo-gramatica {
     background-color: #d8dcfc;
     margin: 0;
 }
 
-.barra-NB {
+.barra-N-B {
     background-color: #B3B3FD;
     font-size: 3rem;
     font-family: 'Lexend', sans-serif;
 }
 
-img {
-    width: auto;
-    height: auto;
-}
-
-.imagen-nombre-NB {
+.imagen-nombre-N-B {
     display: flex;
     align-items: center;
+}
+
+.cuadrado {
+    height: 40rem;
+    width: 35rem;
+    margin: 3rem;
+    display: inline-block;
+    background-color: #dcbee8;
+    border-style: hidden;
+}
+
+.contenedor-cuadrados {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem 0 4rem 0;
+}
+
+.boton-entrar {
+    position: absolute;
+    top: 44rem;
+    margin-left: 7rem;
+    padding: 1rem 5rem;
+
+    border: none;
+    font-size: 2.5rem;
+    background-color: #b3b3fdad;
+    border-radius: 1rem;
+
+    transition-duration: 0.5s;
+    cursor: pointer;
+
+    font-family: 'Lexend', sans-serif;
+}
+
+.boton-entrar:hover {
+    background-color: #9898f8;
+    transform: translateY(-10px);
+}
+
+legend {
+    background-color: #B3B3FD;
+    margin-bottom: 28rem;
+    padding: 1.5rem;
+    font-size: 2.5rem;
+    text-align: center;
+    box-shadow: 3px 3px 3px 3px #9c9ce7bd;
+    font-family: 'Raleway', sans-serif;
 }
