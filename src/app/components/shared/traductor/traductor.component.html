@@ -50,7 +50,6 @@
         <div class="container-traduccion">
           <p *ngIf="traduccion != '=' && traduccion.charAt(0) != '='" class="traduccionC">{{traduccion}}</p>
           <p *ngIf="traduccion != '=' && traduccion.charAt(0) == '='" class="traduccionC">{{traduccion.slice(1)}}</p>
-          
         </div>
         <script>
           console.log(`${traduccion}:traduccion`);

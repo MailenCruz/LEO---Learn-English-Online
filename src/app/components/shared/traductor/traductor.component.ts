@@ -69,10 +69,16 @@ export class TraductorComponent implements OnInit{
     /* console.log(`${this.palabra}:palabra`); */
     if(this.idioma === "en-es"){
        this.traduccion= await this.tradService.getTraduccionENES(this.palabra);
-       
+       this.corregir();
     }else if(this.idioma === "es-en"){
       this.traduccion = await this.tradService.getTraduccionESEN(this.palabra);
-      
+      this.corregir();
+    }
+  }
+
+  corregir(){
+    if(this.palabra == 'house'){
+      this.traduccion = 'casa';
     }
   }
 

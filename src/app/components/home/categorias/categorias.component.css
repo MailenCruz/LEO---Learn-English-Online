@@ -16,7 +16,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 0rem;
     gap: 10rem;
 }
 
@@ -29,6 +29,7 @@
 
 .categoria img.img-normal{
     max-width: 15rem;
+    
 }
 .categoria:hover img.img-normal{
     display:none;

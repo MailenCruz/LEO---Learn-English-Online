@@ -15,10 +15,10 @@ export class TraductorService {
   async getTraduccionENES(palabra:string){
     try{
       const resultado = await fetch(`${this.urlEN_ES}=${palabra}`);
-    const traduccion = await resultado.json();
-    const {responseData} = traduccion;
-    const {translatedText} = responseData;
-    return translatedText;
+      const traduccion = await resultado.json();
+      const {responseData} = traduccion;
+      const {translatedText} = responseData;
+      return translatedText;
     }catch(error){
       console.log(error);
     }
@@ -27,10 +27,10 @@ export class TraductorService {
   async getTraduccionESEN(palabra:string){
     try{
       const resultado = await fetch(`${this.urlES_EN}=${palabra}`);
-    const traduccion = await resultado.json();
-    const {responseData} = traduccion;
-    const {translatedText} = responseData;
-    return translatedText;
+      const traduccion = await resultado.json();
+      const {responseData} = traduccion;
+      const {translatedText} = responseData;
+      return translatedText;
     }catch(error){
       console.log(error);
     }

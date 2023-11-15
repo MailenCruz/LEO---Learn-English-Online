@@ -76,6 +76,7 @@
     top: 7%; /* Cambia este valor según tus necesidades */
     left: 70%;
     padding: 0; /* Cambia este valor según tus necesidades */
+    z-index: 3;
 }
 
 /*   .contenido {
@@ -97,13 +98,14 @@
     padding: 20px;
     border-radius: 5px;
     text-align: center;
-    box-shadow: 10px 10px 10px rgb(142, 142, 212);
+    box-shadow: 8px 10px 10px 10px rgb(142, 142, 212);
     transform: scale(0.9);
     margin-bottom: 0px; /* Ajusta este valor según tus necesidades */
     width: 60%; /* Cambia este valor según tus necesidades */
     /* padding-bottom: 35%;
     padding-top: 35%; */
     height: 105%;
+    
 }
 
 /* Estilos para los encabezados h2 y h3 */
