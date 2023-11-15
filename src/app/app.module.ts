@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -82,6 +83,10 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
+<<<<<<< HEAD
+=======
+    FormsModule,
+>>>>>>> 615cbf8766486c42b5e4bcef855653c420f9f655
     ReactiveFormsModule
   ],
   providers: [],

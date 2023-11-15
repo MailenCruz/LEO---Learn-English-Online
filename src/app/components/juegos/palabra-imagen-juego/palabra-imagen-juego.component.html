@@ -2,10 +2,87 @@
     <div class="imagen-nombre-P-I">
         <a routerLink="/juegos-home"> <img src="../../../../assets/logoChiquito-Juego.png" alt="Logo" width="30"
                 height="24"></a>
-        <span>Unir palabras con imágenes</span>
+        <span>Unir palabras con imágenes - Join word to image</span>
     </div>
 </nav>
 
 <section class="cuerpoJuego-P-I">
+
+    <main>
+        <!-- botones que representan tarjetas -->
+        <section class="section1">
+            <table>
+                <tr>
+                    <td><button id="0" (click)="destapar(0)" class="eleccion">
+                        <img [src]="imagenes[0].nombre" alt="imagen 0">
+                    </button></td>
+                    <td><button id="1" (click)="destapar(1)" class="eleccion">
+                        <img [src]="imagenes[1].nombre" alt="imagen 1">
+                    </button></td>
+                    <td><button id="2" (click)="destapar(2)" class="eleccion">
+                        <img [src]="imagenes[2].nombre" alt="imagen 2">
+                    </button></td>
+                    <td><button id="3" (click)="destapar(3)" class="eleccion">
+                        <img [src]="imagenes[3].nombre" alt="imagen 3">
+                    </button></td>
+               
+                    <td><button id="4" (click)="destapar(4)" class="eleccion">
+                        <img [src]="imagenes[4].nombre" alt="imagen 4">
+                    </button></td>
+                    <td><button id="5" (click)="destapar(5)" class="eleccion">
+                        <img [src]="imagenes[5].nombre" alt="imagen 5">
+                    </button></td>
+                    <td><button id="6" (click)="destapar(6)" class="eleccion">
+                        <img [src]="imagenes[6].nombre" alt="imagen 6">
+                    </button></td>
+                    <td><button id="7" (click)="destapar(7)" class="eleccion">
+                        <img [src]="imagenes[7].nombre" alt="imagen 7">
+                    </button></td>
+                </tr>
+
+                <tr>
+                    <td><button id="8" (click)="destapar(8)" class="eleccion">
+                        <img [src]="imagenes[8].nombre" alt="imagen 8">
+                    </button></td>
+                    <td><button id="9" (click)="destapar(9)" class="eleccion">
+                        <img [src]="imagenes[9].nombre" alt="imagen 9">
+                    </button></td>
+                    <td><button id="10" (click)="destapar(10)" class="eleccion">
+                        <img [src]="imagenes[10].nombre" alt="imagen 10">
+                    </button></td>
+                    <td><button id="11" (click)="destapar(11)" class="eleccion">
+                        <img [src]="imagenes[11].nombre" alt="imagen 11">
+                    </button></td>
+              
+                    <td><button id="12" (click)="destapar(12)" class="eleccion">
+                        <img [src]="imagenes[12].nombre" alt="imagen 12">
+                    </button></td>
+                    <td><button id="13" (click)="destapar(13)" class="eleccion">
+                        <img [src]="imagenes[13].nombre" alt="imagen 13">
+                    </button></td>
+                    <td><button id="14" (click)="destapar(14)" class="eleccion">
+                        <img [src]="imagenes[14].nombre" alt="imagen 14">
+                    </button></td>
+                    <td><button id="15" (click)="destapar(15)" class="eleccion">
+                        <img [src]="imagenes[15].nombre" alt="imagen 15">
+                    </button></td>
+                </tr>
+            </table>
+        </section>
+
+        <!--estadisticas del juego -->
+        <section class="section2">
+            <h2 id="aciertos" class="estadisticas">Aciertos: {{aciertos}}</h2>
+            <h2 id="movimientos" class="estadisticas">Movimientos: {{movimientos}}</h2>
+            
+            <div class="overlay" *ngIf="ganador">
+                <div class="mensajeGanador">
+                    <h1>Felicitaciones, ¡has ganado!</h1>
+                    <button (click)="recargarPagina()"> Jugar de nuevo </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
 </section>

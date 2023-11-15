@@ -17,6 +17,7 @@
     height: 20.3rem;
     background-color: #B3B3FDFF;
     padding: 5rem;
+    box-shadow: 10px 10px 10px rgb(132, 132, 199);
 }
 
 .contenedor-bienvenida .introduccion h1{
