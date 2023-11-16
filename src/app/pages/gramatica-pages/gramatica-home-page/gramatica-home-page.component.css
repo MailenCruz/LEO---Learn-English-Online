@@ -1,6 +1,9 @@
 .cuerpo-gramatica {
-    background-color: #d8dcfc;
-    margin: 0;
+    background-image: url(../../../../assets/img-home/fondo-home-3.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    padding-bottom: 10%;
+    margin-bottom: 0;
 }
 
 .secciones-gramatica h4 {

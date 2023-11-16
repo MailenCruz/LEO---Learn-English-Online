@@ -1,1 +1,42 @@
-<p>ordenar-ejercicio works!</p>
+<section class="cuerpo-NB">
+
+    <nav class="barra-NB">
+        <div class="imagen-nombre-NB">
+            <a routerLink="/nivelBasico-gramatica"> <img src="../../../../assets/logoChiquito-gramatica.png" alt="Logo"
+                    width="30" height="24"></a>
+            <span>Ordenar oraciones</span>
+        </div>
+    </nav>
+
+    <section class="ordenar">
+        <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
+            <p> {{ randomPhrase }} </p>
+
+            <div>
+                <label for="ordenar">Reescriba la oración en orden: </label>
+                <input type="text" id="ordenar" formControlName="ordenar">
+            </div>
+
+            <ng-container *ngIf="correcciones; else noCorrecciones">
+                <div *ngFor="let correccion of correcciones">
+                    <p>{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
+                </div>
+            </ng-container>
+            
+            <ng-template #noCorrecciones>
+                <ng-container *ngIf="respuestaEnviada && (correcciones?.length === 0)">
+                    <p>CORRECTO!</p>
+                </ng-container>
+            </ng-template>
+
+            <div class="botones">
+                <input class="boton" type="submit" value="Check">
+
+                <input class="boton" type="reset" value="Borrar">
+
+                <input class="boton" type="button" value="Siguiente Ejercicio" (click)="siguienteEjercicio()">
+            </div>
+        </form>
+        
+    </section>
+</section>

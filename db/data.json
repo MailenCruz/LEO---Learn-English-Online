@@ -1021,21 +1021,91 @@
           ]
         },
         {
+          "oracion": "You ____ your room.",
+          "respuestas": [
+            "tidy up",
+            "tidies up",
+            "tidied up"
+          ]
+        },
+        {
           "oracion": "Olivia ____ an actress.",
           "respuestas": [
             "becoming",
             "became",
             "become"
           ]
+        },
+        {
+          "oracion": "We ____ the treasure.",
+          "respuestas": [
+            "found",
+            "find",
+            "founded"
+          ]
+        },
+        {
+          "oracion": "He ____ Spanish.",
+          "respuestas": [
+            "speaking",
+            "speaked",
+            "spoke"
+          ]
+        },
+        {
+          "oracion": "I ____ hockey.",
+          "respuestas": [
+            "played",
+            "play",
+            "playing"
+          ]
+        },
+        {
+          "oracion": "You ____ how to play guitar.",
+          "respuestas": [
+            "known",
+            "knew",
+            "know"
+          ]
+        },
+        {
+          "oracion": "My mum ____ a lawyer",
+          "respuestas": [
+            "are",
+            "is",
+            "am"
+          ]
+        },
+        {
+          "oracion": "Mr Robinson ____ a red car.",
+          "respuestas": [
+            "has",
+            "have",
+            "had"
+          ]
+        },
+        {
+          "oracion": "My brother ____ to school on his bike.",
+          "respuestas": [
+            "went",
+            "gone",
+            "goes"
+          ]
         }
       ],
       "ordenar": [
-        {
-          "oracion": "spoke/during/French/the/you/trip"
-        },
-        {
-          "oracion": "I/this/coffee/drank/morning"
-        }
+        "spoke/during/French/the/you/trip",
+        "I/this/coffee/drank/morning",
+        "they/lived/kids/in/a/were/big/they/house/when",
+        "books/last/she/read/week",
+        "to/cinema/yesterday/he/went/the",
+        "do/she/homework/did/her/?",
+        "at/club/sport/tennis/he/plays/the",
+        "park/near/she/house/goes/the/to/usually/her",
+        "in/center/city/live/the/she/lives",
+        "every/out/I/go/friends/Friday/my/with",
+        "fluently/you/French/speak",
+        "cinema/the/he/go/does/to/want/to/?"
       ]
     },
     "intermedio": {},

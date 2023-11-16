@@ -101,6 +101,7 @@ img {
     border: none;
     border-radius: 4px;
     box-shadow: 0px 2px 10px rgb(89, 123, 182), 0px 0px 1px rgb(167, 167, 250);
+    text-decoration: none;
 }
     /* Hover */
 .btn-entrar:hover {

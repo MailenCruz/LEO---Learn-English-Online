@@ -77,6 +77,7 @@ export class ReescribirEjercicioComponent {
   
           if (typeof value === 'string' && value.trim() !== '') { //si no es el string vacío
 
+            value = value.charAt(0).toUpperCase() + value.slice(1);
             let correcciones: Correccion[] | undefined = await this.gramaticaService.getCorreccion(value.trim()); //trae las correciones
             let aux: { [tipo: string]: Correccion[] | undefined } = {};
             aux[key] = correcciones;
@@ -84,7 +85,6 @@ export class ReescribirEjercicioComponent {
           }
         }
       }
-      console.log(this.correccionesPorTipo);
     } catch (error) {
       console.log(error);
     }
@@ -94,6 +94,9 @@ export class ReescribirEjercicioComponent {
     if (this.reescribir.length > 0) {
       this.index = (this.index + 1) % this.reescribir.length;
       this.fraseAleatoria();
+
+      this.answer.reset();
+      this.correccionesPorTipo = [];
     }
   }
   obtenerCorreccion(tipo: string): Correccion[] | undefined {

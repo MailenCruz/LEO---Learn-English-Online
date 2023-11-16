@@ -34,7 +34,6 @@ export class CompletarEjercicioComponent {
     await this.getEjercicios();
     this.randomPhrase = this.completar[this.index]
   }
-  
   async getEjercicios(){
     try{
       let respuesta = await this.gramaticaService.getExercises();
@@ -53,18 +52,23 @@ export class CompletarEjercicioComponent {
     if (this.completar.length > 0) {
       this.index = (this.index + 1) % this.completar.length;
       this.randomPhrase = this.completar[this.index];
+
+      this.answer.reset();
+      this.respuestaEnviada = false;
+      this.correcciones = [];
     }
   }
 
   guardarRespuesta() {
     this.respuesta = this.answer.controls['completar'].value;
     let oracion = this.randomPhrase.oracion.replace(/____/, this.respuesta);
-    this.checkRespuesta(oracion);
     this.respuestaEnviada = true;
+    this.checkRespuesta(oracion);
   }
 
   async checkRespuesta(oracion: string){
     try{
+      oracion = oracion.charAt(0).toUpperCase() + oracion.slice(1);
       this.correcciones = await this.gramaticaService.getCorreccion(oracion);
     }
     catch(error){
