@@ -4,6 +4,9 @@
     background-image: url(../../../../assets/img-home/fondo-home-3.jpg);
     background-repeat: no-repeat;
     background-size:cover;
+    position: absolute;
+    height: 110%;
+    width: 100%;
 }
 
 .secciones-juego h4 {

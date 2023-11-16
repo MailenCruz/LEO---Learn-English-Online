@@ -6,6 +6,11 @@
     background-repeat: no-repeat;
     background-size:cover;
     padding-bottom: 10%;
+    margin-bottom: 0;
+}
+
+.footer{
+    margin-top: 10%;
 }
 
 /* BIENVENIDA */ /*

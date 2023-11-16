@@ -67,7 +67,6 @@ export class ReescribirEjercicioComponent {
     };
     this.checkRespuesta();
   }
-
   async checkRespuesta() {
     try {
       for (let key in this.respuestas) { //recorre las claves del objeto
@@ -78,7 +77,7 @@ export class ReescribirEjercicioComponent {
   
           if (typeof value === 'string' && value.trim() !== '') { //si no es el string vacío
 
-            const correcciones: Correccion[] | undefined = await this.gramaticaService.getCorreccion(value.trim()); //trae las correciones
+            let correcciones: Correccion[] | undefined = await this.gramaticaService.getCorreccion(value.trim()); //trae las correciones
             let aux: { [tipo: string]: Correccion[] | undefined } = {};
             aux[key] = correcciones;
             this.correccionesPorTipo.push(aux);
@@ -97,7 +96,6 @@ export class ReescribirEjercicioComponent {
       this.fraseAleatoria();
     }
   }
-
   obtenerCorreccion(tipo: string): Correccion[] | undefined {
     const correccionEncontrada = this.correccionesPorTipo.find(obj => obj.hasOwnProperty(tipo)); //retorna el objeto
     

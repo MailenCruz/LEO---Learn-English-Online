@@ -21,6 +21,9 @@ img {
     background-size:cover;
     margin: 0;
     display: flex;
+    position: absolute;
+    height: 110%;
+    width: 100%;
 }
 
 main{
