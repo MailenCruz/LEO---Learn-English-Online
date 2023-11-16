@@ -1,0 +1,111 @@
+import { Component } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { Correccion } from 'src/app/interfaces/correccion';
+import { Reescribir } from 'src/app/interfaces/reescribir';
+import { GramaticaService } from 'src/app/services/gramatica.service';
+
+@Component({
+  selector: 'reescribir-ejercicio',
+  templateUrl: './reescribir-ejercicio.component.html',
+  styleUrls: ['./reescribir-ejercicio.component.css']
+})
+
+export class ReescribirEjercicioComponent {
+  reescribir: Reescribir[] = [];
+
+  phraseType: "afirmativo" | "negativo" | "interrogativo" = "afirmativo";
+
+  randomPhrase: string = '';
+  index: number = 0;
+
+  answer: FormGroup = this.formBuilder.group({
+    afirmativo: [''],
+    negativo: [''],
+    interrogativo: ['']
+  })
+
+  respuestas: Reescribir = { 
+    afirmativo: '',
+    negativo: '',
+    interrogativo: ''
+  }
+
+  correccionesPorTipo: { [tipo: string]: Correccion[] | undefined }[] = [];
+  
+  constructor(private formBuilder: FormBuilder, private gramaticaService: GramaticaService) { }
+
+  async ngOnInit() {
+    await this.getEjercicios();
+    this.fraseAleatoria();
+  }
+
+  async getEjercicios() { //trae desde el json y carga al array REESCRIBIR los ejercicios
+    try {
+      const respuesta = await this.gramaticaService.getExercises();
+
+      if (respuesta) {
+        const { basico } = respuesta;
+        this.reescribir = basico.reescribir;
+      }
+    }
+    catch (error) {
+      console.log(error);
+    }
+  }
+
+  fraseAleatoria() {
+    const types = ['afirmativo', 'negativo', 'interrogativo'] as const;
+    this.phraseType = types[Math.floor(Math.random() * types.length)];
+    this.randomPhrase = this.reescribir[this.index][this.phraseType];
+  }
+
+  guardarRespuesta() {
+    this.respuestas = {
+      afirmativo: this.answer.controls['afirmativo'].value,
+      negativo: this.answer.controls['negativo'].value,
+      interrogativo: this.answer.controls['interrogativo'].value
+    };
+    this.checkRespuesta();
+  }
+
+  async checkRespuesta() {
+    try {
+      for (let key in this.respuestas) { //recorre las claves del objeto
+
+        if (this.respuestas.hasOwnProperty(key)) { //si existe el atributo
+
+          let value = this.respuestas[key as keyof Reescribir]; //copia el valor de ese atributo
+  
+          if (typeof value === 'string' && value.trim() !== '') { //si no es el string vacío
+
+            const correcciones: Correccion[] | undefined = await this.gramaticaService.getCorreccion(value.trim()); //trae las correciones
+            let aux: { [tipo: string]: Correccion[] | undefined } = {};
+            aux[key] = correcciones;
+            this.correccionesPorTipo.push(aux);
+          }
+        }
+      }
+      console.log(this.correccionesPorTipo);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  siguienteEjercicio() {
+    if (this.reescribir.length > 0) {
+      this.index = (this.index + 1) % this.reescribir.length;
+      this.fraseAleatoria();
+    }
+  }
+
+  obtenerCorreccion(tipo: string): Correccion[] | undefined {
+    const correccionEncontrada = this.correccionesPorTipo.find(obj => obj.hasOwnProperty(tipo)); //retorna el objeto
+    
+    if (correccionEncontrada) {
+      return correccionEncontrada[tipo];
+    } else {
+      return undefined;
+    }
+  }
+  
+}

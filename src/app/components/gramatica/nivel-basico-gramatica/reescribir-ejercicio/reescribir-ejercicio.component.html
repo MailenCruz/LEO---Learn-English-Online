@@ -1,0 +1,64 @@
+<section class="cuerpo-NB">
+    <nav class="barra-NB">
+        <div class="imagen-nombre-NB">
+            <a routerLink="/gramatica-home"> <img src="../../../../assets/logoChiquito-gramatica.png" alt="Logo"
+                    width="30" height="24"></a>
+            <span>Nivel Básico</span>
+        </div>
+    </nav>
+
+    <section class="reescribir">
+        <form (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
+            <fieldset>
+                <p> {{ randomPhrase }} </p>
+
+                <div *ngIf="phraseType != 'afirmativo'">
+                    <label for="afirmativo"> + </label>
+                    <input type="text" id="afirmativo" formControlName="afirmativo">
+                </div>
+                
+                <div *ngIf="obtenerCorreccion('afirmativo')">
+                    <div *ngFor="let correccion of obtenerCorreccion('afirmativo')">
+                      <p>{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
+                    </div>
+                </div>  
+
+                <div *ngIf="phraseType != 'negativo'">
+                    <label for="negativo"> - </label>
+                    <input type="text" id="negñativo" formControlName="negativo">
+                </div>
+
+                <div *ngIf="obtenerCorreccion('negativo')">
+                    <div *ngFor="let correccion of obtenerCorreccion('negativo')">
+                      <p>{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
+                    </div>
+                </div>  
+
+                <div *ngIf="phraseType != 'interrogativo'">
+                    <label for="interrogativo"> ? </label>
+                    <input type="text" id="interrogativo" formControlName="interrogativo">
+                </div>
+
+                <div *ngIf="obtenerCorreccion('interrogativo')">
+                    <div *ngFor="let correccion of obtenerCorreccion('interrogativo')">
+                      <p>{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
+                    </div>
+                </div>  
+
+                <div class="boton">
+                    <input type="submit" value="Check">
+                </div>
+
+                <div class="boton">
+                    <input type="reset" value="Borrar">
+                </div>
+
+                <div class="boton">
+                    <input type="button" value="Siguiente Ejercicio" (click)="siguienteEjercicio()">
+                </div>
+
+            </fieldset>
+        </form>
+
+    </section>
+</section>

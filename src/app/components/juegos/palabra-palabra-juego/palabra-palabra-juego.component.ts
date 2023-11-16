@@ -1,6 +1,10 @@
+<<<<<<< HEAD
+import { Component } from '@angular/core';
+=======
 import { Component, Renderer2, ElementRef } from '@angular/core';
 import { palabrasJuego } from 'src/app/interfaces/palabrasJuego';
 
+>>>>>>> 615cbf8766486c42b5e4bcef855653c420f9f655
 
 @Component({
   selector: 'app-palabra-palabra-juego',

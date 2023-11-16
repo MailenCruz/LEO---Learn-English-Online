@@ -31,13 +31,17 @@ import { AlojamientoViajeroComponent } from './components/viajero/alojamiento-vi
 import { NavGramaticaComponent } from './components/gramatica/nav-gramatica/nav-gramatica.component';
 import { EleccionNivelComponent } from './components/gramatica/eleccion-nivel/eleccion-nivel.component';
 import { NivelBasicoGramaticaComponent } from './components/gramatica/nivel-basico-gramatica/nivel-basico-gramatica.component';
+import { CompletarEjercicioComponent } from './components/gramatica/nivel-basico-gramatica/completar-ejercicio/completar-ejercicio.component';
+import { OrdenarEjercicioComponent } from './components/gramatica/nivel-basico-gramatica/ordenar-ejercicio/ordenar-ejercicio.component';
+import { ReescribirEjercicioComponent } from './components/gramatica/nivel-basico-gramatica/reescribir-ejercicio/reescribir-ejercicio.component';
+
 import { NivelIntermedioGramaticaComponent } from './components/gramatica/nivel-intermedio-gramatica/nivel-intermedio-gramatica.component';
 import { NivelAvanzadoGramaticaComponent } from './components/gramatica/nivel-avanzado-gramatica/nivel-avanzado-gramatica.component';
 
 import { TraductorComponent } from './components/shared/traductor/traductor.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -68,6 +72,10 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     NavGramaticaComponent,
     EleccionNivelComponent,
     NivelBasicoGramaticaComponent,
+    CompletarEjercicioComponent,
+    ReescribirEjercicioComponent,
+    OrdenarEjercicioComponent,
+
     NivelIntermedioGramaticaComponent,
     NivelAvanzadoGramaticaComponent,
 
@@ -77,10 +85,15 @@ import { FooterComponent } from './components/shared/footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+<<<<<<< HEAD
+=======
     FormsModule,
+>>>>>>> 615cbf8766486c42b5e4bcef855653c420f9f655
     ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

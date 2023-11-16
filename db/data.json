@@ -1,0 +1,131 @@
+{
+  "viajero": {
+    "shopping": {
+      "vocabulario": [
+        {
+          "palabra": "dog",
+          "traduccion": "perro"
+        }
+      ],
+      "ejercicios": {
+        "oraciones": [
+          {
+            "oracion": "I'd like to pay with my ______, please.",
+            "respuestas": [
+              "cash",
+              "wallet",
+              "credit card",
+              "basket"
+            ]
+          },
+          {
+            "oracion": "I'm just browsing, thanks. I'm doing some ________.",
+            "respuestas": [
+              "trying on",
+              "purchasing",
+              "window shopping",
+              "returning"
+            ]
+          }
+        ],
+        "preguntas": [
+          {
+            "pregunta": "I need to try on these jeans. Is there a _____ nearby?",
+            "respuestas": [
+              "clearance",
+              "fitting room",
+              "salesperson",
+              "jewelry"
+            ]
+          },
+          {
+            "pregunta": "Can I get a ______ to carry all these items?",
+            "respuestas": [
+              "size",
+              "dress",
+              "return",
+              "shopping cart"
+            ]
+          }
+        ]
+      }
+    },
+    "restaurante": {},
+    "alojamiento": {}
+  },
+  "gramatica": {
+    "basico": {
+      "reescribir": [
+        {
+          "afirmativo":  "Antonio worked in a school.",
+          "negativo":  "Antonio did not work in a school.",
+          "interrogativo": "Did Antonio work in a school?"
+        },
+        {
+          "afirmativo": "You liked pizza.",
+          "negativo": "You did not like pizza.",
+          "interrogativo": "Did you like pizza?"
+        },
+        {
+          "afirmativo": "He helped Mary every Monday.",
+          "negativo": "He did not help Mary every Monday.",
+          "interrogativo": "Did he help Mary every Monday?"
+        },
+        {
+          "afirmativo": "She learned English.",
+          "negativo": "She did not learn English.",
+          "interrogativo": "Did she learn English?"
+        },
+        {
+          "afirmativo": "We study Maths.",
+          "negativo": "We do not study Maths.",
+          "interrogativo": "Do we study Maths?"
+        },
+        {
+          "afirmativo": "Martha watches television.",
+          "negativo": "Martha does not wathc television.",
+          "interrogativo": "Does Martha wathc television?"
+        },
+        {
+          "afirmativo": "He plays football with us",
+          "negativo": "He does not play football with us.",
+          "interrogativo": "Does he play football with us?"
+        },
+        {
+          "afirmativo": "She wakes up early early.",
+          "negativo": "She does not wake up early.",
+          "interrogativo": "Does she wake up early?"
+        }
+
+      ],
+      "completar": [
+        {
+          "oracion": "I ____ a delicious dinner.",
+          "respuestas": [
+            "making",
+            "made",
+            "make"
+          ]
+        },
+        {
+          "oracion": "Olivia ____ an actress.",
+          "respuestas": [
+            "becoming",
+            "became",
+            "become"
+          ]
+        }
+      ],
+      "ordenar": [
+        {
+          "oracion": "spoke/during/French/the/you/trip"
+        },
+        {
+          "oracion": "I/this/coffee/drank/morning"
+        }
+      ]
+    },
+    "intermedio": {},
+    "avanzado": {}
+  }
+}
