@@ -1,50 +1,43 @@
-<section class="cuerpo-gramatica">
-    
-    <nav class="barra-N-B">
-        <div class="imagen-nombre-N-B">
-            <a routerLink="/gramatica-home"> <img src="../../../../assets/logoChiquito-Juego.png" alt="Logo" width="30"
+<section class="cuerpo-nivel-basico">
+
+    <nav class="barra-NB">
+        <div class="imagen-nombre-NB">
+            <a routerLink="/gramatica-home"> <img src="../../../../assets/logoChiquito-gramatica.png" alt="Logo" width="30"
                     height="24"></a>
             <span>Ejercicios</span>
         </div>
     </nav>
-
-    <div class="contenedor-cuadrados">
-        <fieldset class="cuadrado">
-
-            <legend>Reescribir oraciones</legend>
-            <section class="#">
-                <img src="#" alt="">
-            </section>
-
-            <a routerLink="/reescribir-ejercicio">
-                <button class="boton-entrar">ENTRAR</button>
-            </a>
-
-        </fieldset>
-
-        <fieldset class="cuadrado">
-
-            <legend>Completar oraciones</legend>
-            <section class="#">
-                <img src="#" alt="">
-            </section>
-
-            <a routerLink="/completar-ejercicio">
-                <button class="boton-entrar">ENTRAR</button>
-            </a>
-
-        </fieldset>
-
-        <fieldset class="cuadrado">
-
-            <legend>Ordenar oraciones</legend>
-            <section class="#">
-                <img src="#" alt="">
-            </section>
-
-            <a routerLink="/ordenar-ejercicio">
-                <button class="boton-entrar">ENTRAR</button>
-            </a>
-        </fieldset>
-    </div>
 </section>
+
+<div class="container-pagina">
+    <div class="container-contenido">
+        
+        <legend class="title-opcion1">Reescribir</legend>
+
+            <section class="container-opcion1">
+                <div class="opcion1">
+                    <p class="descripcion">Aqui encontrarás ejercicios donde tendrás que reescribir oraciones en diferentes modos</p>
+                </div>
+                <a class="btn-entrar" routerLink="/reescribir-ejercicio">ENTRAR</a>
+            </section>
+
+        <legend class="title-opcion2">Completar</legend>
+
+            <section class="container-opcion2">
+                <div class="opcion2">
+                    <p class="descripcion">Aquí encontrarás ejercicios donde tendrás que completar la palabra faltante</p>
+                </div>
+                <a class="btn-entrar" routerLink="/completar-ejercicio">ENTRAR</a>
+            </section>
+
+        <legend class="title-opcion3">Ordenar</legend>
+
+            <section class="container-opcion3">
+                <div class="opcion3">
+                    <p class="descripcion">Aquí encontrarás ejercicios donde tendrás que reescribir oraciones ordenando sus palabras</p>
+                </div>
+                <a class="btn-entrar" routerLink="/ordenar-ejercicio">ENTRAR</a>
+            </section>
+    </div>
+
+</div>
