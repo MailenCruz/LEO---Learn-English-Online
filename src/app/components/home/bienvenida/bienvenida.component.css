@@ -3,21 +3,24 @@
     align-items: center;
     justify-content: center;
     gap: 10rem;
-    background-color: #DCBEE8FF; 
+    /* background-color: #DCBEE8FF;  */
     padding: 5rem;
+    
 } 
 
 .contenedor-bienvenida .logo-home{
     max-width: 100%;
     height: 29.3rem;
+    
 }
 
 .contenedor-bienvenida .introduccion{
     max-width: 50%;
-    height: 20.3rem;
-    background-color: #B3B3FDFF;
-    padding: 5rem;
-    box-shadow: 10px 10px 10px rgb(132, 132, 199);
+    height: 15rem;
+ background-color: rgba(179, 179, 253, 0);
+  padding: 5rem;
+  text-shadow:1px 2px 12px rgb(54, 54, 73) ;
+    /* box-shadow: 10px 10px 10px rgb(132, 132, 199); */
 }
 
 .contenedor-bienvenida .introduccion h1{
@@ -26,6 +29,7 @@
     color: black;
     margin: 0;
     font-weight: bold;
+    opacity:100%
 }
 
 .contenedor-bienvenida .introduccion p{
@@ -33,4 +37,5 @@
     text-align: justify;
     color: black;
     font-family: 'Lexend', sans-serif;
+    opacity: 100%;
 }

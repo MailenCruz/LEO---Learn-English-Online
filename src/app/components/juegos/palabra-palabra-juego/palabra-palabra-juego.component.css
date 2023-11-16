@@ -17,7 +17,10 @@ img {
 
 .cuerpo-juego-P-P {
     display: flex;
-    background-color: #d8dcff;
+    /* background-color: #d8dcff; */
+    background-image: url(../../../../assets/img-home/fondo-home-3.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
     margin: 0;
 }
 

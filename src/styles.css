@@ -1,38 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend&family=Manrope:wght@300&family=Raleway:wght@300;500&display=swap');
 
-/* ESTILOS NAVBAR */
-.contenedor-navbar{
-    background-color: #B3B3FD;
-}
-
-nav{
-    display: flex;
-}
-
-.navegacion {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-.navegacion li a {
-    display: flex;
-    padding: 1rem 1.5rem;
-    text-decoration: none;
-    color: rgb(110, 104, 104);
-    font-size: 2rem;
-}
-
-.home-span{
-    font-weight: bolder;
-    color: rgb(0, 0, 0);
-}
-
-.navegacion li a:hover {
-    background-color: #8c8cc5;
-    color: rgb(114, 113, 113);
-}
 
 .logo img {
     max-width: 3rem; 
@@ -49,7 +16,7 @@ html {
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
+    box-sizing: inherit;   
 }
 
 body {
@@ -58,5 +25,7 @@ body {
     font-family: 'Lexend', sans-serif;
     font-family: 'Manrope', sans-serif;
     font-family: 'Raleway', sans-serif;
+    
 }
+
 

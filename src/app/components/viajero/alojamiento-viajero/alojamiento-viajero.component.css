@@ -1,5 +1,6 @@
 .cuerpo-viajero-A {
-    background-color: #d8dcfc;
+    /* background-color: #d8dcfc; */
+    
     margin: 0;
 }
 
@@ -20,7 +21,10 @@ img {
 }
 
 .container-pagina{
-    background-color: #d8dcfc;
+    /* background-color: #d8dcfc; */
+    background-image: url(../../../../assets/img-home/fondo-home-3.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
     display:flow-root;
     padding: 2%;
     width: 100%;
@@ -29,7 +33,7 @@ img {
 }
 
 .container-contenido{
-    background-color: #DCBEE8FF;
+    background-color: rgba(220, 190, 232, 0.61);
     top: 10%;
     left: 5%;
     height: 70%;

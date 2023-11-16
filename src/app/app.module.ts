@@ -35,6 +35,7 @@ import { NivelIntermedioGramaticaComponent } from './components/gramatica/nivel-
 import { NivelAvanzadoGramaticaComponent } from './components/gramatica/nivel-avanzado-gramatica/nivel-avanzado-gramatica.component';
 
 import { TraductorComponent } from './components/shared/traductor/traductor.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
 
 
 
@@ -70,7 +71,8 @@ import { TraductorComponent } from './components/shared/traductor/traductor.comp
     NivelIntermedioGramaticaComponent,
     NivelAvanzadoGramaticaComponent,
 
-    TraductorComponent
+    TraductorComponent,
+      FooterComponent
   ],
   imports: [
     BrowserModule,
