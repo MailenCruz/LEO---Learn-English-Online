@@ -19,11 +19,10 @@ img {
     background-image: url(../../../../assets/img-home/fondo-home-3.jpg);
     background-repeat: no-repeat;
     background-size:cover;
-    margin: 0;
+    padding-bottom: 10%;
+    margin-bottom: 0;
+
     display: flex;
-    position: absolute;
-    height: 110%;
-    width: 100%;
 }
 
 main{

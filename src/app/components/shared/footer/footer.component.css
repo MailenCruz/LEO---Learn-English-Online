@@ -1,10 +1,20 @@
-footer{
-    position:absolute;
-    top:103%;
-    bottom: 0;
-    padding-bottom: 2%;
-    height: 30%;
-    width: 100%;
+footer {
     background-color: #B3B3FD;
-    z-index: 4;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+}
+
+.title-fuentes{
+    text-align: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.fuente{
+    text-align: center;
+    align-items: center;
+    font-size: 2rem;
+    list-style-type: none;
 }

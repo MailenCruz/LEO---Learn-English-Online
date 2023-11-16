@@ -26,10 +26,10 @@ img {
     background-image: url(../../../../assets/img-home/fondo-home-3.jpg);
     background-repeat: no-repeat;
     background-size:cover;
-    display:flow-root;
+    background-position: center;
     padding: 2%;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
 }
 
@@ -41,7 +41,6 @@ img {
     padding: 6%;
     position: absolute;
     width: 90%;
-    position:absolute;
 }
 
 .container-opcion1{

@@ -2,9 +2,9 @@
 
 
 .logo img {
-    max-width: 3rem; 
+    max-width: 3rem;
     height: auto;
-    margin-left: .5rem; 
+    margin-left: .5rem;
 }
 
 /* ESTILOS GENERALES */
@@ -16,7 +16,7 @@ html {
 *,
 *:before,
 *:after {
-    box-sizing: inherit;   
+    box-sizing: inherit;
 }
 
 body {
@@ -25,7 +25,13 @@ body {
     font-family: 'Lexend', sans-serif;
     font-family: 'Manrope', sans-serif;
     font-family: 'Raleway', sans-serif;
-    
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
 }
 
-
+app-root {
+    flex: 1; /* Esto permite que app-root ocupe el espacio restante */
+  }
