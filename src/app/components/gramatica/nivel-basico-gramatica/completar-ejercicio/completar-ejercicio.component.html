@@ -1,1 +1,47 @@
-<p>completar-ejercicio works!</p>
+<section class="cuerpo-NB">
+
+    <nav class="barra-NB">
+        <div class="imagen-nombre-NB">
+            <a routerLink="/nivelBasico-gramatica"> <img src="../../../../assets/logoChiquito-gramatica.png" alt="Logo"
+                    width="30" height="24"></a>
+            <span>Nivel Básico</span>
+        </div>
+    </nav>
+
+    <section class="completar">
+
+        <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
+
+            <p> {{ randomPhrase.oracion }} </p>
+
+            <select id="completar" formControlName="completar">
+                <option disabled selected> -- Seleccione -- </option>
+                <option *ngFor="let i of randomPhrase.respuestas" [value]="i">
+                    {{ i }}
+                </option>
+            </select>
+
+            <ng-container *ngIf="correcciones; else noCorrecciones">
+                <div *ngFor="let correccion of correcciones">
+                    <p>{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
+                </div>
+            </ng-container>
+            
+            <ng-template #noCorrecciones>
+                <ng-container *ngIf="respuestaEnviada && (!correcciones || correcciones.length === 0)">
+                    <p>CORRECTO!</p>
+                </ng-container>
+            </ng-template>
+            
+
+            <div class="botones">
+                <input class="boton" type="submit" value="Check">
+
+                <input class="boton" type="reset" value="Borrar">
+
+                <input class="boton" type="button" value="Siguiente Ejercicio" (click)="siguienteEjercicio()">
+            </div>
+
+        </form>
+    </section>
+</section>

@@ -2,7 +2,7 @@
 
     <nav class="barra-NB">
         <div class="imagen-nombre-NB">
-            <a routerLink="/gramatica-home"> <img src="../../../../assets/logoChiquito-gramatica.png" alt="Logo"
+            <a routerLink="/nivelBasico-gramatica"> <img src="../../../../assets/logoChiquito-gramatica.png" alt="Logo"
                     width="30" height="24"></a>
             <span>Nivel Básico</span>
         </div>
@@ -25,7 +25,7 @@
 
             <div *ngIf="phraseType != 'negativo'">
                 <label for="negativo"> Negativo (-): </label>
-                <input type="text" id="negñativo" formControlName="negativo">
+                <input type="text" id="negativo" formControlName="negativo">
             </div>
 
             <div *ngIf="obtenerCorreccion('negativo')">
