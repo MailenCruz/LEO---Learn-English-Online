@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,6 +41,18 @@ import { NivelAvanzadoGramaticaComponent } from './components/gramatica/nivel-av
 import { TraductorComponent } from './components/shared/traductor/traductor.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 
+import { VocabularioShoppingComponent } from './components/viajero/shopping-viajero/opciones-shopping/vocabulario-shopping/vocabulario-shopping.component';
+import { MultipleChoicePreguntasShoppingComponent } from './components/viajero/shopping-viajero/opciones-shopping/multiple-choice-preguntas-shopping/multiple-choice-preguntas-shopping.component';
+import { MultipleChoiceVocabularioShoppingComponent } from './components/viajero/shopping-viajero/opciones-shopping/multiple-choice-vocabulario-shopping/multiple-choice-vocabulario-shopping.component';
+
+import { VocabularioAlojamientoComponent } from './components/viajero/alojamiento-viajero/opciones-alojamiento/vocabulario-alojamiento/vocabulario-alojamiento.component';
+import { MultipleChoiceVocaburarioAlojamientoComponent } from './components/viajero/alojamiento-viajero/opciones-alojamiento/multiple-choice-vocaburario-alojamiento/multiple-choice-vocaburario-alojamiento.component';
+import { MultipleChoicePreguntasAlojamientoComponent } from './components/viajero/alojamiento-viajero/opciones-alojamiento/multiple-choice-preguntas-alojamiento/multiple-choice-preguntas-alojamiento.component';
+
+import { VocabularioRestauranteComponent } from './components/viajero/restaurante-viajero/opciones-restaurante/vocabulario-restaurante/vocabulario-restaurante.component';
+import { MultipleChoicePreguntasRestauranteComponent } from './components/viajero/restaurante-viajero/opciones-restaurante/multiple-choice-preguntas-restaurante/multiple-choice-preguntas-restaurante.component';
+import { MultipleChoiceVocabularioRestauranteComponent } from './components/viajero/restaurante-viajero/opciones-restaurante/multiple-choice-vocabulario-restaurante/multiple-choice-vocabulario-restaurante.component';
+
 
 @NgModule({
   declarations: [
@@ -79,7 +91,19 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     NivelAvanzadoGramaticaComponent,
 
     TraductorComponent,
-      FooterComponent
+    FooterComponent,
+
+    VocabularioShoppingComponent,
+    MultipleChoicePreguntasShoppingComponent,
+    MultipleChoiceVocabularioShoppingComponent,
+
+    VocabularioAlojamientoComponent,
+    MultipleChoicePreguntasAlojamientoComponent,
+    MultipleChoiceVocaburarioAlojamientoComponent,
+   
+    VocabularioRestauranteComponent,
+    MultipleChoicePreguntasRestauranteComponent,
+    MultipleChoiceVocabularioRestauranteComponent
   ],
   imports: [
     BrowserModule,

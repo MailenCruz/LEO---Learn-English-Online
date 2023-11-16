@@ -1,12 +1,166 @@
 {
   "viajero": {
     "shopping": {
-      "vocabulario": [
-        {
-          "palabra": "dog",
-          "traduccion": "perro"
-        }
-      ],
+      "vocabulario": {
+        "Tiendas y Lugares": [
+          {
+            "ingles": "Store",
+            "español": "Tienda"
+          },
+          {
+            "ingles": "Mall",
+            "español": "Centro comercial"
+          },
+          {
+            "ingles": "Gif Shop",
+            "español": "Tienda de regalos"
+          }
+        ],
+        "Artículo y Ropa": [
+          {
+            "ingles": "Clothes",
+            "español": "Ropa"
+          },
+          {
+            "ingles": "Shoes",
+            "español": "Zapatos"
+          },
+          {
+            "ingles": "Accessories",
+            "español": "Accesorios"
+          },
+          {
+            "ingles": "Jewelry",
+            "español": "Joyería"
+          },
+          {
+            "ingles": "Bag",
+            "español": "Bolso"
+          },
+          {
+            "ingles": "Wallet",
+            "español": "Billetera"
+          },
+          {
+            "ingles": "Sunglasses",
+            "español": "Gafas de sol"
+          },
+          {
+            "ingles": "Hat",
+            "español": "Sombrero"
+          },
+          {
+            "ingles": "Scarf",
+            "español": "Bufanda"
+          },
+          {
+            "ingles": "Umbrella",
+            "español": "Paraguas"
+          },
+          {
+            "ingles": "Perfume",
+            "español": "Perfume"
+          },
+          {
+            "ingles": "Makeup",
+            "español": "Maquillaje"
+          }
+        ],
+        "Transacciones y Pago": [
+          {
+            "ingles": "Cashier",
+            "español": "Caja"
+          },
+          {
+            "ingles": "Cash",
+            "español": "Efectivo"
+          },
+          {
+            "ingles": "Credit Card",
+            "español": "Tarjeta de crédito"
+          },
+          {
+            "ingles": "Price",
+            "español": "Precio"
+          },
+          {
+            "ingles": "Receipt",
+            "español": "Recibo"
+          },
+          {
+            "ingles": "Shopping Cart",
+            "español": "Carrito de compras"
+          },
+          {
+            "ingles": "Basket",
+            "español": "Canasta"
+          },
+          {
+            "ingles": "Buy",
+            "español": "Comprar"
+          },
+          {
+            "ingles": "Pay",
+            "español": "Pagar"
+          },
+          {
+            "ingles": "Return",
+            "español": "Devolver"
+          },
+          {
+            "ingles": "Exchange",
+            "español": "Cambiar"
+          },
+          {
+            "ingles": "Sales Tax",
+            "español": "Impuesto sobre ventas"
+          }
+        ],
+        "Servicio al Cliente": [
+          {
+            "ingles": "Salesperson",
+            "español": "Vendedor/a"
+          },
+          {
+            "ingles": "Customer",
+            "español": "Cliente"
+          },
+          {
+            "ingles": "Try On",
+            "español": "Probarse"
+          },
+          {
+            "ingles": "Fitting Room",
+            "español": "Probador"
+          },
+          {
+            "ingles": "Dressing Room",
+            "español": "Vestidor"
+          },
+          {
+            "ingles": "Size",
+            "español": "Talla"
+          },
+          {
+            "ingles": "Price Tag",
+            "español": "Etiqueta de precio"
+          },
+          {
+            "ingles": "Clearance",
+            "español": "Liquidación"
+          }
+        ],
+        "Horarios y Lugares Relacionados": [
+          {
+            "ingles": "Shopping Center",
+            "español": "Centro de compras"
+          },
+          {
+            "ingles": "Shopping Hours",
+            "español": "Horario de compras"
+          }
+        ]
+      },
       "ejercicios": {
         "oraciones": [
           {
@@ -16,7 +170,8 @@
               "wallet",
               "credit card",
               "basket"
-            ]
+            ],
+            "respuestaCorrecta": ""
           },
           {
             "oracion": "I'm just browsing, thanks. I'm doing some ________.",
@@ -26,11 +181,92 @@
               "window shopping",
               "returning"
             ]
+          },
+          {
+            "oracion": "I need to _____ this handbag for a different color.",
+            "respuestas": [
+              "buy",
+              "exchange",
+              "return",
+              "size"
+            ]
+          },
+          {
+            "oracion": "I'm going to the ______ to try on these jeans.",
+            "respuestas": [
+              "store",
+              "cashier",
+              "fitting room",
+              "shopping cart"
+            ]
+          },
+          {
+            "oracion": "The _____ in this store is so elegant.",
+            "respuestas": [
+              "bag",
+              "scarf",
+              "jewelry",
+              "umbrella"
+            ]
+          },
+          {
+            "oracion": "I'll pay for these items with my _______.",
+            "respuestas": [
+              "receipt",
+              "debit card",
+              "basket",
+              "clearance"
+            ]
+          },
+          {
+            "oracion": "I love the _____ section. It's full of discounts.",
+            "respuestas": [
+              "size",
+              "wallet",
+              "price tag",
+              "clearance"
+            ]
+          },
+          {
+            "oracion": "The _____ is very friendly and helpful.",
+            "respuestas": [
+              "customer",
+              "bag",
+              "cashier",
+              "exchange"
+            ]
+          },
+          {
+            "oracion": "I like to shop at this mall because it has a variety of _____.",
+            "respuestas": [
+              "stores",
+              "credit cards",
+              "shopping centers",
+              "price tags"
+            ]
+          },
+          {
+            "oracion": "These sunglasses are on sale at a great _____.",
+            "respuestas": [
+              "gift shop",
+              "return",
+              "price",
+              "basket"
+            ]
           }
         ],
         "preguntas": [
           {
-            "pregunta": "I need to try on these jeans. Is there a _____ nearby?",
+            "oracion": "I'm looking for a gift for my mom. Where can I find a good _____?",
+            "respuestas": [
+              "wallet",
+              "cashier",
+              "gift shop",
+              "basket"
+            ]
+          },
+          {
+            "oracion": "I need to try on these jeans. Is there a _____ nearby?",
             "respuestas": [
               "clearance",
               "fitting room",
@@ -39,26 +275,704 @@
             ]
           },
           {
-            "pregunta": "Can I get a ______ to carry all these items?",
+            "oracion": "I love these shoes! Do you have them in a ____ 8?",
+            "respuestas": [
+              "hat",
+              "debit card",
+              "bag",
+              "size"
+            ]
+          },
+          {
+            "oracion": "How much does this scarf cost? Is there a _____ on it?",
+            "respuestas": [
+              "umbrella",
+              "basket",
+              "price tag",
+              "fitting room"
+            ]
+          },
+          {
+            "oracion": "Can I get a ______ to carry all these items?",
             "respuestas": [
               "size",
               "dress",
               "return",
               "shopping cart"
             ]
+          },
+          {
+            "oracion": "Where is the nearest ______? I want to try on this dress.",
+            "respuestas": [
+              "sales",
+              "customer",
+              "fitting room",
+              "gift shop"
+            ]
+          },
+          {
+            "oracion": "Do you have any sales or discounts on these_______?",
+            "respuestas": [
+              "dress",
+              "shopping hours",
+              "accessories",
+              "sunglasses"
+            ]
+          },
+          {
+            "oracion": "What are the store's _____ today? When do they close?",
+            "respuestas": [
+              "wallet",
+              "scarf",
+              "shopping hours",
+              "credit card"
+            ]
+          },
+          {
+            "oracion": "Could you please call a ______ to help me find the right size for these shoes?",
+            "respuestas": [
+              "cash",
+              "return",
+              "exchange",
+              "salesperson"
+            ]
+          },
+          {
+            "oracion": "I bought this sweater last week, but it doesn't fit well. Can I ____ it for a different size?",
+            "respuestas": [
+              "jewelry",
+              "perfume",
+              "bag",
+              "return"
+            ]
           }
         ]
       }
     },
-    "restaurante": {},
-    "alojamiento": {}
+    "restaurante": {
+      "vocabulario": {
+        "Comida y Bebida": [
+          {
+            "ingles": "Menu",
+            "español": "Menú"
+          },
+          {
+            "ingles": "Dish",
+            "español": "Plato"
+          },
+          {
+            "ingles": "Appetizer",
+            "español": "Aperitivo"
+          },
+          {
+            "ingles": "Main course",
+            "español": "Plato principal"
+          },
+          {
+            "ingles": "Dessert",
+            "español": "Postre"
+          },
+          {
+            "ingles": "Beverage",
+            "español": "Bebida"
+          },
+          {
+            "ingles": "Water",
+            "español": "Agua"
+          },
+          {
+            "ingles": "Coffee",
+            "español": "Café"
+          },
+          {
+            "ingles": "Tea",
+            "español": "Té"
+          },
+          {
+            "ingles": "Wine",
+            "español": "Vino"
+          },
+          {
+            "ingles": "Beer",
+            "español": "Cerveza"
+          },
+          {
+            "ingles": "Soda",
+            "español": "Refresco"
+          },
+          {
+            "ingles": "Juice",
+            "español": "Jugo"
+          },
+          {
+            "ingles": "Vegetarian",
+            "español": "Vegetariano/a"
+          },
+          {
+            "ingles": "Gluten-free",
+            "español": "Sin gluten"
+          }
+        ],
+        "Pedir Comida": [
+          {
+            "ingles": "Order",
+            "español": "Pedir"
+          },
+          {
+            "ingles": "Waiter/Waitress",
+            "español": "Camarero/a"
+          }
+        ],
+        "Mesa y Servicio": [
+          {
+            "ingles": "Table",
+            "español": "Mesa"
+          },
+          {
+            "ingles": "Chair",
+            "español": "Silla"
+          },
+          {
+            "ingles": "Napkin",
+            "español": "Servilleta"
+          },
+          {
+            "ingles": "Fork",
+            "español": "Tenedor"
+          },
+          {
+            "ingles": "Knife",
+            "español": "Cuchillo"
+          },
+          {
+            "ingles": "Spoon",
+            "español": "Cuchara"
+          },
+          {
+            "ingles": "Plate",
+            "español": "Plato"
+          },
+          {
+            "ingles": "Glass",
+            "español": "Vaso"
+          },
+          {
+            "ingles": "Chopsticks",
+            "español": "Palillos chinos"
+          },
+          {
+            "ingles": "Bill",
+            "español": "Cuenta"
+          },
+          {
+            "ingles": "Tip",
+            "español": "Propina"
+          },
+          {
+            "ingles": "Reservation",
+            "español": "Reserva"
+          },
+          {
+            "ingles": "Special of the day",
+            "español": "Especial del día"
+          }
+        ]
+      },
+      "ejercicios": [
+        {
+          "oracion": "The ____ is delicious.",
+          "respuestas": [
+            "food",
+            "dish",
+            "dessert"
+          ]
+        },
+        {
+          "oracion": "I'd like the ______, please.",
+          "respuestas": [
+            "chicken",
+            "salad",
+            "pasta"
+          ]
+        },
+        {
+          "oracion": "I'd like the ____.",
+          "respuestas": [
+            "check",
+            "bill",
+            "receipt"
+          ]
+        },
+        {
+          "oracion": "Thanks a lot for your ____.",
+          "respuestas": [
+            "service",
+            "help",
+            "support"
+          ]
+        },
+        {
+          "oracion": "I'll have a glass of red ____, please.",
+          "respuestas": [
+            "wine",
+            "water",
+            "soda"
+          ]
+        },
+        {
+          "oracion": "A _____ with milk, please.",
+          "respuestas": [
+            "coffee",
+            "tea",
+            "juice"
+          ]
+        },
+        {
+          "oracion": "Is this dish ______?",
+          "respuestas": [
+            "gluten-free",
+            "vegetarian",
+            "spicy"
+          ]
+        },
+        {
+          "oracion": "I'd like the chocolate cake for ______.",
+          "respuestas": [
+            "dessert",
+            "appetizer",
+            "main course"
+          ]
+        },
+        {
+          "oracion": "I'd like to see the ____, please.",
+          "respuestas": [
+            "menu",
+            "list",
+            "options"
+          ]
+        },
+        {
+          "oracion": "I prefer coffee over ____, please.",
+          "respuestas": [
+            "tea",
+            "juice",
+            "soda"
+          ]
+        }
+      ],
+      "preguntas": [
+        {
+          "oracion": "Where can I make a ____ for Friday?",
+          "respuestas": [
+            "bill",
+            "reservation",
+            "table"
+          ]
+        },
+        {
+          "oracion": "Can we see the ____, please?",
+          "respuestas": [
+            "menu",
+            "list",
+            "specials"
+          ]
+        },
+        {
+          "oracion": "May I have a ____ for two, please?",
+          "respuestas": [
+            "table",
+            "booth",
+            "reservation"
+          ]
+        },
+        {
+          "oracion": "Can I have the____, please?",
+          "respuestas": [
+            "bill",
+            "receipt",
+            "check"
+          ]
+        },
+        {
+          "oracion": "Do you have a _____ option?",
+          "respuestas": [
+            "vegetarian",
+            "vegan",
+            "gluten-free"
+          ]
+        },
+        {
+          "oracion": "Is the ___ included?",
+          "respuestas": [
+            "tip",
+            "tax",
+            "service charge"
+          ]
+        },
+        {
+          "oracion": "Is this ____ spicy?",
+          "respuestas": [
+            "dish",
+            "soup",
+            "sauce"
+          ]
+        },
+        {
+          "oracion": "How long does it take to prepare the _____?",
+          "respuestas": [
+            "food",
+            "meal",
+            "entree"
+          ]
+        }
+      ]
+    },
+    "alojamiento": {
+      "vocabulario": {
+        "Tipos de habitaciones": [
+          {
+            "ingles": "Single room",
+            "español": "Habitación individual"
+          },
+          {
+            "ingles": "Double room",
+            "español": "Habitación doble"
+          },
+          {
+            "ingles": "Twin room",
+            "español": "Habitación con dos camas individuales"
+          },
+          {
+            "ingles": "Suite",
+            "español": "Suite"
+          },
+          {
+            "ingles": "Deluxe room",
+            "español": "Habitación de lujo"
+          }
+        ],
+        "Servicios": [
+          {
+            "ingles": "Bed",
+            "español": "Cama"
+          },
+          {
+            "ingles": "Pillow",
+            "español": "Almohada"
+          },
+          {
+            "ingles": "Blanket",
+            "español": "Manta"
+          },
+          {
+            "ingles": "Towel",
+            "español": "Toalla"
+          },
+          {
+            "ingles": "Bathroom",
+            "español": "Baño"
+          },
+          {
+            "ingles": "Shower",
+            "español": "Ducha"
+          },
+          {
+            "ingles": "Soap",
+            "español": "Jabón"
+          },
+          {
+            "ingles": "Shampoo",
+            "español": "Champú"
+          },
+          {
+            "ingles": "Hairdryer",
+            "español": "Secador de pelo"
+          },
+          {
+            "ingles": "Luggage",
+            "español": "Equipaje"
+          }
+        ],
+        "Instalaciones del hotel": [
+          {
+            "ingles": "Reception",
+            "español": "Recepción"
+          },
+          {
+            "ingles": "Lobby",
+            "español": "Vestíbulo"
+          },
+          {
+            "ingles": "Elevator/Lift",
+            "español": "Ascensor"
+          },
+          {
+            "ingles": "Restaurant",
+            "español": "Restaurante"
+          },
+          {
+            "ingles": "Bar",
+            "español": "Bar"
+          },
+          {
+            "ingles": "Pool",
+            "español": "Piscina"
+          },
+          {
+            "ingles": "Gym",
+            "español": "Gimnasio"
+          },
+          {
+            "ingles": "Wi-Fi password",
+            "español": "Contraseña de Wi-Fi"
+          },
+          {
+            "ingles": "Heating",
+            "español": "Calefacción"
+          },
+          {
+            "ingles": "Room Service",
+            "español": "Servicio a la habitación"
+          },
+          {
+            "ingles": "Housekeeping",
+            "español": "Servicio de limpieza"
+          }
+        ],
+        "Reserva y registro de entrada": [
+          {
+            "ingles": "Reservation",
+            "español": "Reserva"
+          },
+          {
+            "ingles": "Check-in",
+            "español": "Registro de entrada"
+          },
+          {
+            "ingles": "Check-out",
+            "español": "Registro de salida"
+          },
+          {
+            "ingles": "Key card",
+            "español": "Tarjeta magnética"
+          },
+          {
+            "ingles": "Confirmation number",
+            "español": "Número de confirmación"
+          },
+          {
+            "ingles": "Passport",
+            "español": "Pasaporte"
+          },
+          {
+            "ingles": "Receptionist",
+            "español": "Recepcionista"
+          },
+          {
+            "ingles": "Bellboy",
+            "español": "Botones"
+          },
+          {
+            "ingles": "Concierge",
+            "español": "Conserje"
+          }
+        ],
+        "Pago": [
+          {
+            "ingles": "Bill",
+            "español": "Cuenta"
+          },
+          {
+            "ingles": "Credit card",
+            "español": "Tarjeta de crédito"
+          },
+          {
+            "ingles": "Cash",
+            "español": "Efectivo"
+          },
+          {
+            "ingles": "Receipt",
+            "español": "Recibo"
+          },
+          {
+            "ingles": "Tip",
+            "español": "Propina"
+          }
+        ]
+      },
+      "ejercicios": [
+        {
+          "oracion": "The ____ left our luggage in the lobby.",
+          "respuestas": [
+            "Bellboy",
+            "Receptionist",
+            "Receipt"
+          ]
+        },
+        {
+          "oracion": "Sorry, I lost my ____ and now I can't enter the room.",
+          "respuestas": [
+            "Passport",
+            "Receipt",
+            "Key card"
+          ]
+        },
+        {
+          "oracion": "The receptionist told me that they only turn on the ____ at night.",
+          "respuestas": [
+            "Pool",
+            "Heating",
+            "Check-in"
+          ]
+        },
+        {
+          "oracion": "Hurry! The ____ it's in twenty minutes.",
+          "respuestas": [
+            "Check-out",
+            "Key card",
+            "Confirmation number"
+          ]
+        },
+        {
+          "oracion": "This ____ is perfect for only me.",
+          "respuestas": [
+            "Single room",
+            "Double room",
+            "Twin room"
+          ]
+        },
+        {
+          "oracion": "The ____ asked us to leave the room so they can clean it.",
+          "respuestas": [
+            "Receptionist",
+            "Housekeeping",
+            "Bellboy"
+          ]
+        },
+        {
+          "oracion": "I want to shower but I can’t find the ___.",
+          "respuestas": [
+            "Towels",
+            "Blanket",
+            "Pillow"
+          ]
+        },
+        {
+          "oracion": "Let's go to the ____ for a drink.",
+          "respuestas": [
+            "Lobby",
+            "Restaurant",
+            "Bar"
+          ]
+        },
+        {
+          "oracion": "We'll leave a ____ for the staff.",
+          "respuestas": [
+            "Tip",
+            "Bill",
+            "Credit card"
+          ]
+        },
+        {
+          "oracion": "This hotel has a big ____, but it's only available in summer.",
+          "respuestas": [
+            "Elevator",
+            "Deluxe room",
+            "Pool"
+          ]
+        }
+      ],
+      "preguntas": [
+        {
+          "oracion": "Where is the extra ____?",
+          "respuestas": [
+            "Twin room",
+            "Pillow",
+            "Single room"
+          ]
+        },
+        {
+          "oracion": "Can I get a ____ to access my room?",
+          "respuestas": [
+            "Key card",
+            "Confirmation number",
+            "Reservation"
+          ]
+        },
+        {
+          "oracion": "Can I have a ____, please?",
+          "respuestas": [
+            "Receipt",
+            "Bathroom",
+            "Elevator"
+          ]
+        },
+        {
+          "oracion": "Can I use the ____ to get to my room?",
+          "respuestas": [
+            "Elevator",
+            "Pool",
+            "Gym"
+          ]
+        },
+        {
+          "oracion": "Can I pay the bill with a ____?",
+          "respuestas": [
+            "Credit card",
+            "Cash",
+            "Tip"
+          ]
+        },
+        {
+          "oracion": "Is the ____ open?",
+          "respuestas": [
+            "Restaurant",
+            "Wi-Fi",
+            "Shower"
+          ]
+        },
+        {
+          "oracion": "Is there ____ in the hotel?",
+          "respuestas": [
+            "Wi-Fi",
+            "Reception",
+            "Lobby"
+          ]
+        },
+        {
+          "oracion": "Where is the ____?",
+          "respuestas": [
+            "Pool",
+            "Gym",
+            "Restaurant"
+          ]
+        },
+        {
+          "oracion": "Is there ____ in the bathroom?",
+          "respuestas": [
+            "Shower",
+            "Blanket",
+            "Hairdryer"
+          ]
+        },
+        {
+          "oracion": "Do I have to say my ____ to the receptionist?",
+          "respuestas": [
+            "Confirmation number",
+            "Reservation",
+            "Check-in"
+          ]
+        }
+      ]
+    }
   },
+
   "gramatica": {
     "basico": {
       "reescribir": [
         {
-          "afirmativo":  "Antonio worked in a school.",
-          "negativo":  "Antonio did not work in a school.",
+          "afirmativo": "Antonio worked in a school.",
+          "negativo": "Antonio did not work in a school.",
           "interrogativo": "Did Antonio work in a school?"
         },
         {
@@ -96,7 +1010,6 @@
           "negativo": "She does not wake up early.",
           "interrogativo": "Does she wake up early?"
         }
-
       ],
       "completar": [
         {

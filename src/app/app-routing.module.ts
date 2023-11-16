@@ -17,6 +17,15 @@ import { NivelAvanzadoGramaticaComponent } from './components/gramatica/nivel-av
 import { CompletarEjercicioComponent } from './components/gramatica/nivel-basico-gramatica/completar-ejercicio/completar-ejercicio.component';
 import { OrdenarEjercicioComponent } from './components/gramatica/nivel-basico-gramatica/ordenar-ejercicio/ordenar-ejercicio.component';
 import { ReescribirEjercicioComponent } from './components/gramatica/nivel-basico-gramatica/reescribir-ejercicio/reescribir-ejercicio.component';
+import { VocabularioShoppingComponent } from './components/viajero/shopping-viajero/opciones-shopping/vocabulario-shopping/vocabulario-shopping.component';
+import { MultipleChoiceVocabularioShoppingComponent } from './components/viajero/shopping-viajero/opciones-shopping/multiple-choice-vocabulario-shopping/multiple-choice-vocabulario-shopping.component';
+import { MultipleChoicePreguntasShoppingComponent } from './components/viajero/shopping-viajero/opciones-shopping/multiple-choice-preguntas-shopping/multiple-choice-preguntas-shopping.component';
+import { VocabularioRestauranteComponent } from './components/viajero/restaurante-viajero/opciones-restaurante/vocabulario-restaurante/vocabulario-restaurante.component';
+import { MultipleChoiceVocabularioRestauranteComponent } from './components/viajero/restaurante-viajero/opciones-restaurante/multiple-choice-vocabulario-restaurante/multiple-choice-vocabulario-restaurante.component';
+import { MultipleChoicePreguntasRestauranteComponent } from './components/viajero/restaurante-viajero/opciones-restaurante/multiple-choice-preguntas-restaurante/multiple-choice-preguntas-restaurante.component';
+import { VocabularioAlojamientoComponent } from './components/viajero/alojamiento-viajero/opciones-alojamiento/vocabulario-alojamiento/vocabulario-alojamiento.component';
+import { MultipleChoiceVocaburarioAlojamientoComponent } from './components/viajero/alojamiento-viajero/opciones-alojamiento/multiple-choice-vocaburario-alojamiento/multiple-choice-vocaburario-alojamiento.component';
+import { MultipleChoicePreguntasAlojamientoComponent } from './components/viajero/alojamiento-viajero/opciones-alojamiento/multiple-choice-preguntas-alojamiento/multiple-choice-preguntas-alojamiento.component';
 
 const routes: Routes = [
   {path: 'home', component: HomePageComponent},
@@ -29,10 +38,25 @@ const routes: Routes = [
 
   {path:'viajeros-home', component:ViajeroHomePageComponent},
   {path:'shopping-viajeros', component:ShoppingViajeroComponent},
+  {path:'vocabulario-shopping', component:VocabularioShoppingComponent},
+  {path:'multipleChoice-vocabulario-shopping', component:MultipleChoiceVocabularioShoppingComponent},
+  {path:'multipleChoice-preguntas-shopping', component:MultipleChoicePreguntasShoppingComponent},
+
+
   {path:'restaurante-viajeros', component:RestauranteViajeroComponent},
+  {path:'vocabulario-restaurante', component:VocabularioRestauranteComponent},
+  {path:'multipleChoice-vocabulario-restaurante', component:MultipleChoiceVocabularioRestauranteComponent},
+  {path:'multipleChoice-preguntas-restaurante', component:MultipleChoicePreguntasRestauranteComponent},
+
   {path:'alojamiento-viajeros', component:AlojamientoViajeroComponent},
+  {path:'vocabulario-alojamiento', component:VocabularioAlojamientoComponent},
+  {path:'multipleChoice-vocabulario-alojamiento', component:MultipleChoiceVocaburarioAlojamientoComponent},
+  {path:'multipleChoice-preguntas-alojamiento', component:MultipleChoicePreguntasAlojamientoComponent},
+
+
 
   {path:'gramatica-home', component:GramaticaHomePageComponent},
+
   {path:'nivelBasico-gramatica', component:NivelBasicoGramaticaComponent},
   {path:'reescribir-ejercicio', component:ReescribirEjercicioComponent},
   {path:'ordenar-ejercicio', component:OrdenarEjercicioComponent},

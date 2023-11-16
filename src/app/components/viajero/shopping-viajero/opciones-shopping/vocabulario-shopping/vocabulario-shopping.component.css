@@ -1,0 +1,73 @@
+.cuerpo-viajero-S {
+    background-color: #f1c0ab;
+    margin: 0;
+}
+
+.barra-S {
+    background-color: #B3B3FD;
+    font-size: 3rem;
+    font-family: 'Lexend', sans-serif;
+
+}
+
+img {
+    width: auto;
+    height: auto;
+}
+
+.imagen-nombre-S {
+    display: flex;
+    align-items: center;
+}
+
+.contenedor-shopping {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 30rem;
+    margin-top: 2rem;
+    padding-bottom: 5rem;
+}
+
+.titulo {
+    margin: 0;
+    margin-bottom: 5rem;    
+    font-size: 3rem;
+}
+
+.idioma {
+    font-size: 2rem;
+    width: 10%;
+    padding-bottom: 1rem;
+}
+
+.contenedor-tabla {
+    box-shadow: 8px 10px 10px 10px rgb(142, 142, 212);
+    background-color: #bfbfd4;
+    margin: 1rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    margin-left: 5rem;
+}
+
+.tablaShopping {
+    
+    display: flex;
+    flex-direction: column;
+    column-width: 50%;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tablaShopping td{
+    border: 2px solid #ddd; 
+    padding: 8px;
+    width: 10%;
+
+}
+
+.palabras {
+    font-size: 2rem;
+    text-align: center;
+}
