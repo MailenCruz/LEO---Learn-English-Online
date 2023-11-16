@@ -9,6 +9,7 @@ import { GramaticaService } from 'src/app/services/gramatica.service';
   templateUrl: './completar-ejercicio.component.html',
   styleUrls: ['./completar-ejercicio.component.css']
 })
+
 export class CompletarEjercicioComponent {
   
   completar: Completar[] = [];
@@ -33,6 +34,7 @@ export class CompletarEjercicioComponent {
     await this.getEjercicios();
     this.randomPhrase = this.completar[this.index]
   }
+  
   async getEjercicios(){
     try{
       let respuesta = await this.gramaticaService.getExercises();
@@ -60,6 +62,7 @@ export class CompletarEjercicioComponent {
     this.checkRespuesta(oracion);
     this.respuestaEnviada = true;
   }
+
   async checkRespuesta(oracion: string){
     try{
       this.correcciones = await this.gramaticaService.getCorreccion(oracion);
@@ -68,13 +71,4 @@ export class CompletarEjercicioComponent {
       console.log(error);
     }
   }
-  
-  
-
-
-
-
-
-
-
 }
