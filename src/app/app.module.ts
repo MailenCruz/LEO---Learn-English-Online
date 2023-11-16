@@ -41,7 +41,6 @@ import { NivelAvanzadoGramaticaComponent } from './components/gramatica/nivel-av
 import { TraductorComponent } from './components/shared/traductor/traductor.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 
-import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -85,10 +84,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-<<<<<<< HEAD
-=======
     FormsModule,
->>>>>>> 615cbf8766486c42b5e4bcef855653c420f9f655
     ReactiveFormsModule
   ],
   providers: [],
