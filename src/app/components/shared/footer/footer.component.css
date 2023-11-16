@@ -1,8 +1,10 @@
 footer{
-    position:static;
+    position:absolute;
+    top:103%;
     bottom: 0;
-    padding-bottom: 5%;
+    padding-bottom: 2%;
     height: 30%;
     width: 100%;
     background-color: #B3B3FD;
+    z-index: 4;
 }

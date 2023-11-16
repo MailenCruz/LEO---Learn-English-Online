@@ -76,7 +76,7 @@
     top: 7%; /* Cambia este valor según tus necesidades */
     left: 70%;
     padding: 0; /* Cambia este valor según tus necesidades */
-    z-index: 3;
+    z-index: 5;
 }
 
 /*   .contenido {
@@ -259,12 +259,14 @@
     color:red;
     opacity: 70%;
     padding-top: 0;
-    top:1%
+   position: absolute;
+   left: 10%;
+   top: 36%
   }
 
   .btn-traducir{
     position: absolute;
-    top: 42%;
+    top: 45%;
     left: 30%;
     width: 40%;
     height: 20%;

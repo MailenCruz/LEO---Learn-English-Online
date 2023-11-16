@@ -21,6 +21,9 @@ img {
     background-image: url(../../../../assets/img-home/fondo-home-3.jpg);
     background-repeat: no-repeat;
     background-size:cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
     margin: 0;
 }
 
@@ -35,6 +38,7 @@ main{
     background-color: #DCBEE8FF;
     padding: 0 10px 10px 10px;
     border-radius: 8px;
+    margin-bottom: 2rem;
 }
 
 h1{
