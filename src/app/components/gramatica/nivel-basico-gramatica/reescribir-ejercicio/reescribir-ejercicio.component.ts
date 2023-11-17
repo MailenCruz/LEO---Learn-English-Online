@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Correccion } from 'src/app/interfaces/correccion';
 import { Reescribir } from 'src/app/interfaces/reescribir';
 import { GramaticaService } from 'src/app/services/gramatica.service';
@@ -18,20 +18,27 @@ export class ReescribirEjercicioComponent {
   randomPhrase: string = '';
   index: number = 0;
 
+
   answer: FormGroup = this.formBuilder.group({
-    afirmativo: [''],
-    negativo: [''],
-    interrogativo: ['']
+    afirmativo: ['', [Validators.required]],
+    negativo: ['', [Validators.required]],
+    interrogativo: ['', [Validators.required]]
   })
 
-  respuestas: Reescribir = { 
+  respuestas: Reescribir = {
     afirmativo: '',
     negativo: '',
     interrogativo: ''
   }
 
+  check: { afirmativo: boolean, negativo: boolean, interrogativo: boolean } = {
+    afirmativo: false,
+    negativo: false,
+    interrogativo: false
+  }
+
   correccionesPorTipo: { [tipo: string]: Correccion[] | undefined }[] = [];
-  
+
   constructor(private formBuilder: FormBuilder, private gramaticaService: GramaticaService) { }
 
   async ngOnInit() {
@@ -67,6 +74,7 @@ export class ReescribirEjercicioComponent {
     };
     this.checkRespuesta();
   }
+
   async checkRespuesta() {
     try {
       for (let key in this.respuestas) { //recorre las claves del objeto
@@ -74,7 +82,7 @@ export class ReescribirEjercicioComponent {
         if (this.respuestas.hasOwnProperty(key)) { //si existe el atributo
 
           let value = this.respuestas[key as keyof Reescribir]; //copia el valor de ese atributo
-  
+
           if (typeof value === 'string' && value.trim() !== '') { //si no es el string vacío
 
             value = value.charAt(0).toUpperCase() + value.slice(1);
@@ -100,18 +108,24 @@ export class ReescribirEjercicioComponent {
     }
   }
   obtenerCorreccion(tipo: string): Correccion[] | undefined {
-    const correccionEncontrada = this.correccionesPorTipo.find(obj => obj.hasOwnProperty(tipo)); //retorna el objeto
-    
+    const correccionEncontrada = this.correccionesPorTipo.find(obj => obj.hasOwnProperty(tipo)); //objeto
+
     if (correccionEncontrada) {
-      return correccionEncontrada[tipo];
+
+      if (correccionEncontrada[tipo]?.length === 0) {
+        (this.check as any)[tipo] = true;
+      }
+
+      return correccionEncontrada[tipo]; //el value del objeto según la key 
     } else {
       return undefined;
     }
   }
 
-  reset(){
+  reset() {
     this.correccionesPorTipo = [];
+    this.check = {afirmativo: false, negativo: false, interrogativo: false};
     this.answer.reset();
   }
-  
+
 }

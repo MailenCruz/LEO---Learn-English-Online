@@ -20,6 +20,8 @@ export class OrdenarEjercicioComponent {
   respuestaEnviada: boolean = false;
   correcciones: Correccion[] | undefined = [];
 
+  check: boolean = false;
+
   answer: FormGroup = this.formBuilder.group({
     ordenar: ''
   });
@@ -64,6 +66,10 @@ export class OrdenarEjercicioComponent {
     try{
       oracion = oracion.charAt(0).toUpperCase() + oracion.slice(1);
       this.correcciones = await this.gramaticaService.getCorreccion(oracion);
+
+      if(this.correcciones?.length === 0){
+        this.check = true;
+      }
     }
     catch(error){
       console.log(error);
@@ -72,6 +78,7 @@ export class OrdenarEjercicioComponent {
 
   reset(){
     this.correcciones = [];
+    this.check = false;
     this.answer.reset();
   }
 

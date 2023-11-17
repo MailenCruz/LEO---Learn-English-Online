@@ -23,26 +23,23 @@
                     </option>
                 </select>
 
-                <ng-container *ngIf="correcciones; else noCorrecciones">
-                    <div *ngFor="let correccion of correcciones" class="contenedor-errores">
-                        <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}
-                        </p>
-                    </div>
-                </ng-container>
-
-                <ng-template #noCorrecciones>
-                    <ng-container *ngIf="respuestaEnviada && (!correcciones || correcciones.length === 0)">
-                        <p class="correcto">CORRECTO!</p>
-                    </ng-container>
-                </ng-template>
-
-                <div class="botones">
-                    <input class="boton" type="submit" value="Check">
-
-                    <input class="boton" type="button" value="Reset" (click)="reset()">
-
-                    <input class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
+            <div *ngIf="correcciones">
+                <div *ngFor="let correccion of correcciones" class="contenedor-errores">
+                    <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
                 </div>
+            </div>
+
+            <div *ngIf="respuestaEnviada && check === true">
+                <p class="correcto">CORRECTO!</p>
+            </div>
+
+            <div class="botones">
+                <input class="boton" type="submit" value="Check">
+
+                <input class="boton" type="button" value="Reset" (click)="reset()">
+
+                <input class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
+            </div>
 
             </form>
         </section>
