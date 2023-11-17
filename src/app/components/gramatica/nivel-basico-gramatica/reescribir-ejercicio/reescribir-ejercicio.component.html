@@ -17,40 +17,58 @@
                 <input type="text" id="afirmativo" formControlName="afirmativo">
             </div>
 
-            <div *ngIf="obtenerCorreccion('afirmativo')">
+            <ng-container *ngIf="obtenerCorreccion('afirmativo'); else noCorrecciones">
                 <div *ngFor="let correccion of obtenerCorreccion('afirmativo')">
-                    <p>{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
+                    <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
                 </div>
-            </div>
+            </ng-container>
+
+            <ng-template #noCorrecciones>
+                <ng-container *ngIf="obtenerCorreccion('afirmativo')?.length === 0">
+                    <p class="correcto">CORRECTO!</p>
+                </ng-container>
+            </ng-template>
 
             <div *ngIf="phraseType != 'negativo'">
                 <label for="negativo"> Negativo (-): </label>
                 <input type="text" id="negativo" formControlName="negativo">
             </div>
 
-            <div *ngIf="obtenerCorreccion('negativo')">
+            <ng-container *ngIf="obtenerCorreccion('negativo'); else noCorrecciones">
                 <div *ngFor="let correccion of obtenerCorreccion('negativo')">
-                    <p>{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
+                    <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
                 </div>
-            </div>
+            </ng-container>
+
+            <ng-template #noCorrecciones>
+                <ng-container *ngIf="obtenerCorreccion('negativo')?.length === 0">
+                    <p class="correcto">CORRECTO!</p>
+                </ng-container>
+            </ng-template>
 
             <div *ngIf="phraseType != 'interrogativo'">
                 <label for="interrogativo"> Interrogativo (?): </label>
                 <input type="text" id="interrogativo" formControlName="interrogativo">
             </div>
 
-            <div *ngIf="obtenerCorreccion('interrogativo')">
+            <ng-container *ngIf="obtenerCorreccion('interrogativo'); else noCorrecciones">
                 <div *ngFor="let correccion of obtenerCorreccion('interrogativo')">
-                    <p>{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
+                    <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
                 </div>
-            </div>
+            </ng-container>
+
+            <ng-template #noCorrecciones>
+                <ng-container *ngIf="obtenerCorreccion('interrogativo')?.length === 0">
+                    <p class="correcto">CORRECTO!</p>
+                </ng-container>
+            </ng-template>
 
             <div class="botones">
                 <input class="boton" type="submit" value="Check">
 
-                <input class="boton" type="reset" value="Borrar">
+                <input class="boton" type="button" value="Reset" (click)="reset()">
 
-                <input class="boton" type="button" value="Siguiente Ejercicio" (click)="siguienteEjercicio()">
+                <input class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
             </div>
         </form>
 

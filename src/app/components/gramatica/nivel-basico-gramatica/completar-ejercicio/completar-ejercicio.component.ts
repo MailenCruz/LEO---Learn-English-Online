@@ -75,4 +75,9 @@ export class CompletarEjercicioComponent {
       console.log(error);
     }
   }
+
+  reset(){
+    this.correcciones = [];
+    this.answer.reset();
+  }
 }

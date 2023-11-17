@@ -108,5 +108,10 @@ export class ReescribirEjercicioComponent {
       return undefined;
     }
   }
+
+  reset(){
+    this.correccionesPorTipo = [];
+    this.answer.reset();
+  }
   
 }

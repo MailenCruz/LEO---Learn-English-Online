@@ -70,4 +70,9 @@ export class OrdenarEjercicioComponent {
     }
   }
 
+  reset(){
+    this.correcciones = [];
+    this.answer.reset();
+  }
+
 }

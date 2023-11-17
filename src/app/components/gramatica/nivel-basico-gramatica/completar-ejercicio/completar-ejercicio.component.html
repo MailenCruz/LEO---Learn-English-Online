@@ -15,30 +15,30 @@
             <p> {{ randomPhrase.oracion }} </p>
 
             <select id="completar" formControlName="completar">
-                <option disabled selected> -- Seleccione -- </option>
+                <option disabled selected> Choose your answer </option>
                 <option *ngFor="let i of randomPhrase.respuestas" [value]="i">
                     {{ i }}
                 </option>
             </select>
 
             <ng-container *ngIf="correcciones; else noCorrecciones">
-                <div *ngFor="let correccion of correcciones">
-                    <p>{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
+                <div *ngFor="let correccion of correcciones" class="contenedor-errores">
+                    <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
                 </div>
             </ng-container>
             
             <ng-template #noCorrecciones>
                 <ng-container *ngIf="respuestaEnviada && (!correcciones || correcciones.length === 0)">
-                    <p>CORRECTO!</p>
+                    <p class="correcto">CORRECTO!</p>
                 </ng-container>
             </ng-template>
 
             <div class="botones">
                 <input class="boton" type="submit" value="Check">
 
-                <input class="boton" type="reset" value="Borrar">
+                <input class="boton" type="button" value="Reset" (click)="reset()">
 
-                <input class="boton" type="button" value="Siguiente Ejercicio" (click)="siguienteEjercicio()">
+                <input class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
             </div>
 
         </form>
