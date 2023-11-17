@@ -8,39 +8,43 @@
         </div>
     </nav>
 
-    <section class="completar">
+    <div class="contenedor-pagina">
 
-        <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
+        <section class="completar">
 
-            <p> {{ randomPhrase.oracion }} </p>
+            <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
 
-            <select id="completar" formControlName="completar">
-                <option disabled selected> Choose your answer </option>
-                <option *ngFor="let i of randomPhrase.respuestas" [value]="i">
-                    {{ i }}
-                </option>
-            </select>
+                <p> {{ randomPhrase.oracion }} </p>
 
-            <ng-container *ngIf="correcciones; else noCorrecciones">
-                <div *ngFor="let correccion of correcciones" class="contenedor-errores">
-                    <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
-                </div>
-            </ng-container>
-            
-            <ng-template #noCorrecciones>
-                <ng-container *ngIf="respuestaEnviada && (!correcciones || correcciones.length === 0)">
-                    <p class="correcto">CORRECTO!</p>
+                <select id="completar" formControlName="completar">
+                    <option disabled selected> Choose your answer </option>
+                    <option *ngFor="let i of randomPhrase.respuestas" [value]="i">
+                        {{ i }}
+                    </option>
+                </select>
+
+                <ng-container *ngIf="correcciones; else noCorrecciones">
+                    <div *ngFor="let correccion of correcciones" class="contenedor-errores">
+                        <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}
+                        </p>
+                    </div>
                 </ng-container>
-            </ng-template>
 
-            <div class="botones">
-                <input class="boton" type="submit" value="Check">
+                <ng-template #noCorrecciones>
+                    <ng-container *ngIf="respuestaEnviada && (!correcciones || correcciones.length === 0)">
+                        <p class="correcto">CORRECTO!</p>
+                    </ng-container>
+                </ng-template>
 
-                <input class="boton" type="button" value="Reset" (click)="reset()">
+                <div class="botones">
+                    <input class="boton" type="submit" value="Check">
 
-                <input class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
-            </div>
+                    <input class="boton" type="button" value="Reset" (click)="reset()">
 
-        </form>
-    </section>
+                    <input class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
+                </div>
+
+            </form>
+        </section>
+    </div>
 </section>

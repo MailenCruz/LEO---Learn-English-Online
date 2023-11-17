@@ -8,69 +8,76 @@
         </div>
     </nav>
 
-    <section class="reescribir">
-        <form (ngSubmit)="guardarRespuesta()" [formGroup]="answer" class="formulario">
-            <p> {{ randomPhrase }} </p>
+    <div class="contenedor-pagina">
 
-            <div *ngIf="phraseType != 'afirmativo'">
-                <label for="afirmativo"> Afirmativo (+): </label>
-                <input type="text" id="afirmativo" formControlName="afirmativo">
-            </div>
+        <section class="reescribir">
+            <form (ngSubmit)="guardarRespuesta()" [formGroup]="answer" class="formulario">
+                <p> {{ randomPhrase }} </p>
 
-            <ng-container *ngIf="obtenerCorreccion('afirmativo'); else noCorrecciones">
-                <div *ngFor="let correccion of obtenerCorreccion('afirmativo')">
-                    <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
+                <div *ngIf="phraseType != 'afirmativo'">
+                    <label for="afirmativo"> Afirmativo (+): </label>
+                    <input type="text" id="afirmativo" formControlName="afirmativo">
                 </div>
-            </ng-container>
 
-            <ng-template #noCorrecciones>
-                <ng-container *ngIf="obtenerCorreccion('afirmativo')?.length === 0">
-                    <p class="correcto">CORRECTO!</p>
+                <ng-container *ngIf="obtenerCorreccion('afirmativo'); else noCorrecciones">
+                    <div *ngFor="let correccion of obtenerCorreccion('afirmativo')">
+                        <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}
+                        </p>
+                    </div>
                 </ng-container>
-            </ng-template>
 
-            <div *ngIf="phraseType != 'negativo'">
-                <label for="negativo"> Negativo (-): </label>
-                <input type="text" id="negativo" formControlName="negativo">
-            </div>
+                <ng-template #noCorrecciones>
+                    <ng-container *ngIf="obtenerCorreccion('afirmativo')?.length === 0">
+                        <p class="correcto">CORRECTO!</p>
+                    </ng-container>
+                </ng-template>
 
-            <ng-container *ngIf="obtenerCorreccion('negativo'); else noCorrecciones">
-                <div *ngFor="let correccion of obtenerCorreccion('negativo')">
-                    <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
+                <div *ngIf="phraseType != 'negativo'">
+                    <label for="negativo"> Negativo (-): </label>
+                    <input type="text" id="negativo" formControlName="negativo">
                 </div>
-            </ng-container>
 
-            <ng-template #noCorrecciones>
-                <ng-container *ngIf="obtenerCorreccion('negativo')?.length === 0">
-                    <p class="correcto">CORRECTO!</p>
+                <ng-container *ngIf="obtenerCorreccion('negativo'); else noCorrecciones">
+                    <div *ngFor="let correccion of obtenerCorreccion('negativo')">
+                        <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}
+                        </p>
+                    </div>
                 </ng-container>
-            </ng-template>
 
-            <div *ngIf="phraseType != 'interrogativo'">
-                <label for="interrogativo"> Interrogativo (?): </label>
-                <input type="text" id="interrogativo" formControlName="interrogativo">
-            </div>
+                <ng-template #noCorrecciones>
+                    <ng-container *ngIf="obtenerCorreccion('negativo')?.length === 0">
+                        <p class="correcto">CORRECTO!</p>
+                    </ng-container>
+                </ng-template>
 
-            <ng-container *ngIf="obtenerCorreccion('interrogativo'); else noCorrecciones">
-                <div *ngFor="let correccion of obtenerCorreccion('interrogativo')">
-                    <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
+                <div *ngIf="phraseType != 'interrogativo'">
+                    <label for="interrogativo"> Interrogativo (?): </label>
+                    <input type="text" id="interrogativo" formControlName="interrogativo">
                 </div>
-            </ng-container>
 
-            <ng-template #noCorrecciones>
-                <ng-container *ngIf="obtenerCorreccion('interrogativo')?.length === 0">
-                    <p class="correcto">CORRECTO!</p>
+                <ng-container *ngIf="obtenerCorreccion('interrogativo'); else noCorrecciones">
+                    <div *ngFor="let correccion of obtenerCorreccion('interrogativo')">
+                        <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}
+                        </p>
+                    </div>
                 </ng-container>
-            </ng-template>
 
-            <div class="botones">
-                <input class="boton" type="submit" value="Check">
+                <ng-template #noCorrecciones>
+                    <ng-container *ngIf="obtenerCorreccion('interrogativo')?.length === 0">
+                        <p class="correcto">CORRECTO!</p>
+                    </ng-container>
+                </ng-template>
 
-                <input class="boton" type="button" value="Reset" (click)="reset()">
+                <div class="botones">
+                    <input class="boton" type="submit" value="Check">
 
-                <input class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
-            </div>
-        </form>
+                    <input class="boton" type="button" value="Reset" (click)="reset()">
 
-    </section>
+                    <input class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
+                </div>
+            </form>
+
+        </section>
+
+    </div>
 </section>

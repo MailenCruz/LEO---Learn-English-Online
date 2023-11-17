@@ -8,35 +8,38 @@
         </div>
     </nav>
 
-    <section class="ordenar">
-        <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
-            <p> {{ randomPhrase }} </p>
+    <div class="contenedor-pagina">
+        <section class="ordenar">
+            <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
+                <p> {{ randomPhrase }} </p>
 
-            <div>
-                <label for="ordenar">Reescriba la oración en orden: </label>
-                <input type="text" id="ordenar" formControlName="ordenar">
-            </div>
-
-            <ng-container *ngIf="correcciones; else noCorrecciones">
-                <div *ngFor="let correccion of correcciones">
-                    <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
+                <div>
+                    <label for="ordenar">Reescriba la oración en orden: </label>
+                    <input type="text" id="ordenar" formControlName="ordenar">
                 </div>
-            </ng-container>
-            
-            <ng-template #noCorrecciones>
-                <ng-container *ngIf="respuestaEnviada && (correcciones?.length === 0)">
-                    <p>CORRECTO!</p>
+
+                <ng-container *ngIf="correcciones; else noCorrecciones">
+                    <div *ngFor="let correccion of correcciones">
+                        <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}
+                        </p>
+                    </div>
                 </ng-container>
-            </ng-template>
 
-            <div class="botones">
-                <input class="boton" type="submit" value="Check">
+                <ng-template #noCorrecciones>
+                    <ng-container *ngIf="respuestaEnviada && (correcciones?.length === 0)">
+                        <p>CORRECTO!</p>
+                    </ng-container>
+                </ng-template>
 
-                <input class="boton" type="reset" value="Reset" (click)="reset()">
+                <div class="botones">
+                    <input class="boton" type="submit" value="Check">
 
-                <input class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
-            </div>
-        </form>
-        
-    </section>
+                    <input class="boton" type="reset" value="Reset" (click)="reset()">
+
+                    <input class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
+                </div>
+            </form>
+
+        </section>
+    </div>
 </section>
