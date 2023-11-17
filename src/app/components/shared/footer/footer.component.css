@@ -1,15 +1,24 @@
 footer {
     background-color: #B3B3FD;
-    padding: 10px;
+    background: linear-gradient(to top,#7272bd, #B3B3FD);
+   
+    padding: 20px;
     width: 100%;
     text-align: center;
     margin-top: auto;
+    
 }
 
 .title-fuentes{
     text-align: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: x-large;
+    padding: 2rem;
+}
+
+.fuentes{
+    display:flex;
+    justify-content: space-around;
 }
 
 .fuente{
@@ -17,4 +26,18 @@ footer {
     align-items: center;
     font-size: 2rem;
     list-style-type: none;
+    flex-direction: column;
+    
+}
+
+
+
+.fuente a{
+    text-decoration: none;
+    color:#000000;
+}
+
+.fuente a:hover{
+    color: #000000;
+    text-shadow: 1px 2px 12px #eca194;
 }
