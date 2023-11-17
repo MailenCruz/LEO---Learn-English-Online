@@ -18,6 +18,8 @@ export class PalabraImagenJuegoComponent {
   aciertos: number = 0;
   ganador: boolean = false;
 
+  
+
   imagenes: palabrasJuego[] = [
     {id:0,nombre:'../../../../assets/img-juego/img-palabra/imagenes/0.png'},
     {id:0,nombre:'../../../../assets/img-juego/img-palabra/palabras/0.png'},
@@ -43,6 +45,8 @@ export class PalabraImagenJuegoComponent {
     {id:7,nombre:'../../../../assets/img-juego/img-palabra/imagenes/7.png'},
     {id:7,nombre:'../../../../assets/img-juego/img-palabra/palabras/7.png'},
   ];
+
+  estadoClickeado: boolean[] = Array(this.imagenes.length).fill(false);
 
   constructor(private renderer: Renderer2, private el: ElementRef) {
     this.imagenes.sort(() => Math.random() - 0.5);
@@ -127,5 +131,12 @@ export class PalabraImagenJuegoComponent {
     // Puedes usar la función location.reload() para recargar la página.
     location.reload();
   }
+
+  
+
+  cambiarEstado(index:number) {
+    this.estadoClickeado[index] = !this.estadoClickeado[index];
+  }
+  
 
 }
