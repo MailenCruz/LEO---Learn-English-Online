@@ -52,6 +52,12 @@ import { MultipleChoicePreguntasAlojamientoComponent } from './components/viajer
 import { VocabularioRestauranteComponent } from './components/viajero/restaurante-viajero/opciones-restaurante/vocabulario-restaurante/vocabulario-restaurante.component';
 import { MultipleChoicePreguntasRestauranteComponent } from './components/viajero/restaurante-viajero/opciones-restaurante/multiple-choice-preguntas-restaurante/multiple-choice-preguntas-restaurante.component';
 import { MultipleChoiceVocabularioRestauranteComponent } from './components/viajero/restaurante-viajero/opciones-restaurante/multiple-choice-vocabulario-restaurante/multiple-choice-vocabulario-restaurante.component';
+import { ShoppingHomePageComponent } from './pages/viajero-pages/shopping-home-page/shopping-home-page.component';
+import { RestauranteHomePageComponent } from './pages/viajero-pages/restaurante-home/restaurante-home.component';
+import { AlojamientoHomePageComponent } from './pages/viajero-pages/alojamiento-home-page/alojamiento-home-page.component';
+import { BasicoHomeComponent } from './pages/gramatica-pages/basico-home/basico-home.component';
+import { IntermedioHomeComponent } from './pages/gramatica-pages/intermedio-home/intermedio-home.component';
+import { AvanzadoHomeComponent } from './pages/gramatica-pages/avanzado-home/avanzado-home.component';
 
 
 @NgModule({
@@ -103,7 +109,13 @@ import { MultipleChoiceVocabularioRestauranteComponent } from './components/viaj
    
     VocabularioRestauranteComponent,
     MultipleChoicePreguntasRestauranteComponent,
-    MultipleChoiceVocabularioRestauranteComponent
+    MultipleChoiceVocabularioRestauranteComponent,
+    ShoppingHomePageComponent,
+    RestauranteHomePageComponent,
+    AlojamientoHomePageComponent,
+    BasicoHomeComponent,
+    IntermedioHomeComponent,
+    AvanzadoHomeComponent
   ],
   imports: [
     BrowserModule,
