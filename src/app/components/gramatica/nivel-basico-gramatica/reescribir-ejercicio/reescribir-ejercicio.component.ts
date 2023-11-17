@@ -116,6 +116,7 @@ export class ReescribirEjercicioComponent {
         (this.check as any)[tipo] = true;
       }
 
+      console.log(correccionEncontrada['interrogativo']);
       return correccionEncontrada[tipo]; //el value del objeto según la key 
     } else {
       return undefined;

@@ -18,23 +18,26 @@
                     <input type="text" id="ordenar" formControlName="ordenar">
                 </div>
 
-            <div *ngIf="correcciones">
-                <div *ngFor="let correccion of correcciones">
-                    <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
+                <div *ngIf="correcciones">
+                    <div *ngFor="let correccion of correcciones">
+                        <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}
+                        </p>
+                    </div>
                 </div>
-            </div>
-
-            <div *ngIf="respuestaEnviada && check === true">
-                <p class="correcto">CORRECTO!</p>
-            </div>
 
 
-            <div class="botones">
-                <input class="boton" type="submit" value="Check">
-                <input class="boton" type="reset" value="Reset" (click)="reset()">
-                <input class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
-            </div>
-        </form>
+                <div *ngIf="respuestaEnviada && check === true">
+                    <p class="correcto">CORRECTO!</p>
+                </div>
 
-    </section>
+
+                <div class="botones">
+                    <input class="boton" type="submit" value="Check">
+                    <input class="boton" type="reset" value="Reset" (click)="reset()">
+                    <input class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
+                </div>
+            </form>
+
+        </section>
+    </div>
 </section>

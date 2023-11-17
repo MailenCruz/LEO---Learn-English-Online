@@ -8,8 +8,6 @@
         </div>
     </nav>
 
-    <div class="contenedor-pagina">
-
     <section class="reescribir">
         <form (ngSubmit)="guardarRespuesta()" [formGroup]="answer" class="formulario">
 
@@ -21,7 +19,8 @@
                 <input type="text" id="afirmativo" formControlName="afirmativo">
             </div>
 
-            <div class="error" *ngIf="answer.controls['afirmativo'].getError('required') && answer.controls['afirmativo'].touched">
+            <div class="error"
+                *ngIf="answer.controls['afirmativo'].getError('required') && answer.controls['afirmativo'].touched">
                 El campo es requerido
             </div>
 
@@ -43,7 +42,8 @@
                 <input type="text" id="negativo" formControlName="negativo">
             </div>
 
-            <div class="error" *ngIf="answer.controls['negativo'].getError('required') && answer.controls['negativo'].touched ">
+            <div class="error"
+                *ngIf="answer.controls['negativo'].getError('required') && answer.controls['negativo'].touched ">
                 El campo es requerido
             </div>
 
@@ -65,7 +65,8 @@
                 <input type="text" id="interrogativo" formControlName="interrogativo">
             </div>
 
-            <div class="error" *ngIf="answer.controls['interrogativo'].getError('required') && answer.controls['interrogativo'].touched ">
+            <div class="error"
+                *ngIf="answer.controls['interrogativo'].getError('required') && answer.controls['interrogativo'].touched ">
                 El campo es requerido
             </div>
 
@@ -80,20 +81,13 @@
                     <p class="correcto">CORRECTO!</p>
                 </div>
             </div>
-                <ng-template #noCorrecciones>
-                    <ng-container *ngIf="obtenerCorreccion('interrogativo')?.length === 0">
-                        <p class="correcto">CORRECTO!</p>
-                    </ng-container>
-                </ng-template>
 
-                <div class="botones">
-                    <input class="boton" type="submit" value="Check">
-                    <input class="boton" type="button" value="Reset" (click)="reset()">
-                    <input class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
-                </div>
-            </form>
+            <div class="botones">
+                <input class="boton" type="submit" value="Check">
+                <input class="boton" type="button" value="Reset" (click)="reset()">
+                <input class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
+            </div>
+        </form>
 
-        </section>
-
-    </div>
+    </section>
 </section>

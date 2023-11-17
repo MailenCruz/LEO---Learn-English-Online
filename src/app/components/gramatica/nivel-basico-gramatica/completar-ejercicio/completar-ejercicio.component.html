@@ -8,20 +8,23 @@
         </div>
     </nav>
 
-    <div class="contenedor-pagina">
+    <section class="completar">
 
-        <section class="completar">
+        <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
 
-            <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
+            <p> {{ randomPhrase.oracion }} </p>
 
-                <p> {{ randomPhrase.oracion }} </p>
+            <select id="completar" formControlName="completar">
+                <option disabled selected> Choose your answer </option>
+                <option *ngFor="let i of randomPhrase.respuestas" [value]="i">
+                    {{ i }}
+                </option>
+            </select>
 
-                <select id="completar" formControlName="completar">
-                    <option disabled selected> Choose your answer </option>
-                    <option *ngFor="let i of randomPhrase.respuestas" [value]="i">
-                        {{ i }}
-                    </option>
-                </select>
+            <div class="error"
+                *ngIf="answer.controls['completar'].getError('required') && answer.controls['completar'].touched ">
+                El campo es requerido
+            </div>
 
             <div *ngIf="correcciones">
                 <div *ngFor="let correccion of correcciones" class="contenedor-errores">
@@ -35,13 +38,10 @@
 
             <div class="botones">
                 <input class="boton" type="submit" value="Check">
-
                 <input class="boton" type="button" value="Reset" (click)="reset()">
-
                 <input class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
             </div>
 
-            </form>
-        </section>
-    </div>
+        </form>
+    </section>
 </section>

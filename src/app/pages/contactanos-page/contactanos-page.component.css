@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.contacto {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.informacion {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.dato-contacto {
+    margin-top: 10px;
+}
+
+.icono {
+    margin-right: 5px;
+}

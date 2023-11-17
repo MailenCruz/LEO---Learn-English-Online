@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Completar } from 'src/app/interfaces/completar';
 import { Correccion } from 'src/app/interfaces/correccion';
 import { GramaticaService } from 'src/app/services/gramatica.service';
@@ -26,7 +26,7 @@ export class CompletarEjercicioComponent {
   check: boolean = false;
 
   answer: FormGroup = this.formBuilder.group ({
-    completar: ''
+    completar: ['', Validators.required]
   })
 
   constructor(private formBuilder: FormBuilder, private gramaticaService: GramaticaService) { }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Correccion } from 'src/app/interfaces/correccion';
 import { GramaticaService } from 'src/app/services/gramatica.service';
 
@@ -23,7 +23,7 @@ export class OrdenarEjercicioComponent {
   check: boolean = false;
 
   answer: FormGroup = this.formBuilder.group({
-    ordenar: ''
+    ordenar: ['', Validators.required]
   });
 
   async ngOnInit() {
