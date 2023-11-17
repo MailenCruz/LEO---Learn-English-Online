@@ -22,14 +22,14 @@ img {
 
 .descripcion{
     text-align: center;
-    font-size: large;
+    font-size: x-large;
     
     
 }
 
 legend {
     background-color: #B3B3FD;
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
     padding: 1.5rem;
     font-size: large;
     text-align: center;

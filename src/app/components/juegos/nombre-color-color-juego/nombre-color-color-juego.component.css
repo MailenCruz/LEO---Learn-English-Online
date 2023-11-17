@@ -50,8 +50,14 @@ main{
     /*background-color: #9898f1;*/
     background-color: #DCBEE8FF;
 }
+
 .eleccion:hover
 {
+    background-color: #7070f0;
+    box-shadow:  0rem 0rem 1rem 0.01rem black;
+}
+
+.eleccion.clickeado {
     background-color: #7070f0;
     box-shadow:  0rem 0rem 1rem 0.01rem black;
 }

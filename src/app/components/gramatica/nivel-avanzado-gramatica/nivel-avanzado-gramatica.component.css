@@ -21,7 +21,7 @@ img {
 
 .descripcion{
     text-align: center;
-    font-size: large;
+    font-size: x-large;
     justify-content: center;
     align-items: center;
     
@@ -29,7 +29,7 @@ img {
 
 legend {
     background-color: #B3B3FD;
-    margin-bottom: 10rem;
+    margin-bottom: 15rem;
     padding: 1.5rem;
     font-size: large;
     text-align: center;
@@ -38,7 +38,7 @@ legend {
 }
 
 .cuadrado {
-    height: 40rem;
+    height: 50rem;
     width: 35rem;
     margin: 3rem;
     display: inline-block;

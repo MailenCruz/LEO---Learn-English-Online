@@ -42,6 +42,8 @@ export class NombreColorColorJuegoComponent {
     {id:7,nombre:'../../../../assets/img-juego/colores-nombre/nombres/7.png'},
   ];
 
+  estadoClickeado: boolean[] = Array(this.imagenes.length).fill(false);
+
   constructor(private renderer: Renderer2, private el: ElementRef) {
     this.imagenes.sort(() => Math.random() - 0.5);
     console.log(this.imagenes);
@@ -124,6 +126,10 @@ export class NombreColorColorJuegoComponent {
   recargarPagina(): void {
     // Puedes usar la función location.reload() para recargar la página.
     location.reload();
+  }
+
+  cambiarEstado(index:number) {
+    this.estadoClickeado[index] = !this.estadoClickeado[index];
   }
 
 }
