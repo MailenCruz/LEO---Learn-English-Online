@@ -8,14 +8,15 @@
         </div>
     </nav>
 
-    <section class="ordenar">
-        <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
-            <p> {{ randomPhrase }} </p>
+    <div class="contenedor-pagina">
+        <section class="ordenar">
+            <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
+                <p> {{ randomPhrase }} </p>
 
-            <div>
-                <label for="ordenar">Reescriba la oración en orden: </label>
-                <input type="text" id="ordenar" formControlName="ordenar">
-            </div>
+                <div>
+                    <label for="ordenar">Reescriba la oración en orden: </label>
+                    <input type="text" id="ordenar" formControlName="ordenar">
+                </div>
 
             <div *ngIf="correcciones">
                 <div *ngFor="let correccion of correcciones">

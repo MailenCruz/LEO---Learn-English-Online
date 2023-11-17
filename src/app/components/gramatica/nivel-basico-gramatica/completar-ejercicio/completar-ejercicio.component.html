@@ -8,18 +8,20 @@
         </div>
     </nav>
 
-    <section class="completar">
+    <div class="contenedor-pagina">
 
-        <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
+        <section class="completar">
 
-            <p> {{ randomPhrase.oracion }} </p>
+            <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
 
-            <select id="completar" formControlName="completar">
-                <option disabled selected> Choose your answer </option>
-                <option *ngFor="let i of randomPhrase.respuestas" [value]="i">
-                    {{ i }}
-                </option>
-            </select>
+                <p> {{ randomPhrase.oracion }} </p>
+
+                <select id="completar" formControlName="completar">
+                    <option disabled selected> Choose your answer </option>
+                    <option *ngFor="let i of randomPhrase.respuestas" [value]="i">
+                        {{ i }}
+                    </option>
+                </select>
 
             <div *ngIf="correcciones">
                 <div *ngFor="let correccion of correcciones" class="contenedor-errores">
@@ -33,10 +35,13 @@
 
             <div class="botones">
                 <input class="boton" type="submit" value="Check">
+
                 <input class="boton" type="button" value="Reset" (click)="reset()">
+
                 <input class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
             </div>
 
-        </form>
-    </section>
+            </form>
+        </section>
+    </div>
 </section>

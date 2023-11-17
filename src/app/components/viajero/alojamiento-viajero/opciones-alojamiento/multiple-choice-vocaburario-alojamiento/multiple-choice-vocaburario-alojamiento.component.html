@@ -1,1 +1,42 @@
-<p>multiple-choice-vocaburario-alojamiento works!</p>
+<section class="cuerpo-viajero-A">
+
+    <nav class="barra-A">
+        <div class="imagen-nombre-A">
+            <a routerLink="/viajeros-home"> <img src="../../../../assets/logoChiquito-viajero.png" alt="Logo" width="30"
+                    height="24"></a>
+            <span> Multiple choice - vocabulario </span>
+        </div>
+    </nav>
+
+
+    <div class="cuerpo-MCV" *ngIf="mostrarCuestionario">
+        <p class="titulo">{{ oraciones[oracionActual].oracion }}</p>
+
+        <ul class="ejercicio">
+            <li *ngFor="let respuesta of oraciones[oracionActual].respuestas; let i = index">
+                <label>
+                    <input type="radio" [(ngModel)]="respuestaSeleccionada" [value]="respuesta"
+                        [disabled]="respuestaCorrecta !== ''">
+                    {{ respuesta }}
+                    <span
+                        *ngIf="respuestaCorrecta === 'correcta' && respuesta === oraciones[oracionActual].respuestaCorrecta"
+                        style="color: green;">✔</span>
+                    <span *ngIf="respuestaCorrecta === 'incorrecta' && respuesta === respuestaSeleccionada"
+                        style="color: red;">✘</span>
+                </label>
+            </li>
+        </ul>
+
+        <button (click)="verificarRespuesta()">Verificar respuesta</button>
+        <button *ngIf="intentos > 0 && respuestaCorrecta === 'incorrecta'" (click)="resetearEstado()">Intentar de
+            nuevo</button>
+        <button (click)="siguientePregunta()">Siguiente pregunta</button>
+    </div>
+
+    <div class="cuerpo-mensaje" *ngIf="!mostrarCuestionario">
+        <p class="emoticones">🏨 😊 👏</p>
+        <p class="mensaje">¡Fin del cuestionario!</p>
+        <button routerLink="/alojamiento-viajeros">  Volver a alojamiento  </button>
+    </div>
+
+</section>

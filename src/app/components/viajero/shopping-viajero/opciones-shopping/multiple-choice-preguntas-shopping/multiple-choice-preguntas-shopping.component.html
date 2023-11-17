@@ -9,7 +9,7 @@
     </nav>
 
 
-    <div class="cuerpo-MCV" *ngIf="mostrarCuestionario">
+    <div class="cuerpo-MCP" *ngIf="mostrarCuestionario">
         <p class="titulo">{{ preguntas[preguntaActual].oracion }}</p>
 
         <ul class="ejercicio">
@@ -34,7 +34,7 @@
     </div>
 
     <div class="cuerpo-mensaje" *ngIf="!mostrarCuestionario">
-        <p class="emoticones">🛒 😊  👏</p>
+        <p class="emoticones">🛒 😊 👏</p>
         <p class="mensaje">¡Fin del cuestionario!</p>
         <button routerLink="/shopping-viajeros">  Volver a shopping  </button>
     </div>
