@@ -171,16 +171,7 @@
               "credit card",
               "basket"
             ],
-            "respuestaCorrecta": ""
-          },
-          {
-            "oracion": "I'm just browsing, thanks. I'm doing some ________.",
-            "respuestas": [
-              "trying on",
-              "purchasing",
-              "window shopping",
-              "returning"
-            ]
+            "respuestaCorrecta": "credit card"
           },
           {
             "oracion": "I need to _____ this handbag for a different color.",
@@ -189,7 +180,8 @@
               "exchange",
               "return",
               "size"
-            ]
+            ],
+            "respuestaCorrecta": "exchange"
           },
           {
             "oracion": "I'm going to the ______ to try on these jeans.",
@@ -198,7 +190,8 @@
               "cashier",
               "fitting room",
               "shopping cart"
-            ]
+            ],
+            "respuestaCorrecta": "fitting room"
           },
           {
             "oracion": "The _____ in this store is so elegant.",
@@ -207,7 +200,8 @@
               "scarf",
               "jewelry",
               "umbrella"
-            ]
+            ],
+            "respuestaCorrecta": "jewelry"
           },
           {
             "oracion": "I'll pay for these items with my _______.",
@@ -216,7 +210,8 @@
               "debit card",
               "basket",
               "clearance"
-            ]
+            ],
+            "respuestaCorrecta": "debit card"
           },
           {
             "oracion": "I love the _____ section. It's full of discounts.",
@@ -225,7 +220,8 @@
               "wallet",
               "price tag",
               "clearance"
-            ]
+            ],
+            "respuestaCorrecta": "clearance"
           },
           {
             "oracion": "The _____ is very friendly and helpful.",
@@ -234,7 +230,8 @@
               "bag",
               "cashier",
               "exchange"
-            ]
+            ],
+            "respuestaCorrecta": "cashier"
           },
           {
             "oracion": "I like to shop at this mall because it has a variety of _____.",
@@ -243,7 +240,8 @@
               "credit cards",
               "shopping centers",
               "price tags"
-            ]
+            ],
+            "respuestaCorrecta": "stores"
           },
           {
             "oracion": "These sunglasses are on sale at a great _____.",
@@ -252,7 +250,8 @@
               "return",
               "price",
               "basket"
-            ]
+            ],
+            "respuestaCorrecta": "price"
           }
         ],
         "preguntas": [
@@ -263,7 +262,8 @@
               "cashier",
               "gift shop",
               "basket"
-            ]
+            ],
+            "respuestaCorrecta": "gift shop"
           },
           {
             "oracion": "I need to try on these jeans. Is there a _____ nearby?",
@@ -272,7 +272,8 @@
               "fitting room",
               "salesperson",
               "jewelry"
-            ]
+            ],
+            "respuestaCorrecta": "fitting room"
           },
           {
             "oracion": "I love these shoes! Do you have them in a ____ 8?",
@@ -281,7 +282,8 @@
               "debit card",
               "bag",
               "size"
-            ]
+            ],
+            "respuestaCorrecta": "size"
           },
           {
             "oracion": "How much does this scarf cost? Is there a _____ on it?",
@@ -290,7 +292,8 @@
               "basket",
               "price tag",
               "fitting room"
-            ]
+            ],
+            "respuestaCorrecta": "price tag"
           },
           {
             "oracion": "Can I get a ______ to carry all these items?",
@@ -299,7 +302,8 @@
               "dress",
               "return",
               "shopping cart"
-            ]
+            ],
+            "respuestaCorrecta": "shopping cart"
           },
           {
             "oracion": "Where is the nearest ______? I want to try on this dress.",
@@ -308,7 +312,8 @@
               "customer",
               "fitting room",
               "gift shop"
-            ]
+            ],
+            "respuestaCorrecta": "fitting room"
           },
           {
             "oracion": "Do you have any sales or discounts on these_______?",
@@ -317,7 +322,8 @@
               "shopping hours",
               "accessories",
               "sunglasses"
-            ]
+            ],
+            "respuestaCorrecta": "sunglasses"
           },
           {
             "oracion": "What are the store's _____ today? When do they close?",
@@ -326,7 +332,8 @@
               "scarf",
               "shopping hours",
               "credit card"
-            ]
+            ],
+            "respuestaCorrecta": "shopping hours"
           },
           {
             "oracion": "Could you please call a ______ to help me find the right size for these shoes?",
@@ -335,7 +342,8 @@
               "return",
               "exchange",
               "salesperson"
-            ]
+            ],
+            "respuestaCorrecta": "salesperson"
           },
           {
             "oracion": "I bought this sweater last week, but it doesn't fit well. Can I ____ it for a different size?",
@@ -344,7 +352,8 @@
               "perfume",
               "bag",
               "return"
-            ]
+            ],
+            "respuestaCorrecta": "return"
           }
         ]
       }
@@ -485,7 +494,8 @@
             "food",
             "dish",
             "dessert"
-          ]
+          ],
+          "respuestaCorrecta": "food"
         },
         {
           "oracion": "I'd like the ______, please.",
@@ -493,7 +503,8 @@
             "chicken",
             "salad",
             "pasta"
-          ]
+          ],
+          "respuestaCorrecta": "chicken"
         },
         {
           "oracion": "I'd like the ____.",
@@ -501,7 +512,8 @@
             "check",
             "bill",
             "receipt"
-          ]
+          ],
+          "respuestaCorrecta": "check"
         },
         {
           "oracion": "Thanks a lot for your ____.",
@@ -509,7 +521,8 @@
             "service",
             "help",
             "support"
-          ]
+          ],
+          "respuestaCorrecta": "service"
         },
         {
           "oracion": "I'll have a glass of red ____, please.",
@@ -517,7 +530,8 @@
             "wine",
             "water",
             "soda"
-          ]
+          ],
+          "respuestaCorrecta": "wine"
         },
         {
           "oracion": "A _____ with milk, please.",
@@ -525,7 +539,8 @@
             "coffee",
             "tea",
             "juice"
-          ]
+          ],
+          "respuestaCorrecta": "coffee"
         },
         {
           "oracion": "Is this dish ______?",
@@ -533,7 +548,8 @@
             "gluten-free",
             "vegetarian",
             "spicy"
-          ]
+          ],
+          "respuestaCorrecta": "gluten-free"
         },
         {
           "oracion": "I'd like the chocolate cake for ______.",
@@ -541,7 +557,8 @@
             "dessert",
             "appetizer",
             "main course"
-          ]
+          ],
+          "respuestaCorrecta": "dessert"
         },
         {
           "oracion": "I'd like to see the ____, please.",
@@ -549,7 +566,8 @@
             "menu",
             "list",
             "options"
-          ]
+          ],
+          "respuestaCorrecta": "menu"
         },
         {
           "oracion": "I prefer coffee over ____, please.",
@@ -557,7 +575,8 @@
             "tea",
             "juice",
             "soda"
-          ]
+          ],
+          "respuestaCorrecta": "tea"
         }
       ],
       "preguntas": [
@@ -567,7 +586,8 @@
             "bill",
             "reservation",
             "table"
-          ]
+          ],
+          "respuestaCorrecta": "reservation"
         },
         {
           "oracion": "Can we see the ____, please?",
@@ -575,7 +595,8 @@
             "menu",
             "list",
             "specials"
-          ]
+          ],
+          "respuestaCorrecta": "menu"
         },
         {
           "oracion": "May I have a ____ for two, please?",
@@ -583,7 +604,8 @@
             "table",
             "booth",
             "reservation"
-          ]
+          ],
+          "respuestaCorrecta": "table"
         },
         {
           "oracion": "Can I have the____, please?",
@@ -591,7 +613,8 @@
             "bill",
             "receipt",
             "check"
-          ]
+          ],
+          "respuestaCorrecta": "bill"
         },
         {
           "oracion": "Do you have a _____ option?",
@@ -599,7 +622,8 @@
             "vegetarian",
             "vegan",
             "gluten-free"
-          ]
+          ],
+          "respuestaCorrecta": "vegetarian"
         },
         {
           "oracion": "Is the ___ included?",
@@ -607,7 +631,8 @@
             "tip",
             "tax",
             "service charge"
-          ]
+          ],
+          "respuestaCorrecta": "tip"
         },
         {
           "oracion": "Is this ____ spicy?",
@@ -615,7 +640,8 @@
             "dish",
             "soup",
             "sauce"
-          ]
+          ],
+          "respuestaCorrecta": "dish"
         },
         {
           "oracion": "How long does it take to prepare the _____?",
@@ -623,7 +649,8 @@
             "food",
             "meal",
             "entree"
-          ]
+          ],
+          "respuestaCorrecta": "food"
         }
       ]
     },
@@ -807,7 +834,8 @@
             "Bellboy",
             "Receptionist",
             "Receipt"
-          ]
+          ],
+          "respuestaCorrecta": "Bellboy"
         },
         {
           "oracion": "Sorry, I lost my ____ and now I can't enter the room.",
@@ -815,7 +843,8 @@
             "Passport",
             "Receipt",
             "Key card"
-          ]
+          ],
+          "respuestaCorrecta": "Key card"
         },
         {
           "oracion": "The receptionist told me that they only turn on the ____ at night.",
@@ -823,7 +852,8 @@
             "Pool",
             "Heating",
             "Check-in"
-          ]
+          ],
+          "respuestaCorrecta": "Heating"
         },
         {
           "oracion": "Hurry! The ____ it's in twenty minutes.",
@@ -831,7 +861,8 @@
             "Check-out",
             "Key card",
             "Confirmation number"
-          ]
+          ],
+          "respuestaCorrecta": "Check-out"
         },
         {
           "oracion": "This ____ is perfect for only me.",
@@ -839,7 +870,8 @@
             "Single room",
             "Double room",
             "Twin room"
-          ]
+          ],
+          "respuestaCorrecta": "Single room"
         },
         {
           "oracion": "The ____ asked us to leave the room so they can clean it.",
@@ -847,15 +879,17 @@
             "Receptionist",
             "Housekeeping",
             "Bellboy"
-          ]
+          ],
+          "respuestaCorrecta": "Housekeeping"
         },
         {
-          "oracion": "I want to shower but I can’t find the ___.",
+          "oracion": "I want to shower but I can't find the ___.",
           "respuestas": [
             "Towels",
             "Blanket",
             "Pillow"
-          ]
+          ],
+          "respuestaCorrecta": "Towels"
         },
         {
           "oracion": "Let's go to the ____ for a drink.",
@@ -863,7 +897,8 @@
             "Lobby",
             "Restaurant",
             "Bar"
-          ]
+          ],
+          "respuestaCorrecta": "Bar"
         },
         {
           "oracion": "We'll leave a ____ for the staff.",
@@ -871,7 +906,8 @@
             "Tip",
             "Bill",
             "Credit card"
-          ]
+          ],
+          "respuestaCorrecta": "Tip"
         },
         {
           "oracion": "This hotel has a big ____, but it's only available in summer.",
@@ -879,7 +915,8 @@
             "Elevator",
             "Deluxe room",
             "Pool"
-          ]
+          ],
+          "respuestaCorrecta": "Pool"
         }
       ],
       "preguntas": [
@@ -889,7 +926,8 @@
             "Twin room",
             "Pillow",
             "Single room"
-          ]
+          ],
+          "respuestaCorrecta": "Pillow"
         },
         {
           "oracion": "Can I get a ____ to access my room?",
@@ -897,7 +935,8 @@
             "Key card",
             "Confirmation number",
             "Reservation"
-          ]
+          ],
+          "respuestaCorrecta": "Key card"
         },
         {
           "oracion": "Can I have a ____, please?",
@@ -905,7 +944,8 @@
             "Receipt",
             "Bathroom",
             "Elevator"
-          ]
+          ],
+          "respuestaCorrecta": "Receipt"
         },
         {
           "oracion": "Can I use the ____ to get to my room?",
@@ -913,7 +953,8 @@
             "Elevator",
             "Pool",
             "Gym"
-          ]
+          ],
+          "respuestaCorrecta": "Elevator"
         },
         {
           "oracion": "Can I pay the bill with a ____?",
@@ -921,7 +962,8 @@
             "Credit card",
             "Cash",
             "Tip"
-          ]
+          ],
+          "respuestaCorrecta": "Credit card"
         },
         {
           "oracion": "Is the ____ open?",
@@ -929,7 +971,8 @@
             "Restaurant",
             "Wi-Fi",
             "Shower"
-          ]
+          ],
+          "respuestaCorrecta": "Restaurant"
         },
         {
           "oracion": "Is there ____ in the hotel?",
@@ -937,7 +980,8 @@
             "Wi-Fi",
             "Reception",
             "Lobby"
-          ]
+          ],
+          "respuestaCorrecta": "Wi-Fi"
         },
         {
           "oracion": "Where is the ____?",
@@ -945,7 +989,8 @@
             "Pool",
             "Gym",
             "Restaurant"
-          ]
+          ],
+          "respuestaCorrecta": "Pool"
         },
         {
           "oracion": "Is there ____ in the bathroom?",
@@ -953,7 +998,8 @@
             "Shower",
             "Blanket",
             "Hairdryer"
-          ]
+          ],
+          "respuestaCorrecta": "Hairdryer"
         },
         {
           "oracion": "Do I have to say my ____ to the receptionist?",
@@ -961,7 +1007,8 @@
             "Confirmation number",
             "Reservation",
             "Check-in"
-          ]
+          ],
+          "respuestaCorrecta": "Confirmation number"
         }
       ]
     }

@@ -54,6 +54,11 @@ main{
     box-shadow:  0rem 0rem 1rem 0.01rem black;
 }
 
+.eleccion.clickeado {
+    background-color: #7070f0;
+    box-shadow:  0rem 0rem 1rem 0.01rem black;
+}
+
 table{
     margin-left: 3rem;
 }
@@ -69,6 +74,7 @@ button{
 button:hover{
     cursor: pointer;
 }
+
 
 
 .section2{
