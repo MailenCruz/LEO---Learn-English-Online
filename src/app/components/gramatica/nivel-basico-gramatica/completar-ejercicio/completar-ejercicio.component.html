@@ -2,46 +2,50 @@
 
     <nav class="barra-NB">
         <div class="imagen-nombre-NB">
-            <a routerLink="/nivelBasico-gramatica"> <img src="../../../../assets/logoChiquito-gramatica.png" alt="Logo"
+            <a routerLink="/basico-home"> <img src="../../../../assets/logoChiquito-gramatica.png" alt="Logo"
                     width="30" height="24"></a>
             <span>Completar oraciones</span>
         </div>
     </nav>
 
-    <section class="completar">
+    <div class="contenedor-pagina">
 
-        <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
+        <section class="completar">
 
-            <p> {{ randomPhrase.oracion }} </p>
+            <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
 
-            <select id="completar" formControlName="completar">
-                <option disabled selected> Choose your answer </option>
-                <option *ngFor="let i of randomPhrase.respuestas" [value]="i">
-                    {{ i }}
-                </option>
-            </select>
+                <p> {{ randomPhrase.oracion }} </p>
 
-            <div class="error"
-                *ngIf="answer.controls['completar'].getError('required') && answer.controls['completar'].touched ">
-                El campo es requerido
-            </div>
+                <select id="completar" formControlName="completar">
+                    <option disabled selected> Choose your answer </option>
+                    <option *ngFor="let i of randomPhrase.respuestas" [value]="i">
+                        {{ i }}
+                    </option>
+                </select>
 
-            <div *ngIf="correcciones">
-                <div *ngFor="let correccion of correcciones" class="contenedor-errores">
-                    <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
+                <div class="error"
+                    *ngIf="answer.controls['completar'].getError('required') && answer.controls['completar'].touched ">
+                    El campo es requerido
                 </div>
-            </div>
 
-            <div *ngIf="respuestaEnviada && check === true">
-                <p class="correcto">CORRECTO!</p>
-            </div>
+                <div *ngIf="correcciones">
+                    <div *ngFor="let correccion of correcciones" class="contenedor-errores">
+                        <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}
+                        </p>
+                    </div>
+                </div>
 
-            <div class="botones">
-                <input class="boton" type="submit" value="Check">
-                <input class="boton" type="button" value="Reset" (click)="reset()">
-                <input class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
-            </div>
+                <div *ngIf="respuestaEnviada && check === true">
+                    <p class="correcto">CORRECTO!</p>
+                </div>
 
-        </form>
-    </section>
+                <div class="botones">
+                    <input class="boton" type="submit" value="Check">
+                    <input class="boton" type="button" value="Reset" (click)="reset()">
+                    <input class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
+                </div>
+
+            </form>
+        </section>
+    </div>
 </section>

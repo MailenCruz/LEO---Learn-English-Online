@@ -2,92 +2,97 @@
 
     <nav class="barra-NB">
         <div class="imagen-nombre-NB">
-            <a routerLink="/nivelBasico-gramatica"> <img src="../../../../assets/logoChiquito-gramatica.png" alt="Logo"
+            <a routerLink="/basico-home"> <img src="../../../../assets/logoChiquito-gramatica.png" alt="Logo"
                     width="30" height="24"></a>
             <span>Reescribir oraciones</span>
         </div>
     </nav>
 
-    <section class="reescribir">
-        <form (ngSubmit)="guardarRespuesta()" [formGroup]="answer" class="formulario">
+    <div class="contenedor-pagina">
+        <section class="reescribir">
+            <form (ngSubmit)="guardarRespuesta()" [formGroup]="answer" class="formulario">
 
-            <p> {{ randomPhrase }} </p>
+                <p> {{ randomPhrase }} </p>
 
-            <!-- AFIRMATIVO -->
-            <div *ngIf="phraseType != 'afirmativo'">
-                <label for="afirmativo"> Afirmativo (+): </label>
-                <input type="text" id="afirmativo" formControlName="afirmativo">
-            </div>
-
-            <div class="error"
-                *ngIf="answer.controls['afirmativo'].getError('required') && answer.controls['afirmativo'].touched">
-                El campo es requerido
-            </div>
-
-            <div *ngIf="obtenerCorreccion('afirmativo')">
-                <div *ngFor="let correccion of obtenerCorreccion('afirmativo')">
-                    <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
+                <!-- AFIRMATIVO -->
+                <div *ngIf="phraseType != 'afirmativo'">
+                    <label for="afirmativo"> Afirmativo (+): </label>
+                    <input type="text" id="afirmativo" formControlName="afirmativo">
                 </div>
-            </div>
 
-            <div *ngIf="check['afirmativo'] === true">
-                <div *ngIf="obtenerCorreccion('afirmativo')?.length === 0">
-                    <p class="correcto">CORRECTO!</p>
+                <div class="error"
+                    *ngIf="answer.controls['afirmativo'].getError('required') && answer.controls['afirmativo'].touched">
+                    El campo es requerido
                 </div>
-            </div>
 
-            <!-- NEGATIVO -->
-            <div *ngIf="phraseType != 'negativo'">
-                <label for="negativo"> Negativo (-): </label>
-                <input type="text" id="negativo" formControlName="negativo">
-            </div>
-
-            <div class="error"
-                *ngIf="answer.controls['negativo'].getError('required') && answer.controls['negativo'].touched ">
-                El campo es requerido
-            </div>
-
-            <div *ngIf="obtenerCorreccion('negativo')">
-                <div *ngFor="let correccion of obtenerCorreccion('negativo')">
-                    <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
+                <div *ngIf="obtenerCorreccion('afirmativo')">
+                    <div *ngFor="let correccion of obtenerCorreccion('afirmativo')">
+                        <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <div *ngIf="check['negativo'] === true">
-                <div *ngIf="obtenerCorreccion('negativo')?.length === 0">
-                    <p class="correcto">CORRECTO!</p>
+                <div *ngIf="check['afirmativo'] === true">
+                    <div *ngIf="obtenerCorreccion('afirmativo')?.length === 0">
+                        <p class="correcto">CORRECTO!</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- INTERROGATIVO -->
-            <div *ngIf="phraseType != 'interrogativo'">
-                <label for="interrogativo"> Interrogativo (?): </label>
-                <input type="text" id="interrogativo" formControlName="interrogativo">
-            </div>
-
-            <div class="error"
-                *ngIf="answer.controls['interrogativo'].getError('required') && answer.controls['interrogativo'].touched ">
-                El campo es requerido
-            </div>
-
-            <div *ngIf="obtenerCorreccion('interrogativo')">
-                <div *ngFor="let correccion of obtenerCorreccion('interrogativo')">
-                    <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}</p>
+                <!-- NEGATIVO -->
+                <div *ngIf="phraseType != 'negativo'">
+                    <label for="negativo"> Negativo (-): </label>
+                    <input type="text" id="negativo" formControlName="negativo">
                 </div>
-            </div>
 
-            <div *ngIf="check['interrogativo'] === true">
-                <div *ngIf="obtenerCorreccion('interrogativo')?.length === 0">
-                    <p class="correcto">CORRECTO!</p>
+                <div class="error"
+                    *ngIf="answer.controls['negativo'].getError('required') && answer.controls['negativo'].touched ">
+                    El campo es requerido
                 </div>
-            </div>
 
-            <div class="botones">
-                <input class="boton" type="submit" value="Check">
-                <input class="boton" type="button" value="Reset" (click)="reset()">
-                <input class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
-            </div>
-        </form>
+                <div *ngIf="obtenerCorreccion('negativo')">
+                    <div *ngFor="let correccion of obtenerCorreccion('negativo')">
+                        <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}
+                        </p>
+                    </div>
+                </div>
 
-    </section>
+                <div *ngIf="check['negativo'] === true">
+                    <div *ngIf="obtenerCorreccion('negativo')?.length === 0">
+                        <p class="correcto">CORRECTO!</p>
+                    </div>
+                </div>
+
+                <!-- INTERROGATIVO -->
+                <div *ngIf="phraseType != 'interrogativo'">
+                    <label for="interrogativo"> Interrogativo (?): </label>
+                    <input type="text" id="interrogativo" formControlName="interrogativo">
+                </div>
+
+                <div class="error"
+                    *ngIf="answer.controls['interrogativo'].getError('required') && answer.controls['interrogativo'].touched ">
+                    El campo es requerido
+                </div>
+
+                <div *ngIf="obtenerCorreccion('interrogativo')">
+                    <div *ngFor="let correccion of obtenerCorreccion('interrogativo')">
+                        <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}
+                        </p>
+                    </div>
+                </div>
+
+                <div *ngIf="check['interrogativo'] === true">
+                    <div *ngIf="obtenerCorreccion('interrogativo')?.length === 0">
+                        <p class="correcto">CORRECTO!</p>
+                    </div>
+                </div>
+
+                <div class="botones">
+                    <input class="boton" type="submit" value="Check">
+                    <input class="boton" type="button" value="Reset" (click)="reset()">
+                    <input class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
+                </div>
+            </form>
+
+        </section>
+    </div>
 </section>

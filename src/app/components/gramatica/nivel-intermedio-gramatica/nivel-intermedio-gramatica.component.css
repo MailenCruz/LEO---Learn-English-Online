@@ -24,6 +24,8 @@ img {
     font-size: x-large;
     justify-content: center;
     align-items: center;
+    margin-left: 5rem;
+    margin-right: 5rem;
     
 }
 
@@ -31,7 +33,7 @@ legend {
     background-color: #B3B3FD;
     margin-bottom: 13rem;
     padding: 1.5rem;
-    font-size: large;
+    font-size: x-large;
     text-align: center;
     box-shadow: 3px 3px 3px 3px #9c9ce7bd;
     font-family: 'Raleway', sans-serif;
