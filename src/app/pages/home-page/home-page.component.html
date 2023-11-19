@@ -1,4 +1,7 @@
-<navbar></navbar>
+<div *ngIf="!isLogged()">
+{{this.router.navigate(['/home-general'])}}
+</div>
+<app-navbar-logueado></app-navbar-logueado>
 <section class="contenedor-principal">
     <bienvenida></bienvenida>
     <categorias></categorias>

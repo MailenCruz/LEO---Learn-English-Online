@@ -58,6 +58,12 @@ import { AlojamientoHomePageComponent } from './pages/viajero-pages/alojamiento-
 import { BasicoHomeComponent } from './pages/gramatica-pages/basico-home/basico-home.component';
 import { IntermedioHomeComponent } from './pages/gramatica-pages/intermedio-home/intermedio-home.component';
 import { AvanzadoHomeComponent } from './pages/gramatica-pages/avanzado-home/avanzado-home.component';
+import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { LogInComponent } from './components/log-in/log-in.component';
+import { LogInPageComponent } from './pages/log-in-page/log-in-page.component';
+import { NavbarLogueadoComponent } from './components/shared/navbar-logueado/navbar-logueado.component';
+import { HomeNoLogComponent } from './pages/home-no-log/home-no-log.component';
 
 
 @NgModule({
@@ -115,7 +121,13 @@ import { AvanzadoHomeComponent } from './pages/gramatica-pages/avanzado-home/ava
     AlojamientoHomePageComponent,
     BasicoHomeComponent,
     IntermedioHomeComponent,
-    AvanzadoHomeComponent
+    AvanzadoHomeComponent,
+    SignUpPageComponent,
+    SignUpComponent,
+    LogInComponent,
+    LogInPageComponent,
+    NavbarLogueadoComponent,
+    HomeNoLogComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,77 @@
+/* .container{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+} */
+
+fieldset{
+    display: flex;
+    margin-left: 30%;
+    margin-right: 30%;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+
+
+.titulo{
+    font-size: x-large;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+.campo{
+    display:inline-flex;
+    padding: 2rem
+}
+
+input{
+    background-color: rgba(179, 179, 253, 0);
+    border:0;
+    border-bottom: 1px solid black;
+    
+}
+
+input:active{
+    background-color: rgba(179, 179, 253, 0);
+    border:0;
+    border-bottom: 1px solid black;
+}
+
+.btn-registrarte{
+    display:block;
+    margin-left: 45%;
+    background-color: #B3B3FD;
+    border-radius: 10%;
+    border: 1px solid #9c9ceb;
+    font-size: large;
+    box-shadow: 1px 4px 4px 1px solid #5f5fad;
+    font-family:'Lexend' ;
+    padding: 1rem;
+}
+
+
+
+.campo legend{
+    font-size: large;
+}
+
+.registro{
+    justify-content: center;
+    align-content: center;
+    margin-left: 40%;
+    margin-top:2rem;
+    font-size: large;
+}
+
+.errorIncorrecto{
+    display: block;
+    color: red;
+    margin-left:35%;
+    margin-top: 3rem;
+    font-size: large;
+}
+
+
+

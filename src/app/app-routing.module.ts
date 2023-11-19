@@ -32,10 +32,16 @@ import { AlojamientoHomePageComponent } from './pages/viajero-pages/alojamiento-
 import { BasicoHomeComponent } from './pages/gramatica-pages/basico-home/basico-home.component';
 import { IntermedioHomeComponent } from './pages/gramatica-pages/intermedio-home/intermedio-home.component';
 import { AvanzadoHomeComponent } from './pages/gramatica-pages/avanzado-home/avanzado-home.component';
+import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
+import { LogInPageComponent } from './pages/log-in-page/log-in-page.component';
+import { HomeNoLogComponent } from './pages/home-no-log/home-no-log.component';
 
 const routes: Routes = [
   {path: 'home', component: HomePageComponent},
+  {path: 'home-general', component: HomeNoLogComponent},
   {path: 'contactanos', component: ContactanosPageComponent},
+  {path: 'registrate', component: SignUpPageComponent},
+  {path: 'ingresa', component: LogInPageComponent},
 
   {path:'juegos-home', component: JuegosHomePageComponent},
   {path:'palabra-imagen-juego', component:PalabraImagenJuegoComponent},
@@ -43,20 +49,17 @@ const routes: Routes = [
   {path:'nombreColor-color-juego', component:NombreColorColorJuegoComponent},
 
   {path:'viajeros-home', component:ViajeroHomePageComponent},
-  {path:'shopping-viajeros', component:ShoppingViajeroComponent},
   {path:'shopping-home', component:ShoppingHomePageComponent},
   {path:'vocabulario-shopping', component:VocabularioShoppingComponent},
   {path:'multipleChoice-vocabulario-shopping', component:MultipleChoiceVocabularioShoppingComponent},
   {path:'multipleChoice-preguntas-shopping', component:MultipleChoicePreguntasShoppingComponent},
 
 
-  {path:'restaurante-viajeros', component:RestauranteViajeroComponent},
   {path:'restaurante-home', component:RestauranteHomePageComponent},
   {path:'vocabulario-restaurante', component:VocabularioRestauranteComponent},
   {path:'multipleChoice-vocabulario-restaurante', component:MultipleChoiceVocabularioRestauranteComponent},
   {path:'multipleChoice-preguntas-restaurante', component:MultipleChoicePreguntasRestauranteComponent},
 
-  {path:'alojamiento-viajeros', component:AlojamientoViajeroComponent},
   {path:'alojamiento-home', component:AlojamientoHomePageComponent},
   {path:'vocabulario-alojamiento', component:VocabularioAlojamientoComponent},
   {path:'multipleChoice-vocabulario-alojamiento', component:MultipleChoiceVocaburarioAlojamientoComponent},
@@ -77,7 +80,7 @@ const routes: Routes = [
   {path:'nivelAvanzado-gramatica', component:NivelAvanzadoGramaticaComponent},
   {path:'avanzado-home', component:AvanzadoHomeComponent},
   
-  {path: '**', redirectTo: 'home'}
+  {path: '**', redirectTo: 'home-general'}
 ];
 
 @NgModule({

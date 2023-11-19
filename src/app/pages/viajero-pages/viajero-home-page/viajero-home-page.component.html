@@ -1,3 +1,7 @@
+<div *ngIf="!isLogged()">
+    {{this.router.navigate(['/home-general'])}}
+</div>
+
 <section class="cuerpo-viajero">
 
     <nav-viajero></nav-viajero>
