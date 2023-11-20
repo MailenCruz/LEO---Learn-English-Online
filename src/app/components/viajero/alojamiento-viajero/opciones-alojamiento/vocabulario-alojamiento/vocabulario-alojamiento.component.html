@@ -1,1 +1,108 @@
-<p>vocabulario-alojamiento works!</p>
+<section class="cuerpo-viajero-A">
+
+    <nav class="barra-A">
+        <div class="imagen-nombre-A">
+            <a routerLink="/alojamiento-home"> <img src="../../../../assets/logoChiquito-viajero.png" alt="Logo"
+                    width="30" height="24"></a>
+            <span> Vocabulario </span>
+        </div>
+    </nav>
+
+    <section class="contenedor-alojamiento">
+
+        <div class="contenedor-tabla" *ngIf="vocabularioAlojamiento">
+            <h2 class="titulo"> Tipos de habitaciones </h2>
+            <table class="tablaAlojamiento">
+                <thead>
+                    <tr>
+                        <th class="idioma"> INGLÉS </th>
+                        <th class="idioma"> ESPAÑOL </th>
+                    </tr>
+                </thead>
+                <tbody id="palabras-alojamiento">
+                    <tr class="palabras" *ngFor="let palabra of vocabularioAlojamiento['Tipos de habitaciones']">
+                        <td>{{ palabra.ingles }}</td>
+                        <td>{{ palabra['español'] }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="contenedor-tabla" *ngIf="vocabularioAlojamiento">
+            <h2 class="titulo"> Servicios </h2>
+            <table class="tablaAlojamiento">
+                <thead>
+                    <tr>
+                        <th class="idioma"> INGLÉS </th>
+                        <th class="idioma"> ESPAÑOL </th>
+                    </tr>
+                </thead>
+                <tbody id="palabras-alojamiento">
+                    <tr class="palabras" *ngFor="let palabra of vocabularioAlojamiento['Servicios']">
+                        <td>{{ palabra.ingles }}</td>
+                        <td>{{ palabra['español'] }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="contenedor-tabla" *ngIf="vocabularioAlojamiento">
+            <h2 class="titulo"> Instalaciones del hotel </h2>
+            <table class="tablaAlojamiento">
+                <thead>
+                    <tr>
+                        <th class="idioma"> INGLÉS </th>
+                        <th class="idioma"> ESPAÑOL </th>
+                    </tr>
+                </thead>
+                <tbody id="palabras-alojamiento">
+                    <tr class="palabras" *ngFor="let palabra of vocabularioAlojamiento['Instalaciones del hotel']">
+                        <td>{{ palabra.ingles }}</td>
+                        <td>{{ palabra['español'] }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="contenedor-tabla" *ngIf="vocabularioAlojamiento">
+            <h2 class="titulo"> Reserva y registro de entrada </h2>
+            <table class="tablaAlojamiento">
+                <thead>
+                    <tr>
+                        <th class="idioma"> INGLÉS </th>
+                        <th class="idioma"> ESPAÑOL </th>
+                    </tr>
+                </thead>
+                <tbody id="palabras-alojamiento">
+                    <tr class="palabras" *ngFor="let palabra of vocabularioAlojamiento['Reserva y registro de entrada']">
+                        <td>{{ palabra.ingles }}</td>
+                        <td>{{ palabra['español'] }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="contenedor-tabla" *ngIf="vocabularioAlojamiento">
+            <h2 class="titulo"> Pago </h2>
+            <table class="tablaAlojamiento">
+                <thead>
+                    <tr>
+                        <th class="idioma"> INGLÉS </th>
+                        <th class="idioma"> ESPAÑOL </th>
+                    </tr>
+                </thead>
+                <tbody id="palabras-alojamiento">
+                    <tr class="palabras" *ngFor="let palabra of vocabularioAlojamiento['Pago']">
+                        <td>{{ palabra.ingles }}</td>
+                        <td>{{ palabra['español'] }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+
+    <button routerLink="/alojamiento-home"> Volver al Alojamiento </button>
+
+</section>

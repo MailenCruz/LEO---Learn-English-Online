@@ -1,1 +1,71 @@
-<p>vocabulario-restaurante works!</p>
+<section class="cuerpo-viajero-R">
+
+    <nav class="barra-R">
+        <div class="imagen-nombre-R">
+            <a routerLink="/restaurante-home"> <img src="../../../../assets/logoChiquito-viajero.png" alt="Logo" width="30"
+                    height="24"></a>
+            <span> Vocabulario </span>
+        </div>
+    </nav>
+
+    <section class="contenedor-restaurante">
+
+        <div class="contenedor-tabla" *ngIf="vocabularioRestaurante">
+            <h2 class="titulo"> Comida y Bebida </h2>
+            <table class="tablaRestaurante">
+                <thead>
+                    <tr>
+                        <th class="idioma"> INGLÉS </th>
+                        <th class="idioma"> ESPAÑOL </th>
+                    </tr>
+                </thead>
+                <tbody id="palabras-restaurante">
+                    <tr class="palabras" *ngFor="let palabra of vocabularioRestaurante['Comida y Bebida']">
+                        <td>{{ palabra.ingles }}</td>
+                        <td>{{ palabra['español'] }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="contenedor-tabla" *ngIf="vocabularioRestaurante">
+            <h2 class="titulo"> Pedir Comida </h2>
+            <table class="tablaRestaurante">
+                <thead>
+                    <tr>
+                        <th class="idioma"> INGLÉS </th>
+                        <th class="idioma"> ESPAÑOL </th>
+                    </tr>
+                </thead>
+                <tbody id="palabras-restaurante">
+                    <tr class="palabras" *ngFor="let palabra of vocabularioRestaurante['Pedir Comida']">
+                        <td>{{ palabra.ingles }}</td>
+                        <td>{{ palabra['español'] }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="contenedor-tabla" *ngIf="vocabularioRestaurante">
+            <h2 class="titulo"> Mesa y Servicio </h2>
+            <table class="tablaRestaurante">
+                <thead>
+                    <tr>
+                        <th class="idioma"> INGLÉS </th>
+                        <th class="idioma"> ESPAÑOL </th>
+                    </tr>
+                </thead>
+                <tbody id="palabras-restaurante">
+                    <tr class="palabras" *ngFor="let palabra of vocabularioRestaurante['Mesa y Servicio']">
+                        <td>{{ palabra.ingles }}</td>
+                        <td>{{ palabra['español'] }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+    <button routerLink="/restaurante-home"> Volver al Restaurante </button>
+
+</section>

@@ -12,7 +12,20 @@
     margin-top: 2rem;
     max-width: 100%;
     height: 29.3rem;
+
+    animation: scale-up-center 2.0s;
 }
+
+@keyframes scale-up-center {
+    0% {
+        transform: scale(.5)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
 
 .contenedor-bienvenida .introduccion {
     max-width: 50%;
@@ -23,14 +36,17 @@
     /* box-shadow: 10px 10px 10px rgb(132, 132, 199); */
 }
 
+
 .contenedor-bienvenida .introduccion h1 {
     font-size: 4rem;
     font-family: 'Lexend', sans-serif;
     color: black;
     margin: 0;
     font-weight: bold;
-    opacity: 100%
+    opacity: 100%;
+
 }
+
 
 .contenedor-bienvenida .introduccion p {
     font-size: 2rem;
@@ -38,4 +54,8 @@
     color: black;
     font-family: 'Lexend', sans-serif;
     opacity: 100%;
+
+    
 }
+
+

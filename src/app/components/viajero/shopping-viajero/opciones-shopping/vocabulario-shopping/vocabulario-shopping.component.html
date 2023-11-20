@@ -8,11 +8,10 @@
         </div>
     </nav>
 
-    <main class="contenedor-shopping">
+    <section class="contenedor-shopping">
 
-        <div class="contenedor-tabla">
+        <div class="contenedor-tabla" *ngIf="vocabularioShopping">
             <h2 class="titulo"> Tiendas y lugares </h2>
-            
             <table class="tablaShopping">
                 <thead>
                     <tr>
@@ -20,26 +19,17 @@
                         <th class="idioma"> ESPAÑOL </th>
                     </tr>
                 </thead>
-
                 <tbody id="palabras-shopping">
-                    <tr class="palabras">
-                        <td>Store</td>
-                        <td>Tienda</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Mall</td>
-                        <td>Centro comercial</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Gift shop</td>
-                        <td>Tienda de regalos</td>
+                    <tr class="palabras" *ngFor="let palabra of vocabularioShopping['Tiendas y Lugares']">
+                        <td>{{ palabra.ingles }}</td>
+                        <td>{{ palabra['español'] }}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <div class="contenedor-tabla">
-            <h2 class="titulo"> Artículos y Ropa </h2>
+        <div class="contenedor-tabla" *ngIf="vocabularioShopping">
+            <h2 class="titulo"> Artículo y Ropa </h2>
             <table class="tablaShopping">
                 <thead>
                     <tr>
@@ -47,61 +37,16 @@
                         <th class="idioma"> ESPAÑOL </th>
                     </tr>
                 </thead>
-
                 <tbody id="palabras-shopping">
-                    <tr class="palabras">
-                        <td>Clothes</td>
-                        <td>Ropa</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Shoes</td>
-                        <td>Zapatos</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Accesories</td>
-                        <td>Accesorios</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Jewelry</td>
-                        <td>Joyeria</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Bag</td>
-                        <td>Bolso</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Wallet</td>
-                        <td>Billetera</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Sunglasses</td>
-                        <td>Gafas de sol</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Hat</td>
-                        <td>Sombrero</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Scarf</td>
-                        <td>Bufanda</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Umbrella</td>
-                        <td>Paraguas</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Perfume</td>
-                        <td>Perfume</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Makeup</td>
-                        <td>Maquillaje</td>
+                    <tr class="palabras" *ngFor="let palabra of vocabularioShopping['Artículo y Ropa']">
+                        <td>{{ palabra.ingles }}</td>
+                        <td>{{ palabra['español'] }}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <div class="contenedor-tabla">
+        <div class="contenedor-tabla" *ngIf="vocabularioShopping">
             <h2 class="titulo"> Transacciones y Pago </h2>
             <table class="tablaShopping">
                 <thead>
@@ -110,61 +55,16 @@
                         <th class="idioma"> ESPAÑOL </th>
                     </tr>
                 </thead>
-
                 <tbody id="palabras-shopping">
-                    <tr class="palabras">
-                        <td>Cashier</td>
-                        <td>Caja</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Cash</td>
-                        <td>Efectivo</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Credit Card</td>
-                        <td>Tarjeta de credito</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Price</td>
-                        <td>Precio</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Receipt</td>
-                        <td>Recibo</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Shopping Cart</td>
-                        <td>Carrito de compras</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Basket</td>
-                        <td>Canasta</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Buy</td>
-                        <td>Comprar</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Pay</td>
-                        <td>Pagar</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Return</td>
-                        <td>Devolver</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Exchange</td>
-                        <td>Cambiar</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Sales tax</td>
-                        <td>Impuesto sobre ventas</td>
+                    <tr class="palabras" *ngFor="let palabra of vocabularioShopping['Transacciones y Pago']">
+                        <td>{{ palabra.ingles }}</td>
+                        <td>{{ palabra['español'] }}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <div class="contenedor-tabla">
+        <div class="contenedor-tabla" *ngIf="vocabularioShopping">
             <h2 class="titulo"> Servicio al Cliente </h2>
             <table class="tablaShopping">
                 <thead>
@@ -173,45 +73,16 @@
                         <th class="idioma"> ESPAÑOL </th>
                     </tr>
                 </thead>
-
                 <tbody id="palabras-shopping">
-                    <tr class="palabras">
-                        <td>Salesperson</td>
-                        <td>Vendedor/a</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Customer</td>
-                        <td>Cliente</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Try On</td>
-                        <td>Probarse</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Fitting Room</td>
-                        <td>Provador</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Dressing Room</td>
-                        <td>Vestidor</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Size</td>
-                        <td>Talla</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Price Tag</td>
-                        <td>Etiqueta de precio</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Clearance</td>
-                        <td>Liquidación</td>
+                    <tr class="palabras" *ngFor="let palabra of vocabularioShopping['Servicio al Cliente']">
+                        <td>{{ palabra.ingles }}</td>
+                        <td>{{ palabra['español'] }}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <div class="contenedor-tabla">
+        <div class="contenedor-tabla" *ngIf="vocabularioShopping">
             <h2 class="titulo"> Horarios y Lugares Relacionados </h2>
             <table class="tablaShopping">
                 <thead>
@@ -220,20 +91,17 @@
                         <th class="idioma"> ESPAÑOL </th>
                     </tr>
                 </thead>
-
                 <tbody id="palabras-shopping">
-                    <tr class="palabras">
-                        <td>Shopping Center</td>
-                        <td>Centro de compras</td>
-                    </tr>
-                    <tr class="palabras">
-                        <td>Shopping Hours</td>
-                        <td>Horario de compras</td>
+                    <tr class="palabras" *ngFor="let palabra of vocabularioShopping['Horarios y Lugares Relacionados']">
+                        <td>{{ palabra.ingles }}</td>
+                        <td>{{ palabra['español'] }}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
-    </main>
+
+    </section>
+
 
     <button routerLink="/shopping-home"> Volver al Shopping </button>
 

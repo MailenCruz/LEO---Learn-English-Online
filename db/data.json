@@ -161,202 +161,200 @@
           }
         ]
       },
-      "ejercicios": {
-        "oraciones": [
-          {
-            "oracion": "I'd like to pay with my ______, please.",
-            "respuestas": [
-              "cash",
-              "wallet",
-              "credit card",
-              "basket"
-            ],
-            "respuestaCorrecta": "credit card"
-          },
-          {
-            "oracion": "I need to _____ this handbag for a different color.",
-            "respuestas": [
-              "buy",
-              "exchange",
-              "return",
-              "size"
-            ],
-            "respuestaCorrecta": "exchange"
-          },
-          {
-            "oracion": "I'm going to the ______ to try on these jeans.",
-            "respuestas": [
-              "store",
-              "cashier",
-              "fitting room",
-              "shopping cart"
-            ],
-            "respuestaCorrecta": "fitting room"
-          },
-          {
-            "oracion": "The _____ in this store is so elegant.",
-            "respuestas": [
-              "bag",
-              "scarf",
-              "jewelry",
-              "umbrella"
-            ],
-            "respuestaCorrecta": "jewelry"
-          },
-          {
-            "oracion": "I'll pay for these items with my _______.",
-            "respuestas": [
-              "receipt",
-              "debit card",
-              "basket",
-              "clearance"
-            ],
-            "respuestaCorrecta": "debit card"
-          },
-          {
-            "oracion": "I love the _____ section. It's full of discounts.",
-            "respuestas": [
-              "size",
-              "wallet",
-              "price tag",
-              "clearance"
-            ],
-            "respuestaCorrecta": "clearance"
-          },
-          {
-            "oracion": "The _____ is very friendly and helpful.",
-            "respuestas": [
-              "customer",
-              "bag",
-              "cashier",
-              "exchange"
-            ],
-            "respuestaCorrecta": "cashier"
-          },
-          {
-            "oracion": "I like to shop at this mall because it has a variety of _____.",
-            "respuestas": [
-              "stores",
-              "credit cards",
-              "shopping centers",
-              "price tags"
-            ],
-            "respuestaCorrecta": "stores"
-          },
-          {
-            "oracion": "These sunglasses are on sale at a great _____.",
-            "respuestas": [
-              "gift shop",
-              "return",
-              "price",
-              "basket"
-            ],
-            "respuestaCorrecta": "price"
-          }
-        ],
-        "preguntas": [
-          {
-            "oracion": "I'm looking for a gift for my mom. Where can I find a good _____?",
-            "respuestas": [
-              "wallet",
-              "cashier",
-              "gift shop",
-              "basket"
-            ],
-            "respuestaCorrecta": "gift shop"
-          },
-          {
-            "oracion": "I need to try on these jeans. Is there a _____ nearby?",
-            "respuestas": [
-              "clearance",
-              "fitting room",
-              "salesperson",
-              "jewelry"
-            ],
-            "respuestaCorrecta": "fitting room"
-          },
-          {
-            "oracion": "I love these shoes! Do you have them in a ____ 8?",
-            "respuestas": [
-              "hat",
-              "debit card",
-              "bag",
-              "size"
-            ],
-            "respuestaCorrecta": "size"
-          },
-          {
-            "oracion": "How much does this scarf cost? Is there a _____ on it?",
-            "respuestas": [
-              "umbrella",
-              "basket",
-              "price tag",
-              "fitting room"
-            ],
-            "respuestaCorrecta": "price tag"
-          },
-          {
-            "oracion": "Can I get a ______ to carry all these items?",
-            "respuestas": [
-              "size",
-              "dress",
-              "return",
-              "shopping cart"
-            ],
-            "respuestaCorrecta": "shopping cart"
-          },
-          {
-            "oracion": "Where is the nearest ______? I want to try on this dress.",
-            "respuestas": [
-              "sales",
-              "customer",
-              "fitting room",
-              "gift shop"
-            ],
-            "respuestaCorrecta": "fitting room"
-          },
-          {
-            "oracion": "Do you have any sales or discounts on these_______?",
-            "respuestas": [
-              "dress",
-              "shopping hours",
-              "accessories",
-              "sunglasses"
-            ],
-            "respuestaCorrecta": "sunglasses"
-          },
-          {
-            "oracion": "What are the store's _____ today? When do they close?",
-            "respuestas": [
-              "wallet",
-              "scarf",
-              "shopping hours",
-              "credit card"
-            ],
-            "respuestaCorrecta": "shopping hours"
-          },
-          {
-            "oracion": "Could you please call a ______ to help me find the right size for these shoes?",
-            "respuestas": [
-              "cash",
-              "return",
-              "exchange",
-              "salesperson"
-            ],
-            "respuestaCorrecta": "salesperson"
-          },
-          {
-            "oracion": "I bought this sweater last week, but it doesn't fit well. Can I ____ it for a different size?",
-            "respuestas": [
-              "jewelry",
-              "perfume",
-              "bag",
-              "return"
-            ],
-            "respuestaCorrecta": "return"
-          }
-        ]
-      }
+      "ejercicios":   [
+        {
+          "oracion": "I'd like to pay with my ______, please.",
+          "respuestas": [
+            "cash",
+            "wallet",
+            "credit card",
+            "basket"
+          ],
+          "respuestaCorrecta": "credit card"
+        },
+        {
+          "oracion": "I need to _____ this handbag for a different color.",
+          "respuestas": [
+            "buy",
+            "exchange",
+            "return",
+            "size"
+          ],
+          "respuestaCorrecta": "exchange"
+        },
+        {
+          "oracion": "I'm going to the ______ to try on these jeans.",
+          "respuestas": [
+            "store",
+            "cashier",
+            "fitting room",
+            "shopping cart"
+          ],
+          "respuestaCorrecta": "fitting room"
+        },
+        {
+          "oracion": "The _____ in this store is so elegant.",
+          "respuestas": [
+            "bag",
+            "scarf",
+            "jewelry",
+            "umbrella"
+          ],
+          "respuestaCorrecta": "jewelry"
+        },
+        {
+          "oracion": "I'll pay for these items with my _______.",
+          "respuestas": [
+            "receipt",
+            "debit card",
+            "basket",
+            "clearance"
+          ],
+          "respuestaCorrecta": "debit card"
+        },
+        {
+          "oracion": "I love the _____ section. It's full of discounts.",
+          "respuestas": [
+            "size",
+            "wallet",
+            "price tag",
+            "clearance"
+          ],
+          "respuestaCorrecta": "clearance"
+        },
+        {
+          "oracion": "The _____ is very friendly and helpful.",
+          "respuestas": [
+            "customer",
+            "bag",
+            "cashier",
+            "exchange"
+          ],
+          "respuestaCorrecta": "cashier"
+        },
+        {
+          "oracion": "I like to shop at this mall because it has a variety of _____.",
+          "respuestas": [
+            "stores",
+            "credit cards",
+            "shopping centers",
+            "price tags"
+          ],
+          "respuestaCorrecta": "stores"
+        },
+        {
+          "oracion": "These sunglasses are on sale at a great _____.",
+          "respuestas": [
+            "gift shop",
+            "return",
+            "price",
+            "basket"
+          ],
+          "respuestaCorrecta": "price"
+        }
+      ],
+      "preguntas": [
+        {
+          "oracion": "I'm looking for a gift for my mom. Where can I find a good _____?",
+          "respuestas": [
+            "wallet",
+            "cashier",
+            "gift shop",
+            "basket"
+          ],
+          "respuestaCorrecta": "gift shop"
+        },
+        {
+          "oracion": "I need to try on these jeans. Is there a _____ nearby?",
+          "respuestas": [
+            "clearance",
+            "fitting room",
+            "salesperson",
+            "jewelry"
+          ],
+          "respuestaCorrecta": "fitting room"
+        },
+        {
+          "oracion": "I love these shoes! Do you have them in a ____ 8?",
+          "respuestas": [
+            "hat",
+            "debit card",
+            "bag",
+            "size"
+          ],
+          "respuestaCorrecta": "size"
+        },
+        {
+          "oracion": "How much does this scarf cost? Is there a _____ on it?",
+          "respuestas": [
+            "umbrella",
+            "basket",
+            "price tag",
+            "fitting room"
+          ],
+          "respuestaCorrecta": "price tag"
+        },
+        {
+          "oracion": "Can I get a ______ to carry all these items?",
+          "respuestas": [
+            "size",
+            "dress",
+            "return",
+            "shopping cart"
+          ],
+          "respuestaCorrecta": "shopping cart"
+        },
+        {
+          "oracion": "Where is the nearest ______? I want to try on this dress.",
+          "respuestas": [
+            "sales",
+            "customer",
+            "fitting room",
+            "gift shop"
+          ],
+          "respuestaCorrecta": "fitting room"
+        },
+        {
+          "oracion": "Do you have any sales or discounts on these_______?",
+          "respuestas": [
+            "dress",
+            "shopping hours",
+            "accessories",
+            "sunglasses"
+          ],
+          "respuestaCorrecta": "sunglasses"
+        },
+        {
+          "oracion": "What are the store's _____ today? When do they close?",
+          "respuestas": [
+            "wallet",
+            "scarf",
+            "shopping hours",
+            "credit card"
+          ],
+          "respuestaCorrecta": "shopping hours"
+        },
+        {
+          "oracion": "Could you please call a ______ to help me find the right size for these shoes?",
+          "respuestas": [
+            "cash",
+            "return",
+            "exchange",
+            "salesperson"
+          ],
+          "respuestaCorrecta": "salesperson"
+        },
+        {
+          "oracion": "I bought this sweater last week, but it doesn't fit well. Can I ____ it for a different size?",
+          "respuestas": [
+            "jewelry",
+            "perfume",
+            "bag",
+            "return"
+          ],
+          "respuestaCorrecta": "return"
+        }
+      ]
     },
     "restaurante": {
       "vocabulario": {
@@ -488,33 +486,33 @@
         ]
       },
       "ejercicios": [
-        {
-          "oracion": "The ____ is delicious.",
-          "respuestas": [
-            "food",
-            "dish",
-            "dessert"
-          ],
-          "respuestaCorrecta": "food"
-        },
-        {
-          "oracion": "I'd like the ______, please.",
-          "respuestas": [
-            "chicken",
-            "salad",
-            "pasta"
-          ],
-          "respuestaCorrecta": "chicken"
-        },
-        {
-          "oracion": "I'd like the ____.",
-          "respuestas": [
-            "check",
-            "bill",
-            "receipt"
-          ],
-          "respuestaCorrecta": "check"
-        },
+          {
+            "oracion": "The ____ is delicious.",
+            "respuestas": [
+              "food",
+              "dish",
+              "dessert"
+            ],
+            "respuestaCorrecta": "food"
+          },
+          {
+            "oracion": "I'd like the ______, please.",
+            "respuestas": [
+              "chicken",
+              "salad",
+              "pasta"
+            ],
+            "respuestaCorrecta": "chicken"
+          },
+          {
+            "oracion": "I'd like the ____.",
+            "respuestas": [
+              "check",
+              "bill",
+              "receipt"
+            ],
+            "respuestaCorrecta": "check"
+          },
         {
           "oracion": "Thanks a lot for your ____.",
           "respuestas": [
@@ -1014,6 +1012,7 @@
     }
   },
 
+  
   "gramatica": {
     "basico": {
       "reescribir": [

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Ejercicio } from 'src/app/interfaces/interfaces-viajero/ejercicio';
+import { ViajeroService } from 'src/app/services/viajero.service';
 
 @Component({
   selector: 'app-multiple-choice-vocabulario-shopping',
@@ -6,31 +8,37 @@ import { Component } from '@angular/core';
   styleUrls: ['./multiple-choice-vocabulario-shopping.component.css']
 })
 export class MultipleChoiceVocabularioShoppingComponent {
-
-  oraciones = [
-    
-    {
-      oracion: "I'd like to pay with my ______, please.",
-      respuestas: ["cash", "wallet", "credit card", "basket"],
-      respuestaCorrecta: "credit card"
-    },
-    {
-      oracion: "I need to _____ this handbag for a different color.",
-      respuestas: [ "buy", "exchange", "return", "size"],
-      respuestaCorrecta: "exchange"
-    }
-    
-  ];
-
+ 
+  ejerciciosShopping: Ejercicio[] = [];
   oracionActual: number = 0;
   respuestaSeleccionada: string = '';
   respuestaCorrecta: string = '';
   intentos: number = 0;
   mostrarCuestionario: boolean = true;
 
+  mostrarBoton: boolean = false;
+
+  constructor(private viajeroService: ViajeroService) { }
+
+  async ngOnInit() {
+    try {
+      this.ejerciciosShopping = await this.viajeroService.getDataShopping_ejercicios();
+      console.log("EJERCICIOS SHOPPING: ");
+      console.log(this.ejerciciosShopping);
+    }
+    catch (error) {
+      console.log(error);
+    }
+  }
+
   verificarRespuesta() {
     this.intentos++;
-    this.respuestaCorrecta = this.respuestaSeleccionada === this.oraciones[this.oracionActual].respuestaCorrecta ? 'correcta' : 'incorrecta';
+    if (this.respuestaSeleccionada === this.ejerciciosShopping[this.oracionActual].respuestaCorrecta) {
+      this.respuestaCorrecta = 'correcta';
+      this.mostrarBoton = true;
+    } else {
+      this.respuestaCorrecta = 'incorrecta';
+    };
   }
 
   resetearEstado() {
@@ -40,14 +48,16 @@ export class MultipleChoiceVocabularioShoppingComponent {
 
   siguientePregunta() {
     this.oracionActual++;
-    if (this.oracionActual >= this.oraciones.length) {
+    if (this.oracionActual >= this.ejerciciosShopping.length) {
       // Si no hay más preguntas, ocultar el cuestionario
       this.mostrarCuestionario = false;
       console.log("¡Fin del cuestionario!");
     } else {
       // Si hay más preguntas, reiniciar el estado
       this.resetearEstado();
+      this.mostrarBoton=false;
     }
   }
+
 
 }

@@ -8,18 +8,17 @@
         </div>
     </nav>
 
-
     <div class="cuerpo-MCV" *ngIf="mostrarCuestionario">
-        <p class="titulo">{{ oraciones[oracionActual].oracion }}</p>
+        <p class="titulo">{{ ejerciciosRestaurante[oracionActual].oracion }}</p>
 
         <ul class="ejercicio">
-            <li *ngFor="let respuesta of oraciones[oracionActual].respuestas; let i = index">
+            <li *ngFor="let respuesta of ejerciciosRestaurante[oracionActual].respuestas; let i = index">
                 <label>
                     <input type="radio" [(ngModel)]="respuestaSeleccionada" [value]="respuesta"
                         [disabled]="respuestaCorrecta !== ''">
                     {{ respuesta }}
                     <span
-                        *ngIf="respuestaCorrecta === 'correcta' && respuesta === oraciones[oracionActual].respuestaCorrecta"
+                        *ngIf="respuestaCorrecta === 'correcta' && respuesta === ejerciciosRestaurante[oracionActual].respuestaCorrecta"
                         style="color: green;">✔</span>
                     <span *ngIf="respuestaCorrecta === 'incorrecta' && respuesta === respuestaSeleccionada"
                         style="color: red;">✘</span>
@@ -30,13 +29,14 @@
         <button (click)="verificarRespuesta()">Verificar respuesta</button>
         <button *ngIf="intentos > 0 && respuestaCorrecta === 'incorrecta'" (click)="resetearEstado()">Intentar de
             nuevo</button>
-        <button (click)="siguientePregunta()">Siguiente pregunta</button>
+        <button *ngIf="mostrarBoton" (click)="siguientePregunta() ">Siguiente pregunta</button>
     </div>
 
     <div class="cuerpo-mensaje" *ngIf="!mostrarCuestionario">
         <p class="emoticones">🍔 😊 👏</p>
         <p class="mensaje">¡Fin del cuestionario!</p>
-        <button routerLink="/restaurante-home">  Volver a restaurante  </button>
+        <button routerLink="/restaurante-home">Volver a Restaurante</button>
     </div>
+   
 
 </section>

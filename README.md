@@ -3,6 +3,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
 
+## Description
+
+LEO es una plataforma para aprender inglés de forma didáctica. Cuenta con secciones de inglés básico para viajeros, para niños, y para usuarios que posean previamente cierto nivel de inglés.
+
+## Pasos para la Implementación
+
+1. Ejecuta `npm run backend` para obetener datos sobre los ejercicios.
+2. Ejecuta `npm run users` para obtener datos sobre los usuarios.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

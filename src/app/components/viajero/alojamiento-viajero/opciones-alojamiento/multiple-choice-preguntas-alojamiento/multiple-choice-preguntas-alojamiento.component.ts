@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Pregunta } from 'src/app/interfaces/interfaces-viajero/pregunta';
+import { ViajeroService } from 'src/app/services/viajero.service';
 
 @Component({
   selector: 'app-multiple-choice-preguntas-alojamiento',
@@ -6,28 +8,38 @@ import { Component } from '@angular/core';
   styleUrls: ['./multiple-choice-preguntas-alojamiento.component.css']
 })
 export class MultipleChoicePreguntasAlojamientoComponent {
-  preguntas = [
-    {
-      oracion: "Where is the extra ____?",
-      respuestas: ["Twin room","Pillow","Single room"],
-      respuestaCorrecta: "Pillow"
-    },
-    {
-      oracion: "Can I get a ____ to access my room?",
-      respuestas: ["Key card","Confirmation number","Reservation"],
-      respuestaCorrecta: "Key card"
-    }
-  ];
+  
+  preguntasAlojamiento: Pregunta[]=[];
 
-  preguntaActual: number = 0;
+  oracionActual: number = 0;
   respuestaSeleccionada: string = '';
   respuestaCorrecta: string = '';
   intentos: number = 0;
   mostrarCuestionario: boolean = true;
 
+  mostrarBoton: boolean = false;
+  
+  constructor(private viajeroService:ViajeroService ){}
+
+  async ngOnInit(){
+    try{
+      this.preguntasAlojamiento = await this.viajeroService.getDataAlojamiento_preguntas();
+      console.log("PREGUNTAS ALOJAMIENTO: ");
+      console.log(this.preguntasAlojamiento);
+    }
+    catch(error){
+      console.log(error);
+    }
+  }
+
   verificarRespuesta() {
     this.intentos++;
-    this.respuestaCorrecta = this.respuestaSeleccionada === this.preguntas[this.preguntaActual].respuestaCorrecta ? 'correcta' : 'incorrecta';
+    if (this.respuestaSeleccionada === this.preguntasAlojamiento[this.oracionActual].respuestaCorrecta) {
+      this.respuestaCorrecta = 'correcta';
+      this.mostrarBoton = true;
+    } else {
+      this.respuestaCorrecta = 'incorrecta';
+    };
   }
 
   resetearEstado() {
@@ -36,15 +48,15 @@ export class MultipleChoicePreguntasAlojamientoComponent {
   }
 
   siguientePregunta() {
-    this.preguntaActual++;
-    if (this.preguntaActual >= this.preguntas.length) {
+    this.oracionActual++;
+    if (this.oracionActual >= this.preguntasAlojamiento.length) {
       // Si no hay más preguntas, ocultar el cuestionario
       this.mostrarCuestionario = false;
       console.log("¡Fin del cuestionario!");
     } else {
       // Si hay más preguntas, reiniciar el estado
       this.resetearEstado();
+      this.mostrarBoton=false;
     }
   }
-
 }

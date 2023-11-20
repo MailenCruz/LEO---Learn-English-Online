@@ -8,18 +8,17 @@
         </div>
     </nav>
 
-
     <div class="cuerpo-MCP" *ngIf="mostrarCuestionario">
-        <p class="titulo">{{ preguntas[preguntaActual].oracion }}</p>
+        <p class="titulo">{{ preguntasAlojamiento[oracionActual].oracion }}</p>
 
         <ul class="ejercicio">
-            <li *ngFor="let respuesta of preguntas[preguntaActual].respuestas; let i = index">
+            <li *ngFor="let respuesta of preguntasAlojamiento[oracionActual].respuestas; let i = index">
                 <label>
                     <input type="radio" [(ngModel)]="respuestaSeleccionada" [value]="respuesta"
                         [disabled]="respuestaCorrecta !== ''">
                     {{ respuesta }}
                     <span
-                        *ngIf="respuestaCorrecta === 'correcta' && respuesta === preguntas[preguntaActual].respuestaCorrecta"
+                        *ngIf="respuestaCorrecta === 'correcta' && respuesta === preguntasAlojamiento[oracionActual].respuestaCorrecta"
                         style="color: green;">✔</span>
                     <span *ngIf="respuestaCorrecta === 'incorrecta' && respuesta === respuestaSeleccionada"
                         style="color: red;">✘</span>
@@ -30,13 +29,16 @@
         <button (click)="verificarRespuesta()">Verificar respuesta</button>
         <button *ngIf="intentos > 0 && respuestaCorrecta === 'incorrecta'" (click)="resetearEstado()">Intentar de
             nuevo</button>
-        <button (click)="siguientePregunta()">Siguiente pregunta</button>
+        <button *ngIf="mostrarBoton" (click)="siguientePregunta() ">Siguiente pregunta</button>
     </div>
 
     <div class="cuerpo-mensaje" *ngIf="!mostrarCuestionario">
-        <p class="emoticones">🏨 😊 👏</p>
+        <p class="emoticones">🛒 😊 👏</p>
         <p class="mensaje">¡Fin del cuestionario!</p>
-        <button routerLink="/alojamiento-home">  Volver a alojamiento  </button>
+        <button routerLink="/shopping-home">Volver a shopping</button>
     </div>
+
+
+    
 
 </section>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Vocabulario } from 'src/app/interfaces/interfaces-viajero/vocabulario';
+import { ViajeroService } from 'src/app/services/viajero.service';
 
 @Component({
   selector: 'app-vocabulario-shopping',
@@ -7,4 +9,18 @@ import { Component } from '@angular/core';
 })
 export class VocabularioShoppingComponent {
 
+  vocabularioShopping: Vocabulario|undefined;
+  
+  constructor(private viajeroService:ViajeroService ){}
+
+  async ngOnInit(){
+    try{
+      this.vocabularioShopping = await this.viajeroService.getDataShopping_vocabulario();
+      console.log("VOCABULARIO SHOPPING: ");
+      console.log(this.vocabularioShopping);
+    }
+    catch(error){
+      console.log(error);
+    }
+  }
 }

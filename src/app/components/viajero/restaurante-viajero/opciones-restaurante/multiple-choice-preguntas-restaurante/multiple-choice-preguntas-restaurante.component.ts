@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Pregunta } from 'src/app/interfaces/interfaces-viajero/pregunta';
+import { ViajeroService } from 'src/app/services/viajero.service';
 
 @Component({
   selector: 'app-multiple-choice-preguntas-restaurante',
@@ -7,28 +9,36 @@ import { Component } from '@angular/core';
 })
 export class MultipleChoicePreguntasRestauranteComponent {
 
-  preguntas = [
-    {
-      oracion: "Where can I make a ____ for Friday?",
-      respuestas: ["bill","reservation","table"],
-      respuestaCorrecta: "reservation"
-    },
-    {
-      oracion: "Can we see the ____, please?",
-      respuestas: ["menu","list","specials"],
-      respuestaCorrecta: "menu"
-    }
-  ];
-
-  preguntaActual: number = 0;
+  preguntasRestaurante: Pregunta[]=[];
+  oracionActual: number = 0;
   respuestaSeleccionada: string = '';
   respuestaCorrecta: string = '';
   intentos: number = 0;
   mostrarCuestionario: boolean = true;
 
+  mostrarBoton: boolean = false;
+  
+  constructor(private viajeroService:ViajeroService ){}
+
+  async ngOnInit(){
+    try{
+      this.preguntasRestaurante = await this.viajeroService.getDataRestaurante_preguntas();
+      console.log("PREGUNTAS RESTAURANTE: ");
+      console.log(this.preguntasRestaurante);
+    }
+    catch(error){
+      console.log(error);
+    }
+  }
+
   verificarRespuesta() {
     this.intentos++;
-    this.respuestaCorrecta = this.respuestaSeleccionada === this.preguntas[this.preguntaActual].respuestaCorrecta ? 'correcta' : 'incorrecta';
+    if (this.respuestaSeleccionada === this.preguntasRestaurante[this.oracionActual].respuestaCorrecta) {
+      this.respuestaCorrecta = 'correcta';
+      this.mostrarBoton = true;
+    } else {
+      this.respuestaCorrecta = 'incorrecta';
+    };
   }
 
   resetearEstado() {
@@ -37,15 +47,17 @@ export class MultipleChoicePreguntasRestauranteComponent {
   }
 
   siguientePregunta() {
-    this.preguntaActual++;
-    if (this.preguntaActual >= this.preguntas.length) {
+    this.oracionActual++;
+    if (this.oracionActual >= this.preguntasRestaurante.length) {
       // Si no hay más preguntas, ocultar el cuestionario
       this.mostrarCuestionario = false;
       console.log("¡Fin del cuestionario!");
     } else {
       // Si hay más preguntas, reiniciar el estado
       this.resetearEstado();
+      this.mostrarBoton=false;
     }
   }
+  
 
 }

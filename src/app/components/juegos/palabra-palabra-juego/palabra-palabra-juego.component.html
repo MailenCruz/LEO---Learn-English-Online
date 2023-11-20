@@ -50,8 +50,9 @@
             
             <div class="overlay" *ngIf="ganador">
                 <div class="mensajeGanador">
-                    <h1>Felicitaciones, ¡has ganado!</h1>
-                    <button (click)="recargarPagina()"> Jugar de nuevo </button>
+                    <h1>Felicitaciones, ¡ganaste!</h1>
+                    <button class="botonMensaje" (click)="recargarPagina()"> Jugar de nuevo </button>
+                    <button class="botonMensaje" routerLink="/juegos-home"> Volver a Juegos </button>
                 </div>
             </div>
               

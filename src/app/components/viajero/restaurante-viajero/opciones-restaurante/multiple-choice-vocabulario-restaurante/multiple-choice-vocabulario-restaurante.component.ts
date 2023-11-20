@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Ejercicio } from 'src/app/interfaces/interfaces-viajero/ejercicio';
+import { ViajeroService } from 'src/app/services/viajero.service';
 
 @Component({
   selector: 'app-multiple-choice-vocabulario-restaurante',
@@ -7,28 +9,36 @@ import { Component } from '@angular/core';
 })
 export class MultipleChoiceVocabularioRestauranteComponent {
 
-  oraciones = [
-    {
-      oracion: "The ____ is delicious.",
-      respuestas: ["food","dish","dessert"],
-      "respuestaCorrecta": "food"
-    },
-    {
-      oracion: "I'd like the ______, please.",
-      respuestas: ["chicken","salad","pasta"],
-      respuestaCorrecta: "chicken"
-    }
-  ];
-
+  ejerciciosRestaurante: Ejercicio[]=[];
   oracionActual: number = 0;
   respuestaSeleccionada: string = '';
   respuestaCorrecta: string = '';
   intentos: number = 0;
   mostrarCuestionario: boolean = true;
 
+  mostrarBoton: boolean = false;
+  
+  constructor(private viajeroService:ViajeroService){}
+
+  async ngOnInit(){
+    try{
+      this.ejerciciosRestaurante = await this.viajeroService.getDataRestaurante_ejercicios();
+      console.log("EJERCICIOS RESTAURANTE: ");
+      console.log(this.ejerciciosRestaurante);
+    }
+    catch(error){
+      console.log(error);
+    }
+  }
+
   verificarRespuesta() {
     this.intentos++;
-    this.respuestaCorrecta = this.respuestaSeleccionada === this.oraciones[this.oracionActual].respuestaCorrecta ? 'correcta' : 'incorrecta';
+    if (this.respuestaSeleccionada === this.ejerciciosRestaurante[this.oracionActual].respuestaCorrecta) {
+      this.respuestaCorrecta = 'correcta';
+      this.mostrarBoton = true;
+    } else {
+      this.respuestaCorrecta = 'incorrecta';
+    };
   }
 
   resetearEstado() {
@@ -38,13 +48,15 @@ export class MultipleChoiceVocabularioRestauranteComponent {
 
   siguientePregunta() {
     this.oracionActual++;
-    if (this.oracionActual >= this.oraciones.length) {
+    if (this.oracionActual >= this.ejerciciosRestaurante.length) {
       // Si no hay más preguntas, ocultar el cuestionario
       this.mostrarCuestionario = false;
       console.log("¡Fin del cuestionario!");
     } else {
       // Si hay más preguntas, reiniciar el estado
       this.resetearEstado();
+      this.mostrarBoton=false;
     }
   }
+  
 }

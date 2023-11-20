@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Ejercicio } from 'src/app/interfaces/interfaces-viajero/ejercicio';
+import { ViajeroService } from 'src/app/services/viajero.service';
 
 @Component({
   selector: 'app-multiple-choice-vocaburario-alojamiento',
@@ -6,28 +8,36 @@ import { Component } from '@angular/core';
   styleUrls: ['./multiple-choice-vocaburario-alojamiento.component.css']
 })
 export class MultipleChoiceVocaburarioAlojamientoComponent {
-  oraciones = [
-    {
-      oracion: "The ____ left our luggage in the lobby.",
-      respuestas: ["Bellboy","Receptionist","Receipt"],
-      respuestaCorrecta: "Bellboy"
-    },
-    {
-      oracion: "Sorry, I lost my ____ and now I can't enter the room.",
-      respuestas: ["Passport","Receipt","Key card"],
-      respuestaCorrecta: "Key card"
-    },
-  ];
-
+  ejerciciosAlojamiento: Ejercicio[]=[];
   oracionActual: number = 0;
   respuestaSeleccionada: string = '';
   respuestaCorrecta: string = '';
   intentos: number = 0;
   mostrarCuestionario: boolean = true;
 
+  mostrarBoton: boolean = false;
+  
+  constructor(private viajeroService:ViajeroService ){}
+
+  async ngOnInit(){
+    try{
+      this.ejerciciosAlojamiento = await this.viajeroService.getDataAlojamiento_ejercicios();
+      console.log("EJERCICIOS ALOJAMIENTO: ");
+      console.log(this.ejerciciosAlojamiento);
+    }
+    catch(error){
+      console.log(error);
+    }
+  }
+
   verificarRespuesta() {
     this.intentos++;
-    this.respuestaCorrecta = this.respuestaSeleccionada === this.oraciones[this.oracionActual].respuestaCorrecta ? 'correcta' : 'incorrecta';
+    if (this.respuestaSeleccionada === this.ejerciciosAlojamiento[this.oracionActual].respuestaCorrecta) {
+      this.respuestaCorrecta = 'correcta';
+      this.mostrarBoton = true;
+    } else {
+      this.respuestaCorrecta = 'incorrecta';
+    };
   }
 
   resetearEstado() {
@@ -37,13 +47,15 @@ export class MultipleChoiceVocaburarioAlojamientoComponent {
 
   siguientePregunta() {
     this.oracionActual++;
-    if (this.oracionActual >= this.oraciones.length) {
+    if (this.oracionActual >= this.ejerciciosAlojamiento.length) {
       // Si no hay más preguntas, ocultar el cuestionario
       this.mostrarCuestionario = false;
       console.log("¡Fin del cuestionario!");
     } else {
       // Si hay más preguntas, reiniciar el estado
       this.resetearEstado();
+      this.mostrarBoton=false;
     }
   }
+
 }

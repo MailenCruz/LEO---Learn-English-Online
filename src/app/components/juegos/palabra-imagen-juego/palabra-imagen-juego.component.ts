@@ -18,32 +18,32 @@ export class PalabraImagenJuegoComponent {
   aciertos: number = 0;
   ganador: boolean = false;
 
-  
+
 
   imagenes: palabrasJuego[] = [
-    {id:0,nombre:'../../../../assets/img-juego/img-palabra/imagenes/0.png'},
-    {id:0,nombre:'../../../../assets/img-juego/img-palabra/palabras/0.png'},
+    { id: 0, nombre: '../../../../assets/img-juego/img-palabra/imagenes/0.png' },
+    { id: 0, nombre: '../../../../assets/img-juego/img-palabra/palabras/0.png' },
 
-    {id:1,nombre:'../../../../assets/img-juego/img-palabra/imagenes/1.png'},
-    {id:1,nombre:'../../../../assets/img-juego/img-palabra/palabras/1.png'},
+    { id: 1, nombre: '../../../../assets/img-juego/img-palabra/imagenes/1.png' },
+    { id: 1, nombre: '../../../../assets/img-juego/img-palabra/palabras/1.png' },
 
-    {id:2,nombre:'../../../../assets/img-juego/img-palabra/imagenes/2.png'},
-    {id:2,nombre:'../../../../assets/img-juego/img-palabra/palabras/2.png'},
+    { id: 2, nombre: '../../../../assets/img-juego/img-palabra/imagenes/2.png' },
+    { id: 2, nombre: '../../../../assets/img-juego/img-palabra/palabras/2.png' },
 
-    {id:3,nombre:'../../../../assets/img-juego/img-palabra/imagenes/3.png'},
-    {id:3,nombre:'../../../../assets/img-juego/img-palabra/palabras/3.png'},
+    { id: 3, nombre: '../../../../assets/img-juego/img-palabra/imagenes/3.png' },
+    { id: 3, nombre: '../../../../assets/img-juego/img-palabra/palabras/3.png' },
 
-    {id:4,nombre:'../../../../assets/img-juego/img-palabra/imagenes/4.png'},
-    {id:4,nombre:'../../../../assets/img-juego/img-palabra/palabras/4.png'},
+    { id: 4, nombre: '../../../../assets/img-juego/img-palabra/imagenes/4.png' },
+    { id: 4, nombre: '../../../../assets/img-juego/img-palabra/palabras/4.png' },
 
-    {id:5,nombre:'../../../../assets/img-juego/img-palabra/imagenes/5.png'},
-    {id:5,nombre:'../../../../assets/img-juego/img-palabra/palabras/5.png'},
+    { id: 5, nombre: '../../../../assets/img-juego/img-palabra/imagenes/5.png' },
+    { id: 5, nombre: '../../../../assets/img-juego/img-palabra/palabras/5.png' },
 
-    {id:6,nombre:'../../../../assets/img-juego/img-palabra/imagenes/6.png'},
-    {id:6,nombre:'../../../../assets/img-juego/img-palabra/palabras/6.png'},
+    { id: 6, nombre: '../../../../assets/img-juego/img-palabra/imagenes/6.png' },
+    { id: 6, nombre: '../../../../assets/img-juego/img-palabra/palabras/6.png' },
 
-    {id:7,nombre:'../../../../assets/img-juego/img-palabra/imagenes/7.png'},
-    {id:7,nombre:'../../../../assets/img-juego/img-palabra/palabras/7.png'},
+    { id: 7, nombre: '../../../../assets/img-juego/img-palabra/imagenes/7.png' },
+    { id: 7, nombre: '../../../../assets/img-juego/img-palabra/palabras/7.png' },
   ];
 
   estadoClickeado: boolean[] = Array(this.imagenes.length).fill(false);
@@ -64,7 +64,7 @@ export class PalabraImagenJuegoComponent {
       if (element) {
         this.tarjeta1 = element;
         this.primerResultado = this.imagenes[id].id;
-        this.renderer.setProperty(element, 'src',this.imagenes[id].nombre);
+        this.renderer.setProperty(element, 'src', this.imagenes[id].nombre);
         this.renderer.setProperty(element, 'disabled', true);
 
       }
@@ -73,7 +73,7 @@ export class PalabraImagenJuegoComponent {
       if (element) {
         this.tarjeta2 = element;
         this.segundoResultado = this.imagenes[id].id;
-        this.renderer.setProperty(element, 'src',this.imagenes[id].nombre);
+        this.renderer.setProperty(element, 'src', this.imagenes[id].nombre);
         this.renderer.setProperty(element, 'disabled', true);
 
       }
@@ -107,8 +107,10 @@ export class PalabraImagenJuegoComponent {
             this.renderer.removeStyle(this.tarjeta1, 'background-color');
             this.renderer.setProperty(this.tarjeta2, 'src', '');
             this.renderer.removeStyle(this.tarjeta2, 'background-color');
+
             this.renderer.setProperty(this.tarjeta1, 'disabled', false);
             this.renderer.setProperty(this.tarjeta2, 'disabled', false);
+
             this.tarjetasDestapadas = 0;
           }
         }, 1000);
@@ -132,11 +134,16 @@ export class PalabraImagenJuegoComponent {
     location.reload();
   }
 
-  
 
-  cambiarEstado(index:number) {
-    this.estadoClickeado[index] = !this.estadoClickeado[index];
+
+  cambiarEstado(index: number) {
+
+    this.estadoClickeado[index] = true;
+
+    setTimeout(() => {
+      this.estadoClickeado[index] = false;
+    }, 1500);
   }
-  
+
 
 }

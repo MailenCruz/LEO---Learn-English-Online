@@ -5,39 +5,119 @@ footer {
     padding: 20px;
     width: 100%;
     text-align: center;
-    margin-top: auto;
-    
+    margin-top: auto;   
 }
 
 .title-fuentes{
     text-align: center;
-    align-items: center;
-    font-size: x-large;
-    padding: 2rem;
+    font-size: 1.5rem;
+
+    padding: 1rem;
+
+    background-color: #eca19441;
+    box-shadow: 0rem 0rem 1rem 0.01rem rgba(0, 0, 0, 0.288);
+    border-radius: 5rem;
+
+    font-family: 'Manrope', sans-serif;
 }
 
 .fuentes{
     display:flex;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.secciones{
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    background-color: #9b8b8821;
+    box-shadow: 0rem 0rem 1rem 0.01rem rgba(0, 0, 0, 0.288);
+    border-radius: 1rem;
+
+    width: 80%; 
+
+    margin: 0rem 2rem;
+}
+
+.categorias{
+    text-align: center;
+    align-items: center;
+    font-size: 1.5rem; 
+    padding-top: 2rem;
+
+    font-family: 'Manrope', sans-serif;
+}
+
+.linea{
+
+    text-align: center;
+    align-items: center;
+    font-size: 1rem; 
+    padding-bottom: 2rem;
+
 }
 
 .fuente{
     text-align: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
+
     list-style-type: none;
-    flex-direction: column;
-    
+
+    padding-bottom: 2rem;
 }
 
-
-
 .fuente a{
+    display: flex;
+    flex-direction: column;
     text-decoration: none;
     color:#000000;
+
+    padding: 0.5rem;
 }
 
 .fuente a:hover{
     color: #000000;
-    text-shadow: 1px 2px 12px #eca194;
+    box-shadow: 0rem 0rem 1rem 0.01rem #eca194;
+    border-radius: 10rem;
+}
+
+
+.enrutamiento{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #eca19441;
+    box-shadow: 0rem 0rem 1rem 0.01rem rgba(0, 0, 0, 0.288);
+}
+
+.enrutamiento a{
+    text-decoration: none;
+    font-size: 3rem;
+    color: black;
+
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.enrutamiento a:hover{
+    box-shadow: 0rem 0rem 1rem 0.01rem rgba(0, 0, 0, 0.288);
+    border-radius: 10rem;
+}
+
+.enrutamiento .flor1{
+    padding-left: 1rem;
+    padding-right: 32rem;
+    font-size: 2rem;
+}
+.enrutamiento .flor2{
+    padding-left: 32rem;
+    padding-right: 1rem;
+    font-size: 2rem;
 }
