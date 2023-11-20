@@ -65,6 +65,12 @@ import { NivelAvanzadoGramaticaComponent } from './components/gramatica/nivel-av
 import { ReescribirEjercicioAvComponent } from './components/gramatica/nivel-avanzado-gramatica/reescribir-ejercicio-av/reescribir-ejercicio-av.component';
 import { CompletarEjercicioAvComponent } from './components/gramatica/nivel-avanzado-gramatica/completar-ejercicio-av/completar-ejercicio-av.component';
 import { OrdenarEjercicioAvComponent } from './components/gramatica/nivel-avanzado-gramatica/ordenar-ejercicio-av/ordenar-ejercicio-av.component';
+import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { LogInComponent } from './components/log-in/log-in.component';
+import { LogInPageComponent } from './pages/log-in-page/log-in-page.component';
+import { NavbarLogueadoComponent } from './components/shared/navbar-logueado/navbar-logueado.component';
+import { HomeNoLogComponent } from './pages/home-no-log/home-no-log.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -134,7 +140,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NivelAvanzadoGramaticaComponent,
     CompletarEjercicioAvComponent,
     ReescribirEjercicioAvComponent,
-    OrdenarEjercicioAvComponent
+    OrdenarEjercicioAvComponent,
+    SignUpPageComponent,
+    SignUpComponent,
+    LogInComponent,
+    LogInPageComponent,
+    NavbarLogueadoComponent,
+    HomeNoLogComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,6 @@
+<div *ngIf="!isLogged()">
+    {{this.router.navigate(['/home-general'])}}
+    </div>
 <section class="cuerpo-gramatica">
 
     <nav-gramatica></nav-gramatica>

@@ -1,0 +1,51 @@
+<div class="container">
+    <fieldset>
+        <legend class="titulo">Ingresá</legend>
+        <form id="form" [formGroup]="formulario" (ngSubmit)="iniciarSession()">
+            <div class="campo">
+                <legend for="username">Nombre de usuario:</legend>
+                <input type="text" id="username" formControlName="username">
+                <div class="error" *ngIf="this.formulario.touched && formulario.controls['username'].getError('required')">
+                    El campo es requerido
+                </div>
+                <div class="error" *ngIf="this.formulario.touched && formulario.controls['username'].getError('minLength(3)')">
+                    Mínimo de 3 caracteres
+                </div>
+            </div>
+           <!--  <div class="campo">
+                <legend for="email">Ingresa un email:</legend>
+                <input type="email" id="email" formControlName="email">
+                <div class="error" *ngIf="this.form.touched && form.controls['email'].getError('required')">
+                    El campo es requerido
+                </div>
+                <div class="error" *ngIf="this.form.touched && form.controls['email'].getError('email')">
+                    Debe ingresar un email
+                </div>
+            </div> -->
+            <div class="campo">
+                <legend for="password">Ingresa tu contraseña:</legend>
+                <input type="password" id="password" formControlName="password">
+                <div class="error" *ngIf="this.formulario.touched && formulario.controls['password'].getError('required')">
+                    El campo es requerido
+                </div>
+                <div class="error" *ngIf="this.formulario.touched && formulario.controls['password'].getError('minLength(6)')">
+                    Mínimo de 6 caracteres
+                </div>
+            </div>
+            <input class="btn-registrarte" type="submit" value="Iniciar Sesión">
+            
+        </form>
+        
+    </fieldset>
+    <div class="registro">
+        ¿No tenés un usuario? <a routerLink="/registrate">Registrate</a>
+    </div>
+    <div class="errorIncorrecto" *ngIf="valid!='exito'">
+        {{valid}}
+    </div>
+    
+
+    
+    
+    
+</div>

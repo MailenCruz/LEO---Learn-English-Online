@@ -33,22 +33,25 @@ nav{
     color: rgb(0, 0, 0);
 }
 
-.registro, .ingresa{
+.logout, .nombre{
     display: flex;
     padding: 1rem 1.5rem;
     text-decoration: none;
     color: rgb(110, 104, 104);
-    font-size: 2rem;
+    font-size: large;
     float:right;
     color: black;
-    
+}
+
+.nombre{
+    font-weight: bold;
 }
 
 .navegacion li a:hover {
     background-color: #8c8cc5;
     color: rgb(114, 113, 113);
 }
-.registro:hover, .registro:hover {
+.logout:hover {
     background-color: #8c8cc5;
     color: rgb(114, 113, 113);
 }
