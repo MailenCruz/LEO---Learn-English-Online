@@ -11,6 +11,7 @@ LEO es una plataforma para aprender inglés de forma didáctica. Cuenta con secc
 
 1. Ejecuta `npm run backend` para obetener datos sobre los ejercicios.
 2. Ejecuta `npm run users` para obtener datos sobre los usuarios.
+3. Ejecuta `npm install compromise` para instalar la libreria.
 
 ## Development server
 
