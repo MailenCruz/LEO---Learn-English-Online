@@ -1,36 +1,45 @@
-/* .container{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-} */
+.container{
+    padding-top: 10rem;
+    padding-bottom: 0;
+}
 
 fieldset{
-    display: flex;
-    margin-left: 30%;
-    margin-right: 30%;
     justify-content: center;
     align-content: center;
-    
+
+    width: 30%;
+    height: 60%;
+
+    margin-left: 48rem;
+
+    border-color: #5f5fad;
 }
 
 
-
 .titulo{
-    font-size: x-large;
+    font-size: 3rem;
     justify-content: center;
     align-content: center;
     text-align: center;
 }
+
 .campo{
-    display:inline-flex;
-    padding: 2rem
+    display:flex;
+    flex-direction: column;
+
+    align-items: center;
+    padding: 3rem;
 }
 
 input{
-    background-color: rgba(179, 179, 253, 0);
-    border:0;
+    padding: 1rem;
+    background-color: rgba(179, 179, 253, 0.541);
     border-bottom: 1px solid black;
-    
+    border:0;
+
+    margin-bottom: 0;
+
+    font-size: 2rem;
 }
 
 input:active{
@@ -40,38 +49,54 @@ input:active{
 }
 
 .btn-registrarte{
-    display:block;
-    margin-left: 45%;
-    background-color: #B3B3FD;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    margin-top: 3rem;
+    margin-left: 12.5rem;
+
+    background-color:#c48de4;
     border-radius: 10%;
-    border: 1px solid #9c9ceb;
+    border: 1px solid #c48de4;
     font-size: large;
-    box-shadow: 1px 4px 4px 1px solid #5f5fad;
+    
     font-family:'Lexend' ;
+
+
     padding: 1rem;
+}
+
+.btn-registrarte:hover{
+    box-shadow: 0 0 80px black;
 }
 
 
 
 .campo legend{
     font-size: large;
+    padding-bottom: 2rem;
 }
-
 
 .login{
     justify-content: center;
     align-content: center;
     margin-left: 40%;
-    margin-top:2rem;
+    margin-top:8rem;
     font-size: large;
 }
 
-.errorIncorrecto{
-    display: block;
-    color: red;
-    margin-left:35%;
-    margin-top: 3rem;
-    font-size: large;
+.error{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.5rem;
+    color: rgb(148, 40, 40);
+    
 }
+
 
 

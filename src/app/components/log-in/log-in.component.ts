@@ -23,7 +23,6 @@ export class LogInComponent{
 
   async iniciarSession() {
     if (this.formulario.invalid) return;
-    console.log('object');
 
     this.valid=await this.auth.verificarUserAndPass(
       this.formulario.controls['username'].value,

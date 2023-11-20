@@ -83,7 +83,7 @@ input:active{
     justify-content: center;
     align-content: center;
     margin-left: 40%;
-    margin-top:8rem;
+    margin-top:6rem;
     font-size: large;
 }
 
@@ -92,7 +92,7 @@ input:active{
     display: flex;
     align-items: center;
     justify-content: center;
-
+    padding-top: 5rem;
     font-size: 1.5rem;
     color: rgb(148, 40, 40);
     

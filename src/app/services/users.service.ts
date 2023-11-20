@@ -27,6 +27,35 @@ export class UsersService {
     
     return await response.json();
  }
+
+ async putUser(user: User){
+  try {
+    this.user = user;
+    await fetch(`${this.url}/${user?.id}`,
+                {
+                  method:'PUT',
+                  body: JSON.stringify(user),
+                  headers:{'Content-Type':'application/json'}
+                }
+    )
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+  async getUser(id:number){
+    try {
+      const res = await fetch(`${this.url}/${id}`,
+                  {
+                    method:'GET',
+                  }
+      )
+      const user = res.json();
+      return user;
+    } catch (error) {
+      console.log(error)
+    }
+  } 
   
 
  async getUsers(): Promise<User[]> {
@@ -37,11 +66,10 @@ export class UsersService {
  async verificarUserAndPass(user: string, pass: string) {
     const users = await this.getUsers();
     const currentUser = users.find(u => u.password === pass && u.username === user);
-    console.log('1');
-    console.log(currentUser);
+    
     if (currentUser) {
       this.user = currentUser;
-      console.log('2');
+    
       localStorage.setItem('token', currentUser.id.toString())
       this.router.navigate(['/home'])
       return 'exito'

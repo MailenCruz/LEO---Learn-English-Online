@@ -64,6 +64,8 @@ import { LogInComponent } from './components/log-in/log-in.component';
 import { LogInPageComponent } from './pages/log-in-page/log-in-page.component';
 import { NavbarLogueadoComponent } from './components/shared/navbar-logueado/navbar-logueado.component';
 import { HomeNoLogComponent } from './pages/home-no-log/home-no-log.component';
+import { MyProfilePageComponent } from './pages/my-profile-page/my-profile-page.component';
+import { MyProfileComponent } from './components/my-profile/my-profile.component';
 
 
 @NgModule({
@@ -127,7 +129,9 @@ import { HomeNoLogComponent } from './pages/home-no-log/home-no-log.component';
     LogInComponent,
     LogInPageComponent,
     NavbarLogueadoComponent,
-    HomeNoLogComponent
+    HomeNoLogComponent,
+    MyProfilePageComponent,
+    MyProfileComponent
   ],
   imports: [
     BrowserModule,
