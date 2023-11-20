@@ -1,20 +1,16 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ChangeDetectorRef, Component } from '@angular/core';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Completar } from 'src/app/interfaces/completar';
 import { Correccion } from 'src/app/interfaces/correccion';
 import { GramaticaService } from 'src/app/services/gramatica.service';
-import { ChangeDetectorRef } from '@angular/core';
-import nlp from 'compromise';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'completar-ejercicio',
-  templateUrl: './completar-ejercicio.component.html',
-  styleUrls: ['./completar-ejercicio.component.css']
+  selector: 'completar-ejercicio-int',
+  templateUrl: './completar-ejercicio-int.component.html',
+  styleUrls: ['./completar-ejercicio-int.component.css']
 })
-
-export class CompletarEjercicioComponent {
-
+export class CompletarEjercicioIntComponent {
   completar: Completar[] = [];
 
   index: number = 0;
@@ -45,8 +41,8 @@ export class CompletarEjercicioComponent {
       let respuesta = await this.gramaticaService.getExercises();
 
       if (respuesta) {
-        const { basico } = respuesta;
-        this.completar = basico.completar;
+        const { intermedio } = respuesta;
+        this.completar = intermedio.completar;
       }
     }
     catch (error) {

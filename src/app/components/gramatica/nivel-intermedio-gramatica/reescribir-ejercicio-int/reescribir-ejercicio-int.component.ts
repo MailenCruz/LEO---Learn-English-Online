@@ -4,17 +4,15 @@ import { Correccion } from 'src/app/interfaces/correccion';
 import { Reescribir } from 'src/app/interfaces/reescribir';
 import { GramaticaService } from 'src/app/services/gramatica.service';
 import { ChangeDetectorRef } from '@angular/core';
-import nlp from 'compromise';
 import { Router } from '@angular/router';
+import nlp from 'compromise';
 
 @Component({
-  selector: 'reescribir-ejercicio',
-  templateUrl: './reescribir-ejercicio.component.html',
-  styleUrls: ['./reescribir-ejercicio.component.css']
+  selector: 'reescribir-ejercicio-int',
+  templateUrl: './reescribir-ejercicio-int.component.html',
+  styleUrls: ['./reescribir-ejercicio-int.component.css']
 })
-
-export class ReescribirEjercicioComponent {
-
+export class ReescribirEjercicioIntComponent {
   reescribir: Reescribir[] = [];
 
   phraseType: "afirmativo" | "negativo" | "interrogativo" = "afirmativo";
@@ -68,8 +66,8 @@ export class ReescribirEjercicioComponent {
       const respuesta = await this.gramaticaService.getExercises();
 
       if (respuesta) {
-        const { basico } = respuesta;
-        this.reescribir = basico.reescribir;
+        const { intermedio } = respuesta;
+        this.reescribir = intermedio.reescribir;
       }
     }
     catch (error) {
@@ -90,7 +88,7 @@ export class ReescribirEjercicioComponent {
       interrogativo: this.answer.controls['interrogativo'].value
     };
 
-    this.oracionCorrecta()
+    this.oracionCorrecta();
     this.checkRespuesta();
   }
 
@@ -224,4 +222,5 @@ export class ReescribirEjercicioComponent {
     this.checkBoton[type as keyof { afirmativo: boolean, negativo: boolean, interrogativo: boolean }] = flag;
     this.countFlagBoton();
   }
+
 }

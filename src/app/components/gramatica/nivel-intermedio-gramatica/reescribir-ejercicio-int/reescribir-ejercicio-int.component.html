@@ -2,7 +2,7 @@
 
     <nav class="barra-NB">
         <div class="imagen-nombre-NB">
-            <a routerLink="/basico-home"> <img src="../../../../assets/logoChiquito-gramatica.png" alt="Logo" width="30"
+            <a routerLink="/intermedio-home"> <img src="../../../../assets/logoChiquito-gramatica.png" alt="Logo" width="30"
                     height="24"></a>
             <span>Reescribir oraciones</span>
         </div>
@@ -10,7 +10,7 @@
 
     <div class="contenedor-pagina">
         <section class="reescribir">
-            <form (ngSubmit)="guardarRespuesta()" [formGroup]="answer" class="formulario">
+            <form (ngSubmit)="guardarRespuesta()" class="formulario" [formGroup]="answer">
 
                 <p> {{ randomPhrase }} </p>
 
