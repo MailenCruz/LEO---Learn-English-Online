@@ -7,6 +7,7 @@
 
 nav{
     display: flex;
+    width: 100%;
 }
 
 .navegacion {
@@ -14,6 +15,8 @@ nav{
     padding: 0;
     margin: 0;
     display: flex;
+    width: 100%;
+    
 }
 
 .navegacion li a {
@@ -22,6 +25,7 @@ nav{
     text-decoration: none;
     color: rgb(110, 104, 104);
     font-size: 2rem;
+    
 }
 
 .home-span{
@@ -29,7 +33,22 @@ nav{
     color: rgb(0, 0, 0);
 }
 
+.registro, .ingresa{
+    display: flex;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: rgb(110, 104, 104);
+    font-size: 2rem;
+    float:right;
+    color: black;
+    
+}
+
 .navegacion li a:hover {
+    background-color: #8c8cc5;
+    color: rgb(114, 113, 113);
+}
+.registro:hover, .ingresa:hover {
     background-color: #8c8cc5;
     color: rgb(114, 113, 113);
 }

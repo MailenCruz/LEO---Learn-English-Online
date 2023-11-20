@@ -1,0 +1,42 @@
+<div class="container">
+    <fieldset>
+        <legend class="titulo">Edita tu perfil</legend>
+        <form id="form" [formGroup]="form" (ngSubmit)="editarUser()">
+            <div class="campo">
+                <legend for="username">Edita tu nombre de usuario:</legend>
+                <input type="text" id="username" formControlName="editUsername">
+                
+            </div>
+            <div class="error" *ngIf="this.form.touched && form.controls['editUsername'].getError('required')">
+                El campo es requerido
+            </div>
+            <div class="error" *ngIf="this.form.touched && form.controls['editUsername'].getError('minlength')">
+                Mínimo de 3 caracteres
+            </div>
+            <div class="campo">
+                <legend for="email">Edita tu email:</legend>
+                <input type="email" id="email" formControlName="editEmail">
+                
+            </div>
+            <div class="error" *ngIf="this.form.touched && form.controls['editEmail'].getError('required')">
+                El campo es requerido
+            </div>
+            <div class="error" *ngIf="this.form.touched && form.controls['editEmail'].getError('email')">
+                Debe ingresar un email
+            </div>
+            
+            
+            <input class="btn-registrarte" type="submit" value="Editar">
+        </form>
+        
+    </fieldset>
+    
+    <div class="error" *ngIf="errorMail!='exito'">
+        {{errorMail}}
+    </div>
+    <div class="error" *ngIf="errorUser!='exito'">
+        {{errorUser}}
+    </div>
+    
+    
+</div>

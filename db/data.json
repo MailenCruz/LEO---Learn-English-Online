@@ -1154,7 +1154,443 @@
         "cinema/the/he/go/does/to/want/to/?"
       ]
     },
-    "intermedio": {},
-    "avanzado": {}
+    "intermedio": {
+      "reescribir": [
+        {
+          "afirmativo": "Thomas was studying for his exams all night.",
+          "negativo": "Thomas was not studying for his exams all night.",
+          "interrogativo": "Was THomas studying for his exams all night?"
+        },
+        {
+          "afirmativo": " They were playing football in the park.",
+          "negativo": "They were not playing football in the park.",
+          "interrogativo": "Were they playing football in the park?"
+        },
+        {
+          "afirmativo": "She was reading a book at the cafe.",
+          "negativo": " She was not reading a book at the cafe.",
+          "interrogativo": "Was she reading a book at the cafe?"
+        },
+        {
+          "afirmativo": "We were watching a movie when the power went out.",
+          "negativo": "We were not watching a movie when the power went out.",
+          "interrogativo": "Were we watching a movie when the power went out?"
+        },
+        {
+          "afirmativo": "He was working on a new project last week.",
+          "negativo": "He was not working on a new project last week.",
+          "interrogativo": "Was he working on a new project last week?"
+        },
+        {
+          "afirmativo": "I am studying Spanish this semester.",
+          "negativo": "I am not studying Spanish this semester.",
+          "interrogativo": "Am I studying Spanish this semester?"
+        },
+        {
+          "afirmativo": "They are enjoying their vacation in Hawaii.",
+          "negativo": "They are not enjoying their vacation in Hawaii.",
+          "interrogativo": "Are they enjoying their vacation in Hawaii?"
+        },
+        {
+          "afirmativo": "She is working on a new project at the office.",
+          "negativo": "She is not working on a new project at the office.",
+          "interrogativo": "Is she working on a new project at the office?"
+        },
+        {
+          "afirmativo": "We are learning to play the guitar.",
+          "negativo": "We are not learning to play the guitar.",
+          "interrogativo": "Are we learning to play guitar?"
+        },
+        {
+          "afirmativo": "He is attending a business conference this week.",
+          "negativo": "He is not attending a business conference this week.",
+          "interrogativo": "Is he attending a business conference this week?"
+        },
+        {
+          "afirmativo": "I will finish the project by the end of the week.",
+          "negativo": "I will not finish the project by the end of the week.",
+          "interrogativo": "Will I finish the project at the end of the week?"
+        },
+        {
+          "afirmativo": "They will travel to Asia next month.",
+          "negativo": "They will not travel to Asia next month.",
+          "interrogativo": "Will they travel to Asia next month?"
+        },
+        {
+          "afirmativo": "She will attend the conference on Saturday.",
+          "negativo": "She will not attend the conference on Saturday.",
+          "interrogativo": "Will she attend the conference on Saturday?"
+        },
+        {
+          "afirmativo": "We will celebrate her birthday with a surprise party.",
+          "negativo": "We will not celebrate her birthday with a surprise party.",
+          "interrogativo": "Will we celebrate her birthday with a surprise party?"
+        },
+        {
+          "afirmativo": "He will learn to play the piano in the future.",
+          "negativo": "He will not learn to play the piano in the future.",
+          "interrogativo": "Will he learn to play the piano in the future?"
+        }
+      ],
+      "completar": [
+        {
+          "oracion": "I ___ playing the guitar when the phone rang.",
+          "respuestas": [
+            "were",
+            "was",
+            "will"
+          ]
+        },
+        {
+          "oracion": "They ___ studying for hours before the exam",
+          "respuestas": [
+            "where",
+            "would",
+            "were"
+          ]
+        },
+        {
+          "oracion": "She ___ a delicious cake when I visited her.",
+          "respuestas": [
+            "am baking",
+            "was baked",
+            "was baking"
+          ]
+        },
+        {
+          "oracion": "We ___ the house when it started raining.",
+          "respuestas": [
+            "were cleaning",
+            "was cleaning",
+            "were cleaned"
+          ]
+        },
+        {
+          "oracion": "He ___ a book when I saw him at the cafe.",
+          "respuestas": [
+            "is reading",
+            "was reading",
+            "will reading"
+          ]
+        },
+        {
+          "oracion": "I ___ my homework at the moment.",
+          "respuestas": [
+            "do",
+            "am doing",
+            "doing"
+          ]
+        },
+        {
+          "oracion": "They ___ a new language this semester",
+          "respuestas": [
+            "learn",
+            "are learned",
+            "are learning"
+          ]
+        },
+        {
+          "oracion": "She ___ an important email right now.",
+          "respuestas": [
+            "writes",
+            "is writing",
+            "was writing"
+          ]
+        },
+        {
+          "oracion": "We ___ a delicious dinner tonight.",
+          "respuestas": [
+            "are cooking",
+            "cook",
+            "are cooked"
+          ]
+        },
+        {
+          "oracion": "He ___ his car in the parking lot.",
+          "respuestas": [
+            "is looking",
+            "is looking for",
+            "looks for"
+          ]
+        },
+        {
+          "oracion": "I think she ___ the meeting on time.",
+          "respuestas": [
+            "will arrive",
+            "arriving",
+            "will arrived"
+          ]
+        },
+        {
+          "oracion": "They ___ a decision by tomorrow.",
+          "respuestas": [
+            "would make",
+            "will make",
+            "will made"
+          ]
+        },
+        {
+          "oracion": "She ___ the new project next month.",
+          "respuestas": [
+            "will starting",
+            "will started",
+            "will start"
+          ]
+        },
+        {
+          "oracion": "We ___ you a surprise party for your birthday.",
+          "respuestas": [
+            "will organize",
+            "will organized",
+            "will organizing"
+          ]
+        },
+        {
+          "oracion": "He ___ the piano by the end of the year.",
+          "respuestas": [
+            "will learned",
+            "will learnt",
+            "will learn"
+          ]
+        }
+      ],
+      "ordenar": [
+        "yesterday/They/the movie/watching/were",
+        "practicing/She/the concert/guitar/was/her/for",
+        "raining/It/when/started/the picnic/was",
+        "homework/doing/while/listening/music/I/was",
+        "were/playing/they/a/board game/when/I/visited",
+        "paying/yesterday/were/attention/you/?",
+        "now/are/I/this/text/writing",
+        "to/music/listening/while/is/she/working",
+        "a/playing/are/they/volleyball/game/of",
+        "lunch/packing/for/we/are/the picnic",
+        "studying/are/they/for/exams",
+        "weekend/We/a/plan/trip/will/for",
+        "this/buy/new/car/year/They/will",
+        "start/next/will/She/business/month/her",
+        "be/will/It/sunny/tomorrow/probably",
+        "concert/next/attend/I/will/Friday/the"
+      ]
+    },
+    "avanzado": {
+      "reescribir": [
+        {
+          "afirmativo": "She had traveled to Paris before.",
+          "negativo": "She had not traveled to Paris before.",
+          "interrogativo": "Had she traveled to Paris before?"
+        },
+        {
+          "afirmativo": "They had already eaten when we arrived.",
+          "negativo": "They hadn't already eaten when we arrived.",
+          "interrogativo": "Had they already eaten when we arrived?"
+        },
+        {
+          "afirmativo": "He had read the book before the movie came out.",
+          "negativo": "He hadn't read the book before the movie came out.",
+          "interrogativo": "Had he read the book before the movie came out?"
+        },
+        {
+          "afirmativo": "The team had won the championship by then.",
+          "negativo": "The team hadn't won the championship by then.",
+          "interrogativo": "Had the team won the championship by then?"
+        },
+        {
+          "afirmativo": "Mary had never visited that city before last summer.",
+          "negativo": "Mary hadn't visited that city before last summer.",
+          "interrogativo": "Had Mary visited that city before last summer?"
+        },
+        {
+          "afirmativo": "If it had rained, we would have stayed home.",
+          "negativo": "If it hadn't rained, we wouldn't have stayed home.",
+          "interrogativo": "If it had rained, would we have stayed home?"
+        },
+        {
+          "afirmativo": "She would have accepted the job offer if it had better benefits.",
+          "negativo": " She wouldn't have accepted the job offer if it hadn't had better benefits.",
+          "interrogativo": "Would she have accepted the job offer if it had better benefits?"
+        },
+        {
+          "afirmativo": "We would have gone to the concert if we had bought tickets.",
+          "negativo": "We wouldn't have gone to the concert if we hadn't bought tickets.",
+          "interrogativo": "Would we have gone to the concert if we had bought tickets?"
+        },
+        {
+          "afirmativo": "If he had studied harder, he would have passed the exam.",
+          "negativo": "If he hadn't studied harder, he wouldn't have passed the exam.",
+          "interrogativo": "If he had studied harder, would he have passed the exam?"
+        },
+        {
+          "afirmativo": "They would have visited us if we had invited them.",
+          "negativo": "They wouldn't have visited us if we hadn't invited them.",
+          "interrogativo": "Would they have visited us if we had invited them?"
+        },
+        {
+          "afirmativo": "By next year, I will have completed my degree.",
+          "negativo": "By next year, I will not have completed my degree.",
+          "interrogativo": "By next year, will I have completed my degree?"
+        },
+        {
+          "afirmativo": "She will have traveled to five different countries by the end of the year.",
+          "negativo": "She will not have traveled to five different countries by the end of the year.",
+          "interrogativo": "Will she have traveled to five different countries by the end of the year?"
+        },
+        {
+          "afirmativo": "They will have finished the construction of the new bridge by 2024.",
+          "negativo": "They will not have finished the construction of the new bridge by 2024.",
+          "interrogativo": "Will they have finished the construction of the new bridge by 2024?"
+        },
+        {
+          "afirmativo": "By tomorrow, he will have read the entire novel.",
+          "negativo": "By tomorrow, he will not have read the entire novel.",
+          "interrogativo": "By tomorrow, will he have read the entire novel?"
+        },
+        {
+          "afirmativo": "We will have lived in this house for ten years by the time we move.",
+          "negativo": "We will not have lived in this house for ten years by the time we move.",
+          "interrogativo": "Will we have lived in this house for ten years by the time we move?"
+        }
+       
+      ],
+      "completar": [
+        {
+          "oracion": "She ____ her keys before leaving the house.",
+          "respuestas": [
+            "had lost",
+            "lost",
+            "loses"
+          ]
+        },
+        {
+          "oracion": "By the time we arrived, they ____ the party.",
+          "respuestas": [
+            "have left",
+            "had left",
+            "leaves"
+          ]
+        },
+        {
+          "oracion": "He ____ his homework before the teacher collected it.",
+          "respuestas": [
+            "has completed",
+            "had completed",
+            "completes"
+          ]
+        },
+        {
+          "oracion": "The team ____ the match before the rain started.",
+          "respuestas": [
+            "wins",
+            "had won",
+            "had win"
+          ]
+        },
+        {
+          "oracion": "She____ her phone in the car yesterday.",
+          "respuestas": [
+            "had forgotten",
+            "forgets",
+            "have forgotten"
+          ]
+        },
+        {
+          "oracion": "If they had known, they ____ a different route.",
+          "respuestas": [
+            "had take",
+            "would take",
+            "would have taken"
+          ]
+        },
+        {
+          "oracion": "She ____ the job if she had applied earlier.",
+          "respuestas": [
+            "gets",
+            "gotten",
+            "would have gotten"
+          ]
+        },
+        {
+          "oracion": "We ____ the movie if it had good reviews.",
+          "respuestas": [
+            "see",
+            "would had seen",
+            "would have seen"
+          ]
+        },
+        {
+          "oracion": "If it hadn't rained, they ____ the outdoor event.",
+          "respuestas": [
+            "cancel",
+            "would have cancel",
+            "cancels"
+          ]
+        },
+        {
+          "oracion": "He ____ the exam if he had studied harder.",
+          "respuestas": [
+            "passes",
+            "passed",
+            "would have passed"
+          ]
+        },
+        {
+          "oracion": "By this time next year, they ____ their dream house.",
+          "respuestas": [
+            "will buy",
+            "will have bought",
+            "buy"
+          ]
+        },
+        {
+          "oracion": "She ____ her novel by the end of the month.",
+          "respuestas": [
+            "finishes",
+            "finished",
+            "will have finished"
+          ]
+        },
+        {
+          "oracion": "If everything goes as planned, we ____ our journey by sunset.",
+          "respuestas": [
+            "will start",
+            "will have started",
+            "starts"
+          ]
+        },
+        {
+          "oracion": "By the time you arrive, I ____ dinner.",
+          "respuestas": [
+            "will cook",
+            "will have cooked",
+            "cooks"
+          ]
+        },
+        {
+          "oracion": "They ____ their research project before the deadline.",
+          "respuestas": [
+            "will complete",
+            "completes",
+            "will have completed"
+          ]
+        }
+      ],
+      "ordenar": [
+        "not/had/ever/I/food/Japanese",
+        "movie/they/before/seen/had/that",
+        "her/I/never/met/had/before",
+        "finished/homework/already/they/had",
+        "gone/they/arrived/had/they/by/the/time",
+        "money/spent/if/we/had/more/time",
+        "accepted/he/offer/would/job/the",
+        "traveled/they/europe/if/had/more/time",
+        "studied/more/hours/if/I/had",
+        "bought/she/house/the/had/if/more/money",
+        "gone/they/for/a/walk/will/have",
+        "before/finished/they/dinner/will/have",
+        "visited/many/countries/by/the/time/I/turn/thirty/will/have",
+        "you/will/have/a/good/job/finished",
+        "cleaned/she/the/house/will/have/by/the/time/you/arrive"
+      ]
+    }
   }
 }

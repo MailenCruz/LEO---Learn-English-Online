@@ -1,0 +1,54 @@
+<div class="container">
+    <fieldset>
+        <legend class="titulo">Registrate</legend>
+        <form id="form" [formGroup]="form" (ngSubmit)="guardarUser()">
+            <div class="campo">
+                <legend for="username">Crea tu nombre de usuario:</legend>
+                <input type="text" id="username" formControlName="username">
+                
+            </div>
+            <div class="error" *ngIf="this.form.touched && form.controls['username'].getError('required')">
+                El campo es requerido
+            </div>
+            <div class="error" *ngIf="this.form.touched && form.controls['username'].getError('minlength')">
+                Mínimo de 3 caracteres
+            </div>
+            <div class="campo">
+                <legend for="email">Ingresa un email:</legend>
+                <input type="email" id="email" formControlName="email">
+                
+            </div>
+            <div class="error" *ngIf="this.form.touched && form.controls['email'].getError('required')">
+                El campo es requerido
+            </div>
+            <div class="error" *ngIf="this.form.touched && form.controls['email'].getError('email')">
+                Debe ingresar un email
+            </div>
+            <div class="campo">
+                <legend for="password">Crea tu contraseña:</legend>
+                <input type="password" id="password" formControlName="password">
+                
+            </div>
+            <div class="error" *ngIf="this.form.touched && form.controls['password'].getError('required')">
+                El campo es requerido
+            </div>
+            <div class="error" *ngIf="this.form.touched && form.controls['password'].getError('minlength')">
+                Mínimo de 6 caracteres
+            </div>
+            <input class="btn-registrarte" type="submit" value="Registrarte">
+        </form>
+        
+    </fieldset>
+    <div class="error" *ngIf="errorMail!='exito'">
+        {{errorMail}}
+    </div>
+    <div class="error" *ngIf="errorUser!='exito'">
+        {{errorUser}}
+    </div>
+    <div class="login">
+        ¿Ya tenés un usuario? <a routerLink="/ingresa">Ingresá</a>
+    </div>
+    
+    
+    
+</div>
