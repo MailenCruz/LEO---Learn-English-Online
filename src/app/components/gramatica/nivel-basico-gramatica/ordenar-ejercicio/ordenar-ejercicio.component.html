@@ -2,8 +2,8 @@
 
     <nav class="barra-NB">
         <div class="imagen-nombre-NB">
-            <a routerLink="/basico-home"> <img src="../../../../assets/logoChiquito-gramatica.png" alt="Logo"
-                    width="30" height="24"></a>
+            <a routerLink="/basico-home"> <img src="../../../../assets/logoChiquito-gramatica.png" alt="Logo" width="30"
+                    height="24"></a>
             <span>Ordenar oraciones</span>
         </div>
     </nav>
@@ -15,26 +15,39 @@
 
                 <div>
                     <label for="ordenar">Reescriba la oración en orden: </label>
-                    <input type="text" id="ordenar" formControlName="ordenar">
+                    <input type="text" id="ordenar" formControlName="ordenar" (input)="onInputChange($event)">
                 </div>
 
-                <div *ngIf="correcciones">
-                    <div *ngFor="let correccion of correcciones">
-                        <p class="error">{{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(', ') }}
-                        </p>
+                <!-- check -->
+                <div *ngIf="answer.controls['ordenar'].getError('required') && answer.controls['ordenar'].touched">
+                    <p class="error"> El campo es requerido </p>
+                </div>
+
+                <!-- coincide -->
+                <div *ngIf="(check === true) && (oracionCoincide === false)">
+                    <p class="coincide"> La oración no coincide </p>
+                </div>
+
+                <!-- errores -->
+                <div *ngIf="(check === true) &&  (oracionCoincide === true)">
+                    <div *ngIf="correcto === false">
+                        <div *ngFor="let correccion of correcciones">
+                            <p class="error">{{ correccion.message }} </p>
+                        </div>
                     </div>
                 </div>
 
-
-                <div *ngIf="respuestaEnviada && check === true">
-                    <p class="correcto">CORRECTO!</p>
+                <!-- correcto -->
+                <div *ngIf="(check === true) && (oracionCoincide === true)">
+                    <div *ngIf="correcto === true">
+                        <p class="correcto">CORRECTO!</p>
+                    </div>
                 </div>
-
 
                 <div class="botones">
                     <input class="boton" type="submit" value="Check">
                     <input class="boton" type="reset" value="Reset" (click)="reset()">
-                    <input class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
+                    <input *ngIf="correcto" class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
                 </div>
             </form>
 

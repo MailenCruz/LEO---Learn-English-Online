@@ -1,20 +1,17 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ChangeDetectorRef, Component } from '@angular/core';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import nlp from 'compromise/three';
 import { Correccion } from 'src/app/interfaces/correccion';
 import { Reescribir } from 'src/app/interfaces/reescribir';
 import { GramaticaService } from 'src/app/services/gramatica.service';
-import { ChangeDetectorRef } from '@angular/core';
-import nlp from 'compromise';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'reescribir-ejercicio',
-  templateUrl: './reescribir-ejercicio.component.html',
-  styleUrls: ['./reescribir-ejercicio.component.css']
+  selector: 'reescribir-ejercicio-av',
+  templateUrl: './reescribir-ejercicio-av.component.html',
+  styleUrls: ['./reescribir-ejercicio-av.component.css']
 })
-
-export class ReescribirEjercicioComponent {
-
+export class ReescribirEjercicioAvComponent {
   reescribir: Reescribir[] = [];
 
   phraseType: "afirmativo" | "negativo" | "interrogativo" = "afirmativo";
@@ -68,8 +65,8 @@ export class ReescribirEjercicioComponent {
       const respuesta = await this.gramaticaService.getExercises();
 
       if (respuesta) {
-        const { basico } = respuesta;
-        this.reescribir = basico.reescribir;
+        const { avanzado } = respuesta;
+        this.reescribir = avanzado.reescribir;
       }
     }
     catch (error) {

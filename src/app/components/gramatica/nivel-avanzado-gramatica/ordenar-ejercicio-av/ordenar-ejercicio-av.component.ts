@@ -1,18 +1,16 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ChangeDetectorRef, Component } from '@angular/core';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import nlp from 'compromise/three';
 import { Correccion } from 'src/app/interfaces/correccion';
 import { GramaticaService } from 'src/app/services/gramatica.service';
-import { ChangeDetectorRef } from '@angular/core';
-import nlp from 'compromise';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'ordenar-ejercicio',
-  templateUrl: './ordenar-ejercicio.component.html',
-  styleUrls: ['./ordenar-ejercicio.component.css']
+  selector: 'ordenar-ejercicio-av',
+  templateUrl: './ordenar-ejercicio-av.component.html',
+  styleUrls: ['./ordenar-ejercicio-av.component.css']
 })
-export class OrdenarEjercicioComponent {
-
+export class OrdenarEjercicioAvComponent {
   ordenar: string[] = [];
   
   index: number = 0;
@@ -38,8 +36,8 @@ export class OrdenarEjercicioComponent {
       let respuesta = await this.gramaticaService.getExercises();
 
       if (respuesta) {
-        const { basico } = respuesta;
-        this.ordenar = basico.ordenar;
+        const { avanzado } = respuesta;
+        this.ordenar = avanzado.ordenar;
       }
     }
     catch (error) {

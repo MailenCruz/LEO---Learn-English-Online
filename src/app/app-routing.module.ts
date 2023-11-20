@@ -32,6 +32,12 @@ import { AlojamientoHomePageComponent } from './pages/viajero-pages/alojamiento-
 import { BasicoHomeComponent } from './pages/gramatica-pages/basico-home/basico-home.component';
 import { IntermedioHomeComponent } from './pages/gramatica-pages/intermedio-home/intermedio-home.component';
 import { AvanzadoHomeComponent } from './pages/gramatica-pages/avanzado-home/avanzado-home.component';
+import { ReescribirEjercicioIntComponent } from './components/gramatica/nivel-intermedio-gramatica/reescribir-ejercicio-int/reescribir-ejercicio-int.component';
+import { CompletarEjercicioIntComponent } from './components/gramatica/nivel-intermedio-gramatica/completar-ejercicio-int/completar-ejercicio-int.component';
+import { OrdenarEjercicioIntComponent } from './components/gramatica/nivel-intermedio-gramatica/ordenar-ejercicio-int/ordenar-ejercicio-int.component';
+import { CompletarEjercicioAvComponent } from './components/gramatica/nivel-avanzado-gramatica/completar-ejercicio-av/completar-ejercicio-av.component';
+import { OrdenarEjercicioAvComponent } from './components/gramatica/nivel-avanzado-gramatica/ordenar-ejercicio-av/ordenar-ejercicio-av.component';
+import { ReescribirEjercicioAvComponent } from './components/gramatica/nivel-avanzado-gramatica/reescribir-ejercicio-av/reescribir-ejercicio-av.component';
 
 const routes: Routes = [
   {path: 'home', component: HomePageComponent},
@@ -49,7 +55,6 @@ const routes: Routes = [
   {path:'multipleChoice-vocabulario-shopping', component:MultipleChoiceVocabularioShoppingComponent},
   {path:'multipleChoice-preguntas-shopping', component:MultipleChoicePreguntasShoppingComponent},
 
-
   {path:'restaurante-viajeros', component:RestauranteViajeroComponent},
   {path:'restaurante-home', component:RestauranteHomePageComponent},
   {path:'vocabulario-restaurante', component:VocabularioRestauranteComponent},
@@ -62,8 +67,6 @@ const routes: Routes = [
   {path:'multipleChoice-vocabulario-alojamiento', component:MultipleChoiceVocaburarioAlojamientoComponent},
   {path:'multipleChoice-preguntas-alojamiento', component:MultipleChoicePreguntasAlojamientoComponent},
 
-
-
   {path:'gramatica-home', component:GramaticaHomePageComponent},
 
   {path:'nivelBasico-gramatica', component:NivelBasicoGramaticaComponent},
@@ -74,9 +77,16 @@ const routes: Routes = [
 
   {path:'nivelIntermedio-gramatica', component:NivelIntermedioGramaticaComponent},
   {path:'intermedio-home',component:IntermedioHomeComponent},
+  {path:'reescribir-ejercicio-int', component:ReescribirEjercicioIntComponent},
+  {path:'ordenar-ejercicio-int', component:OrdenarEjercicioIntComponent},
+  {path:'completar-ejercicio-int', component:CompletarEjercicioIntComponent},
+
   {path:'nivelAvanzado-gramatica', component:NivelAvanzadoGramaticaComponent},
   {path:'avanzado-home', component:AvanzadoHomeComponent},
-  
+  {path:'reescribir-ejercicio-av', component:ReescribirEjercicioAvComponent},
+  {path:'ordenar-ejercicio-av', component:OrdenarEjercicioAvComponent},
+  {path:'completar-ejercicio-av', component:CompletarEjercicioAvComponent},
+
   {path: '**', redirectTo: 'home'}
 ];
 
