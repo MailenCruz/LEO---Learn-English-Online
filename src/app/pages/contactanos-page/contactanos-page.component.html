@@ -1,4 +1,11 @@
-<navbar></navbar>
+<div *ngIf="!isLogged()">
+    <navbar> </navbar>
+</div>
+
+<div *ngIf="isLogged()">
+    <app-navbar-logueado> </app-navbar-logueado>
+</div>
+
 <section class="contenedor-principal">
 
 
@@ -51,7 +58,7 @@
 
                 <div class="dato-contacto">
                     <span> <b>📞 Teléfono - Phone </b>
-                        <a href="https://wa.me/2235316174" target="_blank"> 223 531 6174 
+                        <a href="https://wa.me/2235316174" target="_blank"> 223 531 6174
                         </a></span>
                 </div>
 

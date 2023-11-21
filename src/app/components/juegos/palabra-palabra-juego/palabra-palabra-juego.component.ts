@@ -124,10 +124,9 @@ export class PalabraPalabraJuegoComponent {
     }
   }
 
-  recargarPagina(): void {
+  /* recargarPagina(): void {
     // Puedes usar la función location.reload() para recargar la página.
     location.reload();
-  }
-
+  } */
 
 }
