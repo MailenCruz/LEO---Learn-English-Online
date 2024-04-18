@@ -25,7 +25,7 @@ import { ReescribirEjercicioAvComponent } from './components/gramatica/nivel-ava
 import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
 import { LogInPageComponent } from './pages/log-in-page/log-in-page.component';
 import { HomeNoLogComponent } from './pages/home-no-log/home-no-log.component';
-import { MyProfilePageComponent } from './pages/my-profile-page/my-profile-page.component';
+import { MyProfilePageComponent } from './sesion/pages/my-profile-page/my-profile-page.component';
 
 const routes: Routes = [
   {path: 'home', component: HomePageComponent},

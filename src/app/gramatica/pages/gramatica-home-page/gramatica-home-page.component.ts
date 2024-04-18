@@ -3,17 +3,17 @@ import { Router } from '@angular/router';
 import { UsersService } from 'src/app/sesion/services/users.service';
 
 @Component({
-  selector: 'contactanos-page',
-  templateUrl: './contactanos-page.component.html',
-  styleUrls: ['./contactanos-page.component.css']
+  selector: 'gramatica-home-page',
+  templateUrl: './gramatica-home-page.component.html',
+  styleUrls: ['./gramatica-home-page.component.css']
 })
-export class ContactanosPageComponent {
+export class GramaticaHomePageComponent {
+  constructor(private userService:UsersService, public router:Router){
 
-  constructor(private userService:UsersService, public router:Router){}
+  }
 
   isLogged(){
     let res = this.userService.currentUser;
     return res? true:false;
   }
-
 }

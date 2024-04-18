@@ -1,0 +1,7 @@
+<div *ngIf="!isLogged()">
+    {{this.router.navigate(['/home-general'])}}
+    </div>
+    <navbar-logueado></navbar-logueado>
+    <section class="container">
+        <my-profile></my-profile>
+    </section>
