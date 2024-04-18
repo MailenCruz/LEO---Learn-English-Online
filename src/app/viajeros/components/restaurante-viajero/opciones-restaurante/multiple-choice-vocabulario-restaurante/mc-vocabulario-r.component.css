@@ -1,0 +1,103 @@
+.cuerpo-viajero-R {
+    background-image: url(../../../../../../assets/img-home/fondoBorroso.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    padding-bottom: 10%;
+    margin-bottom: 0;
+}
+
+.barra-R {
+    background-color: #B3B3FD;
+    font-size: 3rem;
+    font-family: 'Lexend', sans-serif;
+}
+
+img {
+    width: auto;
+    height: auto;
+}
+
+.imagen-nombre-R {
+    display: flex;
+    align-items: center;
+}
+
+
+/*EJERCICIOS*/
+.cuerpo-MCV {
+    background-color: rgba(245, 245, 220, 0.5);
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 10rem;
+    margin: 10rem auto; /* Ajusta el margen: 10rem arriba/abajo y automáticamente a los lados */
+
+    justify-content: center; /* Centra verticalmente */
+}
+
+.titulo {
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+
+.ejercicio {
+    font-size: 2rem;
+    list-style-type: none;
+    text-align: left;
+}
+
+/* Estilo para el botón */
+button {
+
+    background-color: #000000a8;
+    /* Color de fondo */
+    color: white;
+    /* Color del texto */
+
+    padding: 12px 20px;
+    /* Relleno interno */
+    font-size: 16px;
+    /* Tamaño de la fuente */
+
+    border: none;
+    /* Sin borde */
+    border-radius: 5px;
+    /* Bordes redondeados */
+
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease;
+    /* Efecto de transición en el cambio de color de fondo */
+
+    margin: 1rem;
+}
+
+/* Cambia el color de fondo al pasar el ratón sobre el botón */
+button:hover {
+    background-color: #171718;
+}
+
+/* Cambia el color de fondo al hacer clic en el botón */
+button:active {
+    background-color: #9e9ef5;
+}
+
+.cuerpo-mensaje {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.emoticones{
+    margin-top: 10rem;
+    font-size: 5rem;
+}
+
+.mensaje {
+    margin:0;
+    margin-bottom: 10rem;
+    font-size: 5rem;
+    text-shadow: #B3B3FD;
+    color:black;
+}

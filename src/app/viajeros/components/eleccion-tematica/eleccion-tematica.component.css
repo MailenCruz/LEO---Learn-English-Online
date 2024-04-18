@@ -1,0 +1,65 @@
+legend {
+    background-color: #B3B3FD;
+    margin-bottom: 28rem;
+    padding: 1.5rem;
+    font-size: 2.5rem;
+    text-align: center;
+    box-shadow: 3px 3px 3px 3px #9c9ce7bd;
+    font-family: 'Raleway', sans-serif;
+}
+
+.cuadrado {
+    height: 30rem;
+    width: 35rem;
+    margin: 3rem;
+    display: inline-block;
+    background-color: #dcbee8;
+    border-style: hidden;
+}
+
+.img-shopping{
+    position: absolute;
+    top: 32rem;
+    left: 12.5rem;
+}
+
+.img-restaurante{
+    position: absolute;
+    top: 32rem;
+    left: 54rem;
+}
+
+.img-alojamiento{
+    position: absolute;
+    top: 32rem;
+    left: 94.5rem
+}
+
+.contenedor-cuadrados {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0 4rem 0;
+}
+
+.boton-entrar {
+    position: absolute;
+    top: 54rem;
+    margin-left: 7.5rem;
+    padding: 1rem 5rem;
+
+    border: none;
+    font-size: 2.5rem;
+    background-color: #b3b3fdad;
+    border-radius: 1rem;
+
+    transition-duration: 0.5s;
+    cursor: pointer;
+
+    font-family: 'Lexend', sans-serif;
+}
+
+.boton-entrar:hover {
+    background-color: #9898f8;
+    transform: translateY(-10px);
+}

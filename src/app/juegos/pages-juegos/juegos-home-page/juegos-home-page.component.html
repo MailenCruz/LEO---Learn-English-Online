@@ -1,0 +1,18 @@
+
+<div *ngIf="!isLogged()">
+    {{this.router.navigate(['/home-general'])}}
+</div>
+
+<section class="cuerpo-juego">
+
+    <nav-juegos></nav-juegos>
+
+    <section class="secciones-juego">
+        <h4>Bienvenido! jugá con nosotros y aprendé inglés de forma interactiva!</h4>
+    </section>
+
+    <section class="secciones-juego">
+        <eleccion-juegos></eleccion-juegos>
+    </section>
+
+</section>

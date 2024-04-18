@@ -1,0 +1,99 @@
+.cuerpo-viajero-A {
+    background-color: #f1c0ab;
+    margin: 0;
+}
+
+.barra-A {
+    background-color: #B3B3FD;
+    font-size: 3rem;
+    font-family: 'Lexend', sans-serif;
+
+}
+
+img {
+    width: auto;
+    height: auto;
+}
+
+.imagen-nombre-A {
+    display: flex;
+    align-items: center;
+}
+
+.contenedor-alojamiento {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 30rem;
+    margin-top: 2rem;
+    padding-bottom: 5rem;
+}
+
+.titulo {
+    margin: 0;
+    margin-bottom: 5rem;    
+    font-size: 3rem;
+}
+
+.idioma {
+    font-size: 2rem;
+    width: 10%;
+    padding-bottom: 1rem;
+}
+
+.contenedor-tabla {
+    box-shadow: 8px 10px 10px 10px rgb(142, 142, 212);
+    background-color: #bfbfd4;
+    margin: 1rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    margin-left: 5rem;
+    
+}
+
+.tablaAlojamiento {
+    
+    display: flex;
+    flex-direction: column;
+    column-width: 50%;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tablaAlojamiento td{
+    border: 2px solid #ddd; 
+    padding: 8px;
+    width: 10%;
+
+}
+
+.palabras {
+    font-size: 2rem;
+    text-align: center;
+}
+
+button {
+
+    background-color: #000000a8;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 1rem;
+
+    margin-left: 58rem;
+    margin-top: 5rem;
+    margin-bottom: 15rem;
+}
+
+button:hover {
+    background-color: #171718;
+}
+
+button:active {
+    background-color: #9e9ef5;
+}
