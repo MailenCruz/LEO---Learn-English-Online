@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { UsersService } from 'src/app/sesion/services/users.service';
 
 @Component({
-  selector: 'app-shopping-home-page',
-  templateUrl: './shopping-home-page.component.html',
-  styleUrls: ['./shopping-home-page.component.css']
+  selector: 'gramatica-home-page',
+  templateUrl: './gramatica-home-page.component.html',
+  styleUrls: ['./gramatica-home-page.component.css']
 })
-export class ShoppingHomePageComponent {
+export class GramaticaHomePageComponent {
   constructor(private userService:UsersService, public router:Router){
 
   }

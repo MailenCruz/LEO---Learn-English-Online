@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { UsersService } from 'src/app/sesion/services/users.service';
 
 @Component({
-  selector: 'app-shopping-home-page',
-  templateUrl: './shopping-home-page.component.html',
-  styleUrls: ['./shopping-home-page.component.css']
+  selector: 'avanzado-home',
+  templateUrl: './avanzado-home.component.html',
+  styleUrls: ['./avanzado-home.component.css']
 })
-export class ShoppingHomePageComponent {
+export class AvanzadoHomeComponent {
   constructor(private userService:UsersService, public router:Router){
 
   }

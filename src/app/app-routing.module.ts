@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { JuegosHomePageComponent } from './pages/juegos-pages/juegos-home-page/juegos-home-page.component';
 import { ViajeroHomePageComponent } from './pages/viajero-pages/viajero-home-page/viajero-home-page.component';
-import { GramaticaHomePageComponent } from './pages/gramatica-pages/gramatica-home-page/gramatica-home-page.component';
+import { GramaticaHomePageComponent } from './gramatica/pages/gramatica-home-page/gramatica-home-page.component';
 import { PalabraImagenJuegoComponent } from './components/juegos/palabra-imagen-juego/palabra-imagen-juego.component';
 import { PalabraPalabraJuegoComponent } from './components/juegos/palabra-palabra-juego/palabra-palabra-juego.component';
 import { NombreColorColorJuegoComponent } from './components/juegos/nombre-color-color-juego/nombre-color-color-juego.component';
@@ -29,19 +29,19 @@ import { MultipleChoicePreguntasAlojamientoComponent } from './components/viajer
 import { ShoppingHomePageComponent } from './pages/viajero-pages/shopping-home-page/shopping-home-page.component';
 import { RestauranteHomePageComponent } from './pages/viajero-pages/restaurante-home/restaurante-home.component';
 import { AlojamientoHomePageComponent } from './pages/viajero-pages/alojamiento-home-page/alojamiento-home-page.component';
-import { BasicoHomeComponent } from './pages/gramatica-pages/basico-home/basico-home.component';
-import { IntermedioHomeComponent } from './pages/gramatica-pages/intermedio-home/intermedio-home.component';
-import { AvanzadoHomeComponent } from './pages/gramatica-pages/avanzado-home/avanzado-home.component';
+import { BasicoHomeComponent } from './gramatica/pages/basico-home/basico-home.component';
+import { IntermedioHomeComponent } from './gramatica/pages/intermedio-home/intermedio-home.component';
+import { AvanzadoHomeComponent } from './gramatica/pages/avanzado-home/avanzado-home.component';
 import { ReescribirEjercicioIntComponent } from './components/gramatica/nivel-intermedio-gramatica/reescribir-ejercicio-int/reescribir-ejercicio-int.component';
 import { CompletarEjercicioIntComponent } from './components/gramatica/nivel-intermedio-gramatica/completar-ejercicio-int/completar-ejercicio-int.component';
 import { OrdenarEjercicioIntComponent } from './components/gramatica/nivel-intermedio-gramatica/ordenar-ejercicio-int/ordenar-ejercicio-int.component';
 import { CompletarEjercicioAvComponent } from './components/gramatica/nivel-avanzado-gramatica/completar-ejercicio-av/completar-ejercicio-av.component';
 import { OrdenarEjercicioAvComponent } from './components/gramatica/nivel-avanzado-gramatica/ordenar-ejercicio-av/ordenar-ejercicio-av.component';
 import { ReescribirEjercicioAvComponent } from './components/gramatica/nivel-avanzado-gramatica/reescribir-ejercicio-av/reescribir-ejercicio-av.component';
-import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
-import { LogInPageComponent } from './pages/log-in-page/log-in-page.component';
+import { SignUpPageComponent } from './sesion/pages/sign-up-page/sign-up-page.component';
+import { LogInPageComponent } from './sesion/pages/log-in-page/log-in-page.component';
 import { HomeNoLogComponent } from './pages/home-no-log/home-no-log.component';
-import { MyProfilePageComponent } from './pages/my-profile-page/my-profile-page.component';
+import { MyProfilePageComponent } from './sesion/pages/my-profile-page/my-profile-page.component';
 
 const routes: Routes = [
   {path: 'home', component: HomePageComponent},
