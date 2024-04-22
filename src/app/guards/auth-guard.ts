@@ -1,8 +1,8 @@
 import { inject } from '@angular/core';
-import { UsersService } from '../sesion/services/users.service';
+import { UsersService } from '../services/users.service';
 import { Router} from '@angular/router';
 import { Observable, tap } from 'rxjs';
-import { User } from '../sesion/interfaces/user';
+import { User } from '../interfaces/user';
 
 function checkAuthStatus(): boolean | Observable<boolean>{
   const authService = inject(UsersService);

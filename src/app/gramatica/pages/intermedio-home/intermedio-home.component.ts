@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { UsersService } from 'src/app/sesion/services/users.service';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'intermedio-home',

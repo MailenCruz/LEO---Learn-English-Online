@@ -14,8 +14,8 @@ import { OrdenarEjercicioIntComponent } from './components/nivel-intermedio-gram
 import { ReescribirEjercicioIntComponent } from './components/nivel-intermedio-gramatica/reescribir-ejercicio-int/reescribir-ejercicio-int.component';
 import { AvanzadoHomeComponent } from './pages/avanzado-home/avanzado-home.component';
 import { BasicoHomeComponent } from './pages/basico-home/basico-home.component';
-import { GramaticaHomePageComponent } from './pages/gramatica-home-page/gramatica-home-page.component';
 import { IntermedioHomeComponent } from './pages/intermedio-home/intermedio-home.component';
+import { GramaticaHomePageComponent } from './pages/gramatica-home-page/gramatica-home-page.component';
 
 const routes: Routes = [
   {path:'gramatica-home', component:GramaticaHomePageComponent},

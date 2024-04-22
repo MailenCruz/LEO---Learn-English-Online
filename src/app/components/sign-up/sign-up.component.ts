@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/app/sesion/interfaces/user';
-import { UsersService } from 'src/app/sesion/services/users.service';
+import { User } from 'src/app/interfaces/user';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'sign-up',

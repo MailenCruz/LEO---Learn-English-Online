@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UsersService } from 'src/app/sesion/services/users.service';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'navbar',

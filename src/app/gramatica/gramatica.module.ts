@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
 import { GramaticaRoutingModule } from './gramatica-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from '../app-routing.module';
+
 import { EleccionNivelComponent } from './components/eleccion-nivel/eleccion-nivel.component';
 import { NavGramaticaComponent } from './components/nav-gramatica/nav-gramatica.component';
 
@@ -17,11 +22,12 @@ import { NivelIntermedioGramaticaComponent } from './components/nivel-intermedio
 import { CompletarEjercicioIntComponent } from './components/nivel-intermedio-gramatica/completar-ejercicio-int/completar-ejercicio-int.component';
 import { ReescribirEjercicioIntComponent } from './components/nivel-intermedio-gramatica/reescribir-ejercicio-int/reescribir-ejercicio-int.component';
 import { OrdenarEjercicioIntComponent } from './components/nivel-intermedio-gramatica/ordenar-ejercicio-int/ordenar-ejercicio-int.component';
+
 import { AvanzadoHomeComponent } from './pages/avanzado-home/avanzado-home.component';
 import { BasicoHomeComponent } from './pages/basico-home/basico-home.component';
 import { GramaticaHomePageComponent } from './pages/gramatica-home-page/gramatica-home-page.component';
 import { IntermedioHomeComponent } from './pages/intermedio-home/intermedio-home.component';
-import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
     declarations: [
@@ -31,6 +37,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
         IntermedioHomeComponent,
         NivelIntermedioGramaticaComponent,
+
         CompletarEjercicioIntComponent,
         OrdenarEjercicioIntComponent,
         ReescribirEjercicioIntComponent,
@@ -51,7 +58,11 @@ import { ReactiveFormsModule } from '@angular/forms';
         GramaticaRoutingModule
     ],
     imports: [
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        CommonModule,
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule
     ]
   })
   export class GramaticaModule { }
