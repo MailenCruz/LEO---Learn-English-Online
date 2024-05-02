@@ -18,25 +18,32 @@ import { IntermedioHomeComponent } from './pages/intermedio-home/intermedio-home
 import { GramaticaHomePageComponent } from './pages/gramatica-home-page/gramatica-home-page.component';
 
 const routes: Routes = [
-  {path:'gramatica-home', component:GramaticaHomePageComponent},
+  {
+    path: '',
+    children: [
+      { path: 'gramatica-home', component: GramaticaHomePageComponent },
 
-  {path:'nivelBasico-gramatica', component:NivelBasicoGramaticaComponent},
-  {path:'basico-home', component:BasicoHomeComponent},
-  {path:'reescribir-ejercicio', component:ReescribirEjercicioComponent},
-  {path:'ordenar-ejercicio', component:OrdenarEjercicioComponent},
-  {path:'completar-ejercicio', component:CompletarEjercicioComponent},
+      { path: 'nivelBasico-gramatica', component: NivelBasicoGramaticaComponent },
+      { path: 'basico-home', component: BasicoHomeComponent },
+      { path: 'reescribir-ejercicio', component: ReescribirEjercicioComponent },
+      { path: 'ordenar-ejercicio', component: OrdenarEjercicioComponent },
+      { path: 'completar-ejercicio', component: CompletarEjercicioComponent },
 
-  {path:'nivelIntermedio-gramatica', component:NivelIntermedioGramaticaComponent},
-  {path:'intermedio-home',component:IntermedioHomeComponent},
-  {path:'reescribir-ejercicio-int', component:ReescribirEjercicioIntComponent},
-  {path:'ordenar-ejercicio-int', component:OrdenarEjercicioIntComponent},
-  {path:'completar-ejercicio-int', component:CompletarEjercicioIntComponent},
+      { path: 'nivelIntermedio-gramatica', component: NivelIntermedioGramaticaComponent },
+      { path: 'intermedio-home', component: IntermedioHomeComponent },
+      { path: 'reescribir-ejercicio-int', component: ReescribirEjercicioIntComponent },
+      { path: 'ordenar-ejercicio-int', component: OrdenarEjercicioIntComponent },
+      { path: 'completar-ejercicio-int', component: CompletarEjercicioIntComponent },
 
-  {path:'nivelAvanzado-gramatica', component:NivelAvanzadoGramaticaComponent},
-  {path:'avanzado-home', component:AvanzadoHomeComponent},
-  {path:'reescribir-ejercicio-av', component:ReescribirEjercicioAvComponent},
-  {path:'ordenar-ejercicio-av', component:OrdenarEjercicioAvComponent},
-  {path:'completar-ejercicio-av', component:CompletarEjercicioAvComponent}
+      { path: 'nivelAvanzado-gramatica', component: NivelAvanzadoGramaticaComponent },
+      { path: 'avanzado-home', component: AvanzadoHomeComponent },
+      { path: 'reescribir-ejercicio-av', component: ReescribirEjercicioAvComponent },
+      { path: 'ordenar-ejercicio-av', component: OrdenarEjercicioAvComponent },
+      { path: 'completar-ejercicio-av', component: CompletarEjercicioAvComponent },
+
+      { path: '**', redirectTo: 'home-general' }
+    ]
+  }
 ];
 
 @NgModule({

@@ -5,7 +5,6 @@ import nlp from 'compromise/three';
 import { Correccion } from 'src/app/gramatica/interfaces/correccion';
 import { GramaticaService } from 'src/app/gramatica/services/gramatica.service';
 
-
 @Component({
   selector: 'ordenar-ejercicio-av',
   templateUrl: './ordenar-ejercicio-av.component.html',
@@ -27,12 +26,29 @@ export class OrdenarEjercicioAvComponent {
 
   constructor(private router:Router, private formBuilder: FormBuilder, private gramaticaService: GramaticaService, private cdr: ChangeDetectorRef) { }
 
-  async ngOnInit() {
-    await this.getEjercicios();
-    this.randomPhrase = this.ordenar[this.index];
+  ngOnInit() {
+    window.scrollTo(0, 0);
+    this.getEjercicios();
+  }
+  
+  getEjercicios() {
+    let respuesta = this.gramaticaService.getExercisesHttp().subscribe(
+      {
+        next: (respuesta) => {
+          if (respuesta) {
+            const { avanzado } = respuesta;
+            this.ordenar = avanzado.ordenar;
+            this.randomPhrase = this.ordenar[this.index];
+          }
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      }
+    );
   }
 
-  async getEjercicios() {
+  /*async getEjercicios() {
     try {
       let respuesta = await this.gramaticaService.getExercises();
 
@@ -44,7 +60,7 @@ export class OrdenarEjercicioAvComponent {
     catch (error) {
       console.log(error);
     }
-  }
+  }*/
 
   siguienteEjercicio() {
     if (this.ordenar.length > 0) {
@@ -75,7 +91,30 @@ export class OrdenarEjercicioAvComponent {
     this.checkRespuesta(respuesta);
   }
 
-  async checkRespuesta(oracion: string) {
+  checkRespuesta(oracion: string) {
+
+    if(this.oracionCoincide === true){
+
+      oracion = oracion.charAt(0).toUpperCase() + oracion.slice(1);
+      
+      this.gramaticaService.getCorreccionHttp(oracion).subscribe(
+        {
+          next: (correccion) => {
+            this.correcciones = correccion;
+  
+            if (this.correcciones && this.correcciones.length === 0) {
+              this.correcto = true;
+            }
+          },
+          error: (err) => {
+            console.log(err);
+          }
+        }
+      )
+    }
+  }
+
+  /*async checkRespuesta(oracion: string) {
     try {
       if (this.oracionCoincide === true) {
         oracion = oracion.charAt(0).toUpperCase() + oracion.slice(1);
@@ -89,7 +128,7 @@ export class OrdenarEjercicioAvComponent {
     catch (error) {
       console.log(error);
     }
-  }
+  }*/
 
   reset() {
     this.correcciones = [];

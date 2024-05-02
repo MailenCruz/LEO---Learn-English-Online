@@ -56,12 +56,29 @@ export class ReescribirEjercicioAvComponent {
 
   constructor(private router: Router, private formBuilder: FormBuilder, private gramaticaService: GramaticaService, private cdr: ChangeDetectorRef) { }
 
-  async ngOnInit() {
-    await this.getEjercicios();
-    this.fraseAleatoria();
+  ngOnInit() {
+    window.scrollTo(0, 0);
+    this.getEjercicios();
+  }
+  
+  getEjercicios() {
+    let respuesta = this.gramaticaService.getExercisesHttp().subscribe(
+      {
+        next: (respuesta) => {
+          if (respuesta) {
+            const { avanzado } = respuesta;
+            this.reescribir = avanzado.reescribir;
+            this.fraseAleatoria();
+          }
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      }
+    );
   }
 
-  async getEjercicios() { //trae desde el json y carga al array REESCRIBIR los ejercicios
+  /*async getEjercicios() { //trae desde el json y carga al array REESCRIBIR los ejercicios
     try {
       const respuesta = await this.gramaticaService.getExercises();
 
@@ -73,7 +90,7 @@ export class ReescribirEjercicioAvComponent {
     catch (error) {
       console.log(error);
     }
-  }
+  }*/
 
   fraseAleatoria() {
     const types = ['afirmativo', 'negativo', 'interrogativo'] as const;
@@ -136,17 +153,46 @@ export class ReescribirEjercicioAvComponent {
 
     return lemmas;
   }
-  async checkRespuesta() {  //checkea los errores de las oraciones enviadas y que coincidan
+
+  checkRespuesta() {
+
+    this.correccionesPorTipo = [];
+
+    for (let key in this.respuestas) { //recorre las claves del objeto
+
+      if (this.check[key as keyof Reescribir] === true && this.oracionCoincide[key] === true) { //si la respuesta fue enviada (no vacía) y coincide
+
+        let value = this.respuestas[key as keyof Reescribir]; //copia la respuesta del usuario
+
+        value = value.charAt(0).toUpperCase() + value.slice(1); //pone en minúscula la primer letra
+
+        this.gramaticaService.getCorreccionHttp(value.trim()).subscribe(
+          {
+            next: (correccion) => {
+
+              let aux: { [tipo: string]: Correccion[] | undefined } = {};
+              aux[key] = correccion;
+              this.correccionesPorTipo.push(aux);
+            },
+            error: (err) => {
+              console.log(err);
+            }
+          })
+      }
+    }
+  }
+
+  /*async checkRespuesta() {  //checkea los errores de las oraciones enviadas y que coincidan
     this.correccionesPorTipo = [];
     try {
       for (let key in this.respuestas) { //recorre las claves del objeto
-
+ 
         if (this.check[key as keyof Reescribir] === true && this.oracionCoincide[key] === true) { //si la respuesta fue enviada (no vacía) y coincide
-
+ 
           let value = this.respuestas[key as keyof Reescribir]; //copia la respuesta del usuario
-
+ 
           value = value.charAt(0).toUpperCase() + value.slice(1); //pone en minúscula la primer letra
-
+ 
           let correcciones: Correccion[] | undefined = await this.gramaticaService.getCorreccion(value.trim()); //trae las correciones
           let aux: { [tipo: string]: Correccion[] | undefined } = {};
           aux[key] = correcciones;
@@ -156,17 +202,17 @@ export class ReescribirEjercicioAvComponent {
     } catch (error) {
       console.log(error);
     }
-  }
+  }*/
 
   siguienteEjercicio() {
     if (this.reescribir.length > 0) {
 
       this.index = this.index + 1;
 
-      if(this.index == this.reescribir.length){
+      if (this.index == this.reescribir.length) {
         this.router.navigate(['/basico-home']);
       }
-      else{
+      else {
         this.fraseAleatoria();
         this.answer.reset();
         this.correccionesPorTipo = [];

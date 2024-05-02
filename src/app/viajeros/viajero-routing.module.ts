@@ -18,35 +18,39 @@ import { ShoppingHomePageComponent } from './pages/shopping-home-page/shopping-h
 import { ViajeroHomePageComponent } from './pages/viajero-home-page/viajero-home-page.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    children: [
+      { path: 'viajeros-home', component: ViajeroHomePageComponent },
 
-  {path:'viajeros-home', component:ViajeroHomePageComponent},
+      { path: 'shopping', component: ShoppingViajeroComponent },
+      { path: 'restaurant', component: RestauranteViajeroComponent },
+      { path: 'alojamiento', component: AlojamientoViajeroComponent },
 
-  {path:'shopping',component:ShoppingViajeroComponent},
-  {path:'restaurant',component:RestauranteViajeroComponent},
-  {path:'alojamiento',component:AlojamientoViajeroComponent},
+      { path: 'shopping-home', component: ShoppingHomePageComponent },
+      { path: 'restaurante-home', component: RestauranteHomePageComponent },
+      { path: 'alojamiento-home', component: AlojamientoHomePageComponent },
 
-  {path:'shopping-home', component:ShoppingHomePageComponent},
-  {path:'restaurante-home', component:RestauranteHomePageComponent},
-  {path:'alojamiento-home', component:AlojamientoHomePageComponent},
+      { path: 'vocabulario-shopping', component: VocabularioShoppingComponent },
+      { path: 'multipleChoice-vocabulario-shopping', component: MultipleChoiceVocabularioShoppingComponent },
+      { path: 'multipleChoice-preguntas-shopping', component: MultipleChoicePreguntasShoppingComponent },
 
-  {path:'vocabulario-shopping', component:VocabularioShoppingComponent},
-  {path:'multipleChoice-vocabulario-shopping', component:MultipleChoiceVocabularioShoppingComponent},
-  {path:'multipleChoice-preguntas-shopping', component:MultipleChoicePreguntasShoppingComponent},
+      { path: 'vocabulario-restaurante', component: VocabularioRestauranteComponent },
+      { path: 'multipleChoice-vocabulario-restaurante', component: MultipleChoiceVocabularioRestauranteComponent },
+      { path: 'multipleChoice-preguntas-restaurante', component: MultipleChoicePreguntasRestauranteComponent },
 
-  {path:'vocabulario-restaurante', component:VocabularioRestauranteComponent},
-  {path:'multipleChoice-vocabulario-restaurante', component:MultipleChoiceVocabularioRestauranteComponent},
-  {path:'multipleChoice-preguntas-restaurante', component:MultipleChoicePreguntasRestauranteComponent},
+      { path: 'vocabulario-alojamiento', component: VocabularioAlojamientoComponent },
+      { path: 'multipleChoice-vocabulario-alojamiento', component: MultipleChoiceVocaburarioAlojamientoComponent },
+      { path: 'multipleChoice-preguntas-alojamiento', component: MultipleChoicePreguntasAlojamientoComponent },
 
-  {path:'vocabulario-alojamiento', component:VocabularioAlojamientoComponent},
-  {path:'multipleChoice-vocabulario-alojamiento', component:MultipleChoiceVocaburarioAlojamientoComponent},
-  {path:'multipleChoice-preguntas-alojamiento', component:MultipleChoicePreguntasAlojamientoComponent},
-
-  {path: '**', redirectTo: 'home-general'}
+      { path: '**', redirectTo: 'home-general' }
+    ]
+  }
 
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
-  })
-  export class ViajeroRoutingModule { }
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class ViajeroRoutingModule { }

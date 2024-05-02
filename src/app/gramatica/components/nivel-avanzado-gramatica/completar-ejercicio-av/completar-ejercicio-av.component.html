@@ -13,14 +13,14 @@
         <section class="completar">
 
             <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
-                <p> {{ randomPhrase.oracion }} </p>
+                <p *ngIf="randomPhrase"> {{ randomPhrase.oracion }} </p>
 
-                <select id="completar" formControlName="completar">
+                <select id="completar" formControlName="completar" *ngIf="randomPhrase.respuestas">
                     <option disabled selected> Choose your answer </option>
                     <option *ngFor="let i of randomPhrase.respuestas" [value]="i">
                         {{ i }}
                     </option>
-                </select>
+                </select>                  
 
                 <!-- check -->
                 <div *ngIf="answer.controls['completar'].getError('required') && answer.controls['completar'].touched ">

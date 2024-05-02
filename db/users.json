@@ -4,13 +4,19 @@
       "username": "sofia",
       "password": "sofia28",
       "email": "fuelle86@gmail.com",
-      "id": 1
+      "id": "1"
     },
     {
       "username": "mai",
       "password": "mailen123",
       "email": "mailenyfiorella@gmail.com",
-      "id": 2
+      "id": "2"
+    },
+    {
+      "id": "3bac",
+      "username": "luli",
+      "password": "luli123",
+      "email": "luciana@gmail.com"
     }
   ]
 }

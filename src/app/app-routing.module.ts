@@ -8,12 +8,14 @@ import { MyProfilePageComponent } from "./pages/my-profile-page/my-profile-page.
 import { SignUpPageComponent } from "./pages/sign-up-page/sign-up-page.component";
 
 const routes: Routes = [
-  { path: 'home', component: HomePageComponent },
   { path: 'home-general', component: HomeNoLogComponent },
+  { path: 'home', component: HomePageComponent },
   { path: 'contactanos', component: ContactanosPageComponent },
   { path: 'registrate', component: SignUpPageComponent },
   { path: 'ingresa', component: LogInPageComponent },
   { path: 'my-profile/:id', component: MyProfilePageComponent },
+  
+  { path: '', component: HomeNoLogComponent },
 
   //reemplaza imports de juegos
   {
@@ -29,7 +31,7 @@ const routes: Routes = [
 
   //reemplaza imports de gramatica
   {
-    path: 'gramatica',
+    path: 'gramaticas',
     loadChildren: () => import('./gramatica/gramatica.module').then(module => module.GramaticaModule)
   }
 

@@ -29,10 +29,9 @@ import { JuegosHomePageComponent } from './pages-juegos/juegos-home-page/juegos-
   ],
   imports: [
     CommonModule,
-    BrowserModule,
-    AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    JuegosRoutingModule
   ]
 })
 export class JuegosModule { }

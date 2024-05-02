@@ -56,10 +56,9 @@ import { ViajeroHomePageComponent } from './pages/viajero-home-page/viajero-home
   ],
   imports: [
     CommonModule,
-    BrowserModule,
-    AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ViajeroRoutingModule
   ]
 })
 

@@ -27,6 +27,7 @@ import { AvanzadoHomeComponent } from './pages/avanzado-home/avanzado-home.compo
 import { BasicoHomeComponent } from './pages/basico-home/basico-home.component';
 import { GramaticaHomePageComponent } from './pages/gramatica-home-page/gramatica-home-page.component';
 import { IntermedioHomeComponent } from './pages/intermedio-home/intermedio-home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -58,11 +59,11 @@ import { IntermedioHomeComponent } from './pages/intermedio-home/intermedio-home
         GramaticaRoutingModule
     ],
     imports: [
-        ReactiveFormsModule,
         CommonModule,
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        GramaticaRoutingModule
     ]
   })
   export class GramaticaModule { }

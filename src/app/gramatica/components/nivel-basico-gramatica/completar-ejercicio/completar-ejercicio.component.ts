@@ -36,12 +36,29 @@ export class CompletarEjercicioComponent {
 
   constructor(private router:Router, private formBuilder: FormBuilder, private gramaticaService: GramaticaService, private cdr: ChangeDetectorRef) { }
 
-  async ngOnInit() {
-    await this.getEjercicios();
-    this.randomPhrase = this.completar[this.index]
+  ngOnInit() {
+    window.scrollTo(0, 0);
+    this.getEjercicios();
+  }
+  
+  getEjercicios() {
+    let respuesta = this.gramaticaService.getExercisesHttp().subscribe(
+      {
+        next: (respuesta) => {
+          if (respuesta) {
+            const { basico } = respuesta;
+            this.completar = basico.completar;
+            this.randomPhrase = this.completar[this.index];
+          }
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      }
+    );
   }
 
-  async getEjercicios() {
+  /*async getEjercicios() {
     try {
       let respuesta = await this.gramaticaService.getExercises();
 
@@ -53,7 +70,7 @@ export class CompletarEjercicioComponent {
     catch (error) {
       console.log(error);
     }
-  }
+  }*/
 
   siguienteEjercicio() {
     if (this.completar.length > 0) {
@@ -83,7 +100,25 @@ export class CompletarEjercicioComponent {
     this.checkRespuesta(oracion);
   }
 
-  async checkRespuesta(oracion: string) {
+  checkRespuesta(oracion: string) {
+    oracion = oracion.charAt(0).toUpperCase() + oracion.slice(1);
+    this.gramaticaService.getCorreccionHttp(oracion).subscribe(
+      {
+        next: (correccion) => {
+          this.correcciones = correccion;
+
+          if (this.correcciones && this.correcciones.length === 0) {
+            this.correcto = true;
+          }
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      }
+    )
+  }
+
+  /*async checkRespuesta(oracion: string) {
     try {
       oracion = oracion.charAt(0).toUpperCase() + oracion.slice(1);
       this.correcciones = await this.gramaticaService.getCorreccion(oracion);
@@ -95,7 +130,7 @@ export class CompletarEjercicioComponent {
     catch (error) {
       console.log(error);
     }
-  }
+  }*/
 
   reset() {
     this.correcciones = [];
