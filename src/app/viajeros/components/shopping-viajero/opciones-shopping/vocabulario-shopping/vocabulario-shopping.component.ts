@@ -14,14 +14,20 @@ export class VocabularioShoppingComponent {
   
   constructor(private viajeroService:ViajeroService ){}
 
-  async ngOnInit(){
-    try{
-      this.vocabularioShopping = await this.viajeroService.getDataShopping_vocabulario();
-      console.log("VOCABULARIO SHOPPING: ");
-      console.log(this.vocabularioShopping);
-    }
-    catch(error){
-      console.log(error);
-    }
+  ngOnInit(){
+    window.scrollTo(0, 0);
+      this.viajeroService.getDataShopping_vocabulario().subscribe(
+        {
+          next: (voc) => {
+            this.vocabularioShopping = voc;
+          },
+          error: (err) => {
+            console.log(err);
+          }
+        }
+      );
+      //console.log("VOCABULARIO SHOPPING: ");
+      //console.log(this.vocabularioShopping);
+    
   }
 }

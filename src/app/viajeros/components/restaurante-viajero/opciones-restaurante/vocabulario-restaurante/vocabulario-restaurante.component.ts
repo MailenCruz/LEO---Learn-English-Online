@@ -10,19 +10,25 @@ import { ViajeroService } from 'src/app/viajeros/services/viajero.service';
 })
 export class VocabularioRestauranteComponent {
 
-  vocabularioRestaurante: Vocabulario|undefined;
+  vocabularioRestaurante: Vocabulario | undefined;
 
-  constructor(private viajeroService:ViajeroService){}
+  constructor(private viajeroService: ViajeroService) { }
 
-  async ngOnInit(){
-    try{
-      this.vocabularioRestaurante = await this.viajeroService.getDataRestaurante_vocabulario();
-      console.log("VOCABULARIO RESTAURANTE: ");
-      console.log(this.vocabularioRestaurante);
-    }
-    catch(error){
-      console.log(error);
-    }
+  ngOnInit() {
+    window.scrollTo(0, 0);
+    this.viajeroService.getDataRestaurante_vocabulario().subscribe(
+      {
+        next: (voc) => {
+          this.vocabularioRestaurante = voc;
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      }
+    );
+    //console.log("VOCABULARIO RESTAURANTE: ");
+    //console.log(this.vocabularioRestaurante);
+
   }
 
 }

@@ -8,7 +8,7 @@ import { ViajeroService } from 'src/app/viajeros/services/viajero.service';
   styleUrls: ['./mc-vocabulario-s.component.css']
 })
 export class MultipleChoiceVocabularioShoppingComponent {
- 
+
   ejerciciosShopping: Ejercicio[] = [];
   oracionActual: number = 0;
   respuestaSeleccionada: string = '';
@@ -20,15 +20,22 @@ export class MultipleChoiceVocabularioShoppingComponent {
 
   constructor(private viajeroService: ViajeroService) { }
 
-  async ngOnInit() {
-    try {
-      this.ejerciciosShopping = await this.viajeroService.getDataShopping_ejercicios();
-      console.log("EJERCICIOS SHOPPING: ");
-      console.log(this.ejerciciosShopping);
-    }
-    catch (error) {
-      console.log(error);
-    }
+  ngOnInit() {
+    window.scrollTo(0, 0);
+    this.viajeroService.getDataShopping_ejercicios().subscribe(
+      {
+        next: (voc) => {
+          if(voc){
+            this.ejerciciosShopping = voc;
+          }
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      }
+    );
+    //console.log("EJERCICIOS SHOPPING: ");
+    //console.log(this.ejerciciosShopping);
   }
 
   verificarRespuesta() {
@@ -55,7 +62,7 @@ export class MultipleChoiceVocabularioShoppingComponent {
     } else {
       // Si hay más preguntas, reiniciar el estado
       this.resetearEstado();
-      this.mostrarBoton=false;
+      this.mostrarBoton = false;
     }
   }
 

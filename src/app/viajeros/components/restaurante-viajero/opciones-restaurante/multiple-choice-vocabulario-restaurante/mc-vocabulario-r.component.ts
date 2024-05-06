@@ -10,7 +10,7 @@ import { ViajeroService } from 'src/app/viajeros/services/viajero.service';
 })
 export class MultipleChoiceVocabularioRestauranteComponent {
 
-  ejerciciosRestaurante: Ejercicio[]=[];
+  ejerciciosRestaurante: Ejercicio[] = [];
   oracionActual: number = 0;
   respuestaSeleccionada: string = '';
   respuestaCorrecta: string = '';
@@ -18,18 +18,25 @@ export class MultipleChoiceVocabularioRestauranteComponent {
   mostrarCuestionario: boolean = true;
 
   mostrarBoton: boolean = false;
-  
-  constructor(private viajeroService:ViajeroService){}
 
-  async ngOnInit(){
-    try{
-      this.ejerciciosRestaurante = await this.viajeroService.getDataRestaurante_ejercicios();
-      console.log("EJERCICIOS RESTAURANTE: ");
-      console.log(this.ejerciciosRestaurante);
-    }
-    catch(error){
-      console.log(error);
-    }
+  constructor(private viajeroService: ViajeroService) { }
+
+  ngOnInit() {
+    window.scrollTo(0, 0);
+    this.viajeroService.getDataRestaurante_ejercicios().subscribe(
+      {
+        next: (voc) => {
+          if(voc){
+            this.ejerciciosRestaurante = voc;
+          }
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      }
+    );
+    //console.log("EJERCICIOS RESTAURANTE: ");
+    //console.log(this.ejerciciosRestaurante);
   }
 
   verificarRespuesta() {
@@ -56,8 +63,8 @@ export class MultipleChoiceVocabularioRestauranteComponent {
     } else {
       // Si hay más preguntas, reiniciar el estado
       this.resetearEstado();
-      this.mostrarBoton=false;
+      this.mostrarBoton = false;
     }
   }
-  
+
 }

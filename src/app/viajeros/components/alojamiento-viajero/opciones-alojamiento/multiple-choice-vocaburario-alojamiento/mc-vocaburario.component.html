@@ -9,9 +9,12 @@
     </nav>
 
     <div class="cuerpo-MCV" *ngIf="mostrarCuestionario">
-        <p class="titulo">{{ ejerciciosAlojamiento[oracionActual].oracion }}</p>
 
-        <ul class="ejercicio">
+        <div *ngIf="ejerciciosAlojamiento && ejerciciosAlojamiento[oracionActual]">
+            <p class="titulo">{{ ejerciciosAlojamiento[oracionActual].oracion }}</p>
+        </div>
+
+        <ul class="ejercicio" *ngIf="ejerciciosAlojamiento[oracionActual] && ejerciciosAlojamiento[oracionActual].respuestas">
             <li *ngFor="let respuesta of ejerciciosAlojamiento[oracionActual].respuestas; let i = index">
                 <label>
                     <input type="radio" [(ngModel)]="respuestaSeleccionada" [value]="respuesta"

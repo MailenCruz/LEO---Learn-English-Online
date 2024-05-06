@@ -10,7 +10,7 @@ import { ViajeroService } from 'src/app/viajeros/services/viajero.service';
 })
 export class MultipleChoicePreguntasRestauranteComponent {
 
-  preguntasRestaurante: Pregunta[]=[];
+  preguntasRestaurante: Pregunta[] = [];
   oracionActual: number = 0;
   respuestaSeleccionada: string = '';
   respuestaCorrecta: string = '';
@@ -18,18 +18,25 @@ export class MultipleChoicePreguntasRestauranteComponent {
   mostrarCuestionario: boolean = true;
 
   mostrarBoton: boolean = false;
-  
-  constructor(private viajeroService:ViajeroService ){}
 
-  async ngOnInit(){
-    try{
-      this.preguntasRestaurante = await this.viajeroService.getDataRestaurante_preguntas();
-      console.log("PREGUNTAS RESTAURANTE: ");
-      console.log(this.preguntasRestaurante);
-    }
-    catch(error){
-      console.log(error);
-    }
+  constructor(private viajeroService: ViajeroService) { }
+
+  ngOnInit() {
+    window.scrollTo(0, 0);
+    this.viajeroService.getDataRestaurante_preguntas().subscribe(
+      {
+        next: (preg) => {
+          if(preg){
+            this.preguntasRestaurante = preg;
+          }
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      }
+    );
+    //console.log("PREGUNTAS RESTAURANTE: ");
+    //console.log(this.preguntasRestaurante);
   }
 
   verificarRespuesta() {
@@ -56,9 +63,9 @@ export class MultipleChoicePreguntasRestauranteComponent {
     } else {
       // Si hay más preguntas, reiniciar el estado
       this.resetearEstado();
-      this.mostrarBoton=false;
+      this.mostrarBoton = false;
     }
   }
-  
+
 
 }

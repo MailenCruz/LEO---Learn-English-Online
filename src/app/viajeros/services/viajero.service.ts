@@ -5,17 +5,31 @@ import { Alojamiento } from '../interfaces/alojamiento';
 import { Vocabulario } from '../interfaces/vocabulario';
 import { Ejercicio } from '../interfaces/ejercicio';
 import { Pregunta } from '../interfaces/pregunta';
+import { environments } from 'src/environments/environments.prod';
+import { HttpClient } from '@angular/common/http';
+import { Observable, catchError, map, of } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ViajeroService {
 
-  private jsonUrl = 'http://localhost:4000/viajero';
+  //private jsonUrl = 'http://localhost:4000/viajero';
+  jsonUrl: string = environments.baseUrl;
+
+  constructor(private http: HttpClient) { }
 
   /*SHOPPING*/
 
-  async getDataShopping(): Promise<Shopping | undefined> {
+
+  getDataShopping(): Observable<Shopping | undefined> {
+    return this.http.get<any>(`${this.jsonUrl}/viajero`).pipe(
+      map(response => response.shopping)
+    );
+  }
+
+  /*async getDataShopping(): Promise<Shopping | undefined> {
     try {
       const response = await fetch(this.jsonUrl);
 
@@ -32,9 +46,15 @@ export class ViajeroService {
       console.error(error);
       return undefined;
     }
+  }*/
+
+  getDataShopping_vocabulario(): Observable<Vocabulario | undefined> {
+    return this.http.get<any>(`${this.jsonUrl}/viajero`).pipe(
+      map(response => response.shopping.vocabulario)
+    );
   }
 
-  async getDataShopping_vocabulario(): Promise<Vocabulario | undefined> {
+  /*async getDataShopping_vocabulario(): Promise<Vocabulario | undefined> {
     try {
       const response = await fetch(this.jsonUrl);
 
@@ -51,9 +71,15 @@ export class ViajeroService {
       console.error(error);
       return undefined;
     }
+  }*/
+
+  getDataShopping_ejercicios(): Observable<Ejercicio[]>{
+    return this.http.get<any>(`${this.jsonUrl}/viajero`).pipe(
+      map(response => response.shopping.ejercicios)
+    );
   }
 
-  async getDataShopping_ejercicios(): Promise<Ejercicio []> {
+  /*async getDataShopping_ejercicios(): Promise<Ejercicio[]> {
     try {
       const response = await fetch(this.jsonUrl);
 
@@ -70,9 +96,15 @@ export class ViajeroService {
       console.error(error);
       return [];
     }
+  }*/
+
+  getDataShopping_preguntas(): Observable<Pregunta[]>{
+    return this.http.get<any>(`${this.jsonUrl}/viajero`).pipe(
+      map(response => response.shopping.preguntas)
+    );
   }
 
-  async getDataShopping_preguntas(): Promise<Pregunta[]> {
+  /*async getDataShopping_preguntas(): Promise<Pregunta[]> {
     try {
       const response = await fetch(this.jsonUrl);
 
@@ -89,11 +121,16 @@ export class ViajeroService {
       console.error(error);
       return [];
     }
-  }
+  }*/
 
   /*RESTAURANTE*/
 
-  async getDataRestaurante(): Promise<Restaurante | undefined> {
+  getDataRestaurante(): Observable<Restaurante | undefined>{
+    return this.http.get<any>(`${this.jsonUrl}/viajero`).pipe(
+      map(response => response.restaurante)
+    );  }
+
+  /*async getDataRestaurante(): Promise<Restaurante | undefined> {
     try {
       const response = await fetch(this.jsonUrl);
 
@@ -110,9 +147,14 @@ export class ViajeroService {
       console.error(error);
       return undefined;
     }
-  }
+  }*/
 
-  async getDataRestaurante_vocabulario(): Promise<Vocabulario | undefined> {
+  getDataRestaurante_vocabulario(): Observable<Vocabulario | undefined>{
+    return this.http.get<any>(`${this.jsonUrl}/viajero`).pipe(
+      map(response => response.restaurante.vocabulario)
+    );  }
+
+  /*async getDataRestaurante_vocabulario(): Promise<Vocabulario | undefined> {
     try {
       const response = await fetch(this.jsonUrl);
 
@@ -129,9 +171,14 @@ export class ViajeroService {
       console.error(error);
       return undefined;
     }
-  }
+  }*/
 
-  async getDataRestaurante_ejercicios(): Promise<Ejercicio []> {
+  getDataRestaurante_ejercicios(): Observable<Ejercicio[]>{
+    return this.http.get<any>(`${this.jsonUrl}/viajero`).pipe(
+      map(response => response.restaurante.ejercicios)
+    );  }
+
+  /*async getDataRestaurante_ejercicios(): Promise<Ejercicio[]> {
     try {
       const response = await fetch(this.jsonUrl);
 
@@ -148,9 +195,14 @@ export class ViajeroService {
       console.error(error);
       return [];
     }
-  }
+  }*/
 
-  async getDataRestaurante_preguntas(): Promise<Pregunta []> {
+  getDataRestaurante_preguntas(): Observable<Pregunta[]>{
+    return this.http.get<any>(`${this.jsonUrl}/viajero`).pipe(
+      map(response => response.restaurante.preguntas)
+    );  }
+
+  /*async getDataRestaurante_preguntas(): Promise<Pregunta[]> {
     try {
       const response = await fetch(this.jsonUrl);
 
@@ -167,11 +219,16 @@ export class ViajeroService {
       console.error(error);
       return [];
     }
-  }
+  }*/
 
   /*ALOJAMIENTO*/
 
-  async getDataAlojamiento(): Promise<Alojamiento | undefined> {
+  getDataAlojamiento(): Observable<Alojamiento | undefined>{
+    return this.http.get<any>(`${this.jsonUrl}/viajero`).pipe(
+      map(response => response.alojamiento)
+    );  }
+
+  /*async getDataAlojamiento(): Promise<Alojamiento | undefined> {
     try {
       const response = await fetch(this.jsonUrl);
 
@@ -188,9 +245,14 @@ export class ViajeroService {
       console.error(error);
       return undefined;
     }
-  }
+  }*/
 
-  async getDataAlojamiento_vocabulario(): Promise<Vocabulario | undefined> {
+  getDataAlojamiento_vocabulario(): Observable<Vocabulario | undefined>{
+    return this.http.get<any>(`${this.jsonUrl}/viajero`).pipe(
+      map(response => response.alojamiento.vocabulario)
+    );  }
+
+  /*async getDataAlojamiento_vocabulario(): Promise<Vocabulario | undefined> {
     try {
       const response = await fetch(this.jsonUrl);
 
@@ -207,9 +269,14 @@ export class ViajeroService {
       console.error(error);
       return undefined;
     }
-  }
+  }*/
 
-  async getDataAlojamiento_ejercicios(): Promise<Ejercicio[]> {
+  getDataAlojamiento_ejercicios(): Observable<Ejercicio[]>{
+    return this.http.get<any>(`${this.jsonUrl}/viajero`).pipe(
+      map(response => response.alojamiento.ejercicios)
+    );  }
+
+  /*async getDataAlojamiento_ejercicios(): Promise<Ejercicio[]> {
     try {
       const response = await fetch(this.jsonUrl);
 
@@ -226,9 +293,14 @@ export class ViajeroService {
       console.error(error);
       return [];
     }
-  }
+  }*/
 
-  async getDataAlojamiento_preguntas(): Promise<Pregunta []> {
+  getDataAlojamiento_preguntas(): Observable<Pregunta[]>{
+    return this.http.get<any>(`${this.jsonUrl}/viajero`).pipe(
+      map(response => response.alojamiento.preguntas)
+    );  }
+
+  /*async getDataAlojamiento_preguntas(): Promise<Pregunta[]> {
     try {
       const response = await fetch(this.jsonUrl);
 
@@ -245,10 +317,5 @@ export class ViajeroService {
       console.error(error);
       return [];
     }
-  }
-
-
-
-
-
+  }*/
 }

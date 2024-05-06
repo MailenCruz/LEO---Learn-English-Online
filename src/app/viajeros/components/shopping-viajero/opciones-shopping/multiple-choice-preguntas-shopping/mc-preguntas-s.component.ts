@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Pregunta } from 'src/app/viajeros/interfaces/pregunta';
+import { Shopping } from 'src/app/viajeros/interfaces/shopping';
 import { ViajeroService } from 'src/app/viajeros/services/viajero.service';
 
 
@@ -9,9 +10,9 @@ import { ViajeroService } from 'src/app/viajeros/services/viajero.service';
   styleUrls: ['./mc-preguntas-s.component.css']
 })
 export class MultipleChoicePreguntasShoppingComponent {
-  
-  preguntasShopping: Pregunta[]=[];
-  
+
+  preguntasShopping: Pregunta[] = [];
+
   oracionActual: number = 0;
   respuestaSeleccionada: string = '';
   respuestaCorrecta: string = '';
@@ -20,17 +21,22 @@ export class MultipleChoicePreguntasShoppingComponent {
 
   mostrarBoton: boolean = false;
 
-  constructor(private viajeroService:ViajeroService ){}
+  constructor(private viajeroService: ViajeroService) { }
 
-  async ngOnInit(){
-    try{
-      this.preguntasShopping = await this.viajeroService.getDataShopping_preguntas();
-      console.log("PREGUNTAS SHOPPING: ");
-      console.log(this.preguntasShopping);
-    }
-    catch(error){
-      console.log(error);
-    }
+  ngOnInit() {
+    window.scrollTo(0, 0);
+    this.viajeroService.getDataShopping_preguntas().subscribe(
+      {
+        next: (preg) => {
+          if(preg){
+            this.preguntasShopping = preg;
+          }
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      }
+    )
   }
 
   verificarRespuesta() {
@@ -57,7 +63,7 @@ export class MultipleChoicePreguntasShoppingComponent {
     } else {
       // Si hay más preguntas, reiniciar el estado
       this.resetearEstado();
-      this.mostrarBoton=false;
+      this.mostrarBoton = false;
     }
   }
 }

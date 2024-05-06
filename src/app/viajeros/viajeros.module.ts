@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ViajeroRoutingModule } from './viajero-routing.module';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppRoutingModule } from '../app-routing.module';
 import { AlojamientoViajeroComponent } from './components/alojamiento-viajero/alojamiento-viajero.component';
 import { MultipleChoicePreguntasAlojamientoComponent } from './components/alojamiento-viajero/opciones-alojamiento/multiple-choice-preguntas-alojamiento/mc-preguntas.component';
 import { MultipleChoiceVocaburarioAlojamientoComponent } from './components/alojamiento-viajero/opciones-alojamiento/multiple-choice-vocaburario-alojamiento/mc-vocaburario.component';
@@ -22,6 +20,7 @@ import { AlojamientoHomePageComponent } from './pages/alojamiento-home-page/aloj
 import { RestauranteHomePageComponent } from './pages/restaurante-home/restaurante-home.component';
 import { ShoppingHomePageComponent } from './pages/shopping-home-page/shopping-home-page.component';
 import { ViajeroHomePageComponent } from './pages/viajero-home-page/viajero-home-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [    
@@ -58,6 +57,7 @@ import { ViajeroHomePageComponent } from './pages/viajero-home-page/viajero-home
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     ViajeroRoutingModule
   ]
 })

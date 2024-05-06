@@ -2,16 +2,19 @@
 
     <nav class="barra-R">
         <div class="imagen-nombre-R">
-            <a routerLink="/viajeros-home"> <img src="../../../../assets/logoChiquito-viajero.png" alt="Logo" width="30"
+            <a routerLink="/restaurante-home"> <img src="../../../../assets/logoChiquito-viajero.png" alt="Logo" width="30"
                     height="24"></a>
             <span> Multiple choice - vocabulario </span>
         </div>
     </nav>
 
     <div class="cuerpo-MCV" *ngIf="mostrarCuestionario">
-        <p class="titulo">{{ ejerciciosRestaurante[oracionActual].oracion }}</p>
 
-        <ul class="ejercicio">
+        <div *ngIf="ejerciciosRestaurante && ejerciciosRestaurante[oracionActual]">
+            <p class="titulo">{{ ejerciciosRestaurante[oracionActual].oracion }}</p>
+        </div>
+
+        <ul class="ejercicio" *ngIf="ejerciciosRestaurante[oracionActual] && ejerciciosRestaurante[oracionActual].respuestas">
             <li *ngFor="let respuesta of ejerciciosRestaurante[oracionActual].respuestas; let i = index">
                 <label>
                     <input type="radio" [(ngModel)]="respuestaSeleccionada" [value]="respuesta"

@@ -9,9 +9,12 @@
     </nav>
 
     <div class="cuerpo-MCP" *ngIf="mostrarCuestionario">
-        <p class="titulo">{{ preguntasShopping[oracionActual].oracion }}</p>
 
-        <ul class="ejercicio">
+        <div *ngIf="preguntasShopping && preguntasShopping[oracionActual]">
+            <p class="titulo">{{ preguntasShopping[oracionActual].oracion }}</p>
+        </div>
+
+        <ul class="ejercicio" *ngIf="preguntasShopping[oracionActual] && preguntasShopping[oracionActual].respuestas">
             <li *ngFor="let respuesta of preguntasShopping[oracionActual].respuestas; let i = index">
                 <label>
                     <input type="radio" [(ngModel)]="respuestaSeleccionada" [value]="respuesta"
@@ -40,6 +43,6 @@
 
 
 
-    
+
 
 </section>

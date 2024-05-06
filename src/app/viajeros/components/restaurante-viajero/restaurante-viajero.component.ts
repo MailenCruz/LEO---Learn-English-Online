@@ -9,18 +9,22 @@ import { Restaurante } from '../../interfaces/restaurante';
 })
 export class RestauranteViajeroComponent {
 
-  restauranteDatos:Restaurante|undefined;
+  restauranteDatos: Restaurante | undefined;
 
-  constructor(private viajeroService: ViajeroService){}
+  constructor(private viajeroService: ViajeroService) { }
 
-  async ngOnInit(){
-    try{
-      this.restauranteDatos = await this.viajeroService.getDataRestaurante();
-      //console.log(this.restauranteDatos);
-    }
-    catch(error){
-      console.log(error);
-    }
+  ngOnInit() {
+    window.scrollTo(0, 0);
+    this.viajeroService.getDataRestaurante().subscribe(
+      {
+        next: (data) => {
+          this.restauranteDatos = data;
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      }
+    );
+    //console.log(this.restauranteDatos);
   }
-
 }

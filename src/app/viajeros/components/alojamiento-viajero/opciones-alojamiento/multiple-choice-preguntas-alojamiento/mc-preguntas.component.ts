@@ -8,8 +8,8 @@ import { ViajeroService } from 'src/app/viajeros/services/viajero.service';
   styleUrls: ['./mc-preguntas.component.css']
 })
 export class MultipleChoicePreguntasAlojamientoComponent {
-  
-  preguntasAlojamiento: Pregunta[]=[];
+
+  preguntasAlojamiento: Pregunta[] = [];
 
   oracionActual: number = 0;
   respuestaSeleccionada: string = '';
@@ -18,18 +18,25 @@ export class MultipleChoicePreguntasAlojamientoComponent {
   mostrarCuestionario: boolean = true;
 
   mostrarBoton: boolean = false;
-  
-  constructor(private viajeroService:ViajeroService ){}
 
-  async ngOnInit(){
-    try{
-      this.preguntasAlojamiento = await this.viajeroService.getDataAlojamiento_preguntas();
-      console.log("PREGUNTAS ALOJAMIENTO: ");
-      console.log(this.preguntasAlojamiento);
-    }
-    catch(error){
-      console.log(error);
-    }
+  constructor(private viajeroService: ViajeroService) { }
+
+  ngOnInit() {
+    window.scrollTo(0, 0);
+    this.viajeroService.getDataAlojamiento_preguntas().subscribe(
+      {
+        next: (preg) => {
+          if(preg){
+            this.preguntasAlojamiento = preg;
+          }
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      }
+    );
+    //console.log("PREGUNTAS ALOJAMIENTO: ");
+    //console.log(this.preguntasAlojamiento);
   }
 
   verificarRespuesta() {
@@ -56,7 +63,7 @@ export class MultipleChoicePreguntasAlojamientoComponent {
     } else {
       // Si hay más preguntas, reiniciar el estado
       this.resetearEstado();
-      this.mostrarBoton=false;
+      this.mostrarBoton = false;
     }
   }
 }

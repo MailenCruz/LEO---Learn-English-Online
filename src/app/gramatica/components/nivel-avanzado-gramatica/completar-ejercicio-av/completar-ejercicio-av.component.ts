@@ -102,8 +102,6 @@ export class CompletarEjercicioAvComponent {
       {
         next: (correccion) => {
           this.correcciones = correccion;
-          console.log("correcion: " + correccion);
-          console.log("correciones: " + this.correcciones);
 
           if (this.correcciones && this.correcciones.length === 0) {
             this.correcto = true;

@@ -10,18 +10,23 @@ import { ViajeroService } from 'src/app/viajeros/services/viajero.service';
 })
 export class VocabularioAlojamientoComponent {
 
-  vocabularioAlojamiento:Vocabulario|undefined;
+  vocabularioAlojamiento: Vocabulario | undefined;
 
-  constructor(private viajeroService: ViajeroService){}
+  constructor(private viajeroService: ViajeroService) { }
 
-  async ngOnInit(){
-    try{
-      this.vocabularioAlojamiento = await this.viajeroService.getDataAlojamiento_vocabulario();
-      console.log("VOCABULARIO ALOJAMIENTO:");
-      console.log(this.vocabularioAlojamiento);
-    }
-    catch(error){
-      console.log(error);
-    }
+  ngOnInit() {
+    window.scrollTo(0, 0);
+    this.viajeroService.getDataAlojamiento_vocabulario().subscribe(
+      {
+        next: (voc) => {
+          this.vocabularioAlojamiento = voc;
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      }
+    );
+    //console.log("VOCABULARIO ALOJAMIENTO:");
+    //console.log(this.vocabularioAlojamiento);
   }
 }

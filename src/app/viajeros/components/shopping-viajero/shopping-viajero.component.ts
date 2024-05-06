@@ -9,18 +9,22 @@ import { ViajeroService } from 'src/app/viajeros/services/viajero.service';
 })
 export class ShoppingViajeroComponent {
 
-  shoppingDatos:Shopping|undefined;
+  shoppingDatos: Shopping | undefined;
 
-  constructor(private viajeroService: ViajeroService ){}
-  
-   async ngOnInit(){
-    try{
-      this.shoppingDatos =await this.viajeroService.getDataShopping();
-      //console.log(this.shoppingDatos);
-    }
-    catch(error){
-      console.log(error);
-    }
+  constructor(private viajeroService: ViajeroService) { }
+
+  ngOnInit() {
+    window.scrollTo(0, 0);
+    this.viajeroService.getDataShopping().subscribe(
+      {
+        next: (data) => {
+          this.shoppingDatos = data;
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      }
+    );
+    //console.log(this.shoppingDatos);
   }
-
 }

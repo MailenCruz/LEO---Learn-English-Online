@@ -9,7 +9,7 @@ import { ViajeroService } from 'src/app/viajeros/services/viajero.service';
   styleUrls: ['./mc-vocaburario.component.css']
 })
 export class MultipleChoiceVocaburarioAlojamientoComponent {
-  ejerciciosAlojamiento: Ejercicio[]=[];
+  ejerciciosAlojamiento: Ejercicio[] = [];
   oracionActual: number = 0;
   respuestaSeleccionada: string = '';
   respuestaCorrecta: string = '';
@@ -17,18 +17,25 @@ export class MultipleChoiceVocaburarioAlojamientoComponent {
   mostrarCuestionario: boolean = true;
 
   mostrarBoton: boolean = false;
-  
-  constructor(private viajeroService:ViajeroService ){}
 
-  async ngOnInit(){
-    try{
-      this.ejerciciosAlojamiento = await this.viajeroService.getDataAlojamiento_ejercicios();
-      console.log("EJERCICIOS ALOJAMIENTO: ");
-      console.log(this.ejerciciosAlojamiento);
-    }
-    catch(error){
-      console.log(error);
-    }
+  constructor(private viajeroService: ViajeroService) { }
+
+  ngOnInit() {
+    window.scrollTo(0, 0);
+    this.viajeroService.getDataAlojamiento_ejercicios().subscribe(
+      {
+        next: (voc) => {
+          if(voc){
+            this.ejerciciosAlojamiento = voc;
+          }
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      }
+    );
+    //console.log("EJERCICIOS ALOJAMIENTO: ");
+    //console.log(this.ejerciciosAlojamiento);
   }
 
   verificarRespuesta() {
@@ -55,7 +62,7 @@ export class MultipleChoiceVocaburarioAlojamientoComponent {
     } else {
       // Si hay más preguntas, reiniciar el estado
       this.resetearEstado();
-      this.mostrarBoton=false;
+      this.mostrarBoton = false;
     }
   }
 
