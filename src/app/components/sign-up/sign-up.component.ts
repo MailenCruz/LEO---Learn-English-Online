@@ -29,8 +29,7 @@ export class SignUpComponent implements OnInit{
     })
   }
 
-
-  async guardarUser(){
+  /*async guardarUser(){
     this.verificarEmail();
     this.verificarUser();
     if(this.errorMail && this.errorUser){
@@ -39,26 +38,66 @@ export class SignUpComponent implements OnInit{
     }else{
       return;
     }
+  }*/
+
+  guardarUser(){
+    this.verificarEmail();
+    this.verificarUser();
+
+    if(this.errorMail && this.errorUser){
+      this.userService.postUser(this.form.value);
+      this.router.navigate(['/ingresa'])
+    }else{
+      return;
+    }
   }
 
-  async verificarEmail(){
+  /*async verificarEmail(){
     this.errorMail = await this.userService.verificarEmail(this.form.controls['email'].value);
     if(this.errorMail == 'exito'){
       return true;
     }else{
       return false;
     }
+  }*/
+
+  verificarEmail() {
+    this.userService.verificarEmail(this.form.controls['email'].value).subscribe(
+      (mensaje) => {
+        this.errorMail = mensaje;
+      }
+    );
+    
+    if(this.errorMail == 'exito'){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 
-  async verificarUser(){
+  /*async verificarUser(){
     this.errorUser = await this.userService.verificarUser(this.form.controls['username'].value);
     if(this.errorUser == 'exito'){
       return true;
     }else{
       return false;
     }
+  }*/
 
-
-}
+  verificarUser() {
+    this.userService.verificarUser(this.form.controls['username'].value).subscribe(
+      (mensaje) => {
+        this.errorUser = mensaje;
+      }
+    );
+    
+    if(this.errorUser == 'exito'){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 
 }

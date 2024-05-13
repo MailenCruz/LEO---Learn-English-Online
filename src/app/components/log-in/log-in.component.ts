@@ -20,7 +20,7 @@ export class LogInComponent{
     /* email:['',[Validators.required,Validators.email]] */
   })
 
-  async iniciarSession() {
+  /*async iniciarSession() {
     if (this.formulario.invalid) return;
 
     this.valid=await this.auth.verificarUserAndPass(
@@ -28,16 +28,23 @@ export class LogInComponent{
       this.formulario.controls['password'].value)
       
     console.log(this.valid);
+  }*/
 
+  iniciarSession() {
+    if (this.formulario.invalid) return;
+
+    this.auth.verificarUserAndPass(
+      this.formulario.controls['username'].value,
+      this.formulario.controls['password'].value
+    )
+  }
 
     /* const user: User = {
       user: this.formulario.controls['user'].value,
       password: this.formulario.controls['password'].value,
       id?:null
     }
-
     this.auth.loginUser(user.user, user.password) */
-  }
 
 
   /* form!:FormGroup;
@@ -58,7 +65,6 @@ export class LogInComponent{
 
   getUser(){
     this.user = this.form.value;
-
   }
 
   async userExists(email:string){

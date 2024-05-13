@@ -16,10 +16,12 @@ import { AvanzadoHomeComponent } from './pages/avanzado-home/avanzado-home.compo
 import { BasicoHomeComponent } from './pages/basico-home/basico-home.component';
 import { IntermedioHomeComponent } from './pages/intermedio-home/intermedio-home.component';
 import { GramaticaHomePageComponent } from './pages/gramatica-home-page/gramatica-home-page.component';
+import { AuthGuard } from '../guards/auth-guard';
 
 const routes: Routes = [
   {
     path: '',
+    canActivate: [AuthGuard],
     children: [
       { path: 'gramatica-home', component: GramaticaHomePageComponent },
 
