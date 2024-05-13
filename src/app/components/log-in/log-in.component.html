@@ -2,42 +2,42 @@
     <fieldset>
         <legend class="titulo">Ingresá</legend>
         <form id="form" [formGroup]="formulario" (ngSubmit)="iniciarSession()">
-            
+
             <div class="campo">
                 <legend for="username">Nombre de usuario:</legend>
                 <input type="text" id="username" formControlName="username">
-                
-            
-            <div class="error">
-                <span *ngIf=" formulario.controls['username'].getError('required') && this.formulario.touched">
-                   El campo es requerido</span>
+
+                <div class="error">
+                    <span *ngIf=" formulario.controls['username'].getError('required') && this.formulario.touched">
+                        El campo es requerido</span>
+                </div>
+
+                <div class="error">
+                    <span *ngIf=" formulario.controls['username'].getError('minlength') && this.formulario.touched">
+                        Mínimo 3 caracteres</span>
+                </div>
             </div>
-            <div class="error">
-                   <span *ngIf=" formulario.controls['username'].getError('minlength') && this.formulario.touched">
-                      Mínimo 3 caracteres</span>
-            </div>
-        </div>
-            
+
 
             <div class="campo">
                 <legend for="password">Ingresa tu contraseña:</legend>
                 <input type="password" id="password" formControlName="password">
-            
 
-            <div class="error">
-                <span *ngIf=" formulario.controls['password'].getError('required') && this.formulario.touched">
-                   El campo es requerido</span>
+
+                <div class="error">
+                    <span *ngIf=" formulario.controls['password'].getError('required') && this.formulario.touched">
+                        El campo es requerido</span>
+                </div>
+
+                <div class="error">
+                    <span *ngIf=" formulario.controls['password'].getError('minlength') && this.formulario.touched">
+                        Mínimo 3 caracteres</span>
+                </div>
+
             </div>
+            <input class="btn-registrarte" type="submit" value="Iniciar Sesión">
 
-            <div class="error">
-                   <span *ngIf=" formulario.controls['password'].getError('minlength') && this.formulario.touched">
-                      Mínimo 3 caracteres</span>
-            </div>
 
-        </div>
-        <input class="btn-registrarte" type="submit" value="Iniciar Sesión">
-
-            
         </form>
     </fieldset>
 
@@ -48,6 +48,6 @@
     <div class="registro">
         ¿No tenés un usuario? <a routerLink="/registrate">Registrate</a>
     </div>
-    
-    
+
+
 </div>

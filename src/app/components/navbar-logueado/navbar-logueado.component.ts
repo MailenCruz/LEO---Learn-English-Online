@@ -8,31 +8,26 @@ import { UsersService } from 'src/app/services/users.service';
   templateUrl: './navbar-logueado.component.html',
   styleUrls: ['./navbar-logueado.component.css']
 })
-export class NavbarLogueadoComponent implements OnInit{
-  constructor(private usersService: UsersService, private router: Router){
+export class NavbarLogueadoComponent implements OnInit {
+  constructor(private usersService: UsersService, private router: Router) {}
 
-  }
+  ngOnInit(): void {}
 
-ngOnInit(): void {
-}
-
-  get getUser():User | undefined{
+  get getUser(): User | undefined {
     return this.usersService.currentUser;
-    
   }
-   getUserId():number{
-    let res=  this.usersService.currentUser;
-    if(!res){
+  
+  getUserId(): number {
+    let res = this.usersService.currentUser;
+    if (!res) {
       return -1;
     }
-    else{
+    else {
       return res.id;
     }
   }
 
- 
-
-  onLogOut(){
+  onLogOut() {
     this.usersService.logout();
     this.router.navigate(['/home-general'])
   }

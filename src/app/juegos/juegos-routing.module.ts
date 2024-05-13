@@ -6,12 +6,14 @@ import { JuegosHomePageComponent } from './pages-juegos/juegos-home-page/juegos-
 import { PalabraImagenJuegoComponent } from './components-juegos/pi-juego/palabra-imagen-juego.component';
 import { PalabraPalabraJuegoComponent } from './components-juegos/pp-juego/palabra-palabra-juego.component';
 import { NombreColorColorJuegoComponent } from './components-juegos/ncc-juego/nombre-color-color-juego.component';
+import { AuthGuard } from '../guards/auth-guard';
 
 
 const routes: Routes = [
 
   {
     path: '',
+    canActivate: [AuthGuard],
     children: [
       { path: 'juegos-home', component: JuegosHomePageComponent },
 

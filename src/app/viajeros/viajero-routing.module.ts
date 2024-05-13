@@ -16,10 +16,12 @@ import { AlojamientoHomePageComponent } from './pages/alojamiento-home-page/aloj
 import { RestauranteHomePageComponent } from './pages/restaurante-home/restaurante-home.component';
 import { ShoppingHomePageComponent } from './pages/shopping-home-page/shopping-home-page.component';
 import { ViajeroHomePageComponent } from './pages/viajero-home-page/viajero-home-page.component';
+import { AuthGuard } from '../guards/auth-guard';
 
 const routes: Routes = [
   {
     path: '',
+    canActivate: [AuthGuard],
     children: [
       { path: 'viajeros-home', component: ViajeroHomePageComponent },
 

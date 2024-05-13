@@ -9,6 +9,4 @@ import { UsersService } from 'src/app/services/users.service';
 export class NavbarComponent {
   username!:string;
   constructor(private userService:UsersService){}
-
-  
 }
