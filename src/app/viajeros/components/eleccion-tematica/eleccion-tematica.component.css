@@ -1,65 +1,58 @@
-legend {
-    background-color: #B3B3FD;
-    margin-bottom: 28rem;
-    padding: 1.5rem;
-    font-size: 2.5rem;
-    text-align: center;
-    box-shadow: 3px 3px 3px 3px #9c9ce7bd;
-    font-family: 'Raleway', sans-serif;
-}
-
-.cuadrado {
-    height: 30rem;
-    width: 35rem;
-    margin: 3rem;
-    display: inline-block;
-    background-color: #dcbee8;
-    border-style: hidden;
-}
-
-.img-shopping{
-    position: absolute;
-    top: 32rem;
-    left: 12.5rem;
-}
-
-.img-restaurante{
-    position: absolute;
-    top: 32rem;
-    left: 54rem;
-}
-
-.img-alojamiento{
-    position: absolute;
-    top: 32rem;
-    left: 94.5rem
-}
-
-.contenedor-cuadrados {
+.contenedor {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem 0 4rem 0;
+    margin-top: 4rem; /*8*/
 }
 
-.boton-entrar {
-    position: absolute;
-    top: 54rem;
-    margin-left: 7.5rem;
-    padding: 1rem 5rem;
-
-    border: none;
-    font-size: 2.5rem;
-    background-color: #b3b3fdad;
-    border-radius: 1rem;
-
-    transition-duration: 0.5s;
-    cursor: pointer;
-
-    font-family: 'Lexend', sans-serif;
+.opciones {
+    display: flex;
+    flex-direction: row; /* Organiza los botones verticalmente */
+    align-items: center;
 }
 
-.boton-entrar:hover {
-    background-color: #9898f8;
-    transform: translateY(-10px);
+.opciones a {
+    margin: 40px 30px; /* Espacio entre los botones */
+}
+
+/* Efecto de animación al cargar la página */
+.opciones a {
+    opacity: 0;
+    animation: fade-in 1s ease-out forwards;
+}
+
+.opciones a img {
+    max-width: 300px; /* Establece un ancho máximo para las imágenes */
+    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+    transition: transform 0.3s ease; /* Agrega una transición suave al cambio de tamaño */
+}
+
+.opciones a img:hover {
+    transform: scale(1.1); /* Aplica un efecto de zoom al pasar el cursor sobre las imágenes */
+}
+
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Media queries para dispositivos más pequeños */
+@media screen and (max-width: 768px) {
+    .contenedor {
+        margin-top: 2rem; /* Reducción adicional del margen superior */
+    }
+
+    .opciones {
+        flex-direction: column; /* Cambia de nuevo a fila para dispositivos más pequeños */
+    }
+
+    .opciones a {
+        margin: 20px 15px; /* Espacio entre botones reducido */
+    }
 }

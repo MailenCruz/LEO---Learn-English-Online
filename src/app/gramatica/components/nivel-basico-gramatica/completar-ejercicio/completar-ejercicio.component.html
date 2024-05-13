@@ -1,11 +1,14 @@
+<nav class="barra-NB">
+    <div class="imagen-nombre-NB">
+        <a routerLink="/basico-home">
+            <img class="img-flecha" src="../../../../../assets/gramatica-img/nav/flecha-gramatica.png" alt="Logo" width="20" height="14">
+        </a>
+        <span>Completar las oraciones</span>
+    </div>
+</nav>
+
 <section class="cuerpo-NB">
-    <nav class="barra-NB">
-        <div class="imagen-nombre-NB">
-            <a routerLink="/basico-home"> <img src="../../../../assets/logoChiquito-gramatica.png" alt="Logo"
-                    width="30" height="24"></a>
-            <span>Completar oraciones</span>
-        </div>
-    </nav>
+
     <div class="contenedor-pagina">
         <section class="completar">
 
@@ -19,6 +22,7 @@
                         {{ i }}
                     </option>
                 </select>
+                
                 <!-- check -->
                 <div *ngIf="answer.controls['completar'].getError('required') && answer.controls['completar'].touched ">
                     <p class="error"> El campo es requerido </p>
@@ -40,8 +44,10 @@
                 <div class="botones">
                     <input class="boton" type="submit" value="Check">
                     <input class="boton" type="button" value="Reset" (click)="reset()">
-                    <input *ngIf="correcto" class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
+                    <input *ngIf="correcto" class="boton" type="button" value="Next sentence"
+                        (click)="siguienteEjercicio()">
                 </div>
+                
             </form>
         </section>
     </div>

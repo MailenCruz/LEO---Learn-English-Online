@@ -1,49 +1,38 @@
-<section class="cuerpo-nivel-basico">
-    <nav class="barra-NB">
-        <div class="imagen-nombre-NB">
-            <a routerLink="/gramatica-home"> <img src="../../../../assets/logoChiquito-gramatica.png" alt="Logo" width="30"
-                    height="24"></a>
-            <span>Básico: Ejercicios</span>
-        </div>
-    </nav>
-
-    <div class="contenedor-cuadrados">
-
-        <fieldset class="cuadrado">
-    
-            <legend>Reescribir</legend>
-            
-            <div class="descripcion" >Reescribí la oración dada en los diferentes modos solicitados.</div>
-    
-            <a routerLink="/reescribir-ejercicio">
-                <button class="boton-entrar" >ENTRAR</button>
-            </a>
-        </fieldset>
-    
-        <fieldset class="cuadrado">
-    
-            <legend>Completar</legend>
-            <div class="descripcion">Completá con la palabra faltante.</div>
-
-    
-            <a routerLink="/completar-ejercicio">
-                <button class="boton-entrar" >ENTRAR</button>
-            </a>
-        </fieldset>
-    
-        <fieldset class="cuadrado">
-    
-            <legend>Ordenar</legend>
-            <div class="descripcion"> Ordená las palabras y formá la oración.</div>
-            
-            <a routerLink="/ordenar-ejercicio">
-                <button class="boton-entrar">ENTRAR</button>
-            </a>
-        </fieldset>
+<nav class="barra">
+    <div class="imagen-nombre">
+        <a routerLink="/gramaticas/gramatica-home">
+            <img src="../../../../assets/gramatica-img/nav/nav-gramatica.png" alt="Logo">
+        </a>
     </div>
+</nav>
+
+<section class="cuerpo-nivel-basico">
+
+    <div class="opciones">
+
+        <div class="columna">
+            <img class="lupa" src="../../../../assets/gramatica-img/eleccion/lupa-completar.png" alt="competar"
+                title="Completá con la palabra faltante.">
+            <img class="lupa" src="../../../../assets/gramatica-img/eleccion/lupa-odenar.png" alt="ordenar"
+                title="Ordená las palabras y formá la oración.">
+            <img class="lupa" src="../../../../assets/gramatica-img/eleccion/lupa-reescribir.png" alt="reescribir"
+                title="Reescribí la oración dada en los diferentes modos solicitados">
+        </div>
+
+        <div class="columna">
+            <a routerLink="/completar-ejercicio">
+                <img src="../../../../assets/gramatica-img/eleccion/competar.png" alt="completar">
+            </a>
+
+            <a routerLink="/ordenar-ejercicio">
+                <img src="../../../../assets/gramatica-img/eleccion/ordenar.png" alt="ordenar">
+            </a>
+
+            <a routerLink="/reescribir-ejercicio">
+                <img src="../../../../assets/gramatica-img/eleccion/reescribir.png" alt="reescribir">
+            </a>
+        </div>
+
+    </div>
+
 </section>
-
-
-
-
-    

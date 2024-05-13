@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ViajeroRoutingModule } from './viajero-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlojamientoViajeroComponent } from './components/alojamiento-viajero/alojamiento-viajero.component';
-import { MultipleChoicePreguntasAlojamientoComponent } from './components/alojamiento-viajero/opciones-alojamiento/multiple-choice-preguntas-alojamiento/mc-preguntas.component';
+import { MultipleChoicePreguntasAlojamientoComponent } from './components/alojamiento-viajero/opciones-alojamiento/multiple-choice-preguntas-alojamiento/mc-preguntas-a.component';
 import { MultipleChoiceVocaburarioAlojamientoComponent } from './components/alojamiento-viajero/opciones-alojamiento/multiple-choice-vocaburario-alojamiento/mc-vocaburario.component';
 import { VocabularioAlojamientoComponent } from './components/alojamiento-viajero/opciones-alojamiento/vocabulario-alojamiento/vocabulario-alojamiento.component';
 import { EleccionTematicaComponent } from './components/eleccion-tematica/eleccion-tematica.component';

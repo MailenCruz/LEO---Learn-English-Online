@@ -1,143 +1,42 @@
-img {
-    width: auto;
-    height: auto;
-}
-
-legend {
-    background-color: #B3B3FD;
-    margin-bottom: 30rem;
-    padding: 1rem;
-    font-size: 2rem;
-    text-align: center;
-    box-shadow: 3px 3px 3px 3px #9c9ce7bd;
-    font-family: 'Lexend', sans-serif;
-}
-
-.cuadrado {
-    height: 30rem;
-    width: 35rem;
-    margin: 2rem;
-    display: inline-block;
-    background-color: #dcbee8;
-    border-style: hidden;
-}
-
-.cuadrado:hover {
-    box-shadow: var(--shadow-elevation-low);
-    cursor: pointer;
-    transition: all .3s ease;
-}
-
-.img-presentacion1 {
-    position: absolute;
-    top: 34rem;
-    left: 15rem;
-}
-
-.boton-respuesta1 {
+.contenedor {
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    position: absolute;
-    top: 10rem;
-    left: 12rem;
-    padding: 1rem 5rem;
-
-    border: none;
-    font-size: 2.5rem;
-    background-color: #a3a3f7;
-    border-style:outset;
-    border-color: #B3B3FD;
+    margin-top: 8rem;
 }
 
-/*presentacion 2*/
-
-.boton-respuesta2{
+.opciones {
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Organiza los botones verticalmente */
     align-items: center;
-    
-    position: absolute;
-    top: 35rem;
-    left: 55rem;
-    padding: 1rem 5rem;
-
-    border: none;
-    font-size: 2.5rem;
-    background-color: #a3a3f7;
-    border-style:outset;
-    border-color: #B3B3FD;
 }
 
-.boton-respuesta3{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    position: absolute;
-    top: 39rem;
-    left: 63rem;
-    padding: 1rem 5rem;
-
-    border: none;
-    font-size: 2.5rem;
-    background-color: #d1a2e4;
-    border-style:outset;
-    border-color: #d090e9;
-    font-style:italic;
+.opciones a {
+    margin: 35px 0; /* Espacio entre los botones */
 }
 
-/*presentacion 3*/
-
-.img-presentacion3{
-    position: absolute;
-    top: 33rem;
-    left: 97rem;
+/* Efecto de animación al cargar la página */
+.opciones a {
+    opacity: 0;
+    animation: fade-in 1s ease-out forwards;
 }
 
-.boton-respuesta4{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    position: absolute;
-    top: 8rem;
-    left: 5rem;
-    padding: 1rem 5rem;
-
-    border: none;
-    font-size: 2.5rem;
-    background-color: #a3a3f7;
-    border-style:outset;
-    border-color: #B3B3FD;
+.opciones a img {
+    max-width: 500px; /* Establece un ancho máximo para las imágenes */
+    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+    transition: transform 0.3s ease; /* Agrega una transición suave al cambio de tamaño */
 }
 
-.contenedor-cuadrados {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 0 4rem 0;
+.opciones a img:hover {
+    transform: scale(1.1); /* Aplica un efecto de zoom al pasar el cursor sobre las imágenes */
 }
 
-.boton-jugar {
-    position: absolute;
-    top: 55rem;
-    margin-left: 7.5rem;
-    padding: 1rem 5rem;
 
-    border: none;
-    font-size: 2.5rem;
-    background-color: #b3b3fdad;
-    border-radius: 1rem;
-
-    transition-duration: 0.5s;
-    cursor: pointer;
-
-    font-family: 'Lexend', sans-serif;
-}
-
-.boton-jugar:hover {
-    background-color: #9898f8;
-    transform: translateY(-10px);
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

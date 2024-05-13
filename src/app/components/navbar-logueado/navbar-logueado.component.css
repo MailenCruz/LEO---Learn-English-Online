@@ -1,5 +1,5 @@
 .contenedor-navbar{
-    background-color: #B3B3FD;
+    background-color: #C5C6F6;
     position: fixed;
     width: 100%;
     z-index: 4;
@@ -7,7 +7,7 @@
 
 nav{
     display: flex;
-    width: 100%;
+    justify-content: center;
 }
 
 .navegacion {
@@ -15,9 +15,8 @@ nav{
     padding: 0;
     margin: 0;
     display: flex;
-    width: 100%;
-    
 }
+
 
 .navegacion li a {
     display: flex;
@@ -33,6 +32,7 @@ nav{
     color: rgb(0, 0, 0);
 }
 
+
 .logout, .nombre, .editar{
     display: flex;
     padding: 1rem 1.5rem;
@@ -45,7 +45,8 @@ nav{
 }
 
 .nombre{
-    font-weight: bold;
+    font-weight: bold;   
+    padding: 1rem 25rem;
 }
 
 .navegacion li a:hover {

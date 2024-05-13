@@ -1,61 +1,104 @@
-.cuerpo-viajero-R {
-    background-color: #f1c0ab;
-    margin: 0;
-}
-
 .barra-R {
-    background-color: #B3B3FD;
-    font-size: 3rem;
-    font-family: 'Lexend', sans-serif;
-
-}
-
-img {
-    width: auto;
-    height: auto;
+    background-color: white;
 }
 
 .imagen-nombre-R {
+    font-size: 25px; /* Tamaño deseado para el texto */
+    font-family: 'Open Sans', sans-serif;
     display: flex;
     align-items: center;
+}
+
+.img-flecha {
+    width: 50px; /* Ancho deseado para la imagen */
+    height: auto; /* Altura ajustada automáticamente para mantener la proporción */
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.img-r {
+    width: 45px; /* Ancho deseado para la imagen */
+    height: auto; /* Altura ajustada automáticamente para mantener la proporción */
+    position: absolute; /* Posición absoluta */
+    right: 0; /* Posicionar en el extremo derecho */
+    top: 4%; /* Centrar verticalmente */
+    transform: translateY(-50%); /* Ajustar verticalmente */
+}
+
+@media only screen and (max-width: 768px) {
+    .imagen-nombre-R {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .img-flecha {
+        width: 20px; /* Ancho de la imagen en dispositivos móviles */
+        margin-right: 0;
+        margin-bottom: 5px; /* Espacio entre la imagen y el texto en dispositivos móviles */
+    }
+    
+    .img-r {
+        width: 30px; /* Ancho de la imagen en dispositivos móviles */
+        margin-left: 0; /* Eliminar el margen izquierdo en dispositivos móviles */
+    }
+}
+
+
+/**/
+
+.cuerpo-viajero-R {
+    background-color: #838AAB;
 }
 
 .contenedor-restaurante {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    margin-left: 30rem;
-    margin-top: 2rem;
-    padding-bottom: 5rem;
+    width: 100%;
+    max-width: 600px; 
+    margin: 0 auto; 
+    padding-bottom: 3rem;
 }
 
 .titulo {
-    margin: 0;
-    margin-bottom: 5rem;    
-    font-size: 3rem;
+    background-color: #6a6e83;
+   
+    margin-bottom: 3rem;
+    margin-top: 0;
+
+    padding: 1rem;
+
+    border-radius: 20px;
+
+    font-size: 2.5rem;
+    text-align: center;
+    font-family:'Public Sans', sans-serif;
+    color:white;
+    filter: drop-shadow(16px 7px 8px #838AAB);
 }
 
 .idioma {
-    font-size: 2rem;
-    width: 10%;
+    font-size: 1.8rem;
     padding-bottom: 1rem;
 }
 
+/**/
+
 .contenedor-tabla {
-    box-shadow: 8px 10px 10px 10px rgb(142, 142, 212);
-    background-color: #bfbfd4;
-    margin: 1rem;
-    margin-bottom: 3rem;
-    padding: 1rem;
-    margin-left: 5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #a1a7c5;
+
+    margin: 1rem 0;
+    margin-top: 3rem;
+
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 5rem;
+
+    border-radius: 20px;
     
 }
 
 .tablaRestaurante {
     
-    display: flex;
-    flex-direction: column;
-    column-width: 50%;
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
@@ -64,30 +107,33 @@ img {
 .tablaRestaurante td{
     border: 2px solid #ddd; 
     padding: 8px;
-    width: 10%;
-
 }
 
+.tablaShopping th, .tablaShopping td {
+    width: 50%; /* Divide el ancho de la tabla en dos columnas iguales */
+}
+
+/**/
+
 .palabras {
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-align: center;
 }
 
 button {
-
     background-color: #000000a8;
     color: white;
-    padding: 12px 20px;
-    font-size: 16px;
+    font-size: 1.6rem;
     border: none;
-    border-radius: 5px;
+
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin: 1rem;
 
-    margin-left: 58rem;
-    margin-top: 5rem;
-    margin-bottom: 15rem;
+    margin-top: 8rem;
+    margin-bottom: 10rem;
+
+    padding: 15px;
+    border-radius: 20px;
 }
 
 button:hover {
@@ -95,5 +141,5 @@ button:hover {
 }
 
 button:active {
-    background-color: #9e9ef5;
+    background-color: #838AAB;
 }

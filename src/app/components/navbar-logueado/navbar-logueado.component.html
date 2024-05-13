@@ -4,12 +4,10 @@
             <li><a routerLink="/home"><span class="home-span">Inicio</span></a></li>
             <li><a routerLink="/contactanos">Contactanos</a></li>
         </ul>
-        
-        <a  class="nombre" *ngIf="getUser?.username" > Hola, {{getUser?.username}}!</a>
+       
+        <a  class="nombre" *ngIf="getUser?.username" > Bienvenido/a {{getUser?.username}}!</a>
         <a  class="editar" *ngIf="getUser?.username" [routerLink]="['/my-profile',getUserId()]">Editar Perfil</a>
-
         <a  class="logout" *ngIf="getUser?.username" (click)="onLogOut()">Cerrar Sesión</a>
-
         
     </nav>
 </header>

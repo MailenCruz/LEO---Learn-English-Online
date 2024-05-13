@@ -2,18 +2,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10rem;
-    /* background-color: #DCBEE8FF;  */
+    gap: 20%;
     padding: 5rem;
 
+    padding-top: 15rem;
 }
 
 .contenedor-bienvenida .logo-home {
-    margin-top: 2rem;
-    max-width: 100%;
-    height: 29.3rem;
-
+    max-width: 50%;
     animation: scale-up-center 2.0s;
+    width: 30%; /* Tamaño del logo */
+    margin-left: 8rem;
 }
 
 @keyframes scale-up-center {
@@ -29,33 +28,39 @@
 
 .contenedor-bienvenida .introduccion {
     max-width: 50%;
-    height: 15rem;
-    background-color: rgba(179, 179, 253, 0);
-    padding: 5rem;
-    text-shadow: 1px 2px 12px rgb(54, 54, 73);
-    /* box-shadow: 10px 10px 10px rgb(132, 132, 199); */
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
-
-.contenedor-bienvenida .introduccion h1 {
-    font-size: 4rem;
-    font-family: 'Lexend', sans-serif;
-    color: black;
-    margin: 0;
-    font-weight: bold;
-    opacity: 100%;
-
+.hola{
+    max-width: 100%; /* Ajusta el tamaño de la imagen "¡Hola!" */
+    height: auto;
+    width: 35%; /* Tamaño de la imagen "¡Hola!" */
 }
-
 
 .contenedor-bienvenida .introduccion p {
-    font-size: 2rem;
+    font-size: 2.8rem; /* Reduce el tamaño de fuente para pantallas más pequeñas */
     text-align: justify;
     color: black;
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Public Sans', sans-serif;
     opacity: 100%;
-
-    
 }
 
-
+/* Media query para pantallas pequeñas */
+@media only screen and (max-width: 768px) {
+    .contenedor-bienvenida {
+        flex-direction: column; /* Cambia la dirección del flexbox a columna */
+        text-align: center; /* Centra el contenido */
+    }
+    .contenedor-bienvenida .introduccion {
+        max-width: 100%; /* Cambia el ancho máximo a 100% en pantallas pequeñas */
+    }
+    .contenedor-bienvenida .logo-home,
+    .contenedor-bienvenida .introduccion {
+        width: 100%; /* Ajusta el ancho de los elementos a 100% en pantallas pequeñas */
+    }
+    .hola {
+        width: 70%; /* Ajusta el tamaño de la imagen "¡Hola!" en pantallas pequeñas */
+    }
+}

@@ -12,7 +12,8 @@ export class VocabularioShoppingComponent {
 
   vocabularioShopping: Vocabulario|undefined;
   
-  constructor(private viajeroService:ViajeroService ){}
+  constructor(private viajeroService:ViajeroService ){
+  }
 
   ngOnInit(){
     window.scrollTo(0, 0);
@@ -30,4 +31,7 @@ export class VocabularioShoppingComponent {
       //console.log(this.vocabularioShopping);
     
   }
+
+
+  
 }

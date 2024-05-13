@@ -1,127 +1,52 @@
-.contenedor-categorias{
+.contenedor-categorias {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 15rem;
+}
+
+.lista-categorias {
     display: flex;
     flex-direction: column;
+    /* Organiza los botones verticalmente */
     align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    margin-top: 5rem;
 }
 
-.lista-categorias{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0rem;
-    gap: 10rem;
+.lista-categorias a {
+    margin: 35px 0;
+    /* Espacio entre los botones */
 }
 
-.categoria1{
-    text-align: center;
-    text-decoration: none;
-    color: black;
-    margin: 0 1rem;
-
-    animation: scale-up-center 3.0s;
+/* Efecto de animación al cargar la página */
+.lista-categorias a {
+    opacity: 0;
+    animation: fade-in 1s ease-out forwards;
 }
 
-@keyframes scale-up-center {
-    0% {
-        transform: scale(.5)
+.lista-categorias a img {
+    max-width: 300px;
+    /* Establece un ancho máximo para las imágenes */
+    height: auto;
+    /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+    transition: transform 0.3s ease;
+    /* Agrega una transición suave al cambio de tamaño */
+}
+
+.lista-categorias a img:hover {
+    transform: scale(1.1);
+    /* Aplica un efecto de zoom al pasar el cursor sobre las imágenes */
+}
+
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
     }
 
-    100% {
-        transform: scale(1)
-    }
-}
-
-.categoria1 img.img-normal{
-    max-width: 15rem;
-    
-}
-.categoria1:hover img.img-normal{
-    box-shadow: 0 0 100px #000000;
-    border-radius: 8rem;
-
-    transform: translateY(-10px); /* Eleva la imagen al pasar el mouse */
-}
-
-.categoria1 h3{
-    font-size: 2.5rem;
-    margin-top: 1rem;
-}
-
-
-/**/
-
-.categoria2{
-    text-align: center;
-    text-decoration: none;
-    color: black;
-    margin: 0 1rem;
-
-    animation: scale-up-center 4s;
-}
-
-@keyframes scale-up-center {
-    0% {
-        transform: scale(.5)
-    }
-
-    100% {
-        transform: scale(1)
+    to {
+        opacity: 1;
     }
 }
 
-.categoria2 img.img-normal{
-    max-width: 15rem;
-    
-}
-.categoria2:hover img.img-normal{
-    box-shadow: 0 0 100px #000000;
-    border-radius: 8rem;
-
-    transform: translateY(-10px); /* Eleva la imagen al pasar el mouse */
-}
-
-.categoria2 h3{
-    font-size: 2.5rem;
-    margin-top: 1rem;
-}
-
-/**/
-
-.categoria3{
-    text-align: center;
-    text-decoration: none;
-    color: black;
-    margin: 0 1rem;
-
-    animation: scale-up-center 5.0s;
-}
-
-@keyframes scale-up-center {
-    0% {
-        transform: scale(.5)
-    }
-
-    100% {
-        transform: scale(1)
-    }
-}
-
-.categoria3 img.img-normal{
-    max-width: 15rem;
-    
-}
-.categoria3:hover img.img-normal{
-    box-shadow: 0 0 100px #000000;
-    border-radius: 8rem;
-
-    transform: translateY(-10px); /* Eleva la imagen al pasar el mouse */
-}
-
-.categoria3 h3{
-    font-size: 2.5rem;
-    margin-top: 1rem;
-}
 

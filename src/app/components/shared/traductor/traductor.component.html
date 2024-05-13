@@ -1,65 +1,64 @@
-
-
-    <a class="abrir-btn" (click)="alternar()">
-        <img class="logo-traductor"src="../../../../assets/logo-traductor.png" alt="traductor">
-        <img class="logo-traductor-hover"src="../../../../assets/logo-traductor-hover.png" alt="traductor-hover">
-    </a>
+<a class="abrir-btn" (click)="alternar()" title="Hola! puedo ayudarte si no sabes que significan las palabras!">
+  <img class="logo-traductor" src="../../../../assets/home-img/traductor.png" alt="traductor">
+  
+</a>
 
 
 
 <span class="ventana-emergente" [ngClass]="{'mostrar': visible}">
-    <div class="contenido">
+  <div class="contenido">
 
-      <div class="container-titulo-traductor">
-        <h2 class="titulo-traductor">TRADUCTOR</h2>
-      </div>
-
-      <div class="container-cambiar-idioma">
-        <h3 class="idioma" *ngIf="this.idioma === 'es-en'">
-            español-inglés
-        </h3>
-        <h3 class="idioma" *ngIf="this.idioma === 'en-es'">
-            inglés-español
-        </h3>
-        <input class="btn-cambiar-idioma" type="button" value="cambiar" (click)="alternarIdioma()">
-      </div>
-      
-      <fieldset class="campos-traduccion">
-        <form id="forms" [formGroup]="forms" (ngSubmit)="getForm()">
-          <label class="label-palabra" for="palabra">Ingrese palabra a traducir:</label>
-          <div class="container-input">
-            <input *ngIf="palabra == ''" class="input-palabra" type="text" id="palabra" formControlName="palabra">
-            <p *ngIf="palabra != '' && palabra != '=' && palabra.charAt(0) != '='" class="palabra">{{palabra}}</p>
-            <p *ngIf="palabra != '' && palabra != '=' && palabra.charAt(0) == '='" class="palabra">{{palabra.slice(1)}}</p>
-            
-
-          </div>
-          <button class="btn-clean" (click)="clean()">x</button>
-          <div class="error" *ngIf="forms.touched && forms.controls['palabra'].getError('required')">
-            Ingresa una palabra para traducir
-          </div>
-
-          <input  class="btn-traducir" type="submit" value="traducir" >
-
-          <!-- *ngIf="forms.touched && !forms.controls['palabra'].getError('required')" -->
-
-        </form>
-
-        
-
-        <div class="container-traduccion">
-          <p *ngIf="traduccion != '=' && traduccion.charAt(0) != '='" class="traduccionC">{{traduccion}}</p>
-          <p *ngIf="traduccion != '=' && traduccion.charAt(0) == '='" class="traduccionC">{{traduccion.slice(1)}}</p>
-        </div>
-        <script>
-          console.log(`${traduccion}:traduccion`);
-        </script>
-        
-      </fieldset>     
-      
-      
-      
-      
-      
+    <div class="container-titulo-traductor">
+      <h2 class="titulo-traductor">TRADUCTOR</h2>
     </div>
+
+    <div class="container-cambiar-idioma">
+      <h3 class="idioma" *ngIf="this.idioma === 'es-en'">
+        español-inglés
+      </h3>
+      <h3 class="idioma" *ngIf="this.idioma === 'en-es'">
+        inglés-español
+      </h3>
+      <input class="btn-cambiar-idioma" type="button" value="cambiar" (click)="alternarIdioma()">
+    </div>
+
+    <fieldset class="campos-traduccion">
+      <form id="forms" [formGroup]="forms" (ngSubmit)="getForm()">
+        <label class="label-palabra" for="palabra">Ingrese palabra a traducir:</label>
+        <div class="container-input">
+          <input *ngIf="palabra == ''" class="input-palabra" type="text" id="palabra" formControlName="palabra">
+          <p *ngIf="palabra != '' && palabra != '=' && palabra.charAt(0) != '='" class="palabra">{{palabra}}</p>
+          <p *ngIf="palabra != '' && palabra != '=' && palabra.charAt(0) == '='" class="palabra">{{palabra.slice(1)}}
+          </p>
+
+
+        </div>
+        <button class="btn-clean" (click)="clean()">x</button>
+        <div class="error" *ngIf="forms.touched && forms.controls['palabra'].getError('required')">
+          Ingresa una palabra para traducir
+        </div>
+
+        <input class="btn-traducir" type="submit" value="traducir">
+
+        <!-- *ngIf="forms.touched && !forms.controls['palabra'].getError('required')" -->
+
+      </form>
+
+
+
+      <div class="container-traduccion">
+        <p *ngIf="traduccion != '=' && traduccion.charAt(0) != '='" class="traduccionC">{{traduccion}}</p>
+        <p *ngIf="traduccion != '=' && traduccion.charAt(0) == '='" class="traduccionC">{{traduccion.slice(1)}}</p>
+      </div>
+      <script>
+        console.log(`${traduccion}:traduccion`);
+      </script>
+
+    </fieldset>
+
+
+
+
+
+  </div>
 </span>

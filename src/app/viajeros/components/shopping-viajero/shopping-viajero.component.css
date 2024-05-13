@@ -1,95 +1,113 @@
-.cuerpo-viajero-S {
-    /* background-color: #d8dcfc; */
-    margin: 0;
-}
-
 .barra-S {
-    background-color: #B3B3FD;
-    font-size: 3rem;
-    font-family: 'Lexend', sans-serif;
-
-}
-
-img {
-    width: auto;
-    height: auto;
+    background-color: white;
 }
 
 .imagen-nombre-S {
+    font-size: 25px; /* Tamaño deseado para el texto */
+    font-family: 'Open Sans', sans-serif;
     display: flex;
     align-items: center;
 }
+
+.img-flecha {
+    width: 50px; /* Ancho deseado para la imagen */
+    height: auto; /* Altura ajustada automáticamente para mantener la proporción */
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.img-s {
+    width: 45px; /* Ancho deseado para la imagen */
+    height: auto; /* Altura ajustada automáticamente para mantener la proporción */
+    position: absolute; /* Posición absoluta */
+    right: 0; /* Posicionar en el extremo derecho */
+    top: 4%; /* Centrar verticalmente */
+    transform: translateY(-50%); /* Ajustar verticalmente */
+}
+
+@media only screen and (max-width: 768px) {
+    .imagen-nombre-S {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .img-flecha {
+        width: 20px; /* Ancho de la imagen en dispositivos móviles */
+        margin-right: 0;
+        margin-bottom: 5px; /* Espacio entre la imagen y el texto en dispositivos móviles */
+    }
+    
+    .img-s {
+        width: 30px; /* Ancho de la imagen en dispositivos móviles */
+        margin-left: 0; /* Eliminar el margen izquierdo en dispositivos móviles */
+    }
+}
+
 
 /**/
 
-.descripcion {
-    text-align: center;
-    font-size: 2.5rem;
-    padding: 2rem;
-    font-family:'Manrope', sans-serif;
-}
-
-legend {
-    background-color: #B3B3FD;
-    margin-bottom: 1rem;
-    padding: 1.5rem;
-    
-    font-size: 2rem;
-    text-align: center;
-    box-shadow: 3px 3px 3px 3px #9c9ce7bd;
-    font-family: 'Raleway', sans-serif;
-}
-
-.cuadrado {
-    margin: 5rem;
-
-    width: 100rem;
-    height: 18rem;
-
-    display: flex;
-    flex-direction: column;
-
-    background-color: #dcbee8;
-    border-style: hidden;
-    border-radius: 1rem;
-}
-
-
-.contenedor-cuadrados {
-    display: flex;
-    flex-direction: column;
+.contenedor {
+    background-color: #E5B9F1;
     justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+}
+
+.opciones {
+    display: flex;
+    flex-direction: column; /* Organiza los botones verticalmente */
     align-items: center;
 }
 
-.cuadrado a{
-    text-decoration: none;
+.opciones a {
+    margin: 15px 0; /* Espacio entre los botones */
 }
 
-.boton-entrar {
-
-    display: flex;
-
-    width: 20%;
-    text-align: center;
-    justify-content: center;
-    
-
-    margin-top: 1rem;
-    margin-left: 75rem;
-    padding: 1rem;
-
-    border: none;
-    font-size: 2rem;
-    font-family: 'Lexend', sans-serif;
-
-    background-color: #cda4dd9a;
-    border-radius: 1rem;
-    transition-duration: 0.5s;
-    cursor: pointer;
+/* Efecto de animación al cargar la página */
+.opciones a {
+    opacity: 0;
+    animation: fade-in 1s ease-out forwards;
 }
 
-.boton-entrar:hover {
-    background-color: #9898f8;
-    transform: translateY(-10px);
+.opciones a img {
+    max-width: 550px; /* Establece un ancho máximo para las imágenes */
+    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+    transition: transform 0.3s ease; /* Agrega una transición suave al cambio de tamaño */
+}
+
+.opciones a img:hover {
+    transform: scale(1.1); /* Aplica un efecto de zoom al pasar el cursor sobre las imágenes */
+}
+
+.contenedor .opciones h4{
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    color: white;
+    filter: drop-shadow(16px 7px 8px #CB83DF);
+}
+
+
+.opciones-ejercicios a img{
+    max-width: 250px; /* Establece un ancho máximo para las imágenes */
+    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+    transition: transform 0.3s ease; /* Agrega una transición suave al cambio de tamaño */
+}
+
+.opciones-ejercicios a img:hover {
+    transform: scale(1.1); /* Aplica un efecto de zoom al pasar el cursor sobre las imágenes */
+}
+
+.opciones-ejercicios a{
+    margin: 0px 20px;
+}
+
+
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

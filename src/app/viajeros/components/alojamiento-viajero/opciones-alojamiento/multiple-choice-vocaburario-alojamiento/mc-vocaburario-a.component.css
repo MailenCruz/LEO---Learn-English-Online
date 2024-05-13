@@ -1,0 +1,130 @@
+.barra-A {
+    background-color: white;
+}
+
+.imagen-nombre-A {
+    font-size: 25px; /* Tamaño deseado para el texto */
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.img-flecha {
+    width: 50px; /* Ancho deseado para la imagen */
+    height: auto; /* Altura ajustada automáticamente para mantener la proporción */
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.img-a {
+    width: 45px; /* Ancho deseado para la imagen */
+    height: auto; /* Altura ajustada automáticamente para mantener la proporción */
+    position: absolute; /* Posición absoluta */
+    right: 0; /* Posicionar en el extremo derecho */
+    top: 4%; /* Centrar verticalmente */
+    transform: translateY(-50%); /* Ajustar verticalmente */
+}
+
+@media only screen and (max-width: 768px) {
+    .imagen-nombre-A {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .img-flecha {
+        width: 20px; /* Ancho de la imagen en dispositivos móviles */
+        margin-right: 0;
+        margin-bottom: 5px; /* Espacio entre la imagen y el texto en dispositivos móviles */
+    }
+    
+    .img-a {
+        width: 30px; /* Ancho de la imagen en dispositivos móviles */
+        margin-left: 0; /* Eliminar el margen izquierdo en dispositivos móviles */
+    }
+}
+
+/**/
+
+.cuerpo-viajero-A {
+    background-image: url(../../../../../../assets/img-home/fondoBorroso.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    padding-bottom: 10%;
+    margin-bottom: 0;
+
+    padding-top: 10rem;
+}
+
+
+/*EJERCICIOS*/
+.cuerpo-MCV {
+    background-color: rgba(255, 255, 255, 0.849);
+    font-family: 'Open Sans', sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 90%; /* Reducir el ancho del contenedor en dispositivos más pequeños */
+    max-width: 600px; /* Establecer un ancho máximo */
+    margin: auto; /* Centrar el contenedor horizontalmente */
+    
+    padding: 3rem;
+    border-radius: 20px;
+}
+
+.titulo {
+    font-size: 2.5rem;
+    margin-left: 2rem;
+}
+
+.ejercicio {
+    font-size: 2rem;
+    list-style-type: none;
+    text-align: left;
+}
+
+/* Estilo para el botón */
+button {
+    background-color: #000000a8;
+    color: white;
+    font-size: 1.6rem; /* Tamaño de fuente responsivo */
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    border-radius: 50px;
+    margin-top: 3rem;
+    padding: 12px;
+}
+
+/* Cambia el color de fondo al pasar el ratón sobre el botón */
+button:hover {
+    background-color: #171718;
+}
+
+/* Cambia el color de fondo al hacer clic en el botón */
+button:active {
+    background-color: #F1C4C4;
+}
+
+.cuerpo-mensaje {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.emoticones{
+    margin-top: 3vw;
+    font-size: 5vw;
+}
+
+.mensaje {
+    margin:0;
+    margin-bottom: 5vw;
+    font-size: 3vw;
+    text-shadow: #F1C4C4;
+    color:black;
+}

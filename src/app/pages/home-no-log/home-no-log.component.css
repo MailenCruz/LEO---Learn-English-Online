@@ -1,14 +1,19 @@
 @import url(../../../styles.css);
 
-.contenedor-principal{
-    /* background-color: #DCBEE8FF; */
-    background-image: url(../../../assets/img-home/fondo-home-3.jpg);
-    background-repeat: no-repeat;
-    background-size:cover;
-    padding-bottom: 10%;
-    margin-bottom: 0;
+/* Estilos para pantallas pequeñas */
+@media only screen and (max-width: 768px) {
+    .contenedor-principal {
+        padding-bottom: 5%;
+    }
 }
 
-.footer{
-    margin-top: 10%;
+/* Estilos para pantallas grandes */
+@media only screen and (min-width: 768px) {
+    .contenedor-principal {
+        padding-bottom: 10%;
+    }
+}
+
+.footer {
+    margin-top: 5%; /* Ajusta el margen del footer para pantallas grandes y pequeñas */
 }

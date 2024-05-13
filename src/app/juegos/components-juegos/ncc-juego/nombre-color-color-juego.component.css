@@ -1,24 +1,32 @@
-.barra-NC-C {
-    background-color: #B3B3FD;
-    font-size: 3rem;
-    font-family: 'Lexend', sans-serif;
-}
-
-img {
-    width: auto;
-    height: auto;
-}
-
 .imagen-nombre-NC-C {
+    font-size: 25px; /* Tamaño deseado para el texto */
+    font-family: 'Open Sans', sans-serif;
     display: flex;
     align-items: center;
 }
 
+.img-flecha {
+    width: 50px; /* Ancho deseado para la imagen */
+    height: auto; /* Altura ajustada automáticamente para mantener la proporción */
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+
+@media only screen and (max-width: 768px) {
+    .imagen-nombre-NC-C {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .img-flecha {
+        width: 20px; /* Ancho de la imagen en dispositivos móviles */
+        margin-right: 0;
+        margin-bottom: 5px; /* Espacio entre la imagen y el texto en dispositivos móviles */
+    }
+}
+
 .cuerpoJuego-NC-C {
-    /* background-color: #d8dcfc; */
-    background-image: url(../../../../assets/img-home/fondo-juegos.png);
-    background-repeat: no-repeat;
-    background-size:cover;
+    background-color: #8D9DE8;
     padding-bottom: 10%;
     margin-bottom: 0;
 
@@ -32,7 +40,7 @@ main{
 
 .section1{
     /*background-color: #DCBEE8FF;*/
-    background-color: #9898f1;
+    background-color: #cfd2dfa1;
     padding: 3rem;
     border-radius: 8px;
     width: 120rem;
@@ -47,18 +55,17 @@ main{
 {
     border-radius: 10%;
     border-style:none ;
-    /*background-color: #9898f1;*/
-    background-color: #DCBEE8FF;
+    background-color: #8D9DE8
 }
 
 .eleccion:hover
 {
-    background-color: #7070f0;
+    background-color: #d4d5db6b;
     box-shadow:  0rem 0rem 1rem 0.01rem black;
 }
 
 .eleccion.clickeado {
-    background-color: #7070f0;
+    background-color: #8D9DE8;
     box-shadow:  0rem 0rem 1rem 0.01rem black;
 }
 
@@ -83,12 +90,11 @@ button:hover{
     display: flex;
     flex-direction: column;
 
-    /*background-color: #DCBEE8FF;*/
-    background-color: #9898f1;
+    background-color: #cfd2dfa1;
     width: 120rem;
-    height: 20rem;
+    height: 22rem;
 
-    padding: 1rem 1rem;
+    padding: 2rem 35rem;
     margin-left: 5rem;  
     margin-top: 0;
 
@@ -99,7 +105,7 @@ button:hover{
 
 .estadisticas {
     border: 1px solid black;
-    background-color: #DCBEE8FF;
+    background-color: #8d9ee898;
     height: 105px;
     border-radius: 8px;
     padding: 8px 20px;
@@ -107,6 +113,7 @@ button:hover{
     /*texto*/
     padding-top: 2rem;
     text-align: center;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .mensajeGanador{

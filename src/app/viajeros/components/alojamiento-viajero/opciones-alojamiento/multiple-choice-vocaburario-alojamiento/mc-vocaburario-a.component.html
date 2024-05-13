@@ -1,0 +1,51 @@
+<nav class="barra-A">
+
+    <div class="imagen-nombre-A">
+        <a routerLink="/alojamiento-home">
+            <img class="img-flecha" src="../../../../assets/viajeros-img/nav/flecha-viajeros.png" alt="Logo" width="20"
+                height="14">
+        </a>
+        <span>Multiple choice - VOCABULARIO</span>
+    </div>
+
+    <img class="img-a" src="../../../../../../assets/viajeros-img/nav/vocabulario2.png" alt="vocabulario">
+
+</nav>
+
+<section class="cuerpo-viajero-A">
+
+    <div class="cuerpo-MCV" *ngIf="mostrarCuestionario">
+
+        <div *ngIf="ejerciciosAlojamiento && ejerciciosAlojamiento[oracionActual]">
+            <p class="titulo">{{ ejerciciosAlojamiento[oracionActual].oracion }}</p>
+        </div>
+
+        <ul class="ejercicio"
+            *ngIf="ejerciciosAlojamiento[oracionActual] && ejerciciosAlojamiento[oracionActual].respuestas">
+            <li *ngFor="let respuesta of ejerciciosAlojamiento[oracionActual].respuestas; let i = index">
+                <label>
+                    <input type="radio" [(ngModel)]="respuestaSeleccionada" [value]="respuesta"
+                        [disabled]="respuestaCorrecta !== ''">
+                    {{ respuesta }}
+                    <span
+                        *ngIf="respuestaCorrecta === 'correcta' && respuesta === ejerciciosAlojamiento[oracionActual].respuestaCorrecta"
+                        style="color: green;">✔</span>
+                    <span *ngIf="respuestaCorrecta === 'incorrecta' && respuesta === respuestaSeleccionada"
+                        style="color: red;">✘</span>
+                </label>
+            </li>
+        </ul>
+
+        <button (click)="verificarRespuesta()">Verificar respuesta</button>
+        <button *ngIf="intentos > 0 && respuestaCorrecta === 'incorrecta'" (click)="resetearEstado()">Intentar de
+            nuevo</button>
+        <button *ngIf="mostrarBoton" (click)="siguientePregunta() ">Siguiente pregunta</button>
+    </div>
+
+    <div class="cuerpo-mensaje" *ngIf="!mostrarCuestionario">
+        <p class="emoticones">🏨 😊 👏</p>
+        <p class="mensaje">¡Fin del cuestionario!</p>
+        <button routerLink="/alojamiento-home">Volver a alojamiento</button>
+    </div>
+
+</section>

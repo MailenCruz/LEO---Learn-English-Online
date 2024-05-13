@@ -1,15 +1,13 @@
 .barra {
-    background-color: #B3B3FD;
-    font-size: 3rem;
-    font-family: 'Lexend', sans-serif;
-}
-
-img {
-    width: auto;
-    height: auto;
+    background-color: #C5C6F6;
 }
 
 .imagen-nombre {
     display: flex;
     align-items: center;
+}
+
+.barra img {
+    max-width: 150px; /* Establece un ancho máximo para la imagen */
+    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
 }

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Pregunta } from 'src/app/viajeros/interfaces/pregunta';
-import { Shopping } from 'src/app/viajeros/interfaces/shopping';
 import { ViajeroService } from 'src/app/viajeros/services/viajero.service';
 
 

@@ -1,38 +1,93 @@
-.cuerpo-viajero-S {
-    background-image: url(../../../../../../assets/img-home/fondoBorroso.jpg);
-    background-repeat: no-repeat;
-    background-size:cover;
-    padding-bottom: 10%;
-    margin-bottom: 0;
-}
-
 .barra-S {
-    background-color: #B3B3FD;
-    font-size: 3rem;
-    font-family: 'Lexend', sans-serif;
-}
-
-img {
-    width: auto;
-    height: auto;
+    background-color: white;
 }
 
 .imagen-nombre-S {
+    font-size: 25px;
+    /* Tamaño deseado para el texto */
+    font-family: 'Open Sans', sans-serif;
     display: flex;
     align-items: center;
+}
+
+.img-flecha {
+    width: 50px;
+    /* Ancho deseado para la imagen */
+    height: auto;
+    /* Altura ajustada automáticamente para mantener la proporción */
+    margin-right: 10px;
+    /* Espacio entre la imagen y el texto */
+}
+
+.img-s {
+    width: 45px;
+    /* Ancho deseado para la imagen */
+    height: auto;
+    /* Altura ajustada automáticamente para mantener la proporción */
+    position: absolute;
+    /* Posición absoluta */
+    right: 0;
+    /* Posicionar en el extremo derecho */
+    top: 4%;
+    /* Centrar verticalmente */
+    transform: translateY(-50%);
+    /* Ajustar verticalmente */
+}
+
+@media only screen and (max-width: 768px) {
+    .imagen-nombre-S {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .img-flecha {
+        width: 20px;
+        /* Ancho de la imagen en dispositivos móviles */
+        margin-right: 0;
+        margin-bottom: 5px;
+        /* Espacio entre la imagen y el texto en dispositivos móviles */
+    }
+
+    .img-s {
+        width: 30px;
+        /* Ancho de la imagen en dispositivos móviles */
+        margin-left: 0;
+        /* Eliminar el margen izquierdo en dispositivos móviles */
+    }
+}
+
+
+/**/
+.cuerpo-viajero-S {
+    background-image: url(../../../../../../assets/img-home/fondoBorroso.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 10%;
+    margin-bottom: 0;
+
+    padding-top: 10rem;
+
 }
 
 
 /*EJERCICIOS*/
 .cuerpo-MCP {
-    background-color: rgba(245, 245, 220, 0.5);
+    background-color: rgba(255, 255, 255, 0.849);
+    font-family: 'Open Sans', sans-serif;
+
     display: flex;
     flex-direction: column;
-    width: 50%;
-    margin-top: 10rem;
-    margin: 10rem auto; /* Ajusta el margen: 10rem arriba/abajo y automáticamente a los lados */
+    justify-content: center;
 
-    justify-content: center; /* Centra verticalmente */
+    width: 90%;
+    /* Reducir el ancho del contenedor en dispositivos más pequeños */
+    max-width: 600px;
+    /* Establecer un ancho máximo */
+    margin: auto;
+    /* Centrar el contenedor horizontalmente */
+
+    padding: 3rem;
+    border-radius: 20px;
 }
 
 .titulo {
@@ -48,28 +103,19 @@ img {
 
 /* Estilo para el botón */
 button {
-
     background-color: #000000a8;
-    /* Color de fondo */
     color: white;
-    /* Color del texto */
-
-    padding: 12px 20px;
-    /* Relleno interno */
-    font-size: 16px;
-    /* Tamaño de la fuente */
-
+    font-size: 1.6rem;
+    /* Tamaño de fuente responsivo */
+    font-family: 'Open Sans', sans-serif;
     border: none;
-    /* Sin borde */
-    border-radius: 5px;
-    /* Bordes redondeados */
 
     cursor: pointer;
-    /* Cambia el cursor al pasar sobre el botón */
     transition: background-color 0.3s ease;
-    /* Efecto de transición en el cambio de color de fondo */
 
-    margin: 1rem;
+    border-radius: 50px;
+    margin-top: 3rem;
+    padding: 12px;
 }
 
 /* Cambia el color de fondo al pasar el ratón sobre el botón */
@@ -79,25 +125,25 @@ button:hover {
 
 /* Cambia el color de fondo al hacer clic en el botón */
 button:active {
-    background-color: #9e9ef5;
+    background-color: #E5B9F1;
 }
 
 .cuerpo-mensaje {
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.emoticones{
-    margin-top: 10rem;
-    font-size: 5rem;
+.emoticones {
+    margin-top: 3vw;
+    font-size: 5vw;
 }
 
 .mensaje {
-    margin:0;
-    margin-bottom: 10rem;
-    font-size: 5rem;
-    text-shadow: #B3B3FD;
-    color:black;
+    margin: 0;
+    margin-bottom: 5vw;
+    font-size: 3vw;
+    text-shadow: #E5B9F1;
+    color: black;
 }

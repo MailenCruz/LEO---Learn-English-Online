@@ -5,8 +5,8 @@ import { ViajeroService } from 'src/app/viajeros/services/viajero.service';
 
 @Component({
   selector: 'app-multiple-choice-vocaburario-alojamiento',
-  templateUrl: './mc-vocaburario.component.html',
-  styleUrls: ['./mc-vocaburario.component.css']
+  templateUrl: './mc-vocaburario-a.component.html',
+  styleUrls: ['./mc-vocaburario-a.component.css']
 })
 export class MultipleChoiceVocaburarioAlojamientoComponent {
   ejerciciosAlojamiento: Ejercicio[] = [];
