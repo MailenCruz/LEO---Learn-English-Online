@@ -14,7 +14,7 @@ export class ShoppingHomePageComponent {
   }
 
   isLogged(){
-    let res = this.userService.currentUser;
+    let res = this.userService.currentUser();
     return res? true:false;
   }
 }

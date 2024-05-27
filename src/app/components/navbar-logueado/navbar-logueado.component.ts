@@ -13,20 +13,27 @@ export class NavbarLogueadoComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  get getUser(): User | undefined {
-    return this.usersService.currentUser;
+  getUser(): User | undefined {
+    const res = this.usersService.currentUser();
+    if(res){
+      return res;
+    }
+    else{
+      return undefined;
+    }
   }
   
-  getUserId(): number {
-    let res = this.usersService.currentUser;
-    if (!res) {
-      return -1;
-    }
-    else {
+  getUserId(): string {
+    const res = this.usersService.currentUser();
+    if (res === undefined) {
+      //console.log("-1");
+      return "-1";
+    } else {
+      //console.log(res.id);
       return res.id;
     }
   }
-
+  
   onLogOut() {
     this.usersService.logout();
     this.router.navigate(['/home-general'])

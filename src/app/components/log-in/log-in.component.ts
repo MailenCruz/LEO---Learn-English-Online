@@ -8,27 +8,20 @@ import { UsersService } from 'src/app/services/users.service';
   templateUrl: './log-in.component.html',
   styleUrls: ['./log-in.component.css']
 })
-export class LogInComponent{
+export class LogInComponent {
   private formBuilder: FormBuilder = inject(FormBuilder)
   private auth: UsersService = inject(UsersService)
   private router: Router = inject(Router)
-  valid!:string
+  valid!: string
 
-  formulario: FormGroup = this.formBuilder.group({
-    username: ['',[Validators.required, Validators.minLength(3)]],
-    password:['',[Validators.required,Validators.minLength(6)]],
-    /* email:['',[Validators.required,Validators.email]] */
-  })
+  formulario!: FormGroup;
 
-  /*async iniciarSession() {
-    if (this.formulario.invalid) return;
-
-    this.valid=await this.auth.verificarUserAndPass(
-      this.formulario.controls['username'].value,
-      this.formulario.controls['password'].value)
-      
-    console.log(this.valid);
-  }*/
+  ngOnInit(): void {
+    this.formulario = this.formBuilder.group({
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]]
+    });
+  }
 
   iniciarSession() {
     if (this.formulario.invalid) return;
@@ -36,45 +29,15 @@ export class LogInComponent{
     this.auth.verificarUserAndPass(
       this.formulario.controls['username'].value,
       this.formulario.controls['password'].value
-    )
+    ).subscribe({
+      next: user => {
+        localStorage.setItem('token', user.id.toString());
+        this.router.navigate(['/home']);
+      },
+      error: err => {
+        this.valid = 'Usuario o contraseña incorrectos';
+      }
+    });
   }
-
-    /* const user: User = {
-      user: this.formulario.controls['user'].value,
-      password: this.formulario.controls['password'].value,
-      id?:null
-    }
-    this.auth.loginUser(user.user, user.password) */
-
-
-  /* form!:FormGroup;
-  user!:User;
-
-  constructor(private userService:UsersService, private formBuilder:FormBuilder){}
-
-  ngOnInit(): void {
-    this.initForm();
-  }
-
-  initForm(){
-    this.form = this.formBuilder.group({
-      username: ['',[Validators.required, Validators.minLength(3)]],
-      password:['',[Validators.required,Validators.minLength(6)]],
-    })
-  }
-
-  getUser(){
-    this.user = this.form.value;
-  }
-
-  async userExists(email:string){
-    let usuario = await this.userService.getUser(email);
-    if(usuario){
-      console.log('existe');
-    }else{
-      console.log('no existe');
-    }
-  } */
- 
 
 }

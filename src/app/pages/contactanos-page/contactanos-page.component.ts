@@ -12,7 +12,7 @@ export class ContactanosPageComponent {
   constructor(private userService:UsersService, public router:Router){}
 
   isLogged(){
-    let res = this.userService.currentUser;
+    let res = this.userService.currentUser();
     return res? true:false;
   }
 

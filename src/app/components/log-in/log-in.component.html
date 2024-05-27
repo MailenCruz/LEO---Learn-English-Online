@@ -8,13 +8,8 @@
                 <input type="text" id="username" formControlName="username">
 
                 <div class="error">
-                    <span *ngIf=" formulario.controls['username'].getError('required') && this.formulario.touched">
+                    <span *ngIf=" this.formulario.controls['username'].getError('required') && this.formulario.controls['username'].touched">
                         El campo es requerido</span>
-                </div>
-
-                <div class="error">
-                    <span *ngIf=" formulario.controls['username'].getError('minlength') && this.formulario.touched">
-                        Mínimo 3 caracteres</span>
                 </div>
             </div>
 
@@ -25,15 +20,9 @@
 
 
                 <div class="error">
-                    <span *ngIf=" formulario.controls['password'].getError('required') && this.formulario.touched">
+                    <span *ngIf=" this.formulario.controls['password'].getError('required') && this.formulario.controls['password'].touched">
                         El campo es requerido</span>
                 </div>
-
-                <div class="error">
-                    <span *ngIf=" formulario.controls['password'].getError('minlength') && this.formulario.touched">
-                        Mínimo 3 caracteres</span>
-                </div>
-
             </div>
             <input class="btn-registrarte" type="submit" value="Iniciar Sesión">
 
