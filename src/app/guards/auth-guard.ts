@@ -8,7 +8,7 @@ function checkAuthStatus(): boolean | Observable<boolean> {
 
   const authService = inject(UsersService);
   const router = inject(Router);
-  const user: User | undefined = authService.currentUser
+  const user: User | undefined = authService.currentUser();
 
   return authService.checkStatusAutentication()
     .pipe(
