@@ -1,66 +1,118 @@
 .contenedor-bienvenida {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20%;
+    display: flex; 
+    align-items: center; 
+   
+    justify-content: space-between; /* Espacio entre logo y texto */
+    height: 100vh;
     padding: 5rem;
-
-    padding-top: 15rem;
 }
 
-.contenedor-bienvenida .logo-home {
-    max-width: 50%;
-    animation: scale-up-center 2.0s;
-    width: 30%; /* Tamaño del logo */
-    margin-left: 8rem;
+.logo-home {
+    width: 100%;
+    max-width: 500px; /* Tamaño máximo deseado para el logo */
+    height: auto; 
+    opacity: 0;
+    
+
+    animation: slideInFromLeft 1s ease-out forwards; /* Aplica la animación */
+
 }
 
-@keyframes scale-up-center {
+/* Animación de entrada */
+@keyframes slideInFromLeft {
     0% {
-        transform: scale(.5)
+        transform: translateX(-100%);
+        opacity: 0;
     }
-
     100% {
-        transform: scale(1)
+        transform: translateX(0);
+        opacity: 1;
     }
 }
 
-
-.contenedor-bienvenida .introduccion {
+.contenedor-logo{   
     max-width: 50%;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
+    width: 50%;
 }
 
-.hola{
-    max-width: 100%; /* Ajusta el tamaño de la imagen "¡Hola!" */
-    height: auto;
-    width: 35%; /* Tamaño de la imagen "¡Hola!" */
-}
+.contenedor-texto{
+    max-width: 50%;
+    width: 50%;
 
-.contenedor-bienvenida .introduccion p {
-    font-size: 2.8rem; /* Reduce el tamaño de fuente para pantallas más pequeñas */
     text-align: justify;
+    font-size: 1.5rem;
     color: black;
     font-family: 'Public Sans', sans-serif;
     opacity: 100%;
+
+    margin: 1rem 5rem 0rem 0rem; 
 }
 
-/* Media query para pantallas pequeñas */
-@media only screen and (max-width: 768px) {
-    .contenedor-bienvenida {
-        flex-direction: column; /* Cambia la dirección del flexbox a columna */
-        text-align: center; /* Centra el contenido */
+.introduccion{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap; /* Mantiene el texto y la imagen en una sola línea */
+}
+
+.introduccion p {
+    margin-left: 0  rem;
+    font-size: 3rem;
+    padding: 2rem;
+
+    font-family: "Poetsen One", sans-serif;
+    font-style: normal;
+    color: #5c5d88;
+}
+    
+.hola {
+    max-width: 100%;
+    height: auto;
+    width: 80px;
+    margin-right: 1rem;
+
+    animation: moveHand 2s infinite;
+}
+
+/* movimiento de mano */
+@keyframes moveHand {
+    0% {
+        transform: rotate(0deg);
     }
-    .contenedor-bienvenida .introduccion {
-        max-width: 100%; /* Cambia el ancho máximo a 100% en pantallas pequeñas */
+
+    50% {
+        transform: rotate(-40deg);
     }
-    .contenedor-bienvenida .logo-home,
-    .contenedor-bienvenida .introduccion {
-        width: 100%; /* Ajusta el ancho de los elementos a 100% en pantallas pequeñas */
-    }
-    .hola {
-        width: 70%; /* Ajusta el tamaño de la imagen "¡Hola!" en pantallas pequeñas */
+
+    100% {
+        transform: rotate(0deg);
     }
 }
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 767px) {
+    .contenedor-bienvenida {
+        margin-top: 2rem;
+        flex-direction: column; 
+        height: auto; 
+    }
+
+    .contenedor-logo, .contenedor-texto {
+        width: 100%;
+        max-width: 100%;
+        margin: 1.5rem 0; 
+    }
+
+
+    .introduccion p {
+        margin-left: 0;
+        font-size: 2.5rem; 
+        
+    }
+
+    .hola{
+        width: 50px;
+    }
+}
+
+
+

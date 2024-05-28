@@ -31,21 +31,19 @@
 
 @media only screen and (max-width: 768px) {
     .imagen-nombre-A {
-        flex-direction: column;
-        align-items: flex-start;
+       font-size: 20px; /* Ajustar tamaño del texto en dispositivos móviles */
     }
 
     .img-flecha {
-        width: 20px;
+        width: 30px; /* Ancho de la imagen en dispositivos móviles */
         margin-right: 0;
-        margin-bottom: 5px;
     }
-
+    
     .img-a {
-        width: 30px;
-        margin-left: 0;
+        width: 25px; /* Ancho deseado para la imagen */
     }
 }
+
 
 /**/
 
@@ -131,4 +129,71 @@ button:active {
     font-size: 3vw;
     text-shadow: #F1C4C4;
     color: black;
+
+    font-family: "Public Sans", sans-serif;
+}
+
+.vocabulario {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-top: 5rem;
+    padding: 1rem; /* Añadimos un poco de relleno */
+}
+
+
+.boton-vocabulario{
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+
+    background-color: white;
+    color: black;
+
+    margin-top: 2.3rem;
+    padding: 0.9rem;
+    margin-left: -2.4rem;
+    border-radius: 1rem;
+
+    font-family: "Public Sans", sans-serif;
+}
+
+.vocabulario img{
+    width: 15%; /* Aumentamos un poco el tamaño de la imagen */
+    max-width: 60px; /* Limita el tamaño máximo de la imagen */
+    border-radius: 1rem;
+    margin-right: 1rem; /* Añadimos margen derecho */
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .vocabulario {
+        flex-direction: column; /* Cambiamos a columna en pantallas pequeñas */
+        align-items: center;
+    }
+
+    .boton-vocabulario {
+        margin-left: 0; /* Eliminamos el margen izquierdo */
+        margin-top: 1rem; /* Ajustamos el margen superior */
+    }
+
+    .vocabulario img {
+        width: 25%; /* Ajustamos el tamaño de la imagen */
+        margin-right: 0; /* Eliminamos el margen derecho */
+    }
+}
+
+/* Media queries para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .vocabulario img {
+        width: 35%; /* Aumentamos el tamaño de la imagen en pantallas muy pequeñas */
+    }
+
+    .boton-vocabulario {
+        font-size: 14px; /* Ajustamos el tamaño de la fuente */
+        padding: 0.7rem; /* Ajustamos el relleno */
+    }
 }
