@@ -146,5 +146,10 @@ export class PalabraImagenJuegoComponent {
     }, 1500);
   }
 
+  ngOnInit() {
+    window.scrollTo(0, 0);
+  }
+
+
 
 }

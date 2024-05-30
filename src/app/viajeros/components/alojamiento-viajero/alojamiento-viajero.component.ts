@@ -16,6 +16,7 @@ export class AlojamientoViajeroComponent {
 
   ngOnInit() {
     window.scrollTo(0, 0);
+    
     this.viajeroService.getDataAlojamiento().subscribe(
       {
         next: (data) => {

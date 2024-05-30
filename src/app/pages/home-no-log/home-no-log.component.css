@@ -15,5 +15,160 @@
 }
 
 .footer {
-    margin-top: 5%; /* Ajusta el margen del footer para pantallas grandes y pequeñas */
+    margin-top: 5%;
+    /* Ajusta el margen del footer para pantallas grandes y pequeñas */
+}
+
+
+/* INCIO DE SESION / REGISTRARSE */
+.contenedor-todo {
+    width: 100%;
+    max-width: 100%;
+    height: 500px;
+    margin: auto;
+
+    margin-bottom: 10rem;
+    background-color: #6c6e9f1f;
+    box-shadow: 0px 0px 100px 2px #6c6e9f3d;
+
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.iniciarSesion,
+.registrarse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 80%;
+    max-width: 400px;
+    padding: 3rem;
+    border-radius: 50px;
+}
+
+.iniciarSesion {
+    background-color: #BFA1A1;
+    box-shadow: 0px 0px 10px 15px #c5b4b4;
+}
+
+.registrarse {
+    background-color: #B791D8;
+    box-shadow: 0px 0px 10px 15px #c6a9e0;
+
+}
+
+.iniciarSesion h3,
+.registrarse h3 {
+    font-size: 2.5rem;
+    font-family: "Poetsen One", sans-serif;
+    margin-bottom: 5rem;
+
+}
+
+.iniciarSesion p,
+.registrarse p {
+    font-size: 1.5rem;
+    font-family: "Public Sans", sans-serif;
+    text-align: start;
+    margin-bottom: 3rem;
+}
+
+button {
+    padding: 10px 60px 10px 60px;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    border: none;
+    font-size: 2rem;
+    font-family: "Open Sans", sans-serif;
+
+    cursor: pointer;
+    outline: none;
+    border-radius: 50px;
+    transition: transform 0.3s ease;
+    animation: zoomInOut 2s ease-in-out infinite alternate;
+}
+
+.iniciarSesion button {
+    background-color: rgb(211, 190, 190);
+}
+
+.registrarse button {
+    background-color: #c2b2d1;
+}
+
+.registrarse button:hover,
+.iniciarSesion button:hover {
+    box-shadow: 0px 0px 10px 5px white;
+    transform: scale(1.1);
+
+}
+
+@keyframes zoomInOut {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+        /* Puedes ajustar el valor para controlar el nivel de zoom */
+    }
+}
+
+
+/* Estilos para pantallas pequeñas */
+@media only screen and (max-width: 768px) {
+    .contenedor-principal {
+        padding-bottom: 5%;
+    }
+
+    .contenedor-todo {
+        flex-direction: column;
+        /* Cambiar a disposición de columna en pantallas pequeñas */
+        align-items: center;
+        /* Centrar los elementos en pantallas pequeñas */
+    }
+
+    .iniciarSesion,
+    .registrarse {
+        width: 90%;
+        /* Reducir el ancho en pantallas pequeñas */
+        max-width: 70%;
+        /* Reducir el ancho máximo en pantallas pequeñas */
+        padding: 2rem;
+        /* Reducir el padding en pantallas pequeñas */
+        margin-bottom: 8rem;
+        /* Ajustar el margen inferior */
+    }
+
+    button {
+        padding: 8px 50px;
+        /* Ajustar el padding del botón en pantallas pequeñas */
+    }
+}
+
+/* Estilos para pantallas grandes */
+@media only screen and (min-width: 768px) {
+    .contenedor-principal {
+        padding-bottom: 10%;
+    }
+
+    .contenedor-todo {
+        justify-content: space-around;
+        /* Alinear los elementos de manera equitativa */
+    }
+
+    .iniciarSesion,
+    .registrarse {
+        width: 40%;
+        /* Reducir el ancho en pantallas grandes */
+        max-width: 400px;
+        /* Limitar el ancho máximo en pantallas grandes */
+    }
 }

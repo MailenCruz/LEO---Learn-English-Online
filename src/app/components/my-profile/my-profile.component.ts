@@ -22,6 +22,7 @@ export class MyProfileComponent implements OnInit {
   ngOnInit(): void {
     this.initForm();
     this.camposFormulario();
+    window.scrollTo(0, 0);
   }
 
   initForm() {

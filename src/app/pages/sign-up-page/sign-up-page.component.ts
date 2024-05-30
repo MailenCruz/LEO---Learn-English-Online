@@ -8,5 +8,8 @@ import { Component} from '@angular/core';
 })
 export class SignUpPageComponent{
 
-  
+  ngOnInit() {
+    window.scrollTo(0, 0);
+  }
+
 }

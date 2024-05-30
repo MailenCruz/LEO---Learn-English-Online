@@ -6,10 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./categorias.component.css']
 })
 export class CategoriasComponent {
-  
-  ngOnInit() {
-    window.scrollTo(0, 0);
-  }
 
 
 }

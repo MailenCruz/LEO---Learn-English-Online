@@ -19,6 +19,7 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm();
+    window.scrollTo(0, 0);
   }
 
   initForm() {

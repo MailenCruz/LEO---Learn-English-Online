@@ -16,4 +16,8 @@ export class ContactanosPageComponent {
     return res? true:false;
   }
 
+  ngOnInit() {
+    window.scrollTo(0, 0);
+  }
+
 }

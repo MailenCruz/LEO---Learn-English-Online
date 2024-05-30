@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home-no-log',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-no-log.component.css']
 })
 export class HomeNoLogComponent {
+  ngOnInit() {
+    window.scrollTo(0, 0);
+  }
 
 }
+

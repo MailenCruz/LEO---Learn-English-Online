@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./log-in-page.component.css']
 })
 export class LogInPageComponent {
+  ngOnInit() {
+    window.scrollTo(0, 0);
+  }
 
 }

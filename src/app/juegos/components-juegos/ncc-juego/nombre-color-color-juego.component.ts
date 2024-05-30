@@ -138,4 +138,9 @@ export class NombreColorColorJuegoComponent {
     }, 1150);
   }
 
+  ngOnInit() {
+    window.scrollTo(0, 0);
+  }
+
+
 }

@@ -16,4 +16,6 @@ export class HomePageComponent {
     let res = this.userService.currentUser();
     return res? true:false;
   }
+
+
 }
