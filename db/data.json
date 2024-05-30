@@ -1062,47 +1062,41 @@
           "oracion": "I ____ a delicious dinner.",
           "respuestas": [
             "making",
-            "made",
-            "make"
+            "made"
           ]
         },
         {
           "oracion": "You ____ your room.",
           "respuestas": [
             "tidy up",
-            "tidies up",
-            "tidied up"
+            "tidies up"
           ]
         },
         {
           "oracion": "Olivia ____ an actress.",
           "respuestas": [
-            "becoming",
-            "became",
-            "become"
+            "becamed",
+            "became"
           ]
         },
         {
           "oracion": "We ____ the treasure.",
           "respuestas": [
             "found",
-            "find",
-            "founded"
+            "foundes"
           ]
         },
         {
           "oracion": "He ____ Spanish.",
           "respuestas": [
             "speaking",
-            "speaked",
-            "spoke"
+            "speakes"
           ]
         },
         {
           "oracion": "I ____ hockey.",
           "respuestas": [
             "played",
-            "play",
             "playing"
           ]
         },
@@ -1110,7 +1104,6 @@
           "oracion": "You ____ how to play guitar.",
           "respuestas": [
             "known",
-            "knew",
             "know"
           ]
         },
@@ -1118,23 +1111,20 @@
           "oracion": "My mum ____ a lawyer",
           "respuestas": [
             "are",
-            "is",
-            "am"
+            "is"
           ]
         },
         {
           "oracion": "Mr Robinson ____ a red car.",
           "respuestas": [
             "has",
-            "have",
-            "had"
+            "have"
           ]
         },
         {
           "oracion": "My brother ____ to school on his bike.",
           "respuestas": [
-            "went",
-            "gone",
+            "wented",
             "goes"
           ]
         }

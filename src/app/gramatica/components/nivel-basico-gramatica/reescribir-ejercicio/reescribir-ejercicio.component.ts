@@ -7,6 +7,9 @@ import { Router } from '@angular/router';
 import { Correccion } from 'src/app/gramatica/interfaces/correccion';
 import { Reescribir } from 'src/app/gramatica/interfaces/reescribir';
 import { GramaticaService } from 'src/app/gramatica/services/gramatica.service';
+import { Observable, catchError, map, zip } from 'rxjs';
+import { of } from 'rxjs';
+
 
 @Component({
   selector: 'reescribir-ejercicio',
@@ -80,20 +83,6 @@ export class ReescribirEjercicioComponent {
       }
     );
   }
-
-  /*async getEjercicios() { //trae desde el json y carga al array REESCRIBIR los ejercicios
-    try {
-      const respuesta = await this.gramaticaService.getExercises();
-
-      if (respuesta) {
-        const { basico } = respuesta;
-        this.reescribir = basico.reescribir;
-      }
-    }
-    catch (error) {
-      console.log(error);
-    }
-  }*/
 
   fraseAleatoria() {
     const types = ['afirmativo', 'negativo', 'interrogativo'] as const;
@@ -172,7 +161,6 @@ export class ReescribirEjercicioComponent {
         this.gramaticaService.getCorreccionHttp(value.trim()).subscribe(
           {
             next: (correccion) => {
-
               let aux: { [tipo: string]: Correccion[] | undefined } = {};
               aux[key] = correccion;
               this.correccionesPorTipo.push(aux);
@@ -182,30 +170,9 @@ export class ReescribirEjercicioComponent {
             }
           })
       }
+
     }
   }
-
-  /*async checkRespuesta() {  //checkea los errores de las oraciones enviadas y que coincidan
-    this.correccionesPorTipo = [];
-    try {
-      for (let key in this.respuestas) { //recorre las claves del objeto
-
-        if (this.check[key as keyof Reescribir] === true && this.oracionCoincide[key] === true) { //si la respuesta fue enviada (no vacía) y coincide
-
-          let value = this.respuestas[key as keyof Reescribir]; //copia la respuesta del usuario
-
-          value = value.charAt(0).toUpperCase() + value.slice(1); //pone en minúscula la primer letra
-
-          let correcciones: Correccion[] | undefined = await this.gramaticaService.getCorreccion(value.trim()); //trae las correciones
-          let aux: { [tipo: string]: Correccion[] | undefined } = {};
-          aux[key] = correcciones;
-          this.correccionesPorTipo.push(aux);
-        }
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }*/
 
   siguienteEjercicio() {
     if (this.reescribir.length > 0) {

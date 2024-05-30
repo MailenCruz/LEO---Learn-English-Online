@@ -49,7 +49,19 @@ main{
 
 
 .eleccion
-{animation:scale-up-center 0.9s; } @keyframes scale-up-center{ 0%{transform:scale(.5)} 100%{transform:scale(1)} }
+{
+    animation:scale-up-center 0.9s;
+}
+
+@keyframes scale-up-center {
+    0%{
+        transform:scale(.5)
+    }
+    
+    100% {
+        transform:scale(1)
+    }
+}
 
 .eleccion
 {
@@ -65,7 +77,7 @@ main{
 }
 
 .eleccion.clickeado {
-    background-color: #8D9DE8;
+    background-color: #596fc7;
     box-shadow:  0rem 0rem 1rem 0.01rem black;
 }
 

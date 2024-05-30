@@ -12,9 +12,6 @@ import { catchError, map } from 'rxjs/operators';
 })
 export class GramaticaService {
 
-  //url2: string = "http://localhost:4000/gramatica"
-  //urlAPI: string = "https://api.languagetool.org/v2/check"
-
   url: string = environments.baseUrl;
   urlAPI: string = environments.urlAPIGramaticas;
 
@@ -23,19 +20,6 @@ export class GramaticaService {
   getExercisesHttp(): Observable<Gramatica | undefined> {
     return this.http.get<Gramatica>(`${this.url}/gramatica`);
   }
-
-  /*async getExercises(): Promise<Gramatica | undefined> { //trae desde el json todos los ejercicios de gramatica
-    try {
-      const resultado = await fetch(this.url, { method: 'GET' })
-      const ejercicios = resultado.json();
-
-      return ejercicios;
-    }
-    catch (error) {
-      console.log(error);
-    }
-    return undefined;
-  }*/
 
   getCorreccionHttp(answer: string): Observable<Correccion[] | undefined> {
 
@@ -63,12 +47,11 @@ export class GramaticaService {
 
           let correcciones: Correccion[] = [];
 
-          if (response && response.matches) {
-
+          if (response || response.matches) {
             response.matches.forEach((element: any) => {
 
               let { message, replacements } = element;
-
+              
               let arreglo: string[] = replacements.map((replacement: any) => replacement.value);
 
               let error: Correccion = {
@@ -77,7 +60,6 @@ export class GramaticaService {
               };
 
               correcciones.push(error);
-
             });
 
           }
@@ -90,49 +72,3 @@ export class GramaticaService {
       );
   }
 }
-
-/*async getCorreccion(answer: string): Promise<Correccion[] | undefined> {
-  try {
-    const data = new URLSearchParams();
-    data.append('text', answer);
-    data.append('language', 'en');
-    data.append('enabledOnly', 'false');
-
-    const respuesta = await fetch(
-      this.urlAPI,
-      {
-        method: 'POST',
-        body: data,
-        headers: {
-          'Content-type': 'application/x-www-form-urlencoded',
-          'Accept': 'application/json'
-        }
-      }
-    )
-
-    if (respuesta.ok) {
-      let json = await respuesta.json();
-      let { matches } = json;
-      let correcciones: Correccion[] = [];
-
-      matches.forEach((element: any) => {
-        let { message, replacements } = element;
-
-        let arreglo: string[] = replacements.map((replacement: any) => replacement.value);
-
-        let error: Correccion = {
-          message,
-          replacements: arreglo,
-        };
-        correcciones.push(error);
-      })
-      
-      return correcciones;
-    }
-  }
-  catch (error) {
-    console.log(error);
-  }
-
-  return undefined;
-} */
