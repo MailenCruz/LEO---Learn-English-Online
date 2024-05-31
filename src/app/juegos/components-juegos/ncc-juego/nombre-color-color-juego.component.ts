@@ -175,5 +175,9 @@ export class NombreColorColorJuegoComponent {
     window.scrollTo(0, 0);
   }
 
+  recargarPagina(): void {
+    location.reload();
+  }
+
 
 }

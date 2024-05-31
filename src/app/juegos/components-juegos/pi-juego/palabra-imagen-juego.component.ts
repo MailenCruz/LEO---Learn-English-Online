@@ -177,6 +177,10 @@ export class PalabraImagenJuegoComponent {
     window.scrollTo(0, 0);
   }
 
+  recargarPagina(): void {
+    location.reload();
+  }
+
 
 
 }
