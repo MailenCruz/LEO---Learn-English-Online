@@ -1,114 +1,120 @@
 .imagen-nombre-P-P {
-    font-size: 25px; /* Tamaño deseado para el texto */
+    font-size: 25px;
+    /* Tamaño deseado para el texto */
     font-family: 'Open Sans', sans-serif;
     display: flex;
     align-items: center;
 }
 
 .img-flecha {
-    width: 50px; /* Ancho deseado para la imagen */
-    height: auto; /* Altura ajustada automáticamente para mantener la proporción */
-    margin-right: 10px; /* Espacio entre la imagen y el texto */
+    width: 50px;
+    /* Ancho deseado para la imagen */
+    height: auto;
+    /* Altura ajustada automáticamente para mantener la proporción */
+    margin-right: 10px;
+    /* Espacio entre la imagen y el texto */
 }
 
-
-@media only screen and (max-width: 768px) {
-    .imagen-nombre-P-P {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .img-flecha {
-        width: 20px; /* Ancho de la imagen en dispositivos móviles */
-        margin-right: 0;
-        margin-bottom: 5px; /* Espacio entre la imagen y el texto en dispositivos móviles */
-    }
-}
-
+/**/
 
 .cuerpo-juego-P-P {
     background-color: #BA8ECD;
     padding-bottom: 10%;
     margin-bottom: 0;
-
     display: flex;
-}
-
-main{
-    width: 760px;
-    margin: 50px auto 50px;
-    display: flex;
+    justify-content: center;
+    /* Centrar contenido horizontalmente */
     align-items: center;
+    /* Centrar contenido verticalmente */
 }
 
-.section1{
+main {
+    width: 760px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row;
+    /* Cambiar dirección del flex a fila */
+    align-items: center;
+    justify-content: space-between;
+    /* Espaciado entre elementos */
+}
+
+.section1 {
     background-color: #d6cadbbb;
-    padding: 25px 30px 25px 30px;
+    padding: 25px 30px;
     border-radius: 8px;
     margin-bottom: 2rem;
+    flex: 1;
+    /* Permitir que la sección 1 crezca */
+    margin-right: 20px;
+    /* Añadir margen derecho */
 }
 
-
-.eleccion
-{animation:scale-up-center 0.9s; } @keyframes scale-up-center{ 0%{transform:scale(.5)} 100%{transform:scale(1)} }
-
-.eleccion
-{
+.eleccion {
+    animation: scale-up-center 0.9s;
     border-radius: 10%;
-    border-style:none ;
+    border-style: none;
     background-color: #c198d1;
-}
-.eleccion:hover
-{
-    background-color:#BA8ECD;
-    box-shadow:  0rem 0rem 1rem 0.01rem black;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* Añadir transiciones para un efecto suave */
 }
 
+@keyframes scale-up-center {
+    0% {
+        transform: scale(.5)
+    }
 
+    100% {
+        transform: scale(1)
+    }
+}
 
-button{
+.eleccion:hover {
+    background-color: #BA8ECD;
+    box-shadow: 0rem 0rem 1rem 0.01rem black;
+}
+
+button {
     height: 130px;
     width: 130px;
     font-size: 40px;
     color: black;
 }
 
-button:hover{
+button:hover {
     cursor: pointer;
 }
 
 
-.section2{
+.section2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     background-color: #DCBEE8FF;
-    width: 250px;
-    height: 500px;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+    height: 300px;
+
     padding: 0px 30px;
+    flex: 0 0 250px;
+    /* No permitir que la sección 2 crezca */
+    border-radius: 20px;
 }
 
 .estadisticas {
-    border: 1px solid black;
-    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: #c198d1;
+    height: 60px;
     border-radius: 8px;
-    padding: 8px 20px;
-    box-sizing: border-box;
-   
 
-    /*texto*/
-    padding-top: 4rem;
     text-align: center;
-    font-family: 'Open Sans', sans-serif;
-    
+    font-size: 1.8rem;
+    font-family: "Open Sans", sans-serif;   
 }
 
-.mensajeGanador{
-    size: 10rem;
-}
 
-img{
-    width: 70%;
-}
 
 .overlay {
     position: fixed;
@@ -123,6 +129,8 @@ img{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    /* Añadir padding para mejorar la apariencia en dispositivos móviles */
 
 
     z-index: 1000;
@@ -131,17 +139,12 @@ img{
 }
 
 .mensajeGanador {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
-
-    font-size: 5rem;
-    text-align: center;
-
-    background-color: #feccbc8e;
-
-    padding: 80px;
-    border-radius: 15px;
-
-    z-index: 10000;
+    width: 50%;
 
     animation: scale-up-center 1.5s;
 }
@@ -156,44 +159,110 @@ img{
     }
 }
 
-
-.mensajeGanador h1 {
-    font-size: 6rem;
-    text-align: center;
-    margin-bottom: 10rem;
-    margin-top: 2rem;
-    color: rgb(0, 0, 0);
-
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-
+.overlay img {
+    max-width: 100%;
+    width: 15%;
 }
 
 .botonMensaje {
+    width: 100%;
 
-    width: 300px;
-    height: 50px;
+    margin: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
 
-    background-color: #b4b0d9;
+    background-color: #BA8ECD;
     color: rgb(0, 0, 0);
 
-    font-size: 3rem;
-
     border: none;
-    border-radius: 30px;
+    border-radius: 400px;
     cursor: pointer;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    margin-left: 18rem;
-    margin-bottom: 3rem;
-
+    font-size: 2.8rem;
+    font-family: "Poetsen One", sans-serif;
+    font-style: normal;
 
 }
 
-
 .botonMensaje:hover {
     box-shadow: 0rem 0rem 1rem 0.01rem black;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .imagen-nombre-P-P {
+        flex-direction: row; /* Mantiene la dirección en fila */
+        align-items: center; /* Alinea los elementos al centro */
+        font-size: 18px; /* Ajusta el tamaño del texto para pantallas más pequeñas */
+        overflow: hidden; /* Evita que el contenido se salga del contenedor */
+        white-space: nowrap; /* Evita que el texto haga wrap a la siguiente línea */
+        text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es muy largo */
+    }
+
+    .img-flecha {
+        width: 40px; /* Ajusta el ancho de la imagen para pantallas más pequeñas */
+        height: auto; /* Mantiene la proporción de la imagen */
+        
+        margin-left: 15px;
+    }
+
+    .cuerpo-juego-P-P {
+        flex-direction: column;
+        /* Asegurarse de que el cuerpo del juego se ajuste en una columna */
+        padding-bottom: 20px;
+    }
+
+    main {
+        width: 100%;
+        /* Ajustar el ancho principal al 100% */
+        margin: 20px 0;
+        /* Ajustar margen superior e inferior */
+        flex-direction: column;
+        /* Cambiar la dirección del flex a columna */
+    }
+
+    .section1 {
+        width: 80%;
+        /* Ajustar ancho de las secciones al 100% */
+        margin-bottom: 20px;
+        /* Añadir margen inferior para separación */
+    }
+
+    .section2 {
+        width: 250px;
+        height: 100px;
+        padding: 0px 30px;
+
+        /* Ajustar ancho de las secciones al 100% */
+        margin-bottom: 20px;
+        /* Añadir margen inferior para separación */
+    }
+
+    button {
+        height: 80px;
+        /* Reducir altura de los botones en dispositivos móviles */
+        width: 80px;
+        /* Reducir ancho de los botones en dispositivos móviles */
+        font-size: 20px;
+        /* Reducir tamaño de la fuente en dispositivos móviles */
+    }
+
+    .overlay {
+        padding: 20px;
+        /* Añadir padding para mejorar la apariencia en dispositivos móviles */
+    }
+
+    .botonMensaje {
+        font-size: 2rem;
+        /* Adjust font size for smaller screens */
+        margin: 1rem;
+        /* Adjust margin for smaller screens */
+    }
+
+    .mensajeGanador {
+        flex-direction: column;
+        /* Stack buttons vertically on small screens */
+        width: 80%;
+        /* Adjust width for smaller screens */
+    }
 }

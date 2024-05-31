@@ -1,99 +1,120 @@
+.contenedor-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Para que los elementos hijos se posicionen de forma relativa dentro de este contenedor */
+    
+    background-color: white;
+
+    box-shadow: 0rem 0rem 1rem 1rem #eca19441;
+}
+
+img {
+    width: 60px;
+    max-width: 100%;
+    height: auto;
+
+    margin-left: 1rem;
+}
+
+
 footer {
-    background-color: #B3B3FD;
-    background: linear-gradient(to top,#7272bd, #B3B3FD);
+    display: flex;
+    flex-direction: column;
+
+    background: #C5C6F6;
    
-    padding: 20px;
     width: 100%;
     text-align: center;
     margin-top: auto;   
+
 }
 
-.title-fuentes{
-    text-align: center;
-    font-size: 1.5rem;
-
+.contenedor-img .title-fuentes{
     padding: 1rem;
+    
+    
+    font-family: "Poetsen One", sans-serif;
+    font-style: normal;
+    color: black;
+    font-size: 1.5rem;
+  
+}
 
-    background-color: #eca19441;
-    box-shadow: 0rem 0rem 1rem 0.01rem rgba(0, 0, 0, 0.288);
-    border-radius: 5rem;
-
-    font-family: 'Manrope', sans-serif;
+.container-fuentes{
+    background: C5C6F6;
 }
 
 .fuentes{
-    display:flex;
+    display: flex;
     flex-direction: row;
+    flex-wrap: wrap; /* Permitir que los elementos se ajusten a la siguiente línea */
     justify-content: center;
+    padding: 0; /* Elimina el padding innecesario */
+    margin: 0; /* Elimina el margen innecesario */
+
+  
 }
 
 .secciones{
     display: flex;
     flex-direction: column;
-    padding-left: 2rem;
-    padding-right: 2rem;
 
-    background-color: #9b8b8821;
+    background-color: #eca19441;
     box-shadow: 0rem 0rem 1rem 0.01rem rgba(0, 0, 0, 0.288);
     border-radius: 1rem;
+    flex: 1 1 30%; /* Ajusta el tamaño flexible para que se adapte a diferentes tamaños de pantalla */
+    margin: 1rem; /* Ajusta el margen para proporcionar espacio entre elementos */
 
-    width: 80%; 
-
-    margin: 0rem 2rem;
 }
 
 .categorias{
     text-align: center;
     align-items: center;
     font-size: 1.5rem; 
-    padding-top: 2rem;
+    padding: 0.5rem;
 
-    font-family: 'Manrope', sans-serif;
-}
+   
 
-.linea{
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 0.5rem;
 
-    text-align: center;
-    align-items: center;
-    font-size: 1rem; 
-    padding-bottom: 2rem;
-
+    background-color: #eca19441;
 }
 
 .fuente{
     text-align: center;
     align-items: center;
-    font-size: 1.5rem;
-
+    font-size: 1.2rem;
     list-style-type: none;
-
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 
 .fuente a{
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    color:#000000;
-
     padding: 0.5rem;
+
+    color: black;
+    font-family: 'Public Sans', sans-serif;
+    opacity: 100%;
 }
 
 .fuente a:hover{
     color: #000000;
-    box-shadow: 0rem 0rem 1rem 0.01rem #eca194;
-    border-radius: 10rem;
+    box-shadow: 0rem 0rem 1rem 0.01rem #8F5BBD;
+    border-radius: 10px;
 }
 
 
 .enrutamiento{
-
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 
-    background-color: #eca19441;
+    background-color: white;
     box-shadow: 0rem 0rem 1rem 0.01rem rgba(0, 0, 0, 0.288);
 }
 
@@ -101,7 +122,6 @@ footer {
     text-decoration: none;
     font-size: 3rem;
     color: black;
-
     padding-left: 3rem;
     padding-right: 3rem;
 }
@@ -111,13 +131,87 @@ footer {
     border-radius: 10rem;
 }
 
-.enrutamiento .flor1{
-    padding-left: 1rem;
-    padding-right: 32rem;
-    font-size: 2rem;
+
+/* Media queries para hacer el diseño responsive */
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    .title-fuentes {
+        font-size: 1.2rem;
+        border-radius: 2rem;
+    }
+
+    .secciones {
+        width: 95%;
+        margin: 1rem 0.5rem;
+        padding: 1rem;
+        flex: 1 1 100%; /* Ocupa el 100% del ancho en pantallas pequeñas */
+    }
+
+    .categorias {
+        font-size: 1rem;
+    }
+
+    .linea {
+        font-size: 0.8rem;
+        padding-bottom: 1rem;
+    }
+
+    .fuente {
+        font-size: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .enrutamiento a {
+        font-size: 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    img{
+        width: 50px;
+        max-width: 100%;
+        height: auto;
+    }
 }
-.enrutamiento .flor2{
-    padding-left: 32rem;
-    padding-right: 1rem;
-    font-size: 2rem;
+
+/* Estilos para pantallas medianas (tabletas) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .title-fuentes {
+        font-size: 1.4rem;
+        border-radius: 3rem;
+    }
+
+    .secciones {
+        width: 90%;
+        margin: 1rem 1rem;
+        padding: 1.5rem;
+        flex: 1 1 45%; /* Ocupa el 45% del ancho en pantallas medianas */
+    }
+
+    .categorias {
+        font-size: 1rem;
+    }
+
+    .linea {
+        font-size: 0.9rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .fuente {
+        font-size: 1.2rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .enrutamiento a {
+        font-size: 2.5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    img{
+        width: 55px;
+        max-width: 100%;
+        height: auto;
+    }
 }

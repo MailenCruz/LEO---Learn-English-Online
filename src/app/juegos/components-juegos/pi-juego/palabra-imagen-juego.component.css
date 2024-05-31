@@ -38,37 +38,37 @@
 .cuerpoJuego-P-I {
     background-color: #B89696;
     padding-bottom: 10%;
-    margin-bottom: 0;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 main {
-    width: 780px;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    padding: 0 1rem;
 }
 
 .section1 {
     background-color: rgba(255, 255, 255, 0.568);
     padding: 3rem;
     border-radius: 8px;
-    width: 120rem;
-    margin: 5rem 5rem 0rem 5rem;
+    width: 100%;
+    margin: 2rem 0;
 }
 
-
-.eleccion {
-    animation: scale-up-center 0.9s;
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-@keyframes scale-up-center {
-    0% {
-        transform: scale(.5)
-    }
-
-    100% {
-        transform: scale(1)
-    }
+td {
+    padding: 0.5rem;
 }
+
 
 .eleccion {
     border-radius: 10%;
@@ -82,19 +82,35 @@ main {
 }
 
 
+
 .eleccion.clickeado {
     background-color: #d4c0c07c;
     box-shadow: 0rem 0rem 1rem 0.01rem black;
 }
 
-table {
-    margin-left: 3rem;
+@keyframes scale-up-center {
+    0% {
+        transform: scale(.5)
+    }
+
+    100% {
+        transform: scale(1)
+    }
 }
 
+.eleccion img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* que no se genere como un zoom*/
+    object-position: center; /* Centrar img */
+}
 
 button {
-    height: 130px;
-    width: 130px;
+    height: 100%;
+    width: 100%;
     font-size: 40px;
     color: black;
 }
@@ -122,59 +138,50 @@ button:hover {
 }
 
 .estadisticas {
-    border: 1px solid black;
-    background-color: #b896968a;
-    height: 105px;
-    border-radius: 8px;
-    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(255, 255, 255, 0.568);
+   
+    border-radius: 40px;
+    padding: 2px 20px;
+    margin: 2rem;
+    height: 70px;
+    width: 80%;
+
     box-sizing: border-box;
-    /*texto*/
-    padding-top: 2rem;
+    
     text-align: center;
-    font-family: 'Open Sans', sans-serif;
-
+    font-size: 2.5rem;
+    font-family: "Open Sans", sans-serif;
+    
 }
 
-.mensajeGanador {
-    size: 10rem;
-}
-
-img {
-    width: 100%;
-}
 
 .overlay {
     position: fixed;
-    top: 0rem;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+
     background: url(../../../../assets/img-juego/serpentinas.gif) repeat;
-    z-index: 9999;
+    z-index: 1000; /* Asegura que la superposición esté en la parte superior */
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-
-    z-index: 1000;
-    /* Asegura que la superposición esté en la parte superior */
-
 }
 
 .mensajeGanador {
-
-
-    font-size: 5rem;
-    text-align: center;
-
-    background-color: #feccbc8e;
-
-    padding: 80px;
-    border-radius: 15px;
-
-    z-index: 10000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    width: 50%;
 
     animation: scale-up-center 1.5s;
 }
@@ -201,31 +208,68 @@ img {
 }
 
 .botonMensaje {
+    width: 100%;
 
-    width: 300px;
-    height: 50px;
+    margin: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
 
-    background-color: #b4b0d9;
+    background-color: #B89696;
     color: rgb(0, 0, 0);
 
-    font-size: 3rem;
-
     border: none;
-    border-radius: 30px;
+    border-radius: 400px;
     cursor: pointer;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    margin-left: 18rem;
-    margin-bottom: 3rem;
-
+    font-size: 2.8rem;
+    font-family: "Poetsen One", sans-serif;
+    font-style: normal;
 
 }
 
-
 .botonMensaje:hover {
     box-shadow: 0rem 0rem 1rem 0.01rem black;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .imagen-nombre-P-I {
+        flex-direction: row; /* Mantiene la dirección en fila */
+        align-items: center; /* Alinea los elementos al centro */
+        font-size: 18px; /* Ajusta el tamaño del texto para pantallas más pequeñas */
+        overflow: hidden; /* Evita que el contenido se salga del contenedor */
+        white-space: nowrap; /* Evita que el texto haga wrap a la siguiente línea */
+        text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es muy largo */
+    }
+
+    .img-flecha {
+        width: 40px; /* Ajusta el ancho de la imagen para pantallas más pequeñas */
+        height: auto; /* Mantiene la proporción de la imagen */
+        
+        margin-left: 15px;
+    }
+
+    .section1 {
+        padding: 2rem; /* Adjust padding for smaller screens */
+    }
+
+    .eleccion {
+        padding-top: 100%;
+    }
+
+    .estadisticas {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+        height: 60px; /* Adjust height for smaller screens */
+        width: 90%; /* Adjust width for smaller screens */
+    }
+
+    .botonMensaje {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+        margin: 1rem; /* Adjust margin for smaller screens */
+    }
+
+    .mensajeGanador {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+        width: 80%; /* Adjust width for smaller screens */
+    }
 }

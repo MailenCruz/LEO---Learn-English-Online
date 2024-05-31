@@ -72,20 +72,20 @@
                 </tr>
             </table>
         </section>
+    
 
         <!--estadisticas del juego -->
         <section class="section2">
-            <h2 id="aciertos" class="estadisticas">Aciertos: {{aciertos}}</h2>
-            <h2 id="movimientos" class="estadisticas">Movimientos: {{movimientos}}</h2>
-            
-            <div class="overlay" *ngIf="ganador">
+            <h2 id="aciertos" class="estadisticas">ACIERTOS: {{aciertos}}</h2>
+            <h2 id="movimientos" class="estadisticas">MOVIMIENTOS: {{movimientos}}</h2>
+    
+            <div class="overlay" *ngIf="ganador">  
+                <img src="../../../../assets/juegos-img/ganaste/win.png" alt="ganaste">
                 <div class="mensajeGanador">
-                    <h1>Felicitaciones, ¡ganaste!</h1>
-                    <!-- <button class="botonMensaje" (click)="recargarPagina()"> Jugar de nuevo </button> -->
-                    <button class="botonMensaje" routerLink="/juegos-home"> Volver a Juegos </button>
+                    <button class="botonMensaje" (click)="recargarPagina()"> JUGAR DE NUEVO </button>
+                    <button class="botonMensaje" routerLink="/juegos-home"> VOLVER A JUEGOS </button>
                 </div>
             </div>
-            
         </section>
 
     </main>

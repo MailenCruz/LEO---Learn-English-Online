@@ -7,10 +7,21 @@
   border-radius: 50%; /* Forma el div en un círculo */
   box-shadow: 7px 8px 15px rgb(142, 142, 212);
   transition: transform 0.3s ease; /* Transición suave para el cambio de tamaño */
+
+  z-index: 20; /* Asegura que el traductor esté encima de otros elementos */
 }
 
 .logo-traductor:hover{
     transform: scale(1.2); /* Hace que el círculo sea un 20% más grande al pasar el cursor sobre él */
+}
+
+@media (max-width: 767px) {
+
+  .logo-traductor{
+    width: 50px; /* Tamaño del círculo */
+    height: 50px; /* Tamaño del círculo */
+  }
+  
 }
 
 

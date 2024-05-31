@@ -1,9 +1,8 @@
 .contenedor-categorias {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    margin-top: 15rem;
 }
 
 .lista-categorias {
@@ -11,26 +10,27 @@
     flex-direction: column;
     /* Organiza los botones verticalmente */
     align-items: center;
+    padding-top: 5rem;
 }
 
 .lista-categorias a {
     margin: 35px 0;
     /* Espacio entre los botones */
-}
 
-/* Efecto de animación al cargar la página */
-.lista-categorias a {
     opacity: 0;
     animation: fade-in 1s ease-out forwards;
 }
 
 .lista-categorias a img {
-    max-width: 300px;
+    max-width: 250px;
     /* Establece un ancho máximo para las imágenes */
     height: auto;
     /* Permite que la altura se ajuste automáticamente para mantener la proporción */
     transition: transform 0.3s ease;
     /* Agrega una transición suave al cambio de tamaño */
+
+    filter: drop-shadow(0px 15px 15px #9696a3);
+    border-radius: 45px;
 }
 
 .lista-categorias a img:hover {
@@ -48,5 +48,109 @@
         opacity: 1;
     }
 }
+
+.boton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+
+.texto{
+    padding: 1rem;
+}
+
+.texto p{
+    text-align: justify;
+    font-size: 1.5rem;
+    color: black;
+    font-family: 'Public Sans', sans-serif;
+    opacity: 100%;  
+}
+
+.texto .tres{
+    font-size: 2.5rem;
+    padding-bottom: 2rem;
+
+    font-family: "Poetsen One", sans-serif;
+    font-style: normal;
+    color: #5c5d88;
+}
+
+.personalizado-JUEGOS {
+    font-family: "Poetsen One", sans-serif;
+    font-style: normal;
+    color: #6C6E9F;
+}
+
+.personalizado-VIAJEROS {
+    font-family: "Poetsen One", sans-serif;
+    font-style: normal;
+    color: #A28181;
+}
+
+.personalizado-GRAMATICA {
+    font-family: "Poetsen One", sans-serif;
+    font-style: normal;
+    color: #8F5BBD;
+}
+
+
+/* Media queries para hacer el diseño responsive */
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    .lista-categorias {
+        padding-top: 2rem;
+    }
+
+    .lista-categorias a {
+        margin: 20px 0;
+    }
+
+    .lista-categorias a img {
+        max-width: 200px;
+    }
+
+    .texto p {
+        font-size: 1.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }   
+
+    .texto .tres {
+        font-size: 2.5rem;
+        padding-bottom: 1rem;
+    }
+}
+
+/* Estilos para pantallas medianas (tabletas) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .lista-categorias {
+        padding-top: 3rem;
+    }
+
+    .lista-categorias a {
+        margin: 25px 0;
+    }
+
+    .lista-categorias a img {
+        max-width: 250px;
+    }
+
+    .texto p {
+        font-size: 1.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .texto .tres {
+        font-size: 2.5rem;
+        padding-bottom: 1.5rem;
+    }
+}
+
+
+
+
 
 
