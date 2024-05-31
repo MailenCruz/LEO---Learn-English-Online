@@ -65,14 +65,39 @@ export class TraductorComponent implements OnInit{
     this.traduccion = aux;
   }
 
-  async traducir(){
-    /* console.log(`${this.palabra}:palabra`); */
+  /*async traducir(){
+    
     if(this.idioma === "en-es"){
        this.traduccion= await this.tradService.getTraduccionENES(this.palabra);
        this.corregir();
     }else if(this.idioma === "es-en"){
       this.traduccion = await this.tradService.getTraduccionESEN(this.palabra);
       this.corregir();
+    }
+  }
+  */
+
+  traducir() {
+    if (this.idioma === "en-es") {
+      this.tradService.getTraduccionENES(this.palabra).subscribe(
+        traduccion => {
+          this.traduccion = traduccion || '';
+          this.corregir();
+        },
+        error => {
+          console.error('Error:', error);
+        }
+      );
+    } else if (this.idioma === "es-en") {
+      this.tradService.getTraduccionESEN(this.palabra).subscribe(
+        traduccion => {
+          this.traduccion = traduccion || '';
+          this.corregir();
+        },
+        error => {
+          console.error('Error:', error);
+        }
+      );
     }
   }
 
