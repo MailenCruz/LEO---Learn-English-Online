@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./eleccion-tematica.component.css']
 })
 export class EleccionTematicaComponent {
+  ngOnInit() {
+    window.scrollTo(0, 0);
+  }
 
 }

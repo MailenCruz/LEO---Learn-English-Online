@@ -21,6 +21,8 @@ export class LogInComponent {
       username: ['', [Validators.required]],
       password: ['', [Validators.required]]
     });
+
+    window.scrollTo(0, 0);
   }
 
   iniciarSession() {
@@ -40,4 +42,6 @@ export class LogInComponent {
     });
   }
 
+  
+  
 }

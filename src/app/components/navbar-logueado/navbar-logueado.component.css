@@ -1,59 +1,93 @@
-.contenedor-navbar{
-    background-color: #C5C6F6;
-    position: fixed;
+.contenedor-navbar {
     width: 100%;
-    z-index: 4;
+    background-color: #C5C6F6;
+    padding: 10px 20px; /* Espaciado interno del navbar */
 }
 
-nav{
+nav {
     display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+}
+
+nav a {
+    display: inline-block; /* Hace que el enlace ocupe todo el espacio del padding */
+    padding: 1px 15px; /* Espaciado interno para hacer que el área sea mayor */
+    text-decoration: none; /* Sin subrayado en los enlaces */
+   
+    margin: 0 10px; /* Espaciado entre enlaces */
+    color: black; /* Color del texto */
+    font-size: 1.8rem;
+    font-family: "Public Sans", sans-serif;
+
+    transition: box-shadow 0.3s ease; /* Transición suave para el sombreado */
+}
+
+.inicio {
+    padding: 0px 15px; /* Espaciado interno para hacer que el área sea mayor */
+    font-weight: bold; /* Negrita para el enlace "Inicio" */
+}
+
+.nombre {
+    flex-grow: 1; /* Ocupa el espacio disponible en el centro */
+    text-align: center; /* Centra el texto del mensaje de bienvenida */
+}
+
+nav .izquierda,
+nav .medio,
+nav .derecha {
+    display: flex;
+    align-items: center;
+}
+
+.izquierda {
+    justify-content: flex-start;
+}
+
+.medio {
+    flex-grow: 1;
     justify-content: center;
 }
 
-.navegacion {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
+.derecha {
+    justify-content: flex-end;
 }
 
-
-.navegacion li a {
-    display: flex;
-    padding: 1rem 1.5rem;
-    text-decoration: none;
-    color: rgb(110, 104, 104);
-    font-size: 2rem;
-    
+.inicio:hover, .contactanos:hover, .editar:hover, .logout:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra cuando se pasa el cursor */
+    cursor: pointer;
+    border-radius: 10px;
 }
 
-.home-span{
-    font-weight: bolder;
-    color: rgb(0, 0, 0);
+@media (max-width: 768px) {
+    nav {
+        flex-direction: row;
+    }
+
+    nav a{
+        font-size: 1rem;
+    }
+
+    .izquierda, .medio, .derecha {
+        justify-content: center;
+        width: 100%;
+        
+    }
+
+    .nombre {
+        text-align: center;
+        margin-bottom: 10px;
+        flex-direction: row;
+    }
 }
 
+@media (max-width: 480px) {
+    nav a {
+        font-size: 1.4rem;
+        padding: 10px;
+    }
 
-.logout, .nombre, .editar{
-    display: flex;
-    padding: 1rem 1.5rem;
-    text-decoration: none;
-    color: rgb(110, 104, 104);
-    font-size: large;
-    float:right;
-    color: black;
-    white-space: nowrap;
-}
-
-.nombre{
-    font-weight: bold;   
-    padding: 1rem 25rem;
-}
-
-.navegacion li a:hover {
-    background-color: #8c8cc5;
-    color: rgb(114, 113, 113);
-}
-.logout:hover , .editar:hover{
-    background-color: #8c8cc5;
-    color: rgb(114, 113, 113);
+    .nombre {
+        font-size: 1.6rem;
+    }
 }

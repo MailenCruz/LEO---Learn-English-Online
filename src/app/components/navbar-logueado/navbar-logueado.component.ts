@@ -11,7 +11,9 @@ import { UsersService } from 'src/app/services/users.service';
 export class NavbarLogueadoComponent implements OnInit {
   constructor(private usersService: UsersService, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    window.scrollTo(0, 0);
+  }
 
   getUser(): User | undefined {
     const res = this.usersService.currentUser();

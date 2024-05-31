@@ -1,65 +1,61 @@
 <div class="container">
-    <fieldset>
-        <legend class="titulo">Registrate</legend>
-        <form id="form" [formGroup]="form" (ngSubmit)="guardarUser()">
 
-            <div class="campo">
-                <legend for="username">Crea tu nombre de usuario:</legend>
-                <input type="text" id="username" formControlName="username">    
-            </div>
+    <form class="formulario-registrarse" id="form" [formGroup]="form" (ngSubmit)="guardarUser()">
 
-            <div class="error" *ngIf="this.form.controls['username'].touched && this.form.controls['username'].getError('required')">
-                El campo es requerido
-            </div>
-            <div class="error" *ngIf="this.form.controls['username'].touched && this.form.controls['username'].getError('minlength')">
-                Mínimo de 3 caracteres
-            </div>
-            <div class="error" *ngIf="form.controls['username'].touched && form.controls['username'].getError('invalidUsername')">
-                Debe contener al menos dos letras antes de cualquier número
-              </div>
+        <h2> Registrarse </h2>
 
-            <div class="campo">
-                <legend for="email">Ingresa un email:</legend>
-                <input type="email" id="email" formControlName="email">
-            </div>
+        <input type="text" id="username" formControlName="username" placeholder="nombre de usuario">
 
-            <div class="error" *ngIf="this.form.controls['email'].touched && this.form.controls['email'].getError('required')">
-                El campo es requerido
-            </div>
-            <div class="error" *ngIf="this.form.controls['email'].touched && this.form.controls['email'].getError('invalidEmailDomain')">
-                Debe ingresar un email válido
-            </div>
+        <div class="error"
+            *ngIf="this.form.controls['username'].touched && this.form.controls['username'].getError('required')">
+            El campo es requerido
+        </div>
+        <div class="error"
+            *ngIf="this.form.controls['username'].touched && this.form.controls['username'].getError('minlength')">
+            Mínimo de 3 caracteres
+        </div>
+        <div class="error"
+            *ngIf="form.controls['username'].touched && form.controls['username'].getError('invalidUsername')">
+            Debe contener al menos dos letras antes de cualquier número
+        </div>
+
+        <input type="email" id="email" formControlName="email" placeholder="correo electrónico">
+
+        <div class="error"
+            *ngIf="this.form.controls['email'].touched && this.form.controls['email'].getError('required')">
+            El campo es requerido
+        </div>
+        <div class="error"
+            *ngIf="this.form.controls['email'].touched && this.form.controls['email'].getError('invalidEmailDomain')">
+            Debe ingresar un email válido
+        </div>
+
+        <input type="password" id="password" formControlName="password" placeholder="contraseña">
+
+        <div class="error"
+            *ngIf="this.form.controls['password'].touched && this.form.controls['password'].getError('required')">
+            El campo es requerido
+        </div>
+        <div class="error"
+            *ngIf="this.form.controls['password'].touched && this.form.controls['password'].getError('minlength')">
+            Debe contener mínimo de 6 caracteres
+        </div>
+        <div class="error"
+            *ngIf="this.form.controls['password'].touched && this.form.controls['password'].getError('noNumber')">
+            Debe contener al menor un número
+        </div>
+
+        <button class="btn-registrarte"> REGISTARSE </button>
+
+    </form>
 
 
-            <div class="campo">
-                <legend for="password">Crea tu contraseña:</legend>
-                <input type="password" id="password" formControlName="password">
-            </div>
-
-            <div class="error" *ngIf="this.form.controls['password'].touched && this.form.controls['password'].getError('required')">
-                El campo es requerido
-            </div>
-            <div class="error" *ngIf="this.form.controls['password'].touched && this.form.controls['password'].getError('minlength')">
-                Debe contener mínimo de 6 caracteres
-            </div>
-            <div class="error" *ngIf="this.form.controls['password'].touched && this.form.controls['password'].getError('noNumber')">
-                Debe contener al menor un número
-            </div>
-            
-            <input class="btn-registrarte" [disabled]="form.invalid" type="submit" value="Registrarte">
-        </form>
-        
-    </fieldset>
     <div class="error" *ngIf="errorMail!='exito'">
         {{errorMail}}
     </div>
     <div class="error" *ngIf="errorUser!='exito'">
         {{errorUser}}
     </div>
-    <div class="login">
-        ¿Ya tenés un usuario? <a routerLink="/ingresa">Ingresá</a>
-    </div>
-    
-    
-    
+
+
 </div>

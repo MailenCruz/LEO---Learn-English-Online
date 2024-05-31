@@ -15,4 +15,9 @@ export class ViajeroHomePageComponent {
     let res = this.userService.currentUser();
     return res ? true : false;
   }
+
+  ngOnInit() {
+    window.scrollTo(0, 0);
+  }
+
 }

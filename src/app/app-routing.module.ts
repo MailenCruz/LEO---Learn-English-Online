@@ -13,9 +13,10 @@ const routes: Routes = [
   { path: 'home-general', component: HomeNoLogComponent },
   { path: 'home', component: HomePageComponent, canActivate: [AuthGuard] },
   { path: 'contactanos', component: ContactanosPageComponent },
-  { path: 'registrate', component: SignUpPageComponent },
 
+  { path: 'registrate', component: SignUpPageComponent },
   { path: 'ingresa', component: LogInPageComponent, canActivate: [LoginGuard] },
+  
   { path: 'my-profile/:id', component: MyProfilePageComponent, canActivate: [AuthGuard] },
   
   { path: '', component: HomeNoLogComponent },

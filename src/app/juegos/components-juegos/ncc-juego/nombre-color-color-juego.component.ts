@@ -170,4 +170,10 @@ export class NombreColorColorJuegoComponent {
       this.estadoClickeado[index] = false;
     }, 1500);
   }
+
+  ngOnInit() {
+    window.scrollTo(0, 0);
+  }
+
+
 }

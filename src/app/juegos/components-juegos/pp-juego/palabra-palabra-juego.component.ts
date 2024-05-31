@@ -130,4 +130,8 @@ export class PalabraPalabraJuegoComponent {
     location.reload();
   } 
 
+  ngOnInit() {
+    window.scrollTo(0, 0);
+  }
+
 }

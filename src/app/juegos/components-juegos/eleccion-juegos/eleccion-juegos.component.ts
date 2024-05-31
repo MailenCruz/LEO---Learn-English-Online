@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./eleccion-juegos.component.css']
 })
 export class EleccionJuegosComponent {
+  ngOnInit() {
+    window.scrollTo(0, 0);
+  }
 
 }
