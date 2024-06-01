@@ -9,12 +9,13 @@ import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms'
 })
 export class TraductorComponent implements OnInit{
 
-  constructor(private tradService:TraductorService, private formBuilder:FormBuilder){}
-
   palabra:string = '';
   traduccion:string = '';
   idioma:string = "es-en";
   forms!:FormGroup;
+  loading: boolean =false; // Variable para rastrear el estado de carga
+
+  constructor(private tradService:TraductorService, private formBuilder:FormBuilder){}
 
   ngOnInit(): void {
     this.initForm();
@@ -27,65 +28,65 @@ export class TraductorComponent implements OnInit{
   }
 
   getForm(){
-    this.palabra = this.forms.value['palabra'];
-    console.log(this.palabra);
-    this.traducir();
-
+    if (this.forms.valid) {
+      this.palabra = this.forms.value['palabra'];
+      console.log(this.palabra);
+      this.traducir();
+    } else {
+      this.forms.controls['palabra'].markAsTouched();
+    }
   }
 
   clean(){
     this.traduccion ='';
+    this.palabra='';
     this.initForm();
   }
-  
-
 
   visible:boolean = false;
 
   mostrar(){
+    this.clean();
     this.visible = true;
   }
 
   ocultar(){
+    this.clean();
     this.visible = false;
   }
 
   alternar(){
+    this.clean();
     this.visible = !this.visible;
   }
 
   alternarIdioma(){
     if(this.idioma === "es-en"){
       this.idioma = "en-es";
+      this.clean();
     } else if(this.idioma === "en-es"){
       this.idioma = "es-en";
+      this.clean();
     }
     let aux = this.palabra
     this.palabra = this.traduccion;
     this.traduccion = aux;
   }
 
-  /*async traducir(){
-    
-    if(this.idioma === "en-es"){
-       this.traduccion= await this.tradService.getTraduccionENES(this.palabra);
-       this.corregir();
-    }else if(this.idioma === "es-en"){
-      this.traduccion = await this.tradService.getTraduccionESEN(this.palabra);
-      this.corregir();
-    }
-  }
-  */
 
   traducir() {
+    this.loading = true; // Comienza la carga
+    
     if (this.idioma === "en-es") {
       this.tradService.getTraduccionENES(this.palabra).subscribe(
         traduccion => {
           this.traduccion = traduccion || '';
           this.corregir();
+          this.loading = false; // Finaliza la carga
         },
         error => {
           console.error('Error:', error);
+          this.loading = false; // Finaliza la carga en caso de error
         }
       );
     } else if (this.idioma === "es-en") {
@@ -93,9 +94,11 @@ export class TraductorComponent implements OnInit{
         traduccion => {
           this.traduccion = traduccion || '';
           this.corregir();
+          this.loading = false; // Finaliza la carga
         },
         error => {
           console.error('Error:', error);
+          this.loading = false; // Finaliza la carga en caso de error
         }
       );
     }
@@ -105,6 +108,8 @@ export class TraductorComponent implements OnInit{
     if(this.palabra == 'house'){
       this.traduccion = 'casa';
     }
+
+    /* trabajo, mesa, espejo*/
   }
 
 }
