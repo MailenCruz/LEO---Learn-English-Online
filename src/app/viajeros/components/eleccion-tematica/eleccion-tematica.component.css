@@ -2,17 +2,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 4rem; /*8*/
+    margin-top: 4rem;
 }
 
 .opciones {
     display: flex;
-    flex-direction: row; /* Organiza los botones verticalmente */
+    flex-direction: row;
     align-items: center;
 }
 
 .opciones a {
-    margin: 40px 30px; /* Espacio entre los botones */
+    margin: 40px 30px;
 }
 
 /* Efecto de animación al cargar la página */
@@ -22,13 +22,13 @@
 }
 
 .opciones a img {
-    max-width: 300px; /* Establece un ancho máximo para las imágenes */
-    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
-    transition: transform 0.3s ease; /* Agrega una transición suave al cambio de tamaño */
+    max-width: 300px;
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
 .opciones a img:hover {
-    transform: scale(1.1); /* Aplica un efecto de zoom al pasar el cursor sobre las imágenes */
+    transform: scale(1.1);
 }
 
 
@@ -36,6 +36,7 @@
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -45,14 +46,14 @@
 /* Media queries para dispositivos más pequeños */
 @media screen and (max-width: 768px) {
     .contenedor {
-        margin-top: 2rem; /* Reducción adicional del margen superior */
+        margin-top: 2rem;
     }
 
     .opciones {
-        flex-direction: column; /* Cambia de nuevo a fila para dispositivos más pequeños */
+        flex-direction: column;
     }
 
     .opciones a {
-        margin: 20px 15px; /* Espacio entre botones reducido */
+        margin: 20px 15px;
     }
 }

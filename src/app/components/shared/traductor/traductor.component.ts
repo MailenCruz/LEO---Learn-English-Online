@@ -109,7 +109,7 @@ export class TraductorComponent implements OnInit{
       this.traduccion = 'casa';
     }
 
-    /* trabajo, mesa, espejo*/
+    /* trabajo, mesa, espejo, traductor*/
   }
 
 }

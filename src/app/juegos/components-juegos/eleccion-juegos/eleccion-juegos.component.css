@@ -3,30 +3,30 @@
     justify-content: center;
     align-items: center;
     margin-top: 8rem;
-    padding: 0 1rem; /* Añadir padding para mejorar el aspecto en dispositivos pequeños */
+    padding: 0 1rem;
 }
 
 .opciones {
     display: flex;
-    flex-direction: column; /* Organiza los botones verticalmente */
+    flex-direction: column;
     align-items: center;
 }
 
 .opciones a {
-    margin: 35px 0; /* Espacio entre los botones */
+    margin: 35px 0;
     opacity: 0;
     animation: fade-in 1s ease-out forwards;
 }
 
 .opciones a img {
-    max-width: 500px; /* Establece un ancho máximo para las imágenes */
-    width: 100%; /* Hace que las imágenes se ajusten al contenedor */
-    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
-    transition: transform 0.3s ease; /* Agrega una transición suave al cambio de tamaño */
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
 .opciones a img:hover {
-    transform: scale(1.1); /* Aplica un efecto de zoom al pasar el cursor sobre las imágenes */
+    transform: scale(1.1);
 }
 
 
@@ -34,6 +34,7 @@
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -42,31 +43,31 @@
 /* Media Queries para diferentes tamaños de pantalla */
 @media (max-width: 1200px) {
     .contenedor {
-        margin-top: 6rem; /* Ajustar el margen superior */
+        margin-top: 6rem;
     }
 
     .opciones a img {
-        max-width: 400px; /* Reducir el ancho máximo en pantallas medianas */
+        max-width: 400px;
     }
 }
 
 @media (max-width: 768px) {
     .contenedor {
-        margin-top: 4rem; /* Ajustar el margen superior */
-        padding: 0; /* Quitar el padding adicional */
+        margin-top: 4rem;
+        padding: 0;
     }
 
     .opciones a img {
-        max-width: 400px; /* Reducir el ancho máximo en pantallas pequeñas */
+        max-width: 400px;
     }
 }
 
 @media (max-width: 480px) {
     .contenedor {
-        margin-top: 2rem; /* Ajustar el margen superior */
+        margin-top: 2rem;
     }
 
     .opciones a img {
-        max-width: 100%; /* Hacer que las imágenes ocupen todo el ancho del contenedor */
+        max-width: 100%;
     }
 }

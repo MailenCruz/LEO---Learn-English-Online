@@ -1,14 +1,14 @@
 .imagen-nombre-NB {
-    font-size: 25px; /* Tamaño deseado para el texto */
+    font-size: 25px;
     font-family: 'Open Sans', sans-serif;
     display: flex;
     align-items: center;
 }
 
 .img-flecha {
-    width: 50px; /* Ancho deseado para la imagen */
-    height: auto; /* Altura ajustada automáticamente para mantener la proporción */
-    margin-right: 10px; /* Espacio entre la imagen y el texto */
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
 }
 
 
@@ -19,15 +19,15 @@
     }
 
     .img-flecha {
-        width: 20px; /* Ancho de la imagen en dispositivos móviles */
+        width: 20px;
         margin-right: 0;
-        margin-bottom: 5px; /* Espacio entre la imagen y el texto en dispositivos móviles */
+        margin-bottom: 5px;
     }
 }
 
 /**/
 
-.contenedor-pagina{
+.contenedor-pagina {
     background-color: #E5B9F1;
     padding: 2%;
     width: 100%;
@@ -39,15 +39,16 @@
     margin: auto;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centrado verticalmente */
+    align-items: center;
     justify-content: center;
 
     margin-top: 5rem;
+    font-family: "Public Sans", sans-serif;
 }
 
 .formulario {
-    width: 100%; /* Cambiado a 80% */
-    max-width: 800px; /* Limitar el ancho máximo */
+    width: 100%;
+    max-width: 800px;
 
     padding: 10rem;
     padding-bottom: 5rem;
@@ -61,25 +62,25 @@
 .formulario p {
     font-size: 2.6rem;
     font-weight: bold;
-    text-align: center; /* Centrado */
+    text-align: center;
     font-family: "Public Sans", sans-serif;
 }
 
 .formulario input {
     width: 100%;
-    font-size: 1.6rem; /* Reducido el tamaño de la fuente */
+    font-size: 1.6rem;
 
     padding: 1rem;
 }
 
 
-.formulario label{
+.formulario label {
     font-size: 1.7rem;
     margin-top: 5rem;
     margin-bottom: 1.2rem;
     width: 100%;
     display: block;
-    text-align: left; /* Centrado */
+    text-align: left;
 }
 
 .boton {
@@ -106,26 +107,24 @@
     background: rgb(137, 137, 250);
 }
 
-    /* Pressed */
 .boton:hover:active {
     color: #171A1FFF;
     background: rgb(104, 104, 247);
 }
 
-    /* Disabled */
 .boton:disabled {
     opacity: 0.4;
 }
 
-.botones{
-    display: flex; /* Establecer el contenedor como flexbox */
-    justify-content: center; /* Centrar los elementos horizontalmente */
+.botones {
+    display: flex;
+    justify-content: center;
     margin-top: 3rem;
 }
 
 @media only screen and (max-width: 768px) {
     .formulario p {
-        font-size: 1.8rem; /* Reducido el tamaño de la fuente */
+        font-size: 1.8rem;
     }
 }
 
@@ -143,7 +142,7 @@
 
 }
 
-.correcto{
+.correcto {
     color: rgb(30, 134, 30);
     background-color: rgb(47, 201, 47);
     border: .2rem solid rgb(30, 134, 30);
@@ -156,7 +155,7 @@
 }
 
 
-.coincide{
+.coincide {
     color: #965fb6;
     background-color: #B3B3FDFF;
     border: .2rem solid #965fb6;

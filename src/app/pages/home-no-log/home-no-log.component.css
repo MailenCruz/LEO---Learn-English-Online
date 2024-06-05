@@ -117,7 +117,6 @@ button {
 
     50% {
         transform: scale(1.1);
-        /* Puedes ajustar el valor para controlar el nivel de zoom */
     }
 }
 
@@ -130,26 +129,19 @@ button {
 
     .contenedor-todo {
         flex-direction: column;
-        /* Cambiar a disposición de columna en pantallas pequeñas */
         align-items: center;
-        /* Centrar los elementos en pantallas pequeñas */
     }
 
     .iniciarSesion,
     .registrarse {
         width: 90%;
-        /* Reducir el ancho en pantallas pequeñas */
         max-width: 70%;
-        /* Reducir el ancho máximo en pantallas pequeñas */
         padding: 2rem;
-        /* Reducir el padding en pantallas pequeñas */
         margin-bottom: 8rem;
-        /* Ajustar el margen inferior */
     }
 
     button {
         padding: 8px 50px;
-        /* Ajustar el padding del botón en pantallas pequeñas */
     }
 }
 
@@ -161,14 +153,11 @@ button {
 
     .contenedor-todo {
         justify-content: space-around;
-        /* Alinear los elementos de manera equitativa */
     }
 
     .iniciarSesion,
     .registrarse {
         width: 40%;
-        /* Reducir el ancho en pantallas grandes */
         max-width: 400px;
-        /* Limitar el ancho máximo en pantallas grandes */
     }
 }

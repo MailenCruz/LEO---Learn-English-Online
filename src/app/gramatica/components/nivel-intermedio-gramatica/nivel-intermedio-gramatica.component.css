@@ -8,8 +8,8 @@
 }
 
 .barra img {
-    max-width: 200px; /* Establece un ancho máximo para la imagen */
-    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+    max-width: 200px;
+    height: auto;
 }
 
 
@@ -24,47 +24,46 @@
 
 .opciones {
     display: flex;
-    justify-content: space-between; /* Alinea las columnas a los extremos */
-    max-width: 800px; /* Ancho máximo del contenedor de opciones */
+    justify-content: space-between;
+    max-width: 800px;
 }
 
 .columna {
     display: flex;
-    flex-direction: column; /* Organiza las imágenes en columnas */
+    flex-direction: column;
     align-items: center;
 }
 
 
-.opciones a{
-    /* Efecto de animación al cargar la página */
+.opciones a {
     opacity: 0;
     animation: fade-in 1s ease-out forwards;
 
     /**/
     filter: drop-shadow(16px 7px 8px #C5C6F6);
-    
+
 }
 
-.columna img{
-    margin: 16px; /* Espacio entre las imágenes */
+.columna img {
+    margin: 16px;
     border-radius: 27px;
 }
 
 .opciones .columna .lupa {
-    margin-bottom: 30px; /* Agrega un margen inferior de 20px entre cada imagen de lupa */
+    margin-bottom: 30px;
 
     max-width: 80px;
     height: auto;
 }
 
 .opciones a img {
-    max-width: 300px; /* Establece un ancho máximo para las imágenes */
-    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
-    transition: transform 0.3s ease; /* Agrega una transición suave al cambio de tamaño */
+    max-width: 300px;
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
 .opciones a img:hover {
-    transform: scale(1.1); /* Aplica un efecto de zoom al pasar el cursor sobre las imágenes */
+    transform: scale(1.1);
 }
 
 
@@ -72,6 +71,7 @@
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }

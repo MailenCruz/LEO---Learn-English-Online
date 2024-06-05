@@ -9,11 +9,21 @@
     width: 100%;
     height: 100%;
 
-    padding-top: 15rem;
+    padding-top: 5rem;
     padding-bottom: 15rem;
 }
 
+.titulo h2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
+    font-family: "Poetsen One", sans-serif;
+    color: #5c5d88;
+    font-size: 2.5rem;
+    
+}
 
 .persona1 {
     background-color: #A8AADB;
@@ -36,6 +46,8 @@
 
     border-radius: 10px;
     padding: 0rem;
+
+    /*background-color: #b8b9dd;*/
 }
 
 .persona2 {
@@ -59,6 +71,8 @@
 
     border-radius: 10px;
     padding: 0rem;
+
+    /*background-color: #ccb9b9;*/
 }
 
 .persona3 {
@@ -82,6 +96,8 @@
 
     border-radius: 10px;
     padding: 0rem;
+
+    /*background-color: #bc9ada;*/
 }
 
 @keyframes fade-in {

@@ -10,6 +10,8 @@ import { TraductorHomePageComponent } from './pages/traductor-pages/traductor-ho
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { ContactanosPageComponent } from './pages/contactanos-page/contactanos-page.component';
 
+import { ContactanosComponent } from './components/contactanos/contactanos.component';
+
 import { BienvenidaComponent } from './components/home/bienvenida/bienvenida.component';
 import { CategoriasComponent } from './components/home/categorias/categorias.component';
 
@@ -44,6 +46,8 @@ import { MyProfilePageComponent } from "./pages/my-profile-page/my-profile-page.
     NavbarComponent,
 
     ContactanosPageComponent,
+
+    ContactanosComponent, 
     BienvenidaComponent,
     CategoriasComponent,
 

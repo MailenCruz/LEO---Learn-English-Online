@@ -22,29 +22,29 @@ export class PalabraImagenJuegoComponent {
   ganador: boolean = false;
 
   imagenes: palabrasJuego[] = [
-    { id: 0, nombre: '../../../../assets/img-juego/img-palabra/imagenes/0.png' },
-    { id: 0, nombre: '../../../../assets/img-juego/img-palabra/palabras/0.png' },
+    { id: 0, nombre: '../../../../assets/juegos-img/img-palabra/imagenes/0.png' },
+    { id: 0, nombre: '../../../../assets/juegos-img/img-palabra/palabras/0.png' },
 
-    { id: 1, nombre: '../../../../assets/img-juego/img-palabra/imagenes/1.png' },
-    { id: 1, nombre: '../../../../assets/img-juego/img-palabra/palabras/1.png' },
+    { id: 1, nombre: '../../../../assets/juegos-img/img-palabra/imagenes/1.png' },
+    { id: 1, nombre: '../../../../assets/juegos-img/img-palabra/palabras/1.png' },
 
-    { id: 2, nombre: '../../../../assets/img-juego/img-palabra/imagenes/2.png' },
-    { id: 2, nombre: '../../../../assets/img-juego/img-palabra/palabras/2.png' },
+    { id: 2, nombre: '../../../../assets/juegos-img/img-palabra/imagenes/2.png' },
+    { id: 2, nombre: '../../../../assets/juegos-img/img-palabra/palabras/2.png' },
 
-    { id: 3, nombre: '../../../../assets/img-juego/img-palabra/imagenes/3.png' },
-    { id: 3, nombre: '../../../../assets/img-juego/img-palabra/palabras/3.png' },
+    { id: 3, nombre: '../../../../assets/juegos-img/img-palabra/imagenes/3.png' },
+    { id: 3, nombre: '../../../../assets/juegos-img/img-palabra/palabras/3.png' },
 
-    { id: 4, nombre: '../../../../assets/img-juego/img-palabra/imagenes/4.png' },
-    { id: 4, nombre: '../../../../assets/img-juego/img-palabra/palabras/4.png' },
+    { id: 4, nombre: '../../../../assets/juegos-img/img-palabra/imagenes/4.png' },
+    { id: 4, nombre: '../../../../assets/juegos-img/img-palabra/palabras/4.png' },
 
-    { id: 5, nombre: '../../../../assets/img-juego/img-palabra/imagenes/5.png' },
-    { id: 5, nombre: '../../../../assets/img-juego/img-palabra/palabras/5.png' },
+    { id: 5, nombre: '../../../../assets/juegos-img/img-palabra/imagenes/5.png' },
+    { id: 5, nombre: '../../../../assets/juegos-img/img-palabra/palabras/5.png' },
 
-    { id: 6, nombre: '../../../../assets/img-juego/img-palabra/imagenes/6.png' },
-    { id: 6, nombre: '../../../../assets/img-juego/img-palabra/palabras/6.png' },
+    { id: 6, nombre: '../../../../assets/juegos-img/img-palabra/imagenes/6.png' },
+    { id: 6, nombre: '../../../../assets/juegos-img/img-palabra/palabras/6.png' },
 
-    { id: 7, nombre: '../../../../assets/img-juego/img-palabra/imagenes/7.png' },
-    { id: 7, nombre: '../../../../assets/img-juego/img-palabra/palabras/7.png' },
+    { id: 7, nombre: '../../../../assets/juegos-img/img-palabra/imagenes/7.png' },
+    { id: 7, nombre: '../../../../assets/juegos-img/img-palabra/palabras/7.png' },
   ];
 
   estadoClickeado: boolean[] = Array(this.imagenes.length).fill(false);
@@ -126,12 +126,11 @@ export class PalabraImagenJuegoComponent {
         this.habilitarTarjetas();
 
       } else {
-        //this.renderer.addClass(this.tarjeta1, 'incorrecto');
-        //this.renderer.addClass(this.tarjeta2, 'incorrecto');
+  
 
         setTimeout(() => {
           if (this.tarjeta1 && this.tarjeta2) {
-            this.renderer.setStyle(this.tarjeta1, "background-color", "#D65C5C"); //rojo
+            this.renderer.setStyle(this.tarjeta1, "background-color", "#D65C5C"); 
             this.renderer.setStyle(this.tarjeta2, "background-color", "#D65C5C");
           }
         }, 1);

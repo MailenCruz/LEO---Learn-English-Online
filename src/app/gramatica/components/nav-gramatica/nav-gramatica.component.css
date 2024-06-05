@@ -8,6 +8,6 @@
 }
 
 .barra img {
-    max-width: 200px; /* Establece un ancho máximo para la imagen */
-    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+    max-width: 200px; 
+    height: auto; 
 }

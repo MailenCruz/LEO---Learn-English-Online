@@ -4,7 +4,6 @@
 
 .imagen-nombre-S {
     font-size: 25px;
-    /* Tamaño deseado para el texto */
     font-family: 'Open Sans', sans-serif;
     display: flex;
     align-items: center;
@@ -12,48 +11,40 @@
 
 .img-flecha {
     width: 50px;
-    /* Ancho deseado para la imagen */
     height: auto;
-    /* Altura ajustada automáticamente para mantener la proporción */
     margin-right: 10px;
-    /* Espacio entre la imagen y el texto */
+
 }
 
 .img-s {
     width: 45px;
-    /* Ancho deseado para la imagen */
     height: auto;
-    /* Altura ajustada automáticamente para mantener la proporción */
     position: absolute;
-    /* Posición absoluta */
     right: 0;
-    /* Posicionar en el extremo derecho */
     top: 4%;
-    /* Centrar verticalmente */
     transform: translateY(-50%);
-    /* Ajustar verticalmente */
 }
 
 
 @media only screen and (max-width: 768px) {
     .imagen-nombre-S {
-       font-size: 20px; /* Ajustar tamaño del texto en dispositivos móviles */
+       font-size: 20px; 
     }
 
     .img-flecha {
-        width: 30px; /* Ancho de la imagen en dispositivos móviles */
+        width: 30px; 
         margin-right: 0;
        
     }
     
     .img-s {
-        width: 25px; /* Ancho deseado para la imagen */
+        width: 25px; 
     }
 }
 
 /**/
 .cuerpo-viajero-S {
-    background-image: url(../../../../../../assets/img-home/fondoBorroso.jpg);
+    background-image: url(../../../../../../assets/viajeros-img/elecciones/fondo-multipleChoice.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     padding-bottom: 10%;
@@ -74,11 +65,8 @@
     justify-content: center;
 
     width: 90%;
-    /* Reducir el ancho del contenedor en dispositivos más pequeños */
     max-width: 600px;
-    /* Establecer un ancho máximo */
     margin: auto;
-    /* Centrar el contenedor horizontalmente */
 
     padding: 3rem;
     border-radius: 20px;
@@ -100,7 +88,6 @@ button {
     background-color: #000000a8;
     color: white;
     font-size: 1.6rem;
-    /* Tamaño de fuente responsivo */
     font-family: 'Open Sans', sans-serif;
     border: none;
 
@@ -150,7 +137,7 @@ button:active {
     align-items: center;
 
     margin-top: 5rem;
-    padding: 1rem; /* Añadimos un poco de relleno */
+    padding: 1rem; 
 }
 
 
@@ -173,38 +160,38 @@ button:active {
 }
 
 .vocabulario img{
-    width: 15%; /* Aumentamos un poco el tamaño de la imagen */
-    max-width: 60px; /* Limita el tamaño máximo de la imagen */
+    width: 15%;
+    max-width: 60px; 
     border-radius: 1rem;
-    margin-right: 1rem; /* Añadimos margen derecho */
+    margin-right: 1rem;
 }
 
 /* Media queries para pantallas pequeñas */
 @media (max-width: 768px) {
     .vocabulario {
-        flex-direction: column; /* Cambiamos a columna en pantallas pequeñas */
+        flex-direction: column; 
         align-items: center;
     }
 
     .boton-vocabulario {
-        margin-left: 0; /* Eliminamos el margen izquierdo */
-        margin-top: 1rem; /* Ajustamos el margen superior */
+        margin-left: 0; 
+        margin-top: 1rem; 
     }
 
     .vocabulario img {
-        width: 25%; /* Ajustamos el tamaño de la imagen */
-        margin-right: 0; /* Eliminamos el margen derecho */
+        width: 25%; 
+        margin-right: 0; 
     }
 }
 
 /* Media queries para pantallas muy pequeñas */
 @media (max-width: 480px) {
     .vocabulario img {
-        width: 35%; /* Aumentamos el tamaño de la imagen en pantallas muy pequeñas */
+        width: 35%; 
     }
 
     .boton-vocabulario {
-        font-size: 14px; /* Ajustamos el tamaño de la fuente */
-        padding: 0.7rem; /* Ajustamos el relleno */
+        font-size: 14px;
+        padding: 0.7rem; 
     }
 }

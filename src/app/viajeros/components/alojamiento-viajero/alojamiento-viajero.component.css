@@ -3,39 +3,39 @@
 }
 
 .imagen-nombre-A {
-    font-size: 25px; /* Tamaño deseado para el texto */
+    font-size: 25px;
     font-family: 'Open Sans', sans-serif;
     display: flex;
     align-items: center;
 }
 
 .img-flecha {
-    width: 50px; /* Ancho deseado para la imagen */
-    height: auto; /* Altura ajustada automáticamente para mantener la proporción */
-    margin-right: 10px; /* Espacio entre la imagen y el texto */
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
 }
 
 .img-A {
-    width: 45px; /* Ancho deseado para la imagen */
-    height: auto; /* Altura ajustada automáticamente para mantener la proporción */
-    position: absolute; /* Posición absoluta */
-    right: 0; /* Posicionar en el extremo derecho */
-    top: 4%; /* Centrar verticalmente */
-    transform: translateY(-50%); /* Ajustar verticalmente */
+    width: 45px;
+    height: auto;
+    position: absolute;
+    right: 0;
+    top: 4%;
+    transform: translateY(-50%);
 }
 
 @media only screen and (max-width: 768px) {
     .imagen-nombre-A {
-       font-size: 20px; /* Ajustar tamaño del texto en dispositivos móviles */
+        font-size: 20px;
     }
 
     .img-flecha {
-        width: 30px; /* Ancho de la imagen en dispositivos móviles */
+        width: 30px;
         margin-right: 0;
     }
-    
+
     .img-A {
-        width: 25px; /* Ancho deseado para la imagen */
+        width: 25px;
     }
 }
 
@@ -51,12 +51,12 @@
 
 .opciones {
     display: flex;
-    flex-direction: column; /* Organiza los botones verticalmente */
+    flex-direction: column;
     align-items: center;
 }
 
 .opciones a {
-    margin: 15px 0; /* Espacio entre los botones */
+    margin: 15px 0;
 }
 
 /* Efecto de animación al cargar la página */
@@ -66,16 +66,16 @@
 }
 
 .opciones a img {
-    max-width: 550px; /* Establece un ancho máximo para las imágenes */
-    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
-    transition: transform 0.3s ease; /* Agrega una transición suave al cambio de tamaño */
+    max-width: 550px;
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
 .opciones a img:hover {
-    transform: scale(1.1); /* Aplica un efecto de zoom al pasar el cursor sobre las imágenes */
+    transform: scale(1.1);
 }
 
-.contenedor .opciones h4{
+.contenedor .opciones h4 {
     font-family: "Open Sans", sans-serif;
     font-weight: bold;
     font-size: 3rem;
@@ -84,17 +84,17 @@
 }
 
 
-.opciones-ejercicios a img{
-    max-width: 250px; /* Establece un ancho máximo para las imágenes */
-    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
-    transition: transform 0.3s ease; /* Agrega una transición suave al cambio de tamaño */
+.opciones-ejercicios a img {
+    max-width: 250px;
+    height: auto;
+    transition: transform 0.3s ease;
 }
 
 .opciones-ejercicios a img:hover {
-    transform: scale(1.1); /* Aplica un efecto de zoom al pasar el cursor sobre las imágenes */
+    transform: scale(1.1);
 }
 
-.opciones-ejercicios a{
+.opciones-ejercicios a {
     margin: 0px 20px;
 }
 
@@ -104,6 +104,7 @@
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -113,55 +114,55 @@
 /* Media Queries para diferentes tamaños de pantalla */
 @media (max-width: 1200px) {
     .contenedor {
-        margin-top: 6rem; /* Ajustar el margen superior */
+        margin-top: 6rem;
     }
 
     .opciones a img {
-        max-width: 450px; /* Reducir el ancho máximo en pantallas medianas */
+        max-width: 450px;
     }
 
-    .opciones-ejercicios a img{
+    .opciones-ejercicios a img {
         max-width: 200px;
     }
 
-    .contenedor .opciones h4{
+    .contenedor .opciones h4 {
         font-size: 2rem;
     }
 }
 
 @media (max-width: 768px) {
     .contenedor {
-        margin-top: 4rem; /* Ajustar el margen superior */
-        padding: 0; /* Quitar el padding adicional */
+        margin-top: 4rem;
+        padding: 0;
     }
 
     .opciones a img {
-        max-width: 350px; /* Reducir el ancho máximo en pantallas pequeñas */
+        max-width: 350px;
     }
 
-    .opciones-ejercicios a img{
+    .opciones-ejercicios a img {
         max-width: 200px;
     }
 
-    .contenedor .opciones h4{
+    .contenedor .opciones h4 {
         font-size: 2rem;
     }
 }
 
 @media (max-width: 480px) {
     .contenedor {
-        margin-top: 2rem; /* Ajustar el margen superior */
+        margin-top: 2rem;
     }
 
     .opciones a img {
-        max-width: 100%; /* Hacer que las imágenes ocupen todo el ancho del contenedor */
+        max-width: 100%;
     }
 
-    .opciones-ejercicios a img{
+    .opciones-ejercicios a img {
         max-width: 200px;
     }
 
-    .contenedor .opciones h4{
+    .contenedor .opciones h4 {
         font-size: 2rem;
     }
 }

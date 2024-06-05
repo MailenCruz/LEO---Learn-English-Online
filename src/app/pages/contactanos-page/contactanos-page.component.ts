@@ -9,7 +9,7 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class ContactanosPageComponent {
 
-  constructor(private userService:UsersService, public router:Router){}
+  constructor(private userService:UsersService, public router:Router,){}
 
   isLogged(){
     let res = this.userService.currentUser();

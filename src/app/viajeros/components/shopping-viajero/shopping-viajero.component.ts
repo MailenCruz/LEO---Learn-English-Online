@@ -25,6 +25,6 @@ export class ShoppingViajeroComponent {
         }
       }
     );
-    //console.log(this.shoppingDatos);
+    
   }
 }

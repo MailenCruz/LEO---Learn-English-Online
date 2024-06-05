@@ -20,29 +20,29 @@ export class NombreColorColorJuegoComponent {
   ganador: boolean = false;
 
   imagenes: palabrasJuego[] = [
-    {id:0,nombre:'../../../../assets/img-juego/colores-nombre/colores/0.png'},
-    {id:0,nombre:'../../../../assets/img-juego/colores-nombre/nombres/0.png'},
+    {id:0,nombre:'../../../../assets/juegos-img/colores-nombre/colores/0.png'},
+    {id:0,nombre:'../../../../assets/juegos-img/colores-nombre/nombres/0.png'},
 
-    {id:1,nombre:'../../../../assets/img-juego/colores-nombre/colores/1.png'},
-    {id:1,nombre:'../../../../assets/img-juego/colores-nombre/nombres/1.png'},
+    {id:1,nombre:'../../../../assets/juegos-img/colores-nombre/colores/1.png'},
+    {id:1,nombre:'../../../../assets/juegos-img/colores-nombre/nombres/1.png'},
 
-    {id:2,nombre:'../../../../assets/img-juego/colores-nombre/colores/2.png'},
-    {id:2,nombre:'../../../../assets/img-juego/colores-nombre/nombres/2.png'},
+    {id:2,nombre:'../../../../assets/juegos-img/colores-nombre/colores/2.png'},
+    {id:2,nombre:'../../../../assets/juegos-img/colores-nombre/nombres/2.png'},
 
-    {id:3,nombre:'../../../../assets/img-juego/colores-nombre/colores/3.png'},
-    {id:3,nombre:'../../../../assets/img-juego/colores-nombre/nombres/3.png'},
+    {id:3,nombre:'../../../../assets/juegos-img/colores-nombre/colores/3.png'},
+    {id:3,nombre:'../../../../assets/juegos-img/colores-nombre/nombres/3.png'},
 
-    {id:4,nombre:'../../../../assets/img-juego/colores-nombre/colores/4.png'},
-    {id:4,nombre:'../../../../assets/img-juego/colores-nombre/nombres/4.png'},
+    {id:4,nombre:'../../../../assets/juegos-img/colores-nombre/colores/4.png'},
+    {id:4,nombre:'../../../../assets/juegos-img/colores-nombre/nombres/4.png'},
 
-    {id:5,nombre:'../../../../assets/img-juego/colores-nombre/colores/5.png'},
-    {id:5,nombre:'../../../../assets/img-juego/colores-nombre/nombres/5.png'},
+    {id:5,nombre:'../../../../assets/juegos-img/colores-nombre/colores/5.png'},
+    {id:5,nombre:'../../../../assets/juegos-img/colores-nombre/nombres/5.png'},
 
-    {id:6,nombre:'../../../../assets/img-juego/colores-nombre/colores/6.png'},
-    {id:6,nombre:'../../../../assets/img-juego/colores-nombre/nombres/6.png'},
+    {id:6,nombre:'../../../../assets/juegos-img/colores-nombre/colores/6.png'},
+    {id:6,nombre:'../../../../assets/juegos-img/colores-nombre/nombres/6.png'},
 
-    {id:7,nombre:'../../../../assets/img-juego/colores-nombre/colores/7.png'},
-    {id:7,nombre:'../../../../assets/img-juego/colores-nombre/nombres/7.png'},
+    {id:7,nombre:'../../../../assets/juegos-img/colores-nombre/colores/7.png'},
+    {id:7,nombre:'../../../../assets/juegos-img/colores-nombre/nombres/7.png'},
   ];
 
   estadoClickeado: boolean[] = Array(this.imagenes.length).fill(false);
