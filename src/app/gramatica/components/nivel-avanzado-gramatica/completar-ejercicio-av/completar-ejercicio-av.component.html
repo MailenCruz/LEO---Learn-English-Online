@@ -14,6 +14,8 @@
 
         <section class="completar">
 
+            <div *ngIf="loading" class="loading-spinner"></div>
+
             <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
                 <p *ngIf="randomPhrase"> {{ randomPhrase.oracion }} </p>
 

@@ -23,6 +23,7 @@ export class GramaticaService {
 
   getCorreccionHttp(answer: string): Observable<Correccion[] | undefined> {
 
+
     const data = new URLSearchParams();
     data.append('text', answer);
     data.append('language', 'en');
@@ -47,11 +48,12 @@ export class GramaticaService {
 
           let correcciones: Correccion[] = [];
 
-          if (response || response.matches) {
+          if (response && Array.isArray(response.matches)) {
+
             response.matches.forEach((element: any) => {
 
               let { message, replacements } = element;
-              
+
               let arreglo: string[] = replacements.map((replacement: any) => replacement.value);
 
               let error: Correccion = {
