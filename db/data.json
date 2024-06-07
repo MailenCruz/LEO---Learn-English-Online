@@ -161,7 +161,7 @@
           }
         ]
       },
-      "ejercicios":   [
+      "ejercicios": [
         {
           "oracion": "I'd like to pay with my ______, please.",
           "respuestas": [
@@ -486,33 +486,33 @@
         ]
       },
       "ejercicios": [
-          {
-            "oracion": "The ____ is delicious.",
-            "respuestas": [
-              "food",
-              "dish",
-              "dessert"
-            ],
-            "respuestaCorrecta": "food"
-          },
-          {
-            "oracion": "I'd like the ______, please.",
-            "respuestas": [
-              "chicken",
-              "salad",
-              "pasta"
-            ],
-            "respuestaCorrecta": "chicken"
-          },
-          {
-            "oracion": "I'd like the ____.",
-            "respuestas": [
-              "check",
-              "bill",
-              "receipt"
-            ],
-            "respuestaCorrecta": "check"
-          },
+        {
+          "oracion": "The ____ is delicious.",
+          "respuestas": [
+            "food",
+            "dish",
+            "dessert"
+          ],
+          "respuestaCorrecta": "food"
+        },
+        {
+          "oracion": "I'd like the ______, please.",
+          "respuestas": [
+            "chicken",
+            "salad",
+            "pasta"
+          ],
+          "respuestaCorrecta": "chicken"
+        },
+        {
+          "oracion": "I'd like the ____.",
+          "respuestas": [
+            "check",
+            "bill",
+            "receipt"
+          ],
+          "respuestaCorrecta": "check"
+        },
         {
           "oracion": "Thanks a lot for your ____.",
           "respuestas": [
@@ -1011,8 +1011,6 @@
       ]
     }
   },
-
-  
   "gramatica": {
     "basico": {
       "reescribir": [
@@ -1073,24 +1071,10 @@
           ]
         },
         {
-          "oracion": "Olivia ____ an actress.",
-          "respuestas": [
-            "becamed",
-            "became"
-          ]
-        },
-        {
-          "oracion": "We ____ the treasure.",
-          "respuestas": [
-            "found",
-            "foundes"
-          ]
-        },
-        {
           "oracion": "He ____ Spanish.",
           "respuestas": [
             "speaking",
-            "speakes"
+            "speaks"
           ]
         },
         {
@@ -1112,20 +1096,6 @@
           "respuestas": [
             "are",
             "is"
-          ]
-        },
-        {
-          "oracion": "Mr Robinson ____ a red car.",
-          "respuestas": [
-            "has",
-            "have"
-          ]
-        },
-        {
-          "oracion": "My brother ____ to school on his bike.",
-          "respuestas": [
-            "wented",
-            "goes"
           ]
         }
       ],
@@ -1224,123 +1194,45 @@
       ],
       "completar": [
         {
-          "oracion": "I ___ playing the guitar when the phone rang.",
+          "oracion": "I ____ playing the guitar when the phone rang.",
           "respuestas": [
-            "were",
             "was",
             "will"
           ]
         },
         {
-          "oracion": "They ___ studying for hours before the exam",
+          "oracion": "They ____ studying for hours before the exam.",
           "respuestas": [
             "where",
-            "would",
             "were"
           ]
         },
         {
-          "oracion": "She ___ a delicious cake when I visited her.",
+          "oracion": "She ____ a delicious cake when I visited her.",
           "respuestas": [
             "am baking",
-            "was baked",
             "was baking"
           ]
         },
         {
-          "oracion": "We ___ the house when it started raining.",
+          "oracion": "We ____ the house when it started raining.",
           "respuestas": [
             "were cleaning",
-            "was cleaning",
-            "were cleaned"
+            "was cleaning"
           ]
         },
         {
-          "oracion": "He ___ a book when I saw him at the cafe.",
+          "oracion": "He ____ a book when I saw him at the café.",
           "respuestas": [
-            "is reading",
             "was reading",
             "will reading"
           ]
         },
         {
-          "oracion": "I ___ my homework at the moment.",
+          "oracion": "I ____ my homework at the moment.",
           "respuestas": [
-            "do",
             "am doing",
             "doing"
-          ]
-        },
-        {
-          "oracion": "They ___ a new language this semester",
-          "respuestas": [
-            "learn",
-            "are learned",
-            "are learning"
-          ]
-        },
-        {
-          "oracion": "She ___ an important email right now.",
-          "respuestas": [
-            "writes",
-            "is writing",
-            "was writing"
-          ]
-        },
-        {
-          "oracion": "We ___ a delicious dinner tonight.",
-          "respuestas": [
-            "are cooking",
-            "cook",
-            "are cooked"
-          ]
-        },
-        {
-          "oracion": "He ___ his car in the parking lot.",
-          "respuestas": [
-            "is looking",
-            "is looking for",
-            "looks for"
-          ]
-        },
-        {
-          "oracion": "I think she ___ the meeting on time.",
-          "respuestas": [
-            "will arrive",
-            "arriving",
-            "will arrived"
-          ]
-        },
-        {
-          "oracion": "They ___ a decision by tomorrow.",
-          "respuestas": [
-            "would make",
-            "will make",
-            "will made"
-          ]
-        },
-        {
-          "oracion": "She ___ the new project next month.",
-          "respuestas": [
-            "will starting",
-            "will started",
-            "will start"
-          ]
-        },
-        {
-          "oracion": "We ___ you a surprise party for your birthday.",
-          "respuestas": [
-            "will organize",
-            "will organized",
-            "will organizing"
-          ]
-        },
-        {
-          "oracion": "He ___ the piano by the end of the year.",
-          "respuestas": [
-            "will learned",
-            "will learnt",
-            "will learn"
           ]
         }
       ],
@@ -1446,120 +1338,42 @@
           "oracion": "She ____ her keys before leaving the house.",
           "respuestas": [
             "had lost",
-            "lost",
-            "loses"
+            "has loses"
           ]
         },
         {
           "oracion": "By the time we arrived, they ____ the party.",
           "respuestas": [
-            "have left",
             "had left",
             "leaves"
           ]
         },
         {
-          "oracion": "He ____ his homework before the teacher collected it.",
-          "respuestas": [
-            "has completed",
-            "had completed",
-            "completes"
-          ]
-        },
-        {
           "oracion": "The team ____ the match before the rain started.",
           "respuestas": [
-            "wins",
             "had won",
             "had win"
-          ]
-        },
-        {
-          "oracion": "She____ her phone in the car yesterday.",
-          "respuestas": [
-            "had forgotten",
-            "forgets",
-            "have forgotten"
           ]
         },
         {
           "oracion": "If they had known, they ____ a different route.",
           "respuestas": [
             "had take",
-            "would take",
             "would have taken"
           ]
         },
         {
           "oracion": "She ____ the job if she had applied earlier.",
           "respuestas": [
-            "gets",
             "gotten",
             "would have gotten"
           ]
         },
         {
-          "oracion": "We ____ the movie if it had good reviews.",
-          "respuestas": [
-            "see",
-            "would had seen",
-            "would have seen"
-          ]
-        },
-        {
-          "oracion": "If it hadn't rained, they ____ the outdoor event.",
-          "respuestas": [
-            "cancel",
-            "would have cancel",
-            "cancels"
-          ]
-        },
-        {
-          "oracion": "He ____ the exam if he had studied harder.",
-          "respuestas": [
-            "passes",
-            "passed",
-            "would have passed"
-          ]
-        },
-        {
           "oracion": "By this time next year, they ____ their dream house.",
           "respuestas": [
-            "will buy",
-            "will have bought",
-            "buy"
-          ]
-        },
-        {
-          "oracion": "She ____ her novel by the end of the month.",
-          "respuestas": [
-            "finishes",
-            "finished",
-            "will have finished"
-          ]
-        },
-        {
-          "oracion": "If everything goes as planned, we ____ our journey by sunset.",
-          "respuestas": [
-            "will start",
-            "will have started",
-            "starts"
-          ]
-        },
-        {
-          "oracion": "By the time you arrive, I ____ dinner.",
-          "respuestas": [
-            "will cook",
-            "will have cooked",
-            "cooks"
-          ]
-        },
-        {
-          "oracion": "They ____ their research project before the deadline.",
-          "respuestas": [
-            "will complete",
-            "completes",
-            "will have completed"
+            "will bought",
+            "will have bought"
           ]
         }
       ],

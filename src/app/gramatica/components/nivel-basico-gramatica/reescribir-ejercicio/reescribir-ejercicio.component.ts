@@ -7,8 +7,7 @@ import { Router } from '@angular/router';
 import { Correccion } from 'src/app/gramatica/interfaces/correccion';
 import { Reescribir } from 'src/app/gramatica/interfaces/reescribir';
 import { GramaticaService } from 'src/app/gramatica/services/gramatica.service';
-import { Observable, catchError, map, zip } from 'rxjs';
-import { of } from 'rxjs';
+
 
 
 @Component({
@@ -66,12 +65,14 @@ export class ReescribirEjercicioComponent {
 
   correccionesPorTipo: { [tipo: string]: Correccion[] | undefined }[] = [];
 
+
   constructor(private router: Router, private formBuilder: FormBuilder, private gramaticaService: GramaticaService, private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
     window.scrollTo(0, 0);
     this.getEjercicios();
   }
+
 
   getEjercicios() {
     let respuesta = this.gramaticaService.getExercisesHttp().subscribe(
@@ -96,7 +97,9 @@ export class ReescribirEjercicioComponent {
     this.randomPhrase = this.reescribir[this.index][this.phraseType];
   }
 
+
   guardarRespuesta() {
+
     this.respuestas = {
       afirmativo: this.answer.controls['afirmativo'].value,
       negativo: this.answer.controls['negativo'].value,
@@ -176,9 +179,11 @@ export class ReescribirEjercicioComponent {
             this.oracionCoincide[key as keyof Reescribir] = false;
           }
         }
+
       }
     }
   }
+
   processPhrase(phrase: string): string[] {
     const doc = nlp(phrase);
     const lemmas: string[] = [];
@@ -195,13 +200,13 @@ export class ReescribirEjercicioComponent {
 
     this.correccionesPorTipo = [];
 
-    for (let key in this.respuestas) { 
+    for (let key in this.respuestas) {
 
       if (this.check[key as keyof Reescribir] === true && this.oracionCoincide[key] === true && this.oracionFormato[key] === true) { 
 
-        let value = this.respuestas[key as keyof Reescribir]; 
+        let value = this.respuestas[key as keyof Reescribir];
 
-        value = value.charAt(0).toUpperCase() + value.slice(1); 
+        value = value.charAt(0).toUpperCase() + value.slice(1);
 
         this.gramaticaService.getCorreccionHttp(value.trim()).subscribe(
           {
@@ -209,6 +214,7 @@ export class ReescribirEjercicioComponent {
               let aux: { [tipo: string]: Correccion[] | undefined } = {};
               aux[key] = correccion;
               this.correccionesPorTipo.push(aux);
+
             },
             error: (err) => {
               console.log(err);
@@ -224,10 +230,10 @@ export class ReescribirEjercicioComponent {
 
       this.index = this.index + 1;
 
-      if(this.index == this.reescribir.length){
+      if (this.index == this.reescribir.length) {
         this.router.navigate(['/basico-home']);
       }
-      else{
+      else {
         this.fraseAleatoria();
         this.answer.reset();
         this.correccionesPorTipo = [];

@@ -12,7 +12,9 @@
     <div class="contenedor-pagina">
         <section class="completar">
 
-            <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
+            <div *ngIf="loading" class="loading-spinner"></div>
+
+            <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer"  *ngIf="!loading">
 
                 <p> {{ randomPhrase.oracion }} </p>
 
@@ -27,6 +29,7 @@
                 <div *ngIf="answer.controls['completar'].getError('required') && answer.controls['completar'].touched ">
                     <p class="error"> El campo es requerido </p>
                 </div>
+
                 <!-- errores -->
                 <div *ngIf="(check === true)">
                     <div *ngIf="correcto === false">
@@ -35,12 +38,14 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- correcto -->
-                <div *ngIf="(check === true)">
+                <div *ngIf="(check === true) && (this.loading === false)">
                     <div *ngIf="correcto === true">
                         <p class="correcto">CORRECTO!</p>
                     </div>
                 </div>
+
                 <div class="botones">
                     <input class="boton" type="submit" value="Check">
                     <input class="boton" type="button" value="Reset" (click)="reset()">
