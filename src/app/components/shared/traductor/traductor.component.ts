@@ -108,6 +108,19 @@ export class TraductorComponent implements OnInit{
     if(this.palabra == 'house'){
       this.traduccion = 'casa';
     }
+    else if(this.palabra == 'traductor'){
+      this.traduccion = 'translator';
+    }
+    else if(this.palabra == 'trabajo'){
+      this.traduccion = 'job, work';
+    }
+    else if(this.palabra == 'espejo'){
+      this.traduccion = 'mirror';
+    }
+    else if(this.palabra == 'mesa'){
+      this.traduccion = 'table';
+    }
+    
 
     /* trabajo, mesa, espejo, traductor*/
   }

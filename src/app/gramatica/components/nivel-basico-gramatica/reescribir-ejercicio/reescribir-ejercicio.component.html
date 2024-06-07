@@ -30,8 +30,12 @@
                 <div *ngIf="(check['afirmativo'] === true) && (oracionCoincide['afirmativo'] === false)">
                     <p class="coincide"> La oración no coincide </p>
                 </div>
+                <!-- formato -->
+                <div *ngIf="(check['afirmativo'] === true) && (oracionFormato['afirmativo'] === false)">
+                    <p class="formato"> La oración no está en formato afirmativo </p>
+                </div>
                 <!-- errores -->
-                <div *ngIf="(check['afirmativo'] === true) && (oracionCoincide['afirmativo'] === true)">
+                <div *ngIf="(check['afirmativo'] === true) && (oracionCoincide['afirmativo'] === true) && (oracionFormato['afirmativo'] === true)">
                     <div *ngIf="obtenerCorreccion('afirmativo')">
                         <div *ngFor="let correccion of obtenerCorreccion('afirmativo')">
                             <p class="error"> {{ correccion.message }} - Reemplazos: {{
@@ -50,6 +54,7 @@
                         {{ flagBoton('afirmativo', true) }}
                     </div>
                 </div>
+
                 <!-- NEGATIVO -->
                 <div *ngIf="phraseType != 'negativo'">
                     <label for="negativo"> Negativo (-): </label>
@@ -59,13 +64,16 @@
                 <div *ngIf="answer.controls['negativo'].getError('required') && answer.controls['negativo'].touched ">
                     <p class="error"> El campo es requerido </p>
                 </div>
-                
                 <!-- coincide -->
                 <div *ngIf="(check['negativo'] === true) && (oracionCoincide['negativo'] === false)">
                     <p class="coincide"> La oración no coincide </p>
                 </div>
+                <!-- formato -->
+                <div *ngIf="(check['negativo'] === true) && (oracionFormato['negativo'] === false)">
+                    <p class="formato"> La oración no está en formato negativo </p>
+                </div>
                 <!-- errores -->
-                <div *ngIf="(check['negativo'] === true) && (oracionCoincide['negativo'] === true)">
+                <div *ngIf="(check['negativo'] === true) && (oracionCoincide['negativo'] === true) && (oracionFormato['negativo'] === true)">
                     <div *ngIf="obtenerCorreccion('negativo')">
                         <div *ngFor="let correccion of obtenerCorreccion('negativo')">
                             <p class="error"> {{ correccion.message }} - Reemplazos: {{
@@ -82,6 +90,7 @@
                         {{ flagBoton('negativo', true) }}
                     </div>
                 </div>
+
                 <!-- INTERROGATIVO -->
                 <div *ngIf="phraseType != 'interrogativo'">
                     <label for="interrogativo"> Interrogativo (?): </label>
@@ -91,13 +100,16 @@
                 <div *ngIf="answer.controls['interrogativo'].getError('required') && answer.controls['interrogativo'].touched ">
                     <p class="error"> El campo es requerido </p>
                 </div>
-                
                 <!-- coincide -->
                 <div *ngIf="(check['interrogativo'] === true) && (oracionCoincide['interrogativo'] === false)">
                     <p class="coincide"> La oración no coincide </p>
                 </div>
+                <!-- formato -->
+                <div *ngIf="(check['interrogativo'] === true) && (oracionFormato['interrogativo'] === false)">
+                    <p class="formato"> La oración no está en formato interrogativo </p>
+                </div>
                 <!-- errores -->
-                <div *ngIf="(check['interrogativo'] === true) && (oracionCoincide['interrogativo'] === true)">
+                <div *ngIf="(check['interrogativo'] === true) && (oracionCoincide['interrogativo'] === true) && (oracionFormato['interrogativo'] === true)">
                     <div *ngIf="obtenerCorreccion('interrogativo')">
                         <div *ngFor="let correccion of obtenerCorreccion('interrogativo')">
                             <p class="error"> {{ correccion.message }} </p>
@@ -112,6 +124,7 @@
                         {{ flagBoton('interrogativo', true) }}
                     </div>
                 </div>
+
                 <div class="botones">
                     <input class="boton" type="submit" value="Check">
                     <input class="boton" type="button" value="Reset" (click)="reset()">
