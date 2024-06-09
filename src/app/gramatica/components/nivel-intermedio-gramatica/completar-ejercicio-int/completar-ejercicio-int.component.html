@@ -13,25 +13,26 @@
 
         <section class="completar">
 
-            <div *ngIf="loading" class="loading-spinner"></div>
-
-            <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer" *ngIf="!loading">
+            <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
+                
                 <p> {{ randomPhrase.oracion }} </p>
 
-                <select id="completar" formControlName="completar">
+                <select id="completar" formControlName="completar" *ngIf="!loading">
                     <option disabled selected> Choose your answer </option>
                     <option *ngFor="let i of randomPhrase.respuestas" [value]="i">
                         {{ i }}
                     </option>
                 </select>
 
+                <div *ngIf="loading" class="loading-spinner"></div>
+
                 <!-- check -->
-                <div *ngIf="answer.controls['completar'].getError('required') && answer.controls['completar'].touched ">
+                <div *ngIf="!loading && answer.controls['completar'].getError('required') && answer.controls['completar'].touched ">
                     <p class="error"> El campo es requerido </p>
                 </div>
 
                 <!-- errores -->
-                <div *ngIf="(check === true)">
+                <div *ngIf="!loading && (check === true)">
                     <div *ngIf="correcto === false">
                         <div *ngFor="let correccion of correcciones">
                             <p class="error">{{ correccion.message }} </p>
@@ -40,16 +41,16 @@
                 </div>
 
                 <!-- correcto -->
-                <div *ngIf="(check === true) && (loading === false)">
+                <div *ngIf="!loading && (check === true) && (loading === false)">
                     <div *ngIf="correcto === true">
                         <p class="correcto">CORRECTO!</p>
                     </div>
                 </div>
 
                 <div class="botones">
-                    <input class="boton" type="submit" value="Check">
+                    <input *ngIf="!loading" class="boton" type="submit" value="Check">
                     <input class="boton" type="button" value="Reset" (click)="reset()">
-                    <input *ngIf="correcto" class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
+                    <input *ngIf="correcto && !loading" class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
                 </div>
 
             </form>

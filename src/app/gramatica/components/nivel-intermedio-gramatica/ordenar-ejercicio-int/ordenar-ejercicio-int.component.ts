@@ -12,6 +12,8 @@ import { GramaticaService } from 'src/app/gramatica/services/gramatica.service';
   styleUrls: ['./ordenar-ejercicio-int.component.css']
 })
 export class OrdenarEjercicioIntComponent {
+  loading: boolean = false;
+
   ordenar: string[] = [];
   
   index: number = 0;
@@ -49,19 +51,6 @@ export class OrdenarEjercicioIntComponent {
     );
   }
 
-  /*async getEjercicios() {
-    try {
-      let respuesta = await this.gramaticaService.getExercises();
-
-      if (respuesta) {
-        const { intermedio } = respuesta;
-        this.ordenar = intermedio.ordenar;
-      }
-    }
-    catch (error) {
-      console.log(error);
-    }
-  }*/
 
   siguienteEjercicio() {
     if (this.ordenar.length > 0) {
@@ -93,11 +82,10 @@ export class OrdenarEjercicioIntComponent {
   }
 
   checkRespuesta(oracion: string) {
-
     if(this.oracionCoincide === true){
+      this.loading = true;
 
       oracion = oracion.charAt(0).toUpperCase() + oracion.slice(1);
-      
       this.gramaticaService.getCorreccionHttp(oracion).subscribe(
         {
           next: (correccion) => {
@@ -106,30 +94,16 @@ export class OrdenarEjercicioIntComponent {
             if (this.correcciones && this.correcciones.length === 0) {
               this.correcto = true;
             }
+            this.loading = false;
           },
           error: (err) => {
             console.log(err);
+            this.loading = false;
           }
         }
       )
     }
   }
-
-  /*async checkRespuesta(oracion: string) {
-    try {
-      if (this.oracionCoincide === true) {
-        oracion = oracion.charAt(0).toUpperCase() + oracion.slice(1);
-        this.correcciones = await this.gramaticaService.getCorreccion(oracion);
-
-        if (this.correcciones?.length === 0) {
-          this.correcto = true;
-        }
-      }
-    }
-    catch (error) {
-      console.log(error);
-    }
-  }*/
 
   reset() {
     this.correcciones = [];

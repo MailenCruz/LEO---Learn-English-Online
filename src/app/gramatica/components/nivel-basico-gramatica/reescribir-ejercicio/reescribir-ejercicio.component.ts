@@ -1,15 +1,11 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-
 import { ChangeDetectorRef } from '@angular/core';
 import nlp from 'compromise';
 import { Router } from '@angular/router';
 import { Correccion } from 'src/app/gramatica/interfaces/correccion';
 import { Reescribir } from 'src/app/gramatica/interfaces/reescribir';
 import { GramaticaService } from 'src/app/gramatica/services/gramatica.service';
-
-
-
 @Component({
   selector: 'reescribir-ejercicio',
   templateUrl: './reescribir-ejercicio.component.html',
@@ -17,6 +13,7 @@ import { GramaticaService } from 'src/app/gramatica/services/gramatica.service';
 })
 
 export class ReescribirEjercicioComponent {
+  loading: boolean = false;
 
   reescribir: Reescribir[] = [];
 
@@ -24,6 +21,7 @@ export class ReescribirEjercicioComponent {
 
   randomPhrase: string = '';
   index: number = 0;
+  intentos: number = 0;
 
   answer: FormGroup = this.formBuilder.group({
     afirmativo: ['', [Validators.required]],
@@ -65,14 +63,12 @@ export class ReescribirEjercicioComponent {
 
   correccionesPorTipo: { [tipo: string]: Correccion[] | undefined }[] = [];
 
-
   constructor(private router: Router, private formBuilder: FormBuilder, private gramaticaService: GramaticaService, private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
     window.scrollTo(0, 0);
     this.getEjercicios();
   }
-
 
   getEjercicios() {
     let respuesta = this.gramaticaService.getExercisesHttp().subscribe(
@@ -97,8 +93,15 @@ export class ReescribirEjercicioComponent {
     this.randomPhrase = this.reescribir[this.index][this.phraseType];
   }
 
-
   guardarRespuesta() {
+    if(this.intentos > 0){
+      this.mostrarBoton = false;
+
+      this.oracionFormato = { afirmativo: false, negativo: false, interrogativo: false };
+      this.oracionCoincide = { afirmativo: true, negativo: true, interrogativo: true };
+      this.check = { afirmativo: false, negativo: false, interrogativo: false };
+      this.checkBoton = { afirmativo: false, negativo: false, interrogativo: false };
+    }
 
     this.respuestas = {
       afirmativo: this.answer.controls['afirmativo'].value,
@@ -112,22 +115,23 @@ export class ReescribirEjercicioComponent {
   }
 
   analizarFormato() {
-    this.oracionFormato = { afirmativo: false, negativo: false, interrogativo: false};
+    this.oracionFormato = { afirmativo: false, negativo: false, interrogativo: false };
 
     let formatoConsigna = this.getFormatoOracion(this.randomPhrase);
     this.oracionFormato[formatoConsigna as keyof Reescribir] = true;
 
     for (let key in this.respuestas) {
       if(key !== formatoConsigna){
-        let formatoRespuesta = this.getFormatoOracion(this.respuestas[key as keyof Reescribir]);
-        
-        if(formatoRespuesta === key){
-          this.oracionFormato[key] = true;
+
+        if(this.respuestas[key as keyof Reescribir]){
+          let formatoRespuesta = this.getFormatoOracion(this.respuestas[key as keyof Reescribir]);
+          
+          if(formatoRespuesta === key){
+            this.oracionFormato[key] = true;
+          }
         }
       }
     }
-
-    console.log(this.oracionFormato);
   }
 
   getFormatoOracion(respuesta: string): string {
@@ -135,19 +139,25 @@ export class ReescribirEjercicioComponent {
       return 'interrogativo';
     } else if (this.esNegativo(respuesta)) {
       return 'negativo';
-    } else {
+    } else if(this.esAfirmativo(respuesta)){
       return 'afirmativo';
+    } else {
+      return 'sin formato';
     }
   }
 
   esNegativo(oracion: string): boolean {
     return /(wh|how|why|who|what|where|when|do|did|does|was|were).*\b(not|n't)/i.test(oracion);
   }
-  
 
   esInterrogativo(oracion: string): boolean {
     return /^(wh|how|why|who|what|where|when|do|did|does|was|were)\b.*\?$/i.test(oracion);
   }  
+
+  esAfirmativo(oracion: string): boolean {
+    const formatoNegInt = /n't|not|\?/i;
+    return !formatoNegInt.test(oracion);
+  }
 
   oracionCorrecta() {
     let resultado: number = 0;
@@ -179,7 +189,6 @@ export class ReescribirEjercicioComponent {
             this.oracionCoincide[key as keyof Reescribir] = false;
           }
         }
-
       }
     }
   }
@@ -197,29 +206,34 @@ export class ReescribirEjercicioComponent {
   }
 
   checkRespuesta() {
-
+    this.intentos++;
+    
     this.correccionesPorTipo = [];
-
+    
     for (let key in this.respuestas) {
-
+      
       if (this.check[key as keyof Reescribir] === true && this.oracionCoincide[key] === true && this.oracionFormato[key] === true) { 
-
+        this.loading = true;
         let value = this.respuestas[key as keyof Reescribir];
 
-        value = value.charAt(0).toUpperCase() + value.slice(1);
+        if(value !== null){
+          value = value.charAt(0).toUpperCase() + value.slice(1);
 
-        this.gramaticaService.getCorreccionHttp(value.trim()).subscribe(
-          {
-            next: (correccion) => {
-              let aux: { [tipo: string]: Correccion[] | undefined } = {};
-              aux[key] = correccion;
-              this.correccionesPorTipo.push(aux);
-
-            },
-            error: (err) => {
-              console.log(err);
+          this.gramaticaService.getCorreccionHttp(value.trim()).subscribe(
+            {
+              next: (correccion) => {
+                let aux: { [tipo: string]: Correccion[] | undefined } = {};
+                aux[key] = correccion;
+                this.correccionesPorTipo.push(aux);
+                this.loading = false;
+              },
+              error: (err) => {
+                console.log(err);
+                this.loading = false;
+              }
             }
-          })
+          )
+        }
       }
 
     }
@@ -235,8 +249,17 @@ export class ReescribirEjercicioComponent {
       }
       else {
         this.fraseAleatoria();
+
         this.answer.reset();
         this.correccionesPorTipo = [];
+        this.mostrarBoton = false;
+
+        this.oracionFormato = { afirmativo: false, negativo: false, interrogativo: false };
+        this.oracionCoincide = { afirmativo: true, negativo: true, interrogativo: true };
+        this.check = { afirmativo: false, negativo: false, interrogativo: false };
+        this.checkBoton = { afirmativo: false, negativo: false, interrogativo: false };
+
+        this.intentos = 0;
       }
     }
   }
@@ -267,10 +290,12 @@ export class ReescribirEjercicioComponent {
   reset() {
     this.correccionesPorTipo = [];
     this.check = { afirmativo: false, negativo: false, interrogativo: false };
+    this.checkBoton = { afirmativo: false, negativo: false, interrogativo: false };
     this.oracionCoincide = { afirmativo: true, negativo: true, interrogativo: true };
     this.oracionFormato = { afirmativo: false, negativo: false, interrogativo: false};
     this.answer.reset();
     this.mostrarBoton = false;
+    this.intentos = 0;
   }
 
   onInputChange(event: Event, type: string) {
@@ -284,8 +309,6 @@ export class ReescribirEjercicioComponent {
       this.check[type as keyof { afirmativo: boolean, negativo: boolean, interrogativo: boolean }] = false;
       this.oracionCoincide[type] = true;
       this.oracionFormato[type] = false;
-      console.log("TYPE: " + type);
-      console.log("CAMBIO INPUT: " + this.oracionFormato[type]);
     }
   }
 

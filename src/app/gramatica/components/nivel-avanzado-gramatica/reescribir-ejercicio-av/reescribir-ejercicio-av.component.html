@@ -10,29 +10,34 @@
 <section class="cuerpo-NB">
 
     <div class="contenedor-pagina">
+
         <section class="reescribir">
+
             <form (ngSubmit)="guardarRespuesta()" [formGroup]="answer" class="formulario">
 
                 <p> {{ randomPhrase }} </p>
 
+                <div *ngIf="loading" class="loading-spinner"></div>
+
                 <!-- AFIRMATIVO -->
-                <div *ngIf="phraseType != 'afirmativo'">
+                <div *ngIf="phraseType != 'afirmativo' && !loading">
                     <label for="afirmativo"> Afirmativo (+): </label>
                     <input type="text" id="afirmativo" formControlName="afirmativo" (input)="onInputChange($event, 'afirmativo')">
                 </div>
-
                 <!-- check -->
-                <div *ngIf="answer.controls['afirmativo'].getError('required') && answer.controls['afirmativo'].touched">
+                <div *ngIf="!loading && answer.controls['afirmativo'].getError('required') && answer.controls['afirmativo'].touched">
                     <p class="error"> El campo es requerido </p>
                 </div>
-
                 <!-- coincide -->
-                <div *ngIf="(check['afirmativo'] === true) && (oracionCoincide['afirmativo'] === false)">
+                <div *ngIf="!loading && (check['afirmativo'] === true) && (oracionCoincide['afirmativo'] === false)">
                     <p class="coincide"> La oración no coincide </p>
                 </div>
-
+                <!-- formato -->
+                <div *ngIf="!loading && (check['afirmativo'] === true) && (oracionCoincide['afirmativo'] === true) && (oracionFormato['afirmativo'] === false)">
+                    <p class="formato"> La oración no está en formato afirmativo </p>
+                </div>
                 <!-- errores -->
-                <div *ngIf="(check['afirmativo'] === true) && (oracionCoincide['afirmativo'] === true)">
+                <div *ngIf="!loading && (check['afirmativo'] === true) && (oracionCoincide['afirmativo'] === true) && (oracionFormato['afirmativo'] === true)">
                     <div *ngIf="obtenerCorreccion('afirmativo')">
                         <div *ngFor="let correccion of obtenerCorreccion('afirmativo')">
                             <p class="error"> {{ correccion.message }} - Reemplazos: {{
@@ -42,9 +47,8 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- correcto -->
-                <div *ngIf="(check['afirmativo'] === true) && (oracionCoincide['afirmativo'] === true)">
+                <div *ngIf="!loading && (check['afirmativo'] === true) && (oracionCoincide['afirmativo'] === true) && (oracionFormato['afirmativo'] === true)">
                     <div *ngIf="obtenerCorreccion('afirmativo')?.length === 0">
                         <p class="correcto">Correcto!</p>
                         {{ flagBoton('afirmativo', true) }}
@@ -52,23 +56,24 @@
                 </div>
 
                 <!-- NEGATIVO -->
-                <div *ngIf="phraseType != 'negativo'">
+                <div *ngIf="phraseType != 'negativo' && !loading">
                     <label for="negativo"> Negativo (-): </label>
                     <input type="text" id="negativo" formControlName="negativo" (input)="onInputChange($event, 'negativo')">
                 </div>
-
                 <!-- check -->
-                <div *ngIf="answer.controls['negativo'].getError('required') && answer.controls['negativo'].touched ">
+                <div *ngIf="!loading && answer.controls['negativo'].getError('required') && answer.controls['negativo'].touched ">
                     <p class="error"> El campo es requerido </p>
                 </div>
-                
                 <!-- coincide -->
-                <div *ngIf="(check['negativo'] === true) && (oracionCoincide['negativo'] === false)">
+                <div *ngIf="!loading && (check['negativo'] === true) && (oracionCoincide['negativo'] === false)">
                     <p class="coincide"> La oración no coincide </p>
                 </div>
-
+                <!-- formato -->
+                <div *ngIf="!loading && (check['negativo'] === true) && (oracionCoincide['negativo'] === true)  && (oracionFormato['negativo'] === false)">
+                    <p class="formato"> La oración no está en formato negativo </p>
+                </div>
                 <!-- errores -->
-                <div *ngIf="(check['negativo'] === true) && (oracionCoincide['negativo'] === true)">
+                <div *ngIf="!loading && (check['negativo'] === true) && (oracionCoincide['negativo'] === true) && (oracionFormato['negativo'] === true)">
                     <div *ngIf="obtenerCorreccion('negativo')">
                         <div *ngFor="let correccion of obtenerCorreccion('negativo')">
                             <p class="error"> {{ correccion.message }} - Reemplazos: {{
@@ -78,9 +83,8 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- correcto -->
-                <div *ngIf="(check['negativo'] === true) && (oracionCoincide['negativo'] === true)">
+                <div *ngIf="!loading && (check['negativo'] === true) && (oracionCoincide['negativo'] === true) && (oracionFormato['negativo'] === true)">
                     <div *ngIf="obtenerCorreccion('negativo')?.length === 0">
                         <p class="correcto">Correcto!</p>
                         {{ flagBoton('negativo', true) }}
@@ -88,23 +92,24 @@
                 </div>
 
                 <!-- INTERROGATIVO -->
-                <div *ngIf="phraseType != 'interrogativo'">
+                <div *ngIf="phraseType != 'interrogativo' && !loading">
                     <label for="interrogativo"> Interrogativo (?): </label>
                     <input type="text" id="interrogativo" formControlName="interrogativo" (input)="onInputChange($event, 'interrogativo')">
                 </div>
-
                 <!-- check -->
-                <div *ngIf="answer.controls['interrogativo'].getError('required') && answer.controls['interrogativo'].touched ">
+                <div *ngIf="!loading && answer.controls['interrogativo'].getError('required') && answer.controls['interrogativo'].touched ">
                     <p class="error"> El campo es requerido </p>
                 </div>
-                
                 <!-- coincide -->
-                <div *ngIf="(check['interrogativo'] === true) && (oracionCoincide['interrogativo'] === false)">
+                <div *ngIf="!loading && (check['interrogativo'] === true) && (oracionCoincide['interrogativo'] === false)">
                     <p class="coincide"> La oración no coincide </p>
                 </div>
-
+                <!-- formato -->
+                <div *ngIf="!loading && (check['interrogativo'] === true) && (oracionCoincide['interrogativo'] === true) && (oracionFormato['interrogativo'] === false)">
+                    <p class="formato"> La oración no está en formato interrogativo </p>
+                </div>
                 <!-- errores -->
-                <div *ngIf="(check['interrogativo'] === true) && (oracionCoincide['interrogativo'] === true)">
+                <div *ngIf="!loading && (check['interrogativo'] === true) && (oracionCoincide['interrogativo'] === true) && (oracionFormato['interrogativo'] === true)">
                     <div *ngIf="obtenerCorreccion('interrogativo')">
                         <div *ngFor="let correccion of obtenerCorreccion('interrogativo')">
                             <p class="error"> {{ correccion.message }} </p>
@@ -112,9 +117,8 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- correcto -->
-                <div *ngIf="(check['interrogativo'] === true) && (oracionCoincide['interrogativo'] === true)">
+                <div *ngIf="!loading && (check['interrogativo'] === true) && (oracionCoincide['interrogativo'] === true) && (oracionFormato['interrogativo'] === true)">
                     <div *ngIf="obtenerCorreccion('interrogativo')?.length === 0">
                         <p class="correcto">Correcto!</p>
                         {{ flagBoton('interrogativo', true) }}
@@ -122,9 +126,9 @@
                 </div>
 
                 <div class="botones">
-                    <input class="boton" type="submit" value="Check">
+                    <input *ngIf="!loading" class="boton" type="submit" value="Check">
                     <input class="boton" type="button" value="Reset" (click)="reset()">
-                    <input *ngIf="mostrarBoton" class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
+                    <input *ngIf="mostrarBoton && !loading" class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
                 </div>
             </form>
 
