@@ -1,7 +1,8 @@
 <nav class="barra-NB">
     <div class="imagen-nombre-NB">
         <a routerLink="/avanzado-home">
-            <img class="img-flecha" src="../../../../../assets/gramatica-img/nav/flecha-gramatica.png" alt="Logo" width="20" height="14">
+            <img class="img-flecha" src="../../../../../assets/gramatica-img/nav/flecha-gramatica.png" alt="Logo"
+                width="20" height="14">
         </a>
         <span> Ordenar las oraciones - Order the sentences</span>
     </div>
@@ -14,10 +15,10 @@
         <section class="ordenar">
 
             <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
-                
+
                 <p> {{ randomPhrase }} </p>
 
-                <div *ngIf="!loading"> 
+                <div *ngIf="!loading">
                     <label for="ordenar">Reescriba la oración en orden: </label>
                     <input type="text" id="ordenar" formControlName="ordenar" (input)="onInputChange($event)">
                 </div>
@@ -25,7 +26,8 @@
                 <div *ngIf="loading" class="loading-spinner"></div>
 
                 <!-- check -->
-                <div *ngIf="!loading && answer.controls['ordenar'].getError('required') && answer.controls['ordenar'].touched">
+                <div
+                    *ngIf="!loading && answer.controls['ordenar'].getError('required') && answer.controls['ordenar'].touched">
                     <p class="error"> El campo es requerido </p>
                 </div>
 
@@ -53,10 +55,18 @@
                 <div class="botones">
                     <input *ngIf="!loading" class="boton" type="submit" value="Check">
                     <input class="boton" type="reset" value="Reset" (click)="reset()">
-                    <input *ngIf="correcto && !loading" class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
+                    <input *ngIf="correcto && !loading" class="boton" type="button" value="Next sentence"
+                        (click)="siguienteEjercicio()">
                 </div>
             </form>
-
         </section>
+
+        <div class="overlay" *ngIf="ganador">
+            <img src="../../../../assets/juegos-img/ganaste/win2.png" alt="ganaste">
+            <div class="mensajeGanador">
+                <button class="botonMensaje" routerLink="/avanzado-home">VOLVER A AVANZADO </button>
+            </div>
+        </div>
+        
     </div>
 </section>

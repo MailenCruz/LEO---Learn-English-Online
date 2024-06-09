@@ -4,6 +4,7 @@
 
         <h2> Registrarse </h2>
 
+        <!-- USERNAME -->
         <input type="text" id="username" formControlName="username" placeholder="nombre de usuario">
 
         <div class="error"
@@ -19,6 +20,11 @@
             Debe contener al menos dos letras antes de cualquier número
         </div>
 
+        <div class="error" *ngIf="errorUser!='exito'">
+            {{errorUser}}
+        </div>
+
+        <!-- EMAIL -->
         <input type="email" id="email" formControlName="email" placeholder="correo electrónico">
 
         <div class="error"
@@ -30,6 +36,11 @@
             Debe ingresar un email válido
         </div>
 
+        <div class="error" *ngIf="errorMail!='exito'">
+            {{errorMail}}
+        </div>
+
+        <!-- PASSWORD -->
         <input type="password" id="password" formControlName="password" placeholder="contraseña">
 
         <div class="error"
@@ -50,12 +61,6 @@
     </form>
 
 
-    <div class="error" *ngIf="errorMail!='exito'">
-        {{errorMail}}
-    </div>
-    <div class="error" *ngIf="errorUser!='exito'">
-        {{errorUser}}
-    </div>
 
 
 </div>

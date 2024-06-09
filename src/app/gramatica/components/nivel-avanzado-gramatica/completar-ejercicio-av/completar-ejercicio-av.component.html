@@ -56,5 +56,12 @@
 
             </form>
         </section>
+
+        <div class="overlay" *ngIf="ganador">  
+            <img src="../../../../assets/juegos-img/ganaste/win.png" alt="ganaste">
+            <div class="mensajeGanador">
+                <button class="botonMensaje" routerLink="/avanzado-home">VOLVER A AVANZADO </button>
+            </div>
+        </div>
     </div>
 </section>

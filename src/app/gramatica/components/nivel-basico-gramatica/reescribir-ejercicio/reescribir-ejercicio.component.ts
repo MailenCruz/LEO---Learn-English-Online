@@ -13,6 +13,7 @@ import { GramaticaService } from 'src/app/gramatica/services/gramatica.service';
 })
 
 export class ReescribirEjercicioComponent {
+  ganador: boolean = false;
   loading: boolean = false;
 
   reescribir: Reescribir[] = [];
@@ -245,7 +246,8 @@ export class ReescribirEjercicioComponent {
       this.index = this.index + 1;
 
       if (this.index == this.reescribir.length) {
-        this.router.navigate(['/basico-home']);
+        this.ganador = true;
+        //this.router.navigate(['/basico-home']);
       }
       else {
         this.fraseAleatoria();

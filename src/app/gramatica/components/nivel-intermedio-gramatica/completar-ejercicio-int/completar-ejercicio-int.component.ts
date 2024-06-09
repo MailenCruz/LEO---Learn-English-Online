@@ -12,7 +12,7 @@ import { GramaticaService } from 'src/app/gramatica/services/gramatica.service';
   styleUrls: ['./completar-ejercicio-int.component.css']
 })
 export class CompletarEjercicioIntComponent {
-
+  ganador: boolean = false;
   loading: boolean = false;
 
   completar: Completar[] = [];
@@ -62,7 +62,8 @@ export class CompletarEjercicioIntComponent {
       this.index = (this.index + 1);
 
       if(this.index == this.completar.length){
-        this.router.navigate(['/intermedio-home']);
+        this.ganador = true;
+        //this.router.navigate(['/intermedio-home']);
       }
       else{
         this.randomPhrase = this.completar[this.index];

@@ -12,6 +12,7 @@ import { GramaticaService } from 'src/app/gramatica/services/gramatica.service';
   styleUrls: ['./ordenar-ejercicio-int.component.css']
 })
 export class OrdenarEjercicioIntComponent {
+  ganador: boolean = false;
   loading: boolean = false;
 
   ordenar: string[] = [];
@@ -57,7 +58,8 @@ export class OrdenarEjercicioIntComponent {
       this.index = (this.index + 1);
 
       if(this.index == this.ordenar.length){
-        this.router.navigate(['/basico-home']);
+        this.ganador = true;
+        //this.router.navigate(['/intermedio-home']);
       }
       else{
         this.randomPhrase = this.ordenar[this.index];

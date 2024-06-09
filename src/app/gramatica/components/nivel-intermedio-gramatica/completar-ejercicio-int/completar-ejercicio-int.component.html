@@ -52,8 +52,14 @@
                     <input class="boton" type="button" value="Reset" (click)="reset()">
                     <input *ngIf="correcto && !loading" class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
                 </div>
-
             </form>
         </section>
+
+        <div class="overlay" *ngIf="ganador">  
+            <img src="../../../../assets/juegos-img/ganaste/win.png" alt="ganaste">
+            <div class="mensajeGanador">
+                <button class="botonMensaje" routerLink="/intermedio-home">VOLVER A INTERMEDIO </button>
+            </div>
+        </div>
     </div>
 </section>

@@ -4,36 +4,37 @@
 
         <h2> Editar usuario </h2>
 
+        <!-- USERNAME -->
         <input type="text" id="username" formControlName="editUsername" placeholder="nombre de usuario">
-        
 
         <div class="error" *ngIf="this.form.touched && form.controls['editUsername'].getError('required')">
             El campo es requerido
         </div>
-
         <div class="error" *ngIf="this.form.touched && form.controls['editUsername'].getError('minlength')">
             Mínimo de 3 caracteres
         </div>
 
+        <div class="error" *ngIf="errorUser!='exito'">
+            {{errorUser}}
+        </div>
+
+        <!-- EMAIL -->
         <input type="email" id="email" formControlName="editEmail" placeholder="correo electronico">
 
         <div class="error" *ngIf="this.form.touched && form.controls['editEmail'].getError('required')">
             El campo es requerido
         </div>
-
         <div class="error" *ngIf="this.form.touched && form.controls['editEmail'].getError('email')">
             Debe ingresar un email
+        </div>
+
+        <div class="error" *ngIf="errorMail!='exito'">
+            {{errorMail}}
         </div>
 
         <button class="btn-editar"> EDITAR </button>
 
     </form>
 
-    <div class="error" *ngIf="errorMail!='exito'">
-        {{errorMail}}
-    </div>
-    <div class="error" *ngIf="errorUser!='exito'">
-        {{errorUser}}
-    </div>
 
 </div>

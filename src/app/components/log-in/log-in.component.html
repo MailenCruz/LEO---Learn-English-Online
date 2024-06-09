@@ -20,14 +20,15 @@
                 El campo es requerido</span>
         </div>
 
+        <div class="error" *ngIf="valid!='exito'">
+            {{valid}}
+        </div>
+        
         <button class="btn-iniciarSesion"> INICIAR SESION </button>
 
     </form>
 
 
-    <div class="error" *ngIf="valid!='exito'">
-        {{valid}}
-    </div>
    
 
 </div>

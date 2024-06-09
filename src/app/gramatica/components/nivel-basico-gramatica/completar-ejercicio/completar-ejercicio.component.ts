@@ -15,7 +15,7 @@ import { GramaticaService } from 'src/app/gramatica/services/gramatica.service';
 })
 
 export class CompletarEjercicioComponent {
-
+  ganador: boolean = false;
   loading: boolean = false;
 
   completar: Completar[] = [];
@@ -65,7 +65,8 @@ export class CompletarEjercicioComponent {
       this.index = (this.index + 1);
 
       if(this.index == this.completar.length){
-        this.router.navigate(['/basico-home']);
+        this.ganador = true;
+        //this.router.navigate(['/basico-home']);
       }
       else{
         this.randomPhrase = this.completar[this.index];
