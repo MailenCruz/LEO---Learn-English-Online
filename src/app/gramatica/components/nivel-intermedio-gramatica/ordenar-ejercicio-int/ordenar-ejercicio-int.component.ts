@@ -3,6 +3,7 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import nlp from 'compromise/three';
 import { Correccion } from 'src/app/gramatica/interfaces/correccion';
+import { Ordenar } from 'src/app/gramatica/interfaces/ordenar';
 import { GramaticaService } from 'src/app/gramatica/services/gramatica.service';
 
 
@@ -15,10 +16,14 @@ export class OrdenarEjercicioIntComponent {
   ganador: boolean = false;
   loading: boolean = false;
 
-  ordenar: string[] = [];
+  ordenar: Ordenar[] = [];
   
   index: number = 0;
-  randomPhrase: string = '';
+  randomPhrase: Ordenar = {
+    oracion: '',
+    respuesta: ''
+  };
+
   correcciones: Correccion[] | undefined = [];
   check: boolean = false;
   oracionCoincide: boolean = true;
@@ -52,6 +57,24 @@ export class OrdenarEjercicioIntComponent {
     );
   }
 
+  getCorreccion(phrase:string, answer: string){
+    this.loading = true;
+
+    answer = answer.toLowerCase();
+    answer = answer.replace(/\s+/g, ' ');
+    answer = answer.trim();
+
+    this.ordenar.forEach(ejercicio => {
+      if(ejercicio.oracion === phrase){
+        if(ejercicio.respuesta === answer){
+          this.correcto = true;
+          this.loading = false;
+        }
+      } 
+    });
+    this.loading = false;
+  }
+
 
   siguienteEjercicio() {
     if (this.ordenar.length > 0) {
@@ -83,7 +106,13 @@ export class OrdenarEjercicioIntComponent {
     this.checkRespuesta(respuesta);
   }
 
-  checkRespuesta(oracion: string) {
+  checkRespuesta(oracion: string){
+    if(this.oracionCoincide === true){
+      this.getCorreccion(this.randomPhrase.oracion, oracion);
+    }
+  }
+
+  /*checkRespuesta(oracion: string) {
     if(this.oracionCoincide === true){
       this.loading = true;
 
@@ -105,7 +134,7 @@ export class OrdenarEjercicioIntComponent {
         }
       )
     }
-  }
+  }*/
 
   reset() {
     this.correcciones = [];
@@ -128,7 +157,7 @@ export class OrdenarEjercicioIntComponent {
   oracionCorrecta() {
     let resultado: number = 0;
 
-    let frase = this.randomPhrase.split('/');
+    let frase = this.randomPhrase.oracion.split('/');
     let fraseFinal = frase.join(' ');
     let lemmasFrase = this.processPhrase(fraseFinal.toLocaleLowerCase());
 

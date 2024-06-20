@@ -16,7 +16,7 @@
 
             <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
 
-                <p> {{ randomPhrase }} </p>
+                <p> {{ randomPhrase.oracion }} </p>
 
                 <div *ngIf="!loading">
                     <label for="ordenar">Reescriba la oración en orden: </label>
@@ -39,9 +39,7 @@
                 <!-- errores -->
                 <div *ngIf="!loading && (check === true) &&  (oracionCoincide === true)">
                     <div *ngIf="correcto === false">
-                        <div *ngFor="let correccion of correcciones">
-                            <p class="error">{{ correccion.message }} </p>
-                        </div>
+                        <p class="error"> INCORRECTO </p>
                     </div>
                 </div>
 

@@ -23,7 +23,6 @@ export class GramaticaService {
 
   getCorreccionHttp(answer: string): Observable<Correccion[] | undefined> {
 
-
     const data = new URLSearchParams();
     data.append('text', answer);
     data.append('language', 'en');

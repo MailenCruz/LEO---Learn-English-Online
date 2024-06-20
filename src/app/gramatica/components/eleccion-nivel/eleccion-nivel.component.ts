@@ -6,7 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./eleccion-nivel.component.css']
 })
 export class EleccionNivelComponent {
-
+  ngOnInit() {
+    window.scrollTo(0, 0);
+  }
 }
 
 
