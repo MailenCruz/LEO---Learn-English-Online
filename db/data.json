@@ -1041,8 +1041,8 @@
         },
         {
           "afirmativo": "Martha watches television.",
-          "negativo": "Martha does not wathc television.",
-          "interrogativo": "Does Martha wathc television?"
+          "negativo": "Martha does not watch television.",
+          "interrogativo": "Does Martha watch television?"
         },
         {
           "afirmativo": "He plays football with us",
@@ -1050,7 +1050,7 @@
           "interrogativo": "Does he play football with us?"
         },
         {
-          "afirmativo": "She wakes up early early.",
+          "afirmativo": "She wakes up early.",
           "negativo": "She does not wake up early.",
           "interrogativo": "Does she wake up early?"
         }
@@ -1161,11 +1161,6 @@
           "afirmativo": " They were playing football in the park.",
           "negativo": "They were not playing football in the park.",
           "interrogativo": "Were they playing football in the park?"
-        },
-        {
-          "afirmativo": "She was reading a book at the cafe.",
-          "negativo": " She was not reading a book at the cafe.",
-          "interrogativo": "Was she reading a book at the cafe?"
         },
         {
           "afirmativo": "We were watching a movie when the power went out.",
@@ -1280,10 +1275,6 @@
         {
           "oracion": "practising/She/the concert/guitar/was/her/for",
           "respuesta": "she was practising her guitar for the concert"
-        },
-        {
-          "oracion": "cinema/the/he/go/does/to/want/to/?",
-          "respuesta": "does he want to go to the cinema?"
         },
         {
           "oracion": "raining/It/when/started/the picnic/was",

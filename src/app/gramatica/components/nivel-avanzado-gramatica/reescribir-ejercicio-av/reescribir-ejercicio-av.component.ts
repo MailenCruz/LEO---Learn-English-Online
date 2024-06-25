@@ -148,7 +148,14 @@ export class ReescribirEjercicioAvComponent {
   }
 
   esNegativo(oracion: string): boolean {
-    return /(wh|how|why|who|what|where|when|do|did|does|was|were|had|have|will|would).*\b(not|n't)/i.test(oracion);
+    const auxiliares = ['wh', 'how', 'why', 'who', 'what', 'where', 'when', 'do', 'did', 'does', 'was', 'were', 'had', 'have', 'will', 'would', 'could', 'should', 'may', 'might'];
+  
+    for (let verb of auxiliares) {
+      if (oracion.includes(verb + ' not') || oracion.includes(verb + "n't")) {
+        return true;
+      }
+    }
+    return false;
   }
 
   esInterrogativo(oracion: string): boolean {
@@ -218,9 +225,13 @@ export class ReescribirEjercicioAvComponent {
         let value = this.respuestas[key as keyof Reescribir]; //copia la respuesta del usuario
 
         if(value !== null){
+          value = value.toLowerCase();
+          value = value.replace(/\s+/g, ' ');
+          value = value.trim();
+          
           value = value.charAt(0).toUpperCase() + value.slice(1);
 
-          this.gramaticaService.getCorreccionHttp(value.trim()).subscribe(
+          this.gramaticaService.getCorreccionHttp(value).subscribe(
             {
               next: (correccion) => {
                 let aux: { [tipo: string]: Correccion[] | undefined } = {};
