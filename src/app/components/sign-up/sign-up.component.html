@@ -8,11 +8,11 @@
         <input type="text" id="username" formControlName="username" placeholder="nombre de usuario">
 
         <div class="error"
-            *ngIf="this.form.controls['username'].touched && this.form.controls['username'].getError('required')">
+            *ngIf="form.controls['username'].touched && this.form.controls['username'].getError('required')">
             El campo es requerido
         </div>
         <div class="error"
-            *ngIf="this.form.controls['username'].touched && this.form.controls['username'].getError('minlength')">
+            *ngIf="form.controls['username'].touched && this.form.controls['username'].getError('minlength')">
             Mínimo de 3 caracteres
         </div>
         <div class="error"
@@ -28,11 +28,11 @@
         <input type="email" id="email" formControlName="email" placeholder="correo electrónico">
 
         <div class="error"
-            *ngIf="this.form.controls['email'].touched && this.form.controls['email'].getError('required')">
+            *ngIf="form.controls['email'].touched && this.form.controls['email'].getError('required')">
             El campo es requerido
         </div>
         <div class="error"
-            *ngIf="this.form.controls['email'].touched && this.form.controls['email'].getError('invalidEmailDomain')">
+            *ngIf="form.controls['email'].touched && this.form.controls['email'].getError('invalidEmailDomain')">
             Debe ingresar un email válido
         </div>
 
@@ -44,15 +44,15 @@
         <input type="password" id="password" formControlName="password" placeholder="contraseña">
 
         <div class="error"
-            *ngIf="this.form.controls['password'].touched && this.form.controls['password'].getError('required')">
+            *ngIf="form.controls['password'].touched && this.form.controls['password'].getError('required')">
             El campo es requerido
         </div>
         <div class="error"
-            *ngIf="this.form.controls['password'].touched && this.form.controls['password'].getError('minlength')">
+            *ngIf="form.controls['password'].touched && this.form.controls['password'].getError('minlength')">
             Debe contener mínimo de 6 caracteres
         </div>
         <div class="error"
-            *ngIf="this.form.controls['password'].touched && this.form.controls['password'].getError('noNumber')">
+            *ngIf="form.controls['password'].touched && this.form.controls['password'].getError('noNumber')">
             Debe contener al menor un número
         </div>
 

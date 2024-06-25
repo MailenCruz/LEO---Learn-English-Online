@@ -81,5 +81,24 @@
     font-family: "Public Sans", sans-serif;
 }
 
+.password-container {
+    position: relative;
+    width: 80%;
+    margin-top: 10px;
+  }
+  
+  .password-container input {
+    width: calc(100% - 40px);
+    padding-right: 40px;
+  }
+  
+  .password-container i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
 
 
