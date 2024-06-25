@@ -45,8 +45,6 @@
                     *ngIf="!loading && (check['afirmativo'] === true) && (oracionCoincide['afirmativo'] === true) && (oracionFormato['afirmativo'] === true)">
                     <div *ngIf="obtenerCorreccion('afirmativo')">
                         <div *ngFor="let correccion of obtenerCorreccion('afirmativo')">
-                            <p class="error"> {{ correccion.message }} - Reemplazos: {{
-                                correccion.replacements.join(',') }}
                             <p class="error">
                                 {{ correccion.message }} - Reemplazos: {{ correccion.replacements.join(',') }}
                             </p>
@@ -58,7 +56,7 @@
                 <div
                     *ngIf="!loading && (check['afirmativo'] === true) && (oracionCoincide['afirmativo'] === true) && (oracionFormato['afirmativo'] === true)">
                     <div *ngIf="obtenerCorreccion('afirmativo')?.length === 0">
-                        <p class="correcto">Correcto!</p>
+                        <p class="correcto">CORRECTO!</p>
                         {{ flagBoton('afirmativo', true) }}
                     </div>
                 </div>
@@ -99,7 +97,7 @@
                 <!-- correcto -->
                 <div *ngIf="!loading && (check['negativo'] === true) && (oracionCoincide['negativo'] === true)">
                     <div *ngIf="obtenerCorreccion('negativo')?.length === 0">
-                        <p class="correcto">Correcto!</p>
+                        <p class="correcto">CORRECTO!</p>
                         {{ flagBoton('negativo', true) }}
                     </div>
                 </div>
@@ -139,7 +137,7 @@
                 <div
                     *ngIf="!loading && (check['interrogativo'] === true) && (oracionCoincide['interrogativo'] === true)">
                     <div *ngIf="obtenerCorreccion('interrogativo')?.length === 0">
-                        <p class="correcto">Correcto!</p>
+                        <p class="correcto">CORRECTO!</p>
                         {{ flagBoton('interrogativo', true) }}
                     </div>
                 </div>
