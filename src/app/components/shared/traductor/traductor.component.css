@@ -71,6 +71,20 @@
   color: #171A1F;
 }
 
+.cerrar-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  background-color:  #DCBEE8FF;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
 .container-cambiar-idioma {
   display: flex;
   justify-content: center;

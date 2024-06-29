@@ -22,7 +22,7 @@
 
                 <!-- AFIRMATIVO -->
                 <div *ngIf="phraseType != 'afirmativo' && !loading">
-                    <label for="afirmativo"> Afirmativo (+): </label>
+                    <label for="afirmativo"> Afirmativo - Affirmative (+): </label>
                     <input type="text" id="afirmativo" formControlName="afirmativo"
                         (input)="onInputChange($event, 'afirmativo')">
                 </div>
@@ -33,12 +33,12 @@
                 </div>
                 <!-- coincide -->
                 <div *ngIf="!loading && (check['afirmativo'] === true) && (oracionCoincide['afirmativo'] === false)">
-                    <p class="coincide"> La oración no coincide </p>
+                    <p class="coincide"> La oración no coincide - Sentence does not match </p>
                 </div>
                 <!-- formato -->
                 <div
                     *ngIf="!loading && (check['afirmativo'] === true) && (oracionCoincide['afirmativo'] === true) && (oracionFormato['afirmativo'] === false)">
-                    <p class="formato"> La oración no está en formato afirmativo </p>
+                    <p class="formato"> La oración no está en formato afirmativo - Sentence is not in affirmative format  </p>
                 </div>
                 <!-- errores -->
                 <div
@@ -56,14 +56,14 @@
                 <div
                     *ngIf="!loading && (check['afirmativo'] === true) && (oracionCoincide['afirmativo'] === true) && (oracionFormato['afirmativo'] === true)">
                     <div *ngIf="obtenerCorreccion('afirmativo')?.length === 0">
-                        <p class="correcto">CORRECTO!</p>
+                        <p class="correcto"> Your answer is correct!</p>
                         {{ flagBoton('afirmativo', true) }}
                     </div>
                 </div>
 
                 <!-- NEGATIVO -->
                 <div *ngIf="phraseType != 'negativo' && !loading">
-                    <label for="negativo"> Negativo (-): </label>
+                    <label for="negativo"> Negativo - Negative (-): </label>
                     <input type="text" id="negativo" formControlName="negativo"
                         (input)="onInputChange($event, 'negativo')">
                 </div>
@@ -74,12 +74,12 @@
                 </div>
                 <!-- coincide -->
                 <div *ngIf="!loading && (check['negativo'] === true) && (oracionCoincide['negativo'] === false)">
-                    <p class="coincide"> La oración no coincide </p>
+                    <p class="coincide"> La oración no coincide - Sentence does not match</p>
                 </div>
                 <!-- formato -->
                 <div
                     *ngIf="!loading && (check['negativo'] === true) && (oracionCoincide['negativo'] === true)  && (oracionFormato['negativo'] === false)">
-                    <p class="formato"> La oración no está en formato negativo </p>
+                    <p class="formato"> La oración no está en formato negativo - Sentence is not in negative format </p>
                 </div>
                 <!-- errores -->
                 <div
@@ -97,14 +97,14 @@
                 <!-- correcto -->
                 <div *ngIf="!loading && (check['negativo'] === true) && (oracionCoincide['negativo'] === true)">
                     <div *ngIf="obtenerCorreccion('negativo')?.length === 0">
-                        <p class="correcto">CORRECTO!</p>
+                        <p class="correcto">Your answer is correct!</p>
                         {{ flagBoton('negativo', true) }}
                     </div>
                 </div>
 
                 <!-- INTERROGATIVO -->
                 <div *ngIf="phraseType != 'interrogativo' && !loading">
-                    <label for="interrogativo"> Interrogativo (?): </label>
+                    <label for="interrogativo"> Interrogativo - Interrogatory (?): </label>
                     <input type="text" id="interrogativo" formControlName="interrogativo"
                         (input)="onInputChange($event, 'interrogativo')">
                 </div>
@@ -116,12 +116,12 @@
                 <!-- coincide -->
                 <div
                     *ngIf="!loading  && (check['interrogativo'] === true) && (oracionCoincide['interrogativo'] === false)">
-                    <p class="coincide"> La oración no coincide </p>
+                    <p class="coincide"> La oración no coincide - Sentence does not match </p>
                 </div>
                 <!-- formato -->
                 <div
                     *ngIf="!loading && (check['interrogativo'] === true) && (oracionCoincide['interrogativo'] === true) && (oracionFormato['interrogativo'] === false)">
-                    <p class="formato"> La oración no está en formato interrogativo </p>
+                    <p class="formato"> La oración no está en formato interrogativo - Sentence is not in interrogative format </p>
                 </div>
                 <!-- errores -->
                 <div
@@ -137,7 +137,7 @@
                 <div
                     *ngIf="!loading && (check['interrogativo'] === true) && (oracionCoincide['interrogativo'] === true)">
                     <div *ngIf="obtenerCorreccion('interrogativo')?.length === 0">
-                        <p class="correcto">CORRECTO!</p>
+                        <p class="correcto">Your answer is correct!</p>
                         {{ flagBoton('interrogativo', true) }}
                     </div>
                 </div>

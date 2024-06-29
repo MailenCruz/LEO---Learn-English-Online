@@ -122,7 +122,7 @@ export class TraductorComponent implements OnInit{
     }
     
 
-    /* trabajo, mesa, espejo, traductor*/
+  
   }
 
 }

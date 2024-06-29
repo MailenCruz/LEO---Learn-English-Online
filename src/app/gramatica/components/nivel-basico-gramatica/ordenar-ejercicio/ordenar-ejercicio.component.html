@@ -19,7 +19,7 @@
                 <p> {{ randomPhrase.oracion }} </p>
 
                 <div *ngIf="!loading">
-                    <label for="ordenar">Reescriba la oración en orden: </label>
+                    <label for="ordenar">Reescriba la oración en orden - Rewrite the sentence in order: </label>
                     <input type="text" id="ordenar" formControlName="ordenar" (input)="onInputChange($event)">
                 </div>
 
@@ -33,20 +33,20 @@
 
                 <!-- coincide -->
                 <div *ngIf="(check === true) && (oracionCoincide === false)">
-                    <p class="coincide"> La oración no coincide </p>
+                    <p class="coincide"> La oración no coincide - Sentence does not match </p>
                 </div>
 
                 <!-- errores -->
                 <div *ngIf="!loading && (check === true) &&  (oracionCoincide === true)">
                     <div *ngIf="correcto === false">
-                        <p class="error"> INCORRECTO </p>
+                        <p class="error"> Your answer is incorrect! </p>
                     </div>
                 </div>
 
                 <!-- correcto -->
                 <div *ngIf="!loading && (check === true) && (oracionCoincide === true)">
                     <div *ngIf="correcto === true">
-                        <p class="correcto">CORRECTO!</p>
+                        <p class="correcto">Your answer is correct!</p>
                     </div>
                 </div>
 

@@ -129,41 +129,38 @@
 }
 
 /** ERRORES */
-.error {
+.formulario .error {
     color: #c7000a;
-    background-color: #FFBABA;
-    border: .1rem solid #c7000a;
 
     border-radius: .5rem;
     margin-bottom: 1rem;
 
-    font-size: 1rem;
+    font-size: 2.3rem;
     font-family: "Public Sans", sans-serif;
+    font-weight: bold;
 
 }
 
-.correcto {
+.formulario .correcto {
     color: rgb(30, 134, 30);
-    background-color: rgb(47, 201, 47);
-    border: .2rem solid rgb(30, 134, 30);
 
     border-radius: .5rem;
     margin-bottom: 1rem;
 
-    font-size: 1rem;
+    font-size: 2.3rem;
     font-family: "Public Sans", sans-serif;
+    font-weight: bold;
 }
 
-.coincide {
+.formulario .coincide {
     color: #965fb6;
-    background-color: #B3B3FDFF;
-    border: .2rem solid #965fb6;
 
     border-radius: .5rem;
     margin-bottom: 1rem;
 
-    font-size: 1rem;
+    font-size: 2.3rem;
     font-family: "Public Sans", sans-serif;
+    font-weight: bold;
 }
 
 .loading-spinner {

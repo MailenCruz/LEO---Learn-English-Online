@@ -11,6 +11,7 @@
             *ngIf="this.form.controls['editUsername'].touched && this.form.controls['editUsername'].getError('minlength')">
             Mínimo de 3 caracteres
         </div>
+        
         <div class="error"
             *ngIf="form.controls['editUsername'].touched && form.controls['editUsername'].getError('invalidUsername')">
             Debe contener al menos dos letras antes de cualquier número

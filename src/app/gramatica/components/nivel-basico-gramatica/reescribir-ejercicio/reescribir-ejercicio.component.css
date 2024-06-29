@@ -49,6 +49,7 @@
 .formulario {
     width: 100%;
     max-width: 800px;
+    margin-bottom: 5rem;
 
     padding: 10rem;
     padding-bottom: 5rem;
@@ -130,40 +131,44 @@
 }
 
 /** ERRORES */
-.error {
+.formulario .error {
     color: #c7000a;
-    background-color: #FFBABA;
-    padding: .8rem;
-    border: .2rem solid #c7000a;
+
     border-radius: .5rem;
     margin-bottom: 1rem;
+
+    font-size: 2.3rem;
+    font-family: "Public Sans", sans-serif;
 }
 
-.correcto {
+.formulario .correcto {
     color: rgb(30, 134, 30);
-    background-color: rgb(47, 201, 47);
-    padding: .8rem;
-    border: .2rem solid rgb(30, 134, 30);
+
     border-radius: .5rem;
     margin-bottom: 1rem;
+
+    font-size: 2.3rem;
+    font-family: "Public Sans", sans-serif;
 }
 
-.coincide {
+.formulario .coincide {
     color: #965fb6;
-    background-color: #B3B3FDFF;
-    padding: .8rem;
-    border: .2rem solid #965fb6;
+
     border-radius: .5rem;
     margin-bottom: 1rem;
+
+    font-size: 2.3rem;
+    font-family: "Public Sans", sans-serif;
 }
 
-.formato {
+.formulario .formato {
     color: #1b7783;
-    background-color: #38b9ca;
-    padding: .8rem;
-    border: .2rem solid #1b7783;
+
     border-radius: .5rem;
     margin-bottom: 1rem;
+
+    font-size: 2.3rem;
+    font-family: "Public Sans", sans-serif;
 }
 
 .loading-spinner {

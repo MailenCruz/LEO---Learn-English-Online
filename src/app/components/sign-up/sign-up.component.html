@@ -41,7 +41,13 @@
         </div>
 
         <!-- PASSWORD -->
-        <input type="password" id="password" formControlName="password" placeholder="contraseña">
+        <div class="password-container">
+            <input type="password" id="password" formControlName="password" placeholder="contraseña" 
+                [type]="showPassword ? 'text' : 'password'">
+            <i class="fas" (click)="togglePasswordVisibility()" 
+                [ngClass]="showPassword ? 'fa-eye' : 'fa-eye-slash'"></i>
+        </div>
+
 
         <div class="error"
             *ngIf="form.controls['password'].touched && this.form.controls['password'].getError('required')">

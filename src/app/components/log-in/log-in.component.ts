@@ -13,6 +13,7 @@ export class LogInComponent {
   private auth: UsersService = inject(UsersService)
   private router: Router = inject(Router)
   valid!: string
+  showPassword: boolean = false;
 
   formulario!: FormGroup;
 
@@ -42,6 +43,9 @@ export class LogInComponent {
     });
   }
 
-  
-  
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
+
+
 }

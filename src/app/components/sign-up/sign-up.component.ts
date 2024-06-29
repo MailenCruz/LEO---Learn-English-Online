@@ -14,6 +14,7 @@ export class SignUpComponent implements OnInit {
   form!: FormGroup;
   errorMail!: string;
   errorUser!: string;
+  showPassword: boolean = false;
 
   constructor(private userService: UsersService, private formBuilder: FormBuilder, private router: Router) { }
 
@@ -46,7 +47,7 @@ export class SignUpComponent implements OnInit {
     return (control: AbstractControl): { [key: string]: any } | null => {
       const email = control.value;
       if (!email) {
-        return null; 
+        return null;
       }
       const formato = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
       const valido = formato.test(email);
@@ -105,5 +106,10 @@ export class SignUpComponent implements OnInit {
       }
     });
   }
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
+
 
 }
