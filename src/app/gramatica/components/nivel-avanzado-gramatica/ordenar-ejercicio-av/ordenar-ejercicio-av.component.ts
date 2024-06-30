@@ -3,6 +3,7 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import nlp from 'compromise/three';
 import { Correccion } from 'src/app/gramatica/interfaces/correccion';
+import { Ordenar } from 'src/app/gramatica/interfaces/ordenar';
 import { GramaticaService } from 'src/app/gramatica/services/gramatica.service';
 
 @Component({
@@ -11,10 +12,17 @@ import { GramaticaService } from 'src/app/gramatica/services/gramatica.service';
   styleUrls: ['./ordenar-ejercicio-av.component.css']
 })
 export class OrdenarEjercicioAvComponent {
-  ordenar: string[] = [];
+  ganador: boolean = false;
+  loading: boolean = false;
+
+  ordenar: Ordenar[] = [];
   
   index: number = 0;
-  randomPhrase: string = '';
+  randomPhrase: Ordenar = {
+    oracion: '',
+    respuesta: ''
+  };
+
   correcciones: Correccion[] | undefined = [];
   check: boolean = false;
   oracionCoincide: boolean = true;
@@ -48,26 +56,31 @@ export class OrdenarEjercicioAvComponent {
     );
   }
 
-  /*async getEjercicios() {
-    try {
-      let respuesta = await this.gramaticaService.getExercises();
+  getCorreccion(phrase: string, answer: string) {
+    this.loading = true;
 
-      if (respuesta) {
-        const { avanzado } = respuesta;
-        this.ordenar = avanzado.ordenar;
+    answer = answer.toLowerCase();
+    answer = answer.replace(/\s+/g, ' ');
+    answer = answer.trim();
+
+    this.ordenar.forEach(ejercicio => {
+      if (ejercicio.oracion === phrase) {
+        if (ejercicio.respuesta === answer) {
+          this.correcto = true;
+          this.loading = false;
+        }
       }
-    }
-    catch (error) {
-      console.log(error);
-    }
-  }*/
+    });
+    this.loading = false;
+  }
 
   siguienteEjercicio() {
     if (this.ordenar.length > 0) {
       this.index = (this.index + 1);
 
       if(this.index == this.ordenar.length){
-        this.router.navigate(['/basico-home']);
+        this.ganador = true;
+        //this.router.navigate(['/avanzado-home']);
       }
       else{
         this.randomPhrase = this.ordenar[this.index];
@@ -92,11 +105,16 @@ export class OrdenarEjercicioAvComponent {
   }
 
   checkRespuesta(oracion: string) {
+    if (this.oracionCoincide === true) {
+      this.getCorreccion(this.randomPhrase.oracion, oracion);
+    }
+  }
 
+  /*checkRespuesta(oracion: string) {
     if(this.oracionCoincide === true){
+      this.loading = true;
 
       oracion = oracion.charAt(0).toUpperCase() + oracion.slice(1);
-      
       this.gramaticaService.getCorreccionHttp(oracion).subscribe(
         {
           next: (correccion) => {
@@ -105,28 +123,14 @@ export class OrdenarEjercicioAvComponent {
             if (this.correcciones && this.correcciones.length === 0) {
               this.correcto = true;
             }
+            this.loading = false;
           },
           error: (err) => {
             console.log(err);
+            this.loading = false;
           }
         }
       )
-    }
-  }
-
-  /*async checkRespuesta(oracion: string) {
-    try {
-      if (this.oracionCoincide === true) {
-        oracion = oracion.charAt(0).toUpperCase() + oracion.slice(1);
-        this.correcciones = await this.gramaticaService.getCorreccion(oracion);
-
-        if (this.correcciones?.length === 0) {
-          this.correcto = true;
-        }
-      }
-    }
-    catch (error) {
-      console.log(error);
     }
   }*/
 
@@ -151,7 +155,7 @@ export class OrdenarEjercicioAvComponent {
   oracionCorrecta() {
     let resultado: number = 0;
 
-    let frase = this.randomPhrase.split('/');
+    let frase = this.randomPhrase.oracion.split('/');
     let fraseFinal = frase.join(' ');
     let lemmasFrase = this.processPhrase(fraseFinal.toLocaleLowerCase());
 

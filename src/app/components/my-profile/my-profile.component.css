@@ -17,8 +17,8 @@
     align-items: center;
     
     width: 100%;
-    max-width: 40rem; /*ancho de los formularios*/
-    height: 45rem;
+    max-width: 40rem;
+    padding: 2rem;
     border-radius: 50px;
 
 
@@ -31,7 +31,7 @@
     width: 80%;
     font-size: 3rem;
 
-    margin-bottom: 0px;
+    margin-bottom: 3rem;
     
     display: flex;
     justify-content: center;
@@ -52,9 +52,9 @@
     font-family: "Public Sans", sans-serif;
 }
 
-.formulario-editar .btn-editar{
-    padding: 10px 80px 10px 80px;
-    margin-top: 30px; 
+.btn-editar{
+    padding: 10px 80px;
+    margin-top: 50px; 
     border: none;
     font-size: 18px;
     font-family: "Public Sans", sans-serif;
@@ -63,6 +63,7 @@
     cursor: pointer;
     outline: none;
     border-radius: 50px;
+    font-weight: bold;
 }
 
 .btn-editar:hover{
@@ -71,15 +72,38 @@
 }
 
 .error{
-
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding-top: 5rem;
-    font-size: 1.5rem;
-    color: rgb(148, 40, 40);
-    
+    justify-content:center;
+    font-weight: bold;
+
+    font-size: 1.7rem;
+    color: rgb(141, 33, 33);
+    font-family: "Public Sans", sans-serif;
+
+    padding: 0 2rem; /* Reduce el padding para que no empuje demasiado */
+    padding-top: 0.5rem;
 }
+
+
+.password-container {
+    position: relative;
+    width: 80%;
+    margin-top: 10px;
+  }
+  
+  .password-container input {
+    width: calc(100% - 40px);
+    padding-right: 40px;
+  }
+  
+  .password-container i {
+    position: absolute;
+    top: 60%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
 
 
 

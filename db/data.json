@@ -1041,8 +1041,8 @@
         },
         {
           "afirmativo": "Martha watches television.",
-          "negativo": "Martha does not wathc television.",
-          "interrogativo": "Does Martha wathc television?"
+          "negativo": "Martha does not watch television.",
+          "interrogativo": "Does Martha watch television?"
         },
         {
           "afirmativo": "He plays football with us",
@@ -1050,7 +1050,7 @@
           "interrogativo": "Does he play football with us?"
         },
         {
-          "afirmativo": "She wakes up early early.",
+          "afirmativo": "She wakes up early.",
           "negativo": "She does not wake up early.",
           "interrogativo": "Does she wake up early?"
         }
@@ -1100,18 +1100,54 @@
         }
       ],
       "ordenar": [
-        "spoke/during/French/the/you/trip",
-        "I/this/coffee/drank/morning",
-        "they/lived/kids/in/a/were/big/they/house/when",
-        "books/last/she/read/week",
-        "to/cinema/yesterday/he/went/the",
-        "do/she/homework/did/her/?",
-        "at/club/sport/tennis/he/plays/the",
-        "park/near/she/house/goes/the/to/usually/her",
-        "in/center/city/live/the/she/lives",
-        "every/out/I/go/friends/Friday/my/with",
-        "fluently/you/French/speak",
-        "cinema/the/he/go/does/to/want/to/?"
+        {
+          "oracion": "spoke/during/French/the/you/trip",
+          "respuesta": "you spoke french during the trip"
+        },
+        {
+          "oracion": "I/this/coffee/drank/morning",
+          "respuesta": "i drank coffee this morning"
+        },
+        {
+          "oracion": "they/lived/kids/in/a/were/big/they/house/when",
+          "respuesta": "they lived in a big house when they were kids"
+        },
+        {
+          "oracion": "book/last/a/she/read/week",
+          "respuesta": "she read a book last week"
+        },
+        {
+          "oracion": "to/cinema/yesterday/he/went/the",
+          "respuesta": "yesterday he went to the cinema"
+        },
+        {
+          "oracion": "do/she/homework/did/her/?",
+          "respuesta": "did she do her homework?"
+        },
+        {
+          "oracion": "at/club/sport/tennis/he/plays/the",
+          "respuesta": "he plays tennis at the sport club"
+        },
+        {
+          "oracion": "park/near/she/house/goes/the/to/usually/her",
+          "respuesta": "she usually goes to the park near her house"
+        },
+        {
+          "oracion": "in/center/city/the/she/lives",
+          "respuesta": "she lives in the city center"
+        },
+        {
+          "oracion": "every/out/I/go/friends/Friday/my/with",
+          "respuesta": "i go out with my friends every friday"
+        },
+        {
+          "oracion": "fluently/you/French/speak",
+          "respuesta": "you speak french fluently"
+        },
+        {
+          "oracion": "cinema/the/he/go/does/to/want/to/?",
+          "respuesta": "does he want to go to the cinema?"
+        }
       ]
     },
     "intermedio": {
@@ -1119,17 +1155,12 @@
         {
           "afirmativo": "Thomas was studying for his exams all night.",
           "negativo": "Thomas was not studying for his exams all night.",
-          "interrogativo": "Was THomas studying for his exams all night?"
+          "interrogativo": "Was Thomas studying for his exams all night?"
         },
         {
           "afirmativo": " They were playing football in the park.",
           "negativo": "They were not playing football in the park.",
           "interrogativo": "Were they playing football in the park?"
-        },
-        {
-          "afirmativo": "She was reading a book at the cafe.",
-          "negativo": " She was not reading a book at the cafe.",
-          "interrogativo": "Was she reading a book at the cafe?"
         },
         {
           "afirmativo": "We were watching a movie when the power went out.",
@@ -1237,22 +1268,62 @@
         }
       ],
       "ordenar": [
-        "yesterday/They/the movie/watching/were",
-        "practicing/She/the concert/guitar/was/her/for",
-        "raining/It/when/started/the picnic/was",
-        "homework/doing/while/listening/music/I/was",
-        "were/playing/they/a/board game/when/I/visited",
-        "paying/yesterday/were/attention/you/?",
-        "now/are/I/this/text/writing",
-        "to/music/listening/while/is/she/working",
-        "a/playing/are/they/volleyball/game/of",
-        "lunch/packing/for/we/are/the picnic",
-        "studying/are/they/for/exams",
-        "weekend/We/a/plan/trip/will/for",
-        "this/buy/new/car/year/They/will",
-        "start/next/will/She/business/month/her",
-        "be/will/It/sunny/tomorrow/probably",
-        "concert/next/attend/I/will/Friday/the"
+        {
+          "oracion": "yesterday/They/the movie/watching/were",
+          "respuesta": "they were watching the movie yesterday"
+        },
+        {
+          "oracion": "practising/She/the concert/guitar/was/her/for",
+          "respuesta": "she was practising her guitar for the concert"
+        },
+        {
+          "oracion": "raining/It/when/started/the picnic/was",
+          "respuesta": "it was raining when the picnic started"
+        },
+        {
+          "oracion": "homework/doing/while/to/listening/music/I/was",
+          "respuesta": "i was doing homework while listening to music"
+        },
+        {
+          "oracion": "were/playing/they/I/a/board game/when/home/came",
+          "respuesta": "they were playing a board game when i came home"
+        },
+        {
+          "oracion": "paying/yesterday/were/attention/you/?",
+          "respuesta": "were you paying attention yesterday?"
+        },
+        {
+          "oracion": "now/am/I/this/text/writing",
+          "respuesta": "now i am writing this text"
+        },
+        {
+          "oracion": "a/playing/are/they/volleyball/game/of",
+          "respuesta": "they are playing a game of volleyball"
+        },
+        {
+          "oracion": "lunch/packing/for/we/are/the picnic",
+          "respuesta": "we are packing lunch for the picnic"
+        },
+        {
+          "oracion": "studying/are/they/for/exams",
+          "respuesta": "they are studying for exams"
+        },
+        {
+          "oracion": "this/buy/new/car/year/They/will",
+          "respuesta": "they will buy a new car this year"
+        },
+        {
+          "oracion": "start/next/will/She/business/month/her",
+          "respuesta": "she will start her business next month"
+        },
+        {
+          "oracion": "be/will/It/sunny/tomorrow/probably",
+          "respuesta": "it will probably be sunny tomorrow"
+        },
+        {
+          "oracion": "concert/next/attend/I/will/Friday/the",
+          "respuesta": "i will attend the concert next friday"
+        }
       ]
     },
     "avanzado": {
@@ -1378,21 +1449,62 @@
         }
       ],
       "ordenar": [
-        "not/had/ever/I/food/Japanese",
-        "movie/they/before/seen/had/that",
-        "her/I/never/met/had/before",
-        "finished/homework/already/they/had",
-        "gone/they/arrived/had/they/by/the/time",
-        "money/spent/if/we/had/more/time",
-        "accepted/he/offer/would/job/the",
-        "traveled/they/europe/if/had/more/time",
-        "studied/more/hours/if/I/had",
-        "bought/she/house/the/had/if/more/money",
-        "gone/they/for/a/walk/will/have",
-        "before/finished/they/dinner/will/have",
-        "visited/many/countries/by/the/time/I/turn/thirty/will/have",
-        "you/will/have/a/good/job/finished",
-        "cleaned/she/the/house/will/have/by/the/time/you/arrive"
+        {
+          "oracion": "had/never/I/food/Japanese/eaten",
+          "respuesta": "i had never eaten japanese food"
+        },
+        {
+          "oracion": "movie/they/before/seen/had/that",
+          "respuesta": "they had seen that movie before"
+        },
+        {
+          "oracion": "her/I/never/met/had/before",
+          "respuesta": "i had never met her before"
+        },
+        {
+          "oracion": "finished/homework/already/they/had",
+          "respuesta": "they had already finished their homework"
+        },
+        {
+          "oracion": "gone/they/arrived/had/they/by/the/time",
+          "respuesta": "they had gone by the time they arrived"
+        },
+        {
+          "oracion": "accepted/he/offer/would/have/job/the",
+          "respuesta": "he would have accepted the job offer"
+        },
+        {
+          "oracion": "traveled/they/europe/if/had/more/time",
+          "respuesta": "they would have traveled to europe if they had more time"
+        },
+        {
+          "oracion": "studied/more/hours/if/I/had",
+          "respuesta": "i would have studied more hours if i had"
+        },
+        {
+          "oracion": "bought/she/house/the/had/if/more/money",
+          "respuesta": "she would have bought the house if she had more money"
+        },
+        {
+          "oracion": "gone/they/for/a/walk/will/have",
+          "respuesta": "they will have gone for a walk"
+        },
+        {
+          "oracion": "before/finished/they/dinner/will/have",
+          "respuesta": "they will have finished dinner before"
+        },
+        {
+          "oracion": "visited/many/countries/by/the/time/I/turn/thirty/will/have",
+          "respuesta": "i will have visited many countries by the time i turn thirty"
+        },
+        {
+          "oracion": "you/will/have/a/good/job/finished",
+          "respuesta": "you will have finished a good job"
+        },
+        {
+          "oracion": "cleaned/she/the/house/will/have/by/the/time/you/arrive",
+          "respuesta": "she will have cleaned the house by the time you arrive"
+        }
       ]
     }
   }

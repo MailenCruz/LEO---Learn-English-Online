@@ -16,6 +16,7 @@
 .cuerpo-nivel-basico {
     display: flex;
     justify-content: center;
+
     align-items: center;
     margin-top: 8rem;
 }
@@ -36,8 +37,7 @@
 .opciones a {
     opacity: 0;
     animation: fade-in 1s ease-out forwards;
-    filter: drop-shadow(16px 7px 8px #C5C6F6);
-
+    filter: drop-shadow(16px 7px 8px #C5C6F6)
 }
 
 .columna img {

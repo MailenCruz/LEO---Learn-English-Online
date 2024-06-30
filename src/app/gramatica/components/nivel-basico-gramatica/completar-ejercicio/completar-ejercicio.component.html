@@ -1,7 +1,8 @@
 <nav class="barra-NB">
     <div class="imagen-nombre-NB">
         <a routerLink="/basico-home">
-            <img class="img-flecha" src="../../../../../assets/gramatica-img/nav/flecha-gramatica.png" alt="Logo" width="20" height="14">
+            <img class="img-flecha" src="../../../../../assets/gramatica-img/nav/flecha-gramatica.png" alt="Logo"
+                width="20" height="14">
         </a>
         <span>Completar las oraciones - Complete the sentences</span>
     </div>
@@ -10,28 +11,29 @@
 <section class="cuerpo-NB">
 
     <div class="contenedor-pagina">
+
         <section class="completar">
 
-            <div *ngIf="loading" class="loading-spinner"></div>
-
-            <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer"  *ngIf="!loading">
+            <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
 
                 <p> {{ randomPhrase.oracion }} </p>
 
-                <select id="completar" formControlName="completar">
-                    <option disabled selected> Choose your answer </option>
+                <select id="completar" formControlName="completar" *ngIf="!loading">
+                    <option disabled selected> Elegí tu respuesta - Choose your answer </option>
                     <option *ngFor="let i of randomPhrase.respuestas" [value]="i">
                         {{ i }}
                     </option>
                 </select>
-                
+
+                <div *ngIf="loading" class="loading-spinner"></div>
+
                 <!-- check -->
-                <div *ngIf="answer.controls['completar'].getError('required') && answer.controls['completar'].touched ">
+                <div *ngIf="!loading && answer.controls['completar'].getError('required') && answer.controls['completar'].touched">
                     <p class="error"> El campo es requerido </p>
                 </div>
 
                 <!-- errores -->
-                <div *ngIf="(check === true)">
+                <div *ngIf="!loading && (check === true)">
                     <div *ngIf="correcto === false">
                         <div *ngFor="let correccion of correcciones">
                             <p class="error">{{ correccion.message }} </p>
@@ -40,20 +42,23 @@
                 </div>
 
                 <!-- correcto -->
-                <div *ngIf="(check === true) && (this.loading === false)">
-                    <div *ngIf="correcto === true">
-                        <p class="correcto">CORRECTO!</p>
-                    </div>
+                <div *ngIf="!loading && (check === true) && (correcto === true)">
+                    <p class="correcto"> Your answer is correct! </p>
                 </div>
 
                 <div class="botones">
-                    <input class="boton" type="submit" value="Check">
+                    <input *ngIf="!loading" class="boton" type="submit" value="Check">
                     <input class="boton" type="button" value="Reset" (click)="reset()">
-                    <input *ngIf="correcto" class="boton" type="button" value="Next sentence"
-                        (click)="siguienteEjercicio()">
+                    <input *ngIf="correcto && !loading" class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
                 </div>
-                
             </form>
         </section>
+
+        <div class="overlay" *ngIf="ganador">  
+            <img src="../../../../assets/juegos-img/ganaste/win.png" alt="ganaste">
+            <div class="mensajeGanador">
+                <button class="botonMensaje" routerLink="/basico-home">VOLVER A BÁSICO </button>
+            </div>
+        </div>
     </div>
 </section>

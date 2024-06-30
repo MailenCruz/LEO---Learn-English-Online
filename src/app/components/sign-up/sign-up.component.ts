@@ -14,11 +14,16 @@ export class SignUpComponent implements OnInit {
   form!: FormGroup;
   errorMail!: string;
   errorUser!: string;
+  checkUsername: boolean = false;
+  checkEmail: boolean = false;
+  checkPassword: boolean = false;
+  showPassword: boolean = false;
 
   constructor(private userService: UsersService, private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this.initForm();
+    this.onFormChanges();
     window.scrollTo(0, 0);
   }
 
@@ -28,6 +33,25 @@ export class SignUpComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6), this.validarFormatoPassword()]],
       email: ['', [Validators.required, this.validarFormatoEmail()]]
     })
+  }  
+
+  onFormChanges(): void {
+    this.form.get('username')?.valueChanges.subscribe(() => {
+      const control = this.form.get('username');
+      if (control) {
+        control.updateValueAndValidity();
+        this.checkUsername = !control.hasError('invalidUsername') && !control.hasError('minlength') && !control.hasError('spacesAtEdges') && !control.hasError('invalidCharacters');
+      }
+    });
+
+    this.form.get('email')?.valueChanges.subscribe(() => {
+      this.checkEmail = !this.form.get('email')?.hasError('invalidEmailDomain');
+    });
+
+    this.form.get('password')?.valueChanges.subscribe(() => {
+      const control = this.form.get('password');
+      this.checkPassword = !(control?.hasError('noNumber') || control?.hasError('minlength'));
+    });
   }
 
   ///FUNCIONES PARA CREAR NUESTROS VALIDATORS
@@ -38,7 +62,16 @@ export class SignUpComponent implements OnInit {
         return null; // no se valida si el campo está vacío
       }
       const containsNumber = /\d/.test(value);
-      return containsNumber ? null : { 'noNumber': true };
+      if (containsNumber) {
+        if (value.length >= 6) {
+          this.checkPassword = true;
+          return null;
+        } else {
+          return { 'minlength': true };
+        }
+      } else {
+        return { 'noNumber': true };
+      }
     };
   }
 
@@ -46,25 +79,54 @@ export class SignUpComponent implements OnInit {
     return (control: AbstractControl): { [key: string]: any } | null => {
       const email = control.value;
       if (!email) {
-        return null; 
+        return null;
       }
       const formato = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
       const valido = formato.test(email);
-      return valido ? null : { 'invalidEmailDomain': true };
+
+      if (valido) {
+        this.checkEmail = true;
+        return null;
+      }
+      else {
+        return { 'invalidEmailDomain': true };
+      }
     };
   }
 
   validarFormatoUsername(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
-      const username = control.value;
+      let username = control.value;
       if (!username) {
         return null;
       }
-      const formato = /^[A-Za-z]{2,}[A-Za-z0-9]*$/;
-      const valido = formato.test(username);
-      return valido ? null : { 'invalidUsername': true };
-    };
-  }
+
+      const trimmedUsername = username.trim();
+      if (username !== trimmedUsername) {
+        return { 'spacesAtEdges': true }; //espacios
+      }
+
+      const formatoCaracteres = /^[A-Za-z0-9]+$/;
+      const validoCaracteres = formatoCaracteres.test(trimmedUsername);
+      if (!validoCaracteres) {
+        return { 'invalidCharacters': true }; //caracteres especiales
+      }
+
+      const formato = /^(?=.*[A-Za-z]{2,})([A-Za-z0-9]+)$/i;
+      const valido = formato.test(trimmedUsername);
+      if (!valido) {
+        return { 'invalidUsername': true }; //dos letras antes de numeros
+      }
+
+      if (trimmedUsername.length < 3) {
+        return { 'minlength': true }; //longitud
+      }
+
+      this.checkUsername = true;
+      return null;
+    }
+  };
+
 
   guardarUser() {
     forkJoin({
@@ -75,7 +137,7 @@ export class SignUpComponent implements OnInit {
         this.errorMail = emailCheck;
         this.errorUser = userCheck;
 
-        if (this.errorMail === 'exito' && this.errorUser === 'exito') {
+        if (this.errorMail === 'exito' && this.errorUser === 'exito' && this.checkEmail && this.checkPassword && this.checkUsername) {
           this.userService.generarID().subscribe({
             next: (id) => {
               const user: User = {
@@ -106,4 +168,7 @@ export class SignUpComponent implements OnInit {
     });
   }
 
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
 }

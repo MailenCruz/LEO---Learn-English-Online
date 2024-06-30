@@ -4,58 +4,67 @@
 
         <h2> Registrarse </h2>
 
+        <!-- USERNAME -->
         <input type="text" id="username" formControlName="username" placeholder="nombre de usuario">
 
         <div class="error"
-            *ngIf="this.form.controls['username'].touched && this.form.controls['username'].getError('required')">
+            *ngIf="form.controls['username'].touched && form.controls['username'].invalid && form.controls['username'].hasError('required')">
             El campo es requerido
         </div>
         <div class="error"
-            *ngIf="this.form.controls['username'].touched && this.form.controls['username'].getError('minlength')">
+            *ngIf="form.controls['username'].touched && form.controls['username'].invalid && form.controls['username'].hasError('minlength')">
             Mínimo de 3 caracteres
         </div>
         <div class="error"
-            *ngIf="form.controls['username'].touched && form.controls['username'].getError('invalidUsername')">
+            *ngIf="form.controls['username'].touched && form.controls['username'].invalid && form.controls['username'].hasError('invalidUsername')">
             Debe contener al menos dos letras antes de cualquier número
         </div>
+        <div class="error"
+            *ngIf="form.controls['username'].touched && form.controls['username'].invalid && form.controls['username'].hasError('spacesAtEdges')">
+            No se permiten espacios 
+        </div>
+        <div class="error"
+            *ngIf="form.controls['username'].touched && form.controls['username'].invalid && form.controls['username'].hasError('invalidCharacters')">
+            No se permiten caracteres especiales
+        </div>
 
+        <div class="error" *ngIf="errorUser!='exito'">
+            {{errorUser}}
+        </div>
+
+        <!-- EMAIL -->
         <input type="email" id="email" formControlName="email" placeholder="correo electrónico">
 
         <div class="error"
-            *ngIf="this.form.controls['email'].touched && this.form.controls['email'].getError('required')">
-            El campo es requerido
-        </div>
+            *ngIf="form.controls['email'].touched && form.controls['email'].invalid && form.controls['email'].hasError('required')">
+            El campo es requerido</div>
         <div class="error"
-            *ngIf="this.form.controls['email'].touched && this.form.controls['email'].getError('invalidEmailDomain')">
-            Debe ingresar un email válido
+            *ngIf="form.controls['email'].touched && form.controls['email'].invalid && form.controls['email'].hasError('invalidEmailDomain')">
+            Debe ingresar un email válido</div>
+
+        <div class="error" *ngIf="errorMail!='exito'">
+            {{errorMail}}
         </div>
 
-        <input type="password" id="password" formControlName="password" placeholder="contraseña">
+        <!-- PASSWORD -->
+        <div class="password-container">
+            <input type="password" id="password" formControlName="password" placeholder="contraseña"
+                [type]="showPassword ? 'text' : 'password'">
+            <i class="fas" (click)="togglePasswordVisibility()"
+                [ngClass]="showPassword ? 'fa-eye' : 'fa-eye-slash'"></i>
+        </div>
 
         <div class="error"
-            *ngIf="this.form.controls['password'].touched && this.form.controls['password'].getError('required')">
-            El campo es requerido
-        </div>
+            *ngIf="form.controls['password'].touched && form.controls['password'].invalid && form.controls['password'].hasError('required')">
+            El campo es requerido</div>
         <div class="error"
-            *ngIf="this.form.controls['password'].touched && this.form.controls['password'].getError('minlength')">
-            Debe contener mínimo de 6 caracteres
-        </div>
+            *ngIf="form.controls['password'].touched && form.controls['password'].invalid && form.controls['password'].hasError('minlength')">
+            Debe contener mínimo de 6 caracteres</div>
         <div class="error"
-            *ngIf="this.form.controls['password'].touched && this.form.controls['password'].getError('noNumber')">
-            Debe contener al menor un número
-        </div>
+            *ngIf="form.controls['password'].touched && form.controls['password'].invalid && form.controls['password'].hasError('noNumber')">
+            Debe contener al menos un número</div>
 
         <button class="btn-registrarte"> REGISTARSE </button>
 
     </form>
-
-
-    <div class="error" *ngIf="errorMail!='exito'">
-        {{errorMail}}
-    </div>
-    <div class="error" *ngIf="errorUser!='exito'">
-        {{errorUser}}
-    </div>
-
-
 </div>

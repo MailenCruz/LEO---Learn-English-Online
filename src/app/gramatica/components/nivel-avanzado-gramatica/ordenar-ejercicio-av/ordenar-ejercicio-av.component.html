@@ -1,7 +1,8 @@
 <nav class="barra-NB">
     <div class="imagen-nombre-NB">
         <a routerLink="/avanzado-home">
-            <img class="img-flecha" src="../../../../../assets/gramatica-img/nav/flecha-gramatica.png" alt="Logo" width="20" height="14">
+            <img class="img-flecha" src="../../../../../assets/gramatica-img/nav/flecha-gramatica.png" alt="Logo"
+                width="20" height="14">
         </a>
         <span> Ordenar las oraciones - Order the sentences</span>
     </div>
@@ -10,48 +11,60 @@
 <section class="cuerpo-NB">
 
     <div class="contenedor-pagina">
-        <section class="ordenar">
-            <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
-                <p> {{ randomPhrase }} </p>
 
-                <div>
-                    <label for="ordenar">Reescriba la oración en orden: </label>
+        <section class="ordenar">
+
+            <form class="formulario" (ngSubmit)="guardarRespuesta()" [formGroup]="answer">
+
+                <p> {{ randomPhrase.oracion }} </p>
+
+                <div *ngIf="!loading">
+                    <label for="ordenar">Reescriba la oración en orden: - Rewrite the sentence in order: </label>
                     <input type="text" id="ordenar" formControlName="ordenar" (input)="onInputChange($event)">
                 </div>
 
+                <div *ngIf="loading" class="loading-spinner"></div>
+
                 <!-- check -->
-                <div *ngIf="answer.controls['ordenar'].getError('required') && answer.controls['ordenar'].touched">
+                <div
+                    *ngIf="!loading && answer.controls['ordenar'].getError('required') && answer.controls['ordenar'].touched">
                     <p class="error"> El campo es requerido </p>
                 </div>
 
                 <!-- coincide -->
-                <div *ngIf="(check === true) && (oracionCoincide === false)">
-                    <p class="coincide"> La oración no coincide </p>
+                <div *ngIf="!loading && (check === true) && (oracionCoincide === false)">
+                    <p class="coincide"> La oración no coincide - Sentence does not match </p>
                 </div>
 
                 <!-- errores -->
-                <div *ngIf="(check === true) &&  (oracionCoincide === true)">
+                <div *ngIf="!loading && (check === true) &&  (oracionCoincide === true)">
                     <div *ngIf="correcto === false">
-                        <div *ngFor="let correccion of correcciones">
-                            <p class="error">{{ correccion.message }} </p>
-                        </div>
+                        <p class="error"> Your answer is incorrect! </p>
                     </div>
                 </div>
 
                 <!-- correcto -->
-                <div *ngIf="(check === true) && (oracionCoincide === true)">
+                <div *ngIf="!loading && (check === true) && (oracionCoincide === true)">
                     <div *ngIf="correcto === true">
-                        <p class="correcto">CORRECTO!</p>
+                        <p class="correcto">Your answer is correct!</p>
                     </div>
                 </div>
 
                 <div class="botones">
-                    <input class="boton" type="submit" value="Check">
+                    <input *ngIf="!loading" class="boton" type="submit" value="Check">
                     <input class="boton" type="reset" value="Reset" (click)="reset()">
-                    <input *ngIf="correcto" class="boton" type="button" value="Next sentence" (click)="siguienteEjercicio()">
+                    <input *ngIf="correcto && !loading" class="boton" type="button" value="Next sentence"
+                        (click)="siguienteEjercicio()">
                 </div>
             </form>
-
         </section>
+
+        <div class="overlay" *ngIf="ganador">
+            <img src="../../../../assets/juegos-img/ganaste/win2.png" alt="ganaste">
+            <div class="mensajeGanador">
+                <button class="botonMensaje" routerLink="/avanzado-home">VOLVER A AVANZADO </button>
+            </div>
+        </div>
+        
     </div>
 </section>

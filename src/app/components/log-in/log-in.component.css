@@ -1,4 +1,4 @@
-.container{
+.container {
     width: 100%;
     padding: 2rem;
     margin: auto;
@@ -11,14 +11,15 @@
     justify-content: center;
 }
 
-.formulario-IniciarSesion{
+.formulario-IniciarSesion {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    
+
     width: 100%;
-    max-width: 40rem; /*ancho de los formularios*/
+    max-width: 40rem;
+    /*ancho de los formularios*/
     height: 40rem;
     border-radius: 50px;
     padding-top: 2rem;
@@ -29,58 +30,77 @@
     box-shadow: 0px 0px 10px 2px #dfc5c5;
 }
 
-.formulario-IniciarSesion h2{
+.formulario-IniciarSesion h2 {
     width: 80%;
     font-size: 3rem;
 
     margin-bottom: 40px;
-    
+
     display: flex;
     justify-content: center;
     font-family: "Poetsen One", sans-serif;
 }
 
-.formulario-IniciarSesion input{
+.formulario-IniciarSesion input {
     background-color: #dfc5c5;
 
-    width: 80%;
+    width: 75%;
     margin-top: 10px;
     padding: 10px;
     border: none;
     border-radius: 50px;
-  
+
     font-size: 20px;
     outline: none;
     font-family: "Public Sans", sans-serif;
 }
 
-.btn-iniciarSesion{
+.btn-iniciarSesion {
     padding: 10px 50px 10px 50px;
-    margin-top: 30px; 
+    margin-top: 30px;
     border: none;
     font-size: 18px;
     font-family: "Public Sans", sans-serif;
     background: #dfc5c5;
-   
+
     cursor: pointer;
     outline: none;
     border-radius: 50px;
 }
 
-.btn-iniciarSesion:hover{
+.btn-iniciarSesion:hover {
     transform: scale(1.1);
     box-shadow: 0px 0px 20px 2px #948080;
 }
 
-
-.error{
+.error {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
 
-    font-size: 1.5rem;
-    color: rgb(148, 40, 40);
+    font-size: 1.7rem;
+    color: rgb(141, 33, 33);
+    font-family: "Public Sans", sans-serif;
 }
 
 
 
+.password-container {
+    position: relative;
+    width: 75%;
+    margin-top: 10px;
+  }
+  
+  .password-container input {
+    width: calc(100% - 40px);
+    padding-right: 40px;
+  }
+  
+  .password-container i {
+    position: absolute;
+    top: 60%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }

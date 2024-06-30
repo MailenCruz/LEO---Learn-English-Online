@@ -12,7 +12,12 @@
                 El campo es requerido</span>
         </div>
 
-        <input type="password" id="password" formControlName="password" placeholder="contraseña">
+        <div class="password-container">
+            <input type="password" id="password" formControlName="password" placeholder="contraseña" 
+                [type]="showPassword ? 'text' : 'password'">
+            <i class="fas" (click)="togglePasswordVisibility()" 
+                [ngClass]="showPassword ? 'fa-eye' : 'fa-eye-slash'"></i>
+        </div>
 
         <div class="error">
             <span
@@ -20,14 +25,15 @@
                 El campo es requerido</span>
         </div>
 
+        <div class="error" *ngIf="valid!='exito'">
+            {{valid}}
+        </div>
+        
         <button class="btn-iniciarSesion"> INICIAR SESION </button>
 
     </form>
 
 
-    <div class="error" *ngIf="valid!='exito'">
-        {{valid}}
-    </div>
    
 
 </div>

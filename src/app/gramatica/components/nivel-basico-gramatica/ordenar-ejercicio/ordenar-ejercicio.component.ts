@@ -5,6 +5,7 @@ import nlp from 'compromise';
 import { Router } from '@angular/router';
 import { Correccion } from 'src/app/gramatica/interfaces/correccion';
 import { GramaticaService } from 'src/app/gramatica/services/gramatica.service';
+import { Ordenar } from 'src/app/gramatica/interfaces/ordenar';
 
 @Component({
   selector: 'ordenar-ejercicio',
@@ -12,27 +13,33 @@ import { GramaticaService } from 'src/app/gramatica/services/gramatica.service';
   styleUrls: ['./ordenar-ejercicio.component.css']
 })
 export class OrdenarEjercicioComponent {
+  ganador: boolean = false;
+  loading: boolean = false;
 
-  ordenar: string[] = [];
-  
+  ordenar: Ordenar[] = [];
+
   index: number = 0;
-  randomPhrase: string = '';
+  randomPhrase: Ordenar = {
+    oracion: '',
+    respuesta: ''
+  };
+
   correcciones: Correccion[] | undefined = [];
   check: boolean = false;
   oracionCoincide: boolean = true;
   correcto: boolean = false;
-  
+
   answer: FormGroup = this.formBuilder.group({
     ordenar: ['', Validators.required]
   });
 
-  constructor(private router:Router, private formBuilder: FormBuilder, private gramaticaService: GramaticaService, private cdr: ChangeDetectorRef) { }
+  constructor(private router: Router, private formBuilder: FormBuilder, private gramaticaService: GramaticaService, private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
     window.scrollTo(0, 0);
     this.getEjercicios();
   }
-  
+
   getEjercicios() {
     let respuesta = this.gramaticaService.getExercisesHttp().subscribe(
       {
@@ -50,30 +57,35 @@ export class OrdenarEjercicioComponent {
     );
   }
 
-  /*async getEjercicios() {
-    try {
-      let respuesta = await this.gramaticaService.getExercises();
+  getCorreccion(phrase: string, answer: string) {
+    this.loading = true;
 
-      if (respuesta) {
-        const { basico } = respuesta;
-        this.ordenar = basico.ordenar;
+    answer = answer.toLowerCase();
+    answer = answer.replace(/\s+/g, ' ');
+    answer = answer.trim();
+
+    this.ordenar.forEach(ejercicio => {
+      if (ejercicio.oracion === phrase) {
+        if (ejercicio.respuesta === answer) {
+          this.correcto = true;
+          this.loading = false;
+        }
       }
-    }
-    catch (error) {
-      console.log(error);
-    }
-  }*/
+    });
+    this.loading = false;
+  }
 
   siguienteEjercicio() {
     if (this.ordenar.length > 0) {
       this.index = (this.index + 1);
 
-      if(this.index == this.ordenar.length){
-        this.router.navigate(['/basico-home']);
+      if (this.index == this.ordenar.length) {
+        this.ganador = true;
+        //this.router.navigate(['/basico-home']);
       }
-      else{
+      else {
         this.randomPhrase = this.ordenar[this.index];
-  
+
         this.answer.reset();
         this.check = false;
         this.correcciones = [];
@@ -94,41 +106,33 @@ export class OrdenarEjercicioComponent {
   }
 
   checkRespuesta(oracion: string) {
+    if (this.oracionCoincide === true) {
+      this.getCorreccion(this.randomPhrase.oracion, oracion);
+    }
+  }
 
-    if(this.oracionCoincide === true){
+  /*checkRespuesta(oracion: string) {
+    if (this.oracionCoincide === true) {
+      this.loading = true;
 
       oracion = oracion.charAt(0).toUpperCase() + oracion.slice(1);
-      
+
       this.gramaticaService.getCorreccionHttp(oracion).subscribe(
         {
           next: (correccion) => {
             this.correcciones = correccion;
-  
+
             if (this.correcciones && this.correcciones.length === 0) {
               this.correcto = true;
             }
+            this.loading = false;
           },
           error: (err) => {
             console.log(err);
+            this.loading = false;
           }
         }
       )
-    }
-  }
-
-  /*async checkRespuesta(oracion: string) {
-    try {
-      if (this.oracionCoincide === true) {
-        oracion = oracion.charAt(0).toUpperCase() + oracion.slice(1);
-        this.correcciones = await this.gramaticaService.getCorreccion(oracion);
-
-        if (this.correcciones?.length === 0) {
-          this.correcto = true;
-        }
-      }
-    }
-    catch (error) {
-      console.log(error);
     }
   }*/
 
@@ -150,10 +154,11 @@ export class OrdenarEjercicioComponent {
       this.correcto = false;
     }
   }
+
   oracionCorrecta() {
     let resultado: number = 0;
 
-    let frase = this.randomPhrase.split('/');
+    let frase = this.randomPhrase.oracion.split('/');
     let fraseFinal = frase.join(' ');
     let lemmasFrase = this.processPhrase(fraseFinal.toLocaleLowerCase());
 

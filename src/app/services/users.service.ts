@@ -143,4 +143,15 @@ export class UsersService {
     localStorage.clear()
   }
 
+  cambiarPassword(userId: string, currentPassword: string, newPassword: string): Observable<any> {
+    const url = `${this.user}/${userId}/change-password`;
+    
+    return this.http.post(url, { currentPassword, newPassword }).pipe(
+      catchError(error => {
+        console.error('Error al cambiar la contraseña:', error);
+        throw error; // Propaga el error para que sea manejado en el componente
+      })
+    );
+  }
+
 }
