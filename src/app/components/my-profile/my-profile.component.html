@@ -68,10 +68,19 @@
             *ngIf="form.controls['newPassword'].touched && this.form.controls['newPassword'].getError('noNumber')">
             Debe contener al menos un número
         </div>
+        <div class="error"
+            *ngIf="form.controls['newPassword'].touched && form.controls['newPassword'].invalid && form.controls['newPassword'].hasError('spacesAtEdges')">
+            No se permiten espacios 
+        </div>
+        <div class="error"
+            *ngIf="form.controls['newPassword'].touched && form.controls['newPassword'].invalid && form.controls['newPassword'].hasError('invalidCharacters')">
+            No se permiten caracteres especiales
+        </div>
         
         <div class="error" *ngIf="errorCurrentPassword!='exito'">
             {{errorCurrentPassword}}
         </div>
+        
 
         <button class="btn-editar"> EDITAR </button>
 

@@ -37,10 +37,12 @@
 
         <div class="error"
             *ngIf="form.controls['email'].touched && form.controls['email'].invalid && form.controls['email'].hasError('required')">
-            El campo es requerido</div>
+            El campo es requerido
+        </div>
         <div class="error"
             *ngIf="form.controls['email'].touched && form.controls['email'].invalid && form.controls['email'].hasError('invalidEmailDomain')">
-            Debe ingresar un email válido</div>
+            Debe ingresar un email válido
+        </div>
 
         <div class="error" *ngIf="errorMail!='exito'">
             {{errorMail}}
@@ -56,13 +58,24 @@
 
         <div class="error"
             *ngIf="form.controls['password'].touched && form.controls['password'].invalid && form.controls['password'].hasError('required')">
-            El campo es requerido</div>
+            El campo es requerido
+        </div>
         <div class="error"
             *ngIf="form.controls['password'].touched && form.controls['password'].invalid && form.controls['password'].hasError('minlength')">
-            Debe contener mínimo de 6 caracteres</div>
+            Debe contener mínimo de 6 caracteres
+        </div>
         <div class="error"
             *ngIf="form.controls['password'].touched && form.controls['password'].invalid && form.controls['password'].hasError('noNumber')">
-            Debe contener al menos un número</div>
+            Debe contener al menos un número
+        </div>
+        <div class="error"
+            *ngIf="form.controls['password'].touched && form.controls['password'].invalid && form.controls['password'].hasError('spacesAtEdges')">
+            No se permiten espacios 
+        </div>
+        <div class="error"
+            *ngIf="form.controls['password'].touched && form.controls['password'].invalid && form.controls['password'].hasError('invalidCharacters')">
+            No se permiten caracteres especiales
+        </div>
 
         <button class="btn-registrarte"> REGISTARSE </button>
 

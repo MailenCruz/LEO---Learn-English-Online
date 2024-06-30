@@ -49,45 +49,59 @@ export class MyProfileComponent implements OnInit {
 
   onFormChanges(): void {
     this.form.get('editUsername')?.valueChanges.subscribe(() => {
-      const control = this.form.get('editUsername');
-      if (control) {
-        control.updateValueAndValidity();
-        this.checkUsername = !control.hasError('invalidUsername') && !control.hasError('minlength') && !control.hasError('spacesAtEdges') && !control.hasError('invalidCharacters');
-      }
+        const control = this.form.get('editUsername');
+        if (control) {
+            control.updateValueAndValidity();
+            this.checkUsername = !control.hasError('invalidUsername') && !control.hasError('minlength') && !control.hasError('spacesAtEdges') && !control.hasError('invalidCharacters');
+        }
     });
 
     this.form.get('editEmail')?.valueChanges.subscribe(() => {
-      this.checkEmail = !this.form.get('editEmail')?.hasError('invalidEmailDomain');
+        this.checkEmail = !this.form.get('editEmail')?.hasError('invalidEmailDomain');
     });
 
     this.form.get('newPassword')?.valueChanges.subscribe(() => {
-      const control = this.form.get('newPassword');
-      this.checkPassword = !(control?.hasError('noNumber') || control?.hasError('minlength'));
+        const control = this.form.get('newPassword');
+        if (control) {
+            control.updateValueAndValidity();
+            this.checkPassword = !control.hasError('noNumber') && !control.hasError('minlength') && !control.hasError('spacesAtEdges') && !control.hasError('invalidCharacters');
+        }
     });
+}
 
-  }
 
   ///FUNCIONES PARA CREAR NUESTROS VALIDATORS
   validarFormatoPassword(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
       const value = control.value;
       if (!value) {
-        return null; // no se valida si el campo está vacío
+        return null;
       }
+
+      const trimmedPassword = value.trim();
+      if (value !== trimmedPassword) {
+        return { 'spacesAtEdges': true }; //espacios
+      }
+
+      const formatoCaracteres = /^[A-Za-z0-9]+$/;
+      const validoCaracteres = formatoCaracteres.test(trimmedPassword);
+      if (!validoCaracteres) {
+        return { 'invalidCharacters': true }; //caracteres especiales
+      }
+
       const containsNumber = /\d/.test(value);
-      if (containsNumber) {
-        if (value.length >= 6) {
-          this.checkPassword = true;
-          return null;
-        } else {
-          return { 'minlength': true };
-        }
-      } else {
-        return { 'noNumber': true };
+      if (!containsNumber) {
+        return { 'noNumber': true }; //contiene numero
       }
+
+      if (trimmedPassword.length < 6) {
+        return { 'minlength': true }; //longitud
+      }
+
+      this.checkPassword = true;
+      return null;
     };
   }
-
   validarFormatoEmail(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
       const email = control.value;
