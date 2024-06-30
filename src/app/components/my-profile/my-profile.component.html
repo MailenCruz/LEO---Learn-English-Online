@@ -8,13 +8,24 @@
         <input type="text" id="username" formControlName="editUsername" placeholder="nombre de usuario">
 
         <div class="error"
-            *ngIf="this.form.controls['editUsername'].touched && this.form.controls['editUsername'].getError('minlength')">
+            *ngIf="form.controls['editUsername'].touched && form.controls['editUsername'].invalid && form.controls['editUsername'].hasError('required')">
+            El campo es requerido
+        </div>
+        <div class="error"
+            *ngIf="form.controls['editUsername'].touched && form.controls['editUsername'].invalid && form.controls['editUsername'].hasError('minlength')">
             Mínimo de 3 caracteres
         </div>
-        
         <div class="error"
-            *ngIf="form.controls['editUsername'].touched && form.controls['editUsername'].getError('invalidUsername')">
+            *ngIf="form.controls['editUsername'].touched && form.controls['editUsername'].invalid && form.controls['editUsername'].hasError('invalidUsername')">
             Debe contener al menos dos letras antes de cualquier número
+        </div>
+        <div class="error"
+            *ngIf="form.controls['editUsername'].touched && form.controls['editUsername'].invalid && form.controls['editUsername'].hasError('spacesAtEdges')">
+            No se permiten espacios 
+        </div>
+        <div class="error"
+            *ngIf="form.controls['editUsername'].touched && form.controls['editUsername'].invalid && form.controls['editUsername'].hasError('invalidCharacters')">
+            No se permiten caracteres especiales
         </div>
 
         <div class="error" *ngIf="errorUser!='exito'">
@@ -33,7 +44,7 @@
             {{errorMail}}
         </div>
 
-        <!-- CONTRA ACTUAL -->
+        <!-- CONTRASEÑA ACTUAL -->
         <div class="password-container">
             <input type="password" id="currentPassword" formControlName="currentPassword"
                 placeholder="contraseña actual" [type]="showCurrentPassword ? 'text' : 'password'">
@@ -41,7 +52,7 @@
                 [ngClass]="showCurrentPassword ? 'fa-eye' : 'fa-eye-slash'"></i>
         </div>
         
-        <!-- CONTRA NUEVA -->
+        <!-- CONTRASEÑA NUEVA -->
         <div class="password-container">
             <input type="password" id="newPassword" formControlName="newPassword" placeholder="nueva contraseña"
             [type]="showNewPassword ? 'text' : 'password'">
@@ -55,7 +66,7 @@
         </div>
         <div class="error"
             *ngIf="form.controls['newPassword'].touched && this.form.controls['newPassword'].getError('noNumber')">
-            Debe contener al menor un número
+            Debe contener al menos un número
         </div>
         
         <div class="error" *ngIf="errorCurrentPassword!='exito'">

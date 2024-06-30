@@ -19,6 +19,10 @@ export class MyProfileComponent implements OnInit {
   errorNewPassword!: string;
   user!: User | undefined;
 
+  checkUsername: boolean = false;
+  checkEmail: boolean = false;
+  checkPassword: boolean = false;
+
   showCurrentPassword: boolean = false;
   showNewPassword: boolean = false;
 
@@ -30,6 +34,7 @@ export class MyProfileComponent implements OnInit {
   ngOnInit(): void {
     this.initForm();
     this.camposFormulario();
+    this.onFormChanges();
     window.scrollTo(0, 0);
   }
 
@@ -42,6 +47,26 @@ export class MyProfileComponent implements OnInit {
     })
   }
 
+  onFormChanges(): void {
+    this.form.get('editUsername')?.valueChanges.subscribe(() => {
+      const control = this.form.get('editUsername');
+      if (control) {
+        control.updateValueAndValidity();
+        this.checkUsername = !control.hasError('invalidUsername') && !control.hasError('minlength') && !control.hasError('spacesAtEdges') && !control.hasError('invalidCharacters');
+      }
+    });
+
+    this.form.get('editEmail')?.valueChanges.subscribe(() => {
+      this.checkEmail = !this.form.get('editEmail')?.hasError('invalidEmailDomain');
+    });
+
+    this.form.get('newPassword')?.valueChanges.subscribe(() => {
+      const control = this.form.get('newPassword');
+      this.checkPassword = !(control?.hasError('noNumber') || control?.hasError('minlength'));
+    });
+
+  }
+
   ///FUNCIONES PARA CREAR NUESTROS VALIDATORS
   validarFormatoPassword(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
@@ -50,7 +75,16 @@ export class MyProfileComponent implements OnInit {
         return null; // no se valida si el campo está vacío
       }
       const containsNumber = /\d/.test(value);
-      return containsNumber ? null : { 'noNumber': true };
+      if (containsNumber) {
+        if (value.length >= 6) {
+          this.checkPassword = true;
+          return null;
+        } else {
+          return { 'minlength': true };
+        }
+      } else {
+        return { 'noNumber': true };
+      }
     };
   }
 
@@ -62,22 +96,51 @@ export class MyProfileComponent implements OnInit {
       }
       const formato = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
       const valido = formato.test(email);
-      return valido ? null : { 'invalidEmailDomain': true };
+
+      if(valido){
+        this.checkEmail = true;
+        return null;
+      }
+      else{
+        this.checkEmail = false;
+        return { 'invalidEmailDomain': true };
+      }
     };
   }
 
   validarFormatoUsername(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } | null => {
-      const username = control.value;
+      let username = control.value;
       if (!username) {
         return null;
       }
-      const formato = /^[A-Za-z]{2,}[A-Za-z0-9]*$/;
-      const valido = formato.test(username);
-      return valido ? null : { 'invalidUsername': true };
-    };
-  }
 
+      const trimmedUsername = username.trim();
+      if (username !== trimmedUsername) {
+        return { 'spacesAtEdges': true }; //espacios
+      }
+
+      const formatoCaracteres = /^[A-Za-z0-9]+$/;
+      const validoCaracteres = formatoCaracteres.test(trimmedUsername);
+      if (!validoCaracteres) {
+        return { 'invalidCharacters': true }; //caracteres especiales
+      }
+
+      const formato = /^(?=.*[A-Za-z]{2,})([A-Za-z0-9]+)$/i;
+      const valido = formato.test(trimmedUsername);
+      if (!valido) {
+        return { 'invalidUsername': true }; //dos letras antes de numeros
+      }
+
+      if (trimmedUsername.length < 3) {
+        return { 'minlength': true }; //longitud
+      }
+
+      this.checkUsername = true;
+      return null;
+    }
+  };
+  
   camposFormulario() {
     this.route.params.subscribe(params => {
       const userId = params['id'];
@@ -117,35 +180,6 @@ export class MyProfileComponent implements OnInit {
     );
   }
 
-  /*
-  editarUser() {
-    if (!this.user) return;
-  
-    const newUsername = this.form.get('editUsername')!.value;
-    const newEmail = this.form.get('editEmail')!.value;
-  
-    if (newUsername !== this.user.username) {
-      this.userService.verificarUser(newUsername).subscribe(result => {
-        this.errorUser = result;
-        if (this.errorUser === 'exito') {
-          this.user!.username = newUsername;
-          this.actualizarUsuario();
-        }
-      });
-    }
-  
-    if (newEmail !== this.user.email) {
-      this.userService.verificarEmail(newEmail).subscribe(result => {
-        this.errorMail = result;
-        if (this.errorMail === 'exito') {
-          this.user!.email = newEmail;
-          this.actualizarUsuario();
-        }
-      });
-    }
-
-  }
-  */
   editarUser() {
     if (!this.user) return;
 
@@ -156,12 +190,11 @@ export class MyProfileComponent implements OnInit {
 
     const observables = [];
 
-
     if (newUsername !== this.user.username) {
       this.userService.verificarUser(newUsername).subscribe(result => {
         this.errorUser = result;
         if (this.errorUser === 'exito') {
-          if (newUsername) {
+          if (newUsername && this.checkUsername) {
             this.user!.username = newUsername;
           }
           this.actualizarUsuario();
@@ -173,7 +206,7 @@ export class MyProfileComponent implements OnInit {
       this.userService.verificarEmail(newEmail).subscribe(result => {
         this.errorMail = result;
         if (this.errorMail === 'exito') {
-          if (newEmail) {
+          if (newEmail && this.checkEmail) {
             this.user!.email = newEmail;
           }
           this.actualizarUsuario();
@@ -186,7 +219,7 @@ export class MyProfileComponent implements OnInit {
         this.errorCurrentPassword = 'La contraseña actual no coincide.';
       } else if (auxNewPassword === auxCurrentPassword) {
         this.errorCurrentPassword = 'La nueva contraseña es igual a la actual.';
-      } else {
+      } else if (this.checkPassword){
         this.user.password = auxNewPassword;
         this.actualizarUsuario();
       }
@@ -202,8 +235,6 @@ export class MyProfileComponent implements OnInit {
   }
 
   private actualizarUsuario() {
-
-
     if (this.user) {
       this.userService.putUser(this.user).subscribe({
         next: () => {
@@ -215,12 +246,5 @@ export class MyProfileComponent implements OnInit {
       });
     }
   }
-
-
-
-
-
-
-
 }
 
