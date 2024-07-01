@@ -109,6 +109,49 @@ button:active {
     background-color: #E5B9F1;
 }
 
+.boton-intentar{
+    background-color: rgb(206, 80, 80);
+    color: white;
+    font-size: 1.6rem;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    border-radius: 50px;
+    margin-top: 3rem;
+    padding: 12px;
+}
+.boton-intentar:hover {
+    background-color: rgb(224, 24, 24);
+}
+.boton-intentar:active {
+    background-color: rgb(224, 24, 24);
+}
+
+
+.boton-siguiente{
+    background-color: #25a021a8;
+    color: white;
+    font-size: 1.6rem;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    border-radius: 50px;
+    margin-top: 3rem;
+    padding: 12px;
+}
+.boton-siguiente:hover{
+    background-color: #146d11a8;
+}
+.boton-siguiente:active{
+    background-color: #146d11a8;
+}
+
 .cuerpo-mensaje {
     display: flex;
     flex-direction: column;

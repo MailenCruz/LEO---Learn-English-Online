@@ -37,9 +37,9 @@
         </ul>
 
         <button (click)="verificarRespuesta()">Verificar respuesta</button>
-        <button *ngIf="intentos > 0 && respuestaCorrecta === 'incorrecta'" (click)="resetearEstado()">Intentar de
+        <button *ngIf="intentos > 0 && respuestaCorrecta === 'incorrecta'" (click)="resetearEstado()" class="boton-intentar">Intentar de
             nuevo</button>
-        <button *ngIf="mostrarBoton" (click)="siguientePregunta() ">Siguiente pregunta</button>
+        <button *ngIf="mostrarBoton" (click)="siguientePregunta()" class="boton-siguiente">Siguiente pregunta</button>
     </div>
 
     <div class="cuerpo-mensaje" *ngIf="!mostrarCuestionario">
