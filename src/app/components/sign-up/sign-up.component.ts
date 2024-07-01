@@ -3,7 +3,7 @@ import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from
 import { Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user';
 import { UsersService } from 'src/app/services/users.service';
-import { Observable, forkJoin } from 'rxjs';
+import { Observable, debounceTime, forkJoin } from 'rxjs';
 @Component({
   selector: 'sign-up',
   templateUrl: './sign-up.component.html',
@@ -22,6 +22,7 @@ export class SignUpComponent implements OnInit {
   constructor(private userService: UsersService, private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
+    this.userService.logout();
     this.initForm();
     this.onFormChanges();
     window.scrollTo(0, 0);
@@ -36,26 +37,37 @@ export class SignUpComponent implements OnInit {
   }
 
   onFormChanges(): void {
-    this.form.get('username')?.valueChanges.subscribe(() => {
+    this.form.get('username')?.valueChanges.pipe(
+      debounceTime(300)
+    ).subscribe(() => {
       const control = this.form.get('username');
       if (control) {
         control.updateValueAndValidity();
-        this.checkUsername = !control.hasError('invalidUsername') && !control.hasError('minlength') && !control.hasError('spacesAtEdges') && !control.hasError('invalidCharacters');
+        this.checkUsername = !control.hasError('invalidUsername') &&
+          !control.hasError('minlength') &&
+          !control.hasError('spacesAtEdges') &&
+          !control.hasError('invalidCharacters');
       }
     });
 
-    this.form.get('password')?.valueChanges.subscribe(() => {
+    this.form.get('password')?.valueChanges.pipe(
+      debounceTime(300)
+    ).subscribe(() => {
       const control = this.form.get('password');
       if (control) {
         control.updateValueAndValidity();
-        this.checkUsername = !control.hasError('noNumber') && !control.hasError('minlength') && !control.hasError('spacesAtEdges') && !control.hasError('invalidCharacters');
+        this.checkPassword = !control.hasError('noNumber') &&
+          !control.hasError('minlength') &&
+          !control.hasError('spacesAtEdges') &&
+          !control.hasError('invalidCharacters');
       }
     });
 
-    this.form.get('email')?.valueChanges.subscribe(() => {
+    this.form.get('email')?.valueChanges.pipe(
+      debounceTime(300)
+    ).subscribe(() => {
       this.checkEmail = !this.form.get('email')?.hasError('invalidEmailDomain');
     });
-
   }
 
   ///FUNCIONES PARA CREAR NUESTROS VALIDATORS
