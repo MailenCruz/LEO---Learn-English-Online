@@ -18,8 +18,8 @@ const routes: Routes = [
   { path: 'ingresa', component: LogInPageComponent, canActivate: [LoginGuard] },
   
   { path: 'my-profile/:id', component: MyProfilePageComponent, canActivate: [AuthGuard] },
-  
-  { path: '', component: HomeNoLogComponent },
+
+  { path: '', component:HomeNoLogComponent},
 
   //reemplaza imports de juegos
   {

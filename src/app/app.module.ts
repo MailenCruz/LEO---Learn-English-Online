@@ -62,8 +62,6 @@ import { MyProfilePageComponent } from "./pages/my-profile-page/my-profile-page.
     SignUpComponent,
     SignUpPageComponent,
 
-    HomePageComponent,
-
     MyProfileComponent,
     MyProfilePageComponent,
     

@@ -2,7 +2,7 @@
   "users": [
     {
       "id": "5823034498",
-      "username": "mailen78",
+      "username": "mailen",
       "email": "mailenyfiorella@gmail.com",
       "password": "mai123"
     },
@@ -11,6 +11,12 @@
       "username": "luli",
       "email": "lu@gmail.com",
       "password": "luli702"
+    },
+    {
+      "id": "4215566658",
+      "username": "fiore",
+      "email": "fiorellaquimey23@gmail.com",
+      "password": "fio123"
     }
   ]
 }

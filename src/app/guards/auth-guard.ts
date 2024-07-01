@@ -14,7 +14,7 @@ function checkAuthStatus(): boolean | Observable<boolean> {
     .pipe(
       tap(estaAutenticado => {
         if (!estaAutenticado){
-          router.navigate(['/login'])
+          router.navigate(['/home-general'])
         }
       })
     )

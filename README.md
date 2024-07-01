@@ -11,9 +11,9 @@ LEO es una plataforma para aprender inglés de forma didáctica. Cuenta con secc
 
 1. Ejecuta `npm run backend` para obtener datos sobre los ejercicios.
 2. Ejecuta `npm run users` para obtener datos sobre los usuarios.
-3. Ejecuta `npm install compromise` para instalar la libreria.
-4. Ejecuta npm run traductor para obtener datos de la traducción.
-5. Ejecuta npm install @fortawesome/fontawesome-free para instalar recursos visuales del session.
+3. Ejecuta `npm run traductor` para obtener datos de la traducción.
+4. Ejecuta `npm install compromise` para instalar la libreria.
+5. Ejecuta `npm install @fortawesome/fontawesome-free` para instalar recursos visuales del session.
 
 
 ## Development server
