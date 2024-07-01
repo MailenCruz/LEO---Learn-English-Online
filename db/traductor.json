@@ -231,10 +231,12 @@
 
     {"palabra": "carrera", "traduccion": "career"},
     {"palabra": "segui", "traduccion": "i continued"},
+    {"palabra": "seguí", "traduccion": "i continued"},
     {"palabra": "tu", "traduccion": "you"},
     {"palabra": "vos", "traduccion": "you"},
     {"palabra": "yo", "traduccion": "I"},
     {"palabra": "el", "traduccion": "he"},
+    {"palabra": "él", "traduccion": "he"},
     {"palabra": "ella", "traduccion": "she"},
     {"palabra": "ellas", "traduccion": "they"},
     {"palabra": "nosotros", "traduccion": "us"},
