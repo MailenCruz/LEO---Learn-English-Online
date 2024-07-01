@@ -11,7 +11,7 @@ export class TraductorComponent implements OnInit{
 
   palabra:string = '';
   traduccion:string = '';
-  idioma:string = "es-en";
+  idioma:string = "en-es";
   forms!:FormGroup;
   loading: boolean =false; // Variable para rastrear el estado de carga
   correccion!: boolean

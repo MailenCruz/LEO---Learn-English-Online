@@ -20,14 +20,15 @@ const routes: Routes = [
   { path: 'my-profile/:id', component: MyProfilePageComponent, canActivate: [AuthGuard] },
 
   { path: '', component:HomeNoLogComponent},
+  
 
-  //reemplaza imports de juegos
+  //reemplaza imports de juegosa
   {
     path: 'juegos',
     loadChildren: () => import('./juegos/juegos.module').then(module => module.JuegosModule),
     canActivate: [AuthGuard]
   },
-
+  
   //reemplaza imports de viajeros
   {
     path: 'viajeros',
