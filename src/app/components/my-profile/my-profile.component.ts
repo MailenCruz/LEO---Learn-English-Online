@@ -3,7 +3,7 @@ import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user';
 import { UsersService } from 'src/app/services/users.service';
-import { Observable, catchError, forkJoin, map, of, switchMap } from 'rxjs';
+import { Observable, catchError, debounceTime, forkJoin, map, of, switchMap } from 'rxjs';
 
 @Component({
   selector: 'my-profile',
@@ -48,26 +48,38 @@ export class MyProfileComponent implements OnInit {
   }
 
   onFormChanges(): void {
-    this.form.get('editUsername')?.valueChanges.subscribe(() => {
-        const control = this.form.get('editUsername');
-        if (control) {
-            control.updateValueAndValidity();
-            this.checkUsername = !control.hasError('invalidUsername') && !control.hasError('minlength') && !control.hasError('spacesAtEdges') && !control.hasError('invalidCharacters');
-        }
+    this.form.get('username')?.valueChanges.pipe(
+      debounceTime(300)
+    ).subscribe(() => {
+      const control = this.form.get('username');
+      if (control) {
+        control.updateValueAndValidity();
+        this.checkUsername = !control.hasError('invalidUsername') &&
+          !control.hasError('minlength') &&
+          !control.hasError('spacesAtEdges') &&
+          !control.hasError('invalidCharacters');
+      }
     });
 
-    this.form.get('editEmail')?.valueChanges.subscribe(() => {
-        this.checkEmail = !this.form.get('editEmail')?.hasError('invalidEmailDomain');
+    this.form.get('password')?.valueChanges.pipe(
+      debounceTime(300)
+    ).subscribe(() => {
+      const control = this.form.get('password');
+      if (control) {
+        control.updateValueAndValidity();
+        this.checkPassword = !control.hasError('noNumber') &&
+          !control.hasError('minlength') &&
+          !control.hasError('spacesAtEdges') &&
+          !control.hasError('invalidCharacters');
+      }
     });
 
-    this.form.get('newPassword')?.valueChanges.subscribe(() => {
-        const control = this.form.get('newPassword');
-        if (control) {
-            control.updateValueAndValidity();
-            this.checkPassword = !control.hasError('noNumber') && !control.hasError('minlength') && !control.hasError('spacesAtEdges') && !control.hasError('invalidCharacters');
-        }
+    this.form.get('email')?.valueChanges.pipe(
+      debounceTime(300)
+    ).subscribe(() => {
+      this.checkEmail = !this.form.get('email')?.hasError('invalidEmailDomain');
     });
-}
+  }
 
 
   ///FUNCIONES PARA CREAR NUESTROS VALIDATORS
@@ -111,11 +123,11 @@ export class MyProfileComponent implements OnInit {
       const formato = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
       const valido = formato.test(email);
 
-      if(valido){
+      if (valido) {
         this.checkEmail = true;
         return null;
       }
-      else{
+      else {
         this.checkEmail = false;
         return { 'invalidEmailDomain': true };
       }
@@ -154,7 +166,7 @@ export class MyProfileComponent implements OnInit {
       return null;
     }
   };
-  
+
   camposFormulario() {
     this.route.params.subscribe(params => {
       const userId = params['id'];
@@ -233,7 +245,7 @@ export class MyProfileComponent implements OnInit {
         this.errorCurrentPassword = 'La contraseña actual no coincide.';
       } else if (auxNewPassword === auxCurrentPassword) {
         this.errorCurrentPassword = 'La nueva contraseña es igual a la actual.';
-      } else if (this.checkPassword){
+      } else if (this.checkPassword) {
         this.user.password = auxNewPassword;
         this.actualizarUsuario();
       }

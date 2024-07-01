@@ -17,6 +17,24 @@
       "username": "fiore",
       "email": "fiorellaquimey23@gmail.com",
       "password": "fio123"
+    },
+    {
+      "id": "9789986580",
+      "username": "minho",
+      "email": "minho@gmail.com",
+      "password": "minho14"
+    },
+    {
+      "id": "5489271432",
+      "username": "jisung",
+      "email": "jisung@gmail.com",
+      "password": "jisung12"
+    },
+    {
+      "id": "4887491544",
+      "username": "yeko",
+      "email": "yeko@gmail.com",
+      "password": "yeko01"
     }
   ]
 }
