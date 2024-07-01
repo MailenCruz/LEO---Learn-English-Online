@@ -14,6 +14,7 @@ export class TraductorComponent implements OnInit{
   idioma:string = "es-en";
   forms!:FormGroup;
   loading: boolean =false; // Variable para rastrear el estado de carga
+  correccion!: boolean
 
   constructor(private tradService:TraductorService, private formBuilder:FormBuilder){}
 
@@ -81,7 +82,8 @@ export class TraductorComponent implements OnInit{
       this.tradService.getTraduccionENES(this.palabra).subscribe(
         traduccion => {
           this.traduccion = traduccion?.toLocaleLowerCase() || '';
-          this.corregir();
+          this.checkWordExists(this.palabra);
+          this.handleTranslation();
           this.loading = false; // Finaliza la carga
         },
         error => {
@@ -93,7 +95,8 @@ export class TraductorComponent implements OnInit{
       this.tradService.getTraduccionESEN(this.palabra).subscribe(
         traduccion => {
           this.traduccion = traduccion?.toLocaleLowerCase() || '';
-          this.corregir();
+          this.checkWordExists(this.palabra);
+          this.handleTranslation();
           this.loading = false; // Finaliza la carga
         },
         error => {
@@ -104,7 +107,66 @@ export class TraductorComponent implements OnInit{
     }
   }
 
+  handleTranslation() {
+    this.tradService.wordExists(this.palabra).subscribe(
+      result => {
+        this.correccion = result === 1;
+        if (this.correccion) {
+          this.corregir(this.palabra);
+        }else{
+          console.log("no necesita corregirse");
+        }
+      },
+      error => {
+        console.error('Error al verificar la palabra:', error);
+      }
+    );
+  }
+  checkWordExists(word: string): number {
+    this.tradService.wordExists(word).subscribe(
+      result => {
+        if (result === 1) {
+          //console.log(`La palabra "${word}" existe en las traducciones.`);
+          this.correccion = true;
+          console.log(this.correccion);
+        } else {
+          //console.log(`La palabra "${word}" no existe en las traducciones.`);
+          this.correccion = false;
+          console.log(this.correccion);
+        }
+      },
+      error => {
+        console.error('Error al verificar la palabra:', error);
+      }
+    );
+    return -1;
+  }
+
+  
+
+  corregir(word: string): void {
+    this.tradService.getTraduccionCorregida(word).subscribe(
+      result => {
+        if (result) {
+          //console.log(`La traducción de "${word}" es "${result}".`);
+          this.traduccion = result.toLocaleLowerCase();
+          console.log(result);
+
+        } else {
+          //console.log(`No se encontró traducción para la palabra "${word}".`);
+          this.traduccion = result
+        }
+      },
+      error => {
+        console.error('Error al obtener la traducción:', error);
+      }
+    );
+    
+  }
+
+/*
   corregir(){
+    
     this.palabra = this.palabra.toLocaleLowerCase();
     if(this.palabra == 'house'){
       this.traduccion = 'casa';
@@ -664,8 +726,10 @@ export class TraductorComponent implements OnInit{
     else if(this.palabra == 'botones'){
       this.traduccion = 'buttons / bellboy';
     }
+    
 
    
   }
+  */
 
 }
