@@ -5,7 +5,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Description
 
-LEO es una plataforma para aprender inglés de forma didáctica. Cuenta con secciones de inglés básico para viajeros, para niños, y para usuarios que posean previamente cierto nivel de inglés.
+LEO es una plataforma para aprender inglés de forma didáctica. Cuenta con tres secciones, las cuales estan destinadas a un publico general, la primera de ellas es juegos para aprender de forma dinamica, la segunada es viajeros que esta destinada
+a aquellas personas que quieren aprender ingles para utilizar en diferentes contextos de viajes y la ultima es gramatica que cuenta con ejercicios gramaticales en tres niveles para que puedas seguir mejorando tu ingles.
 
 ## Pasos para la Implementación
 
